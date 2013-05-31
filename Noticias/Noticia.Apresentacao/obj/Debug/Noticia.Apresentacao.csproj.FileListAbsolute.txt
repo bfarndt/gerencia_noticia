@@ -1,0 +1,11 @@
+C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Apresentacao\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Apresentacao\bin\Noticia.Apresentacao.dll
+C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Apresentacao\bin\Noticia.Apresentacao.pdb
+C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Apresentacao\bin\Noticia.Entidades.dll
+C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Apresentacao\bin\Noticia.Negocios.dll
+C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Apresentacao\bin\Noticia.AcessoDados.dll
+C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Apresentacao\bin\Noticia.Entidades.pdb
+C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Apresentacao\bin\Noticia.Negocios.pdb
+C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Apresentacao\bin\Noticia.AcessoDados.pdb
+C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Apresentacao\obj\Debug\Noticia.Apresentacao.dll
+C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Apresentacao\obj\Debug\Noticia.Apresentacao.pdb

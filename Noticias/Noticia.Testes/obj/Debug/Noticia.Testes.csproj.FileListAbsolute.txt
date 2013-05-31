@@ -1,0 +1,5 @@
+C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Testes\bin\Debug\Noticia.Testes.dll
+C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Testes\bin\Debug\Noticia.Testes.pdb
+C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Testes\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Testes\obj\Debug\Noticia.Testes.dll
+C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Testes\obj\Debug\Noticia.Testes.pdb
