@@ -7,3 +7,12 @@ C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Notici
 C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Negocios\bin\Debug\Noticia.Entidades.pdb
 C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.dll
 C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.pdb
+E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Negocios\bin\Debug\Noticia.Negocios.dll
+E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Negocios\bin\Debug\Noticia.Negocios.pdb
+E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Negocios\bin\Debug\Noticia.AcessoDados.dll
+E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Negocios\bin\Debug\Noticia.Entidades.dll
+E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Negocios\bin\Debug\Noticia.AcessoDados.pdb
+E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Negocios\bin\Debug\Noticia.Entidades.pdb
+E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.csprojResolveAssemblyReference.cache
+E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.dll
+E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.pdb

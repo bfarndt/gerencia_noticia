@@ -3,3 +3,8 @@ C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Notici
 C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Testes\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Testes\obj\Debug\Noticia.Testes.dll
 C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Testes\obj\Debug\Noticia.Testes.pdb
+E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Testes\bin\Debug\Noticia.Testes.dll
+E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Testes\bin\Debug\Noticia.Testes.pdb
+E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Testes\obj\Debug\Noticia.Testes.csprojResolveAssemblyReference.cache
+E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Testes\obj\Debug\Noticia.Testes.dll
+E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Testes\obj\Debug\Noticia.Testes.pdb

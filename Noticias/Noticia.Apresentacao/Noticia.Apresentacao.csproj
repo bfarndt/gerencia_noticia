@@ -20,6 +20,10 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,16 +62,217 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Account\ChangePassword.aspx" />
-    <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
-    <Content Include="Account\Register.aspx" />
+    <Content Include="frmNoticiaListagem.aspx" />
+    <Content Include="Imagem\add.png" />
+    <Content Include="Imagem\barra_cores.jpg" />
+    <Content Include="Imagem\barra_verde.png" />
+    <Content Include="Imagem\btnAcessar.png" />
+    <Content Include="Imagem\btnEnviar.gif" />
+    <Content Include="Imagem\btnFiltrar.png" />
+    <Content Include="Imagem\btnNovo.png" />
+    <Content Include="Imagem\btnSalvar.png" />
+    <Content Include="Imagem\btnVoltar.png" />
+    <Content Include="Imagem\btn_excluir.jpg" />
+    <Content Include="Imagem\btn_fechar.jpg" />
+    <Content Include="Imagem\calendar.png" />
+    <Content Include="Imagem\carregando.gif" />
+    <Content Include="Imagem\error.png" />
+    <Content Include="Imagem\fundo_tela_principal.jpg" />
+    <Content Include="Imagem\fundo_tela_principal.png" />
+    <Content Include="Imagem\gestaodeacesso.gif" />
+    <Content Include="Imagem\gestaodeacessos.gif" />
+    <Content Include="Imagem\gestaodeacessos.png" />
+    <Content Include="Imagem\grd_alt.png" />
+    <Content Include="Imagem\grd_head.png" />
+    <Content Include="Imagem\group.gif" />
+    <Content Include="Imagem\icone_lupa.gif" />
+    <Content Include="Imagem\ico_adicionar_grid.gif" />
+    <Content Include="Imagem\ico_cancel_grid.gif" />
+    <Content Include="Imagem\ico_cfg_grid.gif" />
+    <Content Include="Imagem\ico_delete_grid.gif" />
+    <Content Include="Imagem\ico_edit_grid.gif" />
+    <Content Include="Imagem\ico_habilitar.gif" />
+    <Content Include="Imagem\ico_salvar_grid.gif" />
+    <Content Include="Imagem\info.png" />
+    <Content Include="Imagem\loader.gif" />
+    <Content Include="Imagem\loader.white.gif" />
+    <Content Include="Imagem\LogotipoSOL.png" />
+    <Content Include="Imagem\magnifier.png" />
+    <Content Include="Imagem\Mail-48.png" />
+    <Content Include="Imagem\mss.jpg" />
+    <Content Include="Imagem\navPageBKGD.gif" />
+    <Content Include="Imagem\no-foto.jpg" />
+    <Content Include="Imagem\no_photo.jpg" />
+    <Content Include="Imagem\no_photo2.jpg" />
+    <Content Include="Imagem\success.png" />
+    <Content Include="Imagem\tick.png" />
+    <Content Include="Imagem\topo_repeat.png" />
+    <Content Include="Imagem\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Imagem\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Imagem\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Imagem\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Imagem\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Imagem\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Imagem\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Imagem\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Imagem\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Imagem\ui-icons_222222_256x240.png" />
+    <Content Include="Imagem\ui-icons_228ef1_256x240.png" />
+    <Content Include="Imagem\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Imagem\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Imagem\ui-icons_ffffff_256x240.png" />
+    <Content Include="Imagem\user.gif" />
+    <Content Include="Imagem\viewheadergrad.gif" />
+    <Content Include="Imagem\warning.png" />
+    <Content Include="Scripts\easytooltip\01.html" />
+    <Content Include="Scripts\easytooltip\02.html" />
+    <Content Include="Scripts\easytooltip\03.html" />
+    <Content Include="Scripts\easytooltip\bg.gif" />
+    <Content Include="Scripts\easytooltip\bg2.gif" />
+    <Content Include="Scripts\easytooltip\js\easyTooltip.js" />
+    <Content Include="Scripts\easytooltip\js\_notes\dwsync.xml" />
+    <Content Include="Scripts\Funcoes.js" />
+    <Content Include="Scripts\highslide-4.1.8\examples\ajax.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\flash.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\gallery-controls-in-heading.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\gallery-dark.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\gallery-floating-caption.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\gallery-floating-thumbs.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\gallery-horizontal-strip.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\gallery-in-box.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\gallery-in-page.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\gallery-thumbstrip-above.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\gallery-vertical-strip.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\gallery-white.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\headline.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\html.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\iframe.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\image-map.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\includes\ajax.htm" />
+    <Content Include="Scripts\highslide-4.1.8\examples\includes\Flash.swf" />
+    <Content Include="Scripts\highslide-4.1.8\examples\includes\include-short.htm" />
+    <Content Include="Scripts\highslide-4.1.8\examples\inline.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\mini-galleries.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\mini-gallery.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\no-border.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\no-outline.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\outer-glow.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\white-10px.html" />
+    <Content Include="Scripts\highslide-4.1.8\examples\white-rounded-outline.html" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\close.png" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\closeX.png" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\controlbar-black-border.gif" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\controlbar-text-buttons.png" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\controlbar-white-small.gif" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\controlbar-white.gif" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\controlbar2.gif" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\controlbar3.gif" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\controlbar4-hover.gif" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\controlbar4.gif" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\fullexpand.gif" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\geckodimmer.png" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\icon.gif" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\loader.gif" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\loader.white.gif" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\outlines\beveled.png" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\outlines\drop-shadow.png" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\outlines\glossy-dark.png" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\outlines\outer-glow.png" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\outlines\rounded-black.png" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\outlines\rounded-white.png" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\resize.gif" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\scrollarrows.png" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\zoomin.cur" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\zoomout.cur" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\highslide-full.js" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\highslide-full.min.js" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\highslide-full.packed.js" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\highslide-ie6.css" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\highslide-with-gallery.js" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\highslide-with-gallery.min.js" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\highslide-with-gallery.packed.js" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\highslide-with-html.js" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\highslide-with-html.min.js" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\highslide-with-html.packed.js" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\highslide.css" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\highslide.js" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\highslide.min.js" />
+    <Content Include="Scripts\highslide-4.1.8\highslide\highslide.packed.js" />
+    <Content Include="Scripts\highslide-4.1.8\images\full-image.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\full6.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\gallery1.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\gallery1.thumb.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\gallery2.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\gallery2.thumb.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\gallery3.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\gallery3.thumb.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\nordic.gif" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumb6.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbnail.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip01.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip01.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip02.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip02.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip03.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip03.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip04.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip04.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip05.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip05.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip06.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip06.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip07.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip07.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip08.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip08.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip09.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip09.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip10.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip10.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip11.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip11.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip12.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip12.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip13.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip13.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip14.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip14.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip15.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip15.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip16.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip16.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip17.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip17.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip18.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip18.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip19.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip19.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip20.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip20.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip21.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip21.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip22.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip22.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip23.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip23.thumb.png" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip24.jpg" />
+    <Content Include="Scripts\highslide-4.1.8\images\thumbstrip24.thumb.png" />
+    <Content Include="Scripts\jquery-1.5.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.13.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-personalized-1.5.2.packed.js" />
+    <Content Include="Scripts\jquery.tooltip.min.js" />
+    <Content Include="Scripts\sprinkle.js" />
+    <Content Include="Styles\highslide.css" />
+    <Content Include="Styles\jquery-ui-1.8.13.custom.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\StyleSheet.css" />
+    <Content Include="Styles\StyleSheetImagem.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -84,33 +289,12 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\ChangePassword.aspx.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\ChangePassword.aspx.designer.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
-      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
-      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -119,8 +303,18 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmNoticiaListagem.aspx.cs">
+      <DependentUpon>frmNoticiaListagem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmNoticiaListagem.aspx.designer.cs">
+      <DependentUpon>frmNoticiaListagem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="NoticiaPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -135,7 +329,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +340,16 @@
       <Project>{FE15BC13-CD33-4391-981A-4743E40219E1}</Project>
       <Name>Noticia.Negocios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\highslide-4.1.8\highslide\graphics\outlines\Outlines.psd" />
+    <Content Include="Scripts\highslide-4.1.8\images\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\Skin.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagem\Thumbs.db" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
