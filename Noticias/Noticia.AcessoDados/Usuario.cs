@@ -6,11 +6,11 @@ using System.Data;
 
 namespace Noticia.AcessoDados
 {
-    public class Noticia : ICrud<Entidades.Noticia>
+    public class Usuario : ICrud<Entidades.Usuario>
     {
         AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
 
-        public List<Entidades.Noticia> Consultar(Entidades.Noticia entidade)
+        public List<Entidades.Usuario> Consultar(Entidades.Usuario entidade)
         {
             try
             {
@@ -18,13 +18,15 @@ namespace Noticia.AcessoDados
 
                 objDados.LimparParametros();
                 objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdNoticia", entidade.IdNoticia);
-                objDados.AdicionarParametros("@vchTitulo", entidade.Titulo);
-                objDados.AdicionarParametros("@vchConteudo", entidade.Conteudo);
+                objDados.AdicionarParametros("@intIdUsuario", entidade.IdUsuario);
+                objDados.AdicionarParametros("@vchLogin", entidade.Login);
+                objDados.AdicionarParametros("@vchSenha", entidade.Senha);
+                objDados.AdicionarParametros("@vchNome", entidade.Nome);
+                objDados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spNoticia");
+                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spUsuario");
 
-                List<Entidades.Noticia> objRetorno = new List<Entidades.Noticia>();
+                List<Entidades.Usuario> objRetorno = new List<Entidades.Usuario>();
 
                 if (objDataTable.Rows.Count <= 0)
                 {
@@ -33,13 +35,18 @@ namespace Noticia.AcessoDados
 
                 foreach (DataRow objLinha in objDataTable.Rows)
                 {
-                    Entidades.Noticia objNovaNoticia = new Entidades.Noticia();
+                    Entidades.Usuario objNovoUsuario = new Entidades.Usuario();
 
-                      objNovaNoticia.IdNoticia = objLinha["IdNoticia"] != DBNull.Value ? Convert.ToInt32(objLinha["IdNoticia"]) : 0;
-                    objNovaNoticia.Titulo = objLinha["Titulo"] != DBNull.Value ? Convert.ToString(objLinha["Titulo"]) : null;
-                    objNovaNoticia.Conteudo = objLinha["Conteudo"] != DBNull.Value ? Convert.ToString(objLinha["Conteudo"]) : null;
+                    objNovoUsuario.IdUsuario = objLinha["IdUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdNoticia"]) : 0;
+                    objNovoUsuario.Login = objLinha["Login"] != DBNull.Value ? Convert.ToString(objLinha["Login"]) : null;
+                    objNovoUsuario.Senha = objLinha["Senha"] != DBNull.Value ? Convert.ToString(objLinha["Senha"]) : null;
+                    objNovoUsuario.Nome = objLinha["Nome"] != DBNull.Value ? Convert.ToString(objLinha["Nome"]) : null;
+                    objNovoUsuario.TipoUsuario = new Entidades.TipoUsuario()
+                    {
+                        IdTipoUsuario = objLinha["IdTipoUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdTipoUsuario"]) : 0
+                    };
 
-                    objRetorno.Add(objNovaNoticia);
+                    objRetorno.Add(objNovoUsuario);
                 }
 
                 return objRetorno;
@@ -50,7 +57,7 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Inserir(Entidades.Noticia entidade)
+        public string Inserir(Entidades.Usuario entidade)
         {
             try
             {
@@ -59,10 +66,12 @@ namespace Noticia.AcessoDados
                 if (entidade != null)
                 {
                     objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@vchTitulo", entidade.Titulo);
-                    objDados.AdicionarParametros("@vchConteudo", entidade.Conteudo);
+                    objDados.AdicionarParametros("@vchLogin", entidade.Login);
+                    objDados.AdicionarParametros("@vchSenha", entidade.Senha);
+                    objDados.AdicionarParametros("@vchNome", entidade.Nome);
+                    objDados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spNoticia");
+                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuario");
                 }
 
                 int intResultado = 0;
@@ -85,20 +94,21 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Alterar(Entidades.Noticia entidade)
+        public string Alterar(Entidades.Usuario entidade)
         {
             try
             {
                 objDados.LimparParametros();
                 object objRetorno = null;
-                if (entidade != null && entidade.IdNoticia > 0)
+                if (entidade != null && entidade.IdUsuario > 0)
                 {
                     objDados.AdicionarParametros("@vchAcao", "ALTERAR");
-                    objDados.AdicionarParametros("@intIdNoticia", entidade.IdNoticia);
-                    objDados.AdicionarParametros("@vchTitulo", entidade.Titulo);
-                    objDados.AdicionarParametros("@vchConteudo", entidade.Conteudo);
+                    objDados.AdicionarParametros("@vchLogin", entidade.Login);
+                    objDados.AdicionarParametros("@vchSenha", entidade.Senha);
+                    objDados.AdicionarParametros("@vchNome", entidade.Nome);
+                    objDados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spNoticia");
+                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuario");
                 }
 
                 int intResultado = 0;
@@ -120,20 +130,20 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Excluir(Entidades.Noticia entidade)
+        public string Excluir(Entidades.Usuario entidade)
         {
             try
             {
                 objDados.LimparParametros();
                 object objRetorno = null;
-                if (entidade != null && entidade.IdNoticia > 0)
+                if (entidade != null && entidade.IdUsuario > 0)
                 {
                     objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdNoticia", entidade.IdNoticia);
+                    objDados.AdicionarParametros("@intIdUsuario", entidade.IdUsuario);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spNoticia");
+                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuario");
                 }
-              
+
 
                 int intResultado = 0;
                 if (objRetorno != null)

@@ -11,8 +11,5 @@ namespace Noticia.Entidades
         public int? IdNoticia { get; set; }
         public string Titulo { get; set; }
         public string Conteudo { get; set; }
-        public DateTime? DataCriacao { get; set; }
-
-        
     }
 }

@@ -9,7 +9,6 @@ C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Notici
 C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Apresentacao\bin\Noticia.AcessoDados.pdb
 C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Apresentacao\obj\Debug\Noticia.Apresentacao.dll
 C:\Users\BentorSiqueira\Dropbox\ProjetoDotNet_ES\GerenciaNoticia\Noticias\Noticia.Apresentacao\obj\Debug\Noticia.Apresentacao.pdb
-E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Apresentacao\obj\Debug\Noticia.Apresentacao.csprojResolveAssemblyReference.cache
 E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Apresentacao\bin\Noticia.Apresentacao.dll
 E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Apresentacao\bin\Noticia.Apresentacao.pdb
 E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Apresentacao\bin\Noticia.Entidades.dll
@@ -18,5 +17,6 @@ E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Apresentacao\bin
 E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Apresentacao\bin\Noticia.Entidades.pdb
 E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Apresentacao\bin\Noticia.Negocios.pdb
 E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Apresentacao\bin\Noticia.AcessoDados.pdb
+E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Apresentacao\obj\Debug\Noticia.Apresentacao.csprojResolveAssemblyReference.cache
 E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Apresentacao\obj\Debug\Noticia.Apresentacao.dll
 E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Apresentacao\obj\Debug\Noticia.Apresentacao.pdb
