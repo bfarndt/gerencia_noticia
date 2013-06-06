@@ -41,9 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Noticia.cs" />
+    <Compile Include="Permissao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoUsuario.cs" />
+    <Compile Include="Trabalho.cs" />
     <Compile Include="Usuario.cs" />
+    <Compile Include="UsuarioEndereco.cs" />
+    <Compile Include="UsuarioPermissao.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

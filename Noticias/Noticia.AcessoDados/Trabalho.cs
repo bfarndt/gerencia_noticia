@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
-using System.Data;
 
 namespace Noticia.AcessoDados
 {
-    public class Usuario : ICrud<Entidades.Usuario>
+    public class Trabalho : ICrud<Entidades.Trabalho>
     {
         AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
 
-        public List<Entidades.Usuario> Consultar(Entidades.Usuario entidade)
+        public List<Entidades.Trabalho> Consultar(Entidades.Trabalho entidade)
         {
             try
             {
@@ -18,15 +18,12 @@ namespace Noticia.AcessoDados
 
                 objDados.LimparParametros();
                 objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdUsuario", entidade.IdUsuario);
-                objDados.AdicionarParametros("@vchLogin", entidade.Login);
-                objDados.AdicionarParametros("@vchSenha", entidade.Senha);
-                objDados.AdicionarParametros("@vchNome", entidade.Nome);
+                objDados.AdicionarParametros("@intIdTrabalho", entidade.IdTrabalho);
                 objDados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spUsuario");
+                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spTrabalho");
 
-                List<Entidades.Usuario> objRetorno = new List<Entidades.Usuario>();
+                List<Entidades.Trabalho> objRetorno = new List<Entidades.Trabalho>();
 
                 if (objDataTable.Rows.Count <= 0)
                 {
@@ -35,18 +32,14 @@ namespace Noticia.AcessoDados
 
                 foreach (DataRow objLinha in objDataTable.Rows)
                 {
-                    Entidades.Usuario objNovoUsuario = new Entidades.Usuario();
+                    Entidades.Trabalho objNovoTrabalho = new Entidades.Trabalho();
 
-                    objNovoUsuario.IdUsuario = objLinha["IdUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdNoticia"]) : 0;
-                    objNovoUsuario.Login = objLinha["Login"] != DBNull.Value ? Convert.ToString(objLinha["Login"]) : null;
-                    objNovoUsuario.Senha = objLinha["Senha"] != DBNull.Value ? Convert.ToString(objLinha["Senha"]) : null;
-                    objNovoUsuario.Nome = objLinha["Nome"] != DBNull.Value ? Convert.ToString(objLinha["Nome"]) : null;
-                    objNovoUsuario.TipoUsuario = new Entidades.TipoUsuario()
-                    {
-                        IdTipoUsuario = objLinha["IdTipoUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdTipoUsuario"]) : 0
-                    };
+                    objNovoTrabalho.TipoUsuario = new Entidades.TipoUsuario();
+                    objNovoTrabalho.IdTrabalho = objLinha["IdTrabalho"] != DBNull.Value ? Convert.ToInt32(objLinha["IdTrabalho"]) : 0;
+                    objNovoTrabalho.TipoUsuario.IdTipoUsuario = objLinha["IdTipoUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdTipoUsuario"]) : 0;
+                    objNovoTrabalho.ValorHoraTrabalhada = objLinha["ValorHoraTrabalhada"] != DBNull.Value ? Convert.ToDecimal(objLinha["ValorHoraTrabalhada"]) : 0;
 
-                    objRetorno.Add(objNovoUsuario);
+                    objRetorno.Add(objNovoTrabalho);
                 }
 
                 return objRetorno;
@@ -57,7 +50,7 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Inserir(Entidades.Usuario entidade)
+        public string Inserir(Entidades.Trabalho entidade)
         {
             try
             {
@@ -66,12 +59,10 @@ namespace Noticia.AcessoDados
                 if (entidade != null)
                 {
                     objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@vchLogin", entidade.Login);
-                    objDados.AdicionarParametros("@vchSenha", entidade.Senha);
-                    objDados.AdicionarParametros("@vchNome", entidade.Nome);
                     objDados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
+                    objDados.AdicionarParametros("@decValorHoraTrabalhada", entidade.ValorHoraTrabalhada);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuario");
+                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spTrabalho");
                 }
 
                 int intResultado = 0;
@@ -94,22 +85,20 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Alterar(Entidades.Usuario entidade)
+        public string Alterar(Entidades.Trabalho entidade)
         {
             try
             {
                 objDados.LimparParametros();
                 object objRetorno = null;
-                if (entidade != null && entidade.IdUsuario > 0)
+                if (entidade != null && entidade.IdTrabalho > 0)
                 {
                     objDados.AdicionarParametros("@vchAcao", "ALTERAR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.IdUsuario);
-                    objDados.AdicionarParametros("@vchLogin", entidade.Login);
-                    objDados.AdicionarParametros("@vchSenha", entidade.Senha);
-                    objDados.AdicionarParametros("@vchNome", entidade.Nome);
+                    objDados.AdicionarParametros("@intIdTrabalho", entidade.IdTrabalho);
                     objDados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
+                    objDados.AdicionarParametros("@decValorHoraTrabalhada", entidade.ValorHoraTrabalhada);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuario");
+                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spTrabalho");
                 }
 
                 int intResultado = 0;
@@ -131,18 +120,18 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Excluir(Entidades.Usuario entidade)
+        public string Excluir(Entidades.Trabalho entidade)
         {
             try
             {
                 objDados.LimparParametros();
                 object objRetorno = null;
-                if (entidade != null && entidade.IdUsuario > 0)
+                if (entidade != null && entidade.IdTrabalho > 0)
                 {
                     objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.IdUsuario);
+                    objDados.AdicionarParametros("@intIdTrabalho", entidade.IdTrabalho);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuario");
+                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spTrabalho");
                 }
 
 

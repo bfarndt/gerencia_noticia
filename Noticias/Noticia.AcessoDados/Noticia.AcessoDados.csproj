@@ -43,8 +43,13 @@
     <Compile Include="AcessoDadosSqlServer.cs" />
     <Compile Include="ICrud.cs" />
     <Compile Include="Noticia.cs" />
+    <Compile Include="Permissao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipoUsuario.cs" />
+    <Compile Include="Trabalho.cs" />
     <Compile Include="Usuario.cs" />
+    <Compile Include="UsuarioEndereco.cs" />
+    <Compile Include="UsuarioPermissao.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Noticia.Entidades\Noticia.Entidades.csproj">
