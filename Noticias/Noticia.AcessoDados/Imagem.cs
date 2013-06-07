@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Noticia.AcessoDados
 {
-    public class UsuarioPermissao : ICrud<Entidades.UsuarioPermissao>
+    public class Imagem : ICrud<Entidades.Imagem>
     {
         AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
 
-        public List<Entidades.UsuarioPermissao> Consultar(Entidades.UsuarioPermissao entidade)
+        public List<Entidades.Imagem> Consultar(Entidades.Imagem entidade)
         {
             try
             {
@@ -18,12 +18,12 @@ namespace Noticia.AcessoDados
 
                 objDados.LimparParametros();
                 objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                objDados.AdicionarParametros("@intIdPermissao", entidade.Permissao.IdPermissao);
+                objDados.AdicionarParametros("@intIdImagem", entidade.IdImagem);
+                objDados.AdicionarParametros("@vchLegenda", entidade.Legenda);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spUsuarioPermissao");
+                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spImagem");
 
-                List<Entidades.UsuarioPermissao> objRetorno = new List<Entidades.UsuarioPermissao>();
+                List<Entidades.Imagem> objRetorno = new List<Entidades.Imagem>();
 
                 if (objDataTable.Rows.Count <= 0)
                 {
@@ -32,14 +32,12 @@ namespace Noticia.AcessoDados
 
                 foreach (DataRow objLinha in objDataTable.Rows)
                 {
-                    Entidades.UsuarioPermissao objNovoUsuarioPermissao = new Entidades.UsuarioPermissao();
+                    Entidades.Imagem objNovoImagem = new Entidades.Imagem();
 
-                    objNovoUsuarioPermissao.Usuario = new Entidades.Usuario();
-                    objNovoUsuarioPermissao.Usuario.IdUsuario = objLinha["IdUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdUsuario"]) : 0;
-                    objNovoUsuarioPermissao.Permissao = new Entidades.Permissao();
-                    objNovoUsuarioPermissao.Permissao.IdPermissao = objLinha["IdPermissao"] != DBNull.Value ? Convert.ToInt32(objLinha["IdPermissao"]) : 0;
+                    objNovoImagem.IdImagem = objLinha["IdImagem"] != DBNull.Value ? Convert.ToInt32(objLinha["IdImagem"]) : 0;
+                    objNovoImagem.Legenda = objLinha["Legenda"] != DBNull.Value ? Convert.ToString(objLinha["Legenda"]) : null;
 
-                    objRetorno.Add(objNovoUsuarioPermissao);
+                    objRetorno.Add(objNovoImagem);
                 }
 
                 return objRetorno;
@@ -50,7 +48,7 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Inserir(Entidades.UsuarioPermissao entidade)
+        public string Inserir(Entidades.Imagem entidade)
         {
             try
             {
@@ -59,10 +57,9 @@ namespace Noticia.AcessoDados
                 if (entidade != null)
                 {
                     objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                    objDados.AdicionarParametros("@intIdPermissao", entidade.Permissao.IdPermissao);
+                    objDados.AdicionarParametros("@vchLegenda", entidade.Legenda);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuarioPermissao");
+                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagem");
                 }
 
                 int intResultado = 0;
@@ -85,32 +82,19 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Alterar(Entidades.UsuarioPermissao entidade)
-        {
-            try
-            {
-                return "Utilize o excluir depois inserir";
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public string Excluir(Entidades.UsuarioPermissao entidade)
+        public string Alterar(Entidades.Imagem entidade)
         {
             try
             {
                 objDados.LimparParametros();
                 object objRetorno = null;
-                if (entidade != null && entidade.Usuario != null && entidade.Usuario.IdUsuario > 0 &&
-                    entidade.Permissao != null && entidade.Permissao.IdPermissao > 0)
+                if (entidade != null && entidade.IdImagem > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                    objDados.AdicionarParametros("@intIdPermissao", entidade.Permissao.IdPermissao);
+                    objDados.AdicionarParametros("@vchAcao", "ALTERAR");
+                    objDados.AdicionarParametros("@intIdImagem", entidade.IdImagem);
+                    objDados.AdicionarParametros("@vchLegenda", entidade.Legenda);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuarioPermissao");
+                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagem");
                 }
 
                 int intResultado = 0;
@@ -131,5 +115,39 @@ namespace Noticia.AcessoDados
                 throw ex;
             }
         }
+
+        public string Excluir(Entidades.Imagem entidade)
+        {
+            try
+            {
+                objDados.LimparParametros();
+                object objRetorno = null;
+                if (entidade != null && entidade.IdImagem > 0)
+                {
+                    objDados.AdicionarParametros("@vchAcao", "DELETAR");
+                    objDados.AdicionarParametros("@intIdImagem", entidade.IdImagem);
+
+                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagem");
+                }
+
+                int intResultado = 0;
+                if (objRetorno != null)
+                {
+                    if (int.TryParse(objRetorno.ToString(), out intResultado))
+                        return intResultado.ToString();
+                    else
+                        throw new Exception(objRetorno.ToString());
+                }
+                else
+                {
+                    return "Não foi possível executar";
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
