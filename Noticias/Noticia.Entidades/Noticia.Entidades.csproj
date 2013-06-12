@@ -43,8 +43,11 @@
     <Compile Include="DiaSemana.cs" />
     <Compile Include="Historico.cs" />
     <Compile Include="Imagem.cs" />
+    <Compile Include="ImagemArquivo.cs" />
+    <Compile Include="ImagemGravacao.cs" />
     <Compile Include="Noticia.cs" />
     <Compile Include="NoticiaImagem.cs" />
+    <Compile Include="PalavraChave.cs" />
     <Compile Include="Permissao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatusNoticia.cs" />

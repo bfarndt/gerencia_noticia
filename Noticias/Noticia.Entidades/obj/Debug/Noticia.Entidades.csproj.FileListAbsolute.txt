@@ -13,3 +13,8 @@ E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Entidades\bin\De
 E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Entidades\obj\Debug\Noticia.Entidades.csprojResolveAssemblyReference.cache
 E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Entidades\obj\Debug\Noticia.Entidades.dll
 E:\Materias\Mestrado\OP2_ENG\Entregas\Noticias\Noticias\Noticia.Entidades\obj\Debug\Noticia.Entidades.pdb
+E:\Materias\Mestrado\OP2_ENG\Projeto\Noticias\Noticia.Entidades\bin\Debug\Noticia.Entidades.dll
+E:\Materias\Mestrado\OP2_ENG\Projeto\Noticias\Noticia.Entidades\bin\Debug\Noticia.Entidades.pdb
+E:\Materias\Mestrado\OP2_ENG\Projeto\Noticias\Noticia.Entidades\obj\Debug\Noticia.Entidades.csprojResolveAssemblyReference.cache
+E:\Materias\Mestrado\OP2_ENG\Projeto\Noticias\Noticia.Entidades\obj\Debug\Noticia.Entidades.dll
+E:\Materias\Mestrado\OP2_ENG\Projeto\Noticias\Noticia.Entidades\obj\Debug\Noticia.Entidades.pdb
