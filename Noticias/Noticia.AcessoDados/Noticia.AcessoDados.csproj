@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcessoDadosSqlServer.cs" />
+    <Compile Include="Contratacao.cs" />
     <Compile Include="DiaSemana.cs" />
+    <Compile Include="GrupoTrabalho.cs" />
     <Compile Include="Historico.cs" />
     <Compile Include="ICrud.cs" />
     <Compile Include="Imagem.cs" />
