@@ -37,6 +37,8 @@ namespace Noticia.AcessoDados
                     objNovoTrabalho.TipoUsuario = new Entidades.TipoUsuario();
                     objNovoTrabalho.IdTrabalho = objLinha["IdTrabalho"] != DBNull.Value ? Convert.ToInt32(objLinha["IdTrabalho"]) : 0;
                     objNovoTrabalho.TipoUsuario.IdTipoUsuario = objLinha["IdTipoUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdTipoUsuario"]) : 0;
+                    objNovoTrabalho.TipoUsuario = new AcessoDados.TipoUsuario().Consultar(objNovoTrabalho.TipoUsuario).First();
+
                     objNovoTrabalho.ValorHoraTrabalhada = objLinha["ValorHoraTrabalhada"] != DBNull.Value ? Convert.ToDecimal(objLinha["ValorHoraTrabalhada"]) : 0;
 
                     objRetorno.Add(objNovoTrabalho);

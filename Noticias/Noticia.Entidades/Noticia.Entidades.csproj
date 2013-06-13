@@ -42,7 +42,9 @@
   <ItemGroup>
     <Compile Include="Contratacao.cs" />
     <Compile Include="DiaSemana.cs" />
+    <Compile Include="DiasTrabalhados.cs" />
     <Compile Include="GrupoTrabalho.cs" />
+    <Compile Include="GrupoTrabalhoUsuario.cs" />
     <Compile Include="Historico.cs" />
     <Compile Include="Imagem.cs" />
     <Compile Include="ImagemArquivo.cs" />

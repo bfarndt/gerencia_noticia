@@ -47,6 +47,7 @@ namespace Noticia.AcessoDados
                     objNovoPalavraChave.IdPalavraChave = objLinha["IdPalavraChave"] != DBNull.Value ? Convert.ToInt32(objLinha["IdPalavraChave"]) : 0;
                     objNovoPalavraChave.Noticia = new Entidades.Noticia();
                     objNovoPalavraChave.Noticia.IdNoticia = objLinha["IdNoticia"] != DBNull.Value ? Convert.ToInt32(objLinha["IdNoticia"]) : 0;
+                    objNovoPalavraChave.Noticia = new AcessoDados.Noticia().Consultar(objNovoPalavraChave.Noticia).First();
                     objNovoPalavraChave.PalavraChaveTexto = objLinha["PalavraChave"] != DBNull.Value ? Convert.ToString(objLinha["PalavraChave"]) : "";
 
                     objRetorno.Add(objNovoPalavraChave);

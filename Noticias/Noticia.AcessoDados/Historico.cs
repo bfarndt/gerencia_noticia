@@ -39,10 +39,16 @@ namespace Noticia.AcessoDados
                     objNovoHistorico.IdHistorico = objLinha["IdHistorico"] != DBNull.Value ? Convert.ToInt32(objLinha["IdHistorico"]) : 0;
                     objNovoHistorico.Noticia = new Entidades.Noticia();
                     objNovoHistorico.Noticia.IdNoticia = objLinha["IdNoticia"] != DBNull.Value ? Convert.ToInt32(objLinha["IdNoticia"]) : 0;
+                    objNovoHistorico.Noticia = new AcessoDados.Noticia().Consultar(objNovoHistorico.Noticia).First();
+
                     objNovoHistorico.Usuario = new Entidades.Usuario();
                     objNovoHistorico.Usuario.IdUsuario = objLinha["IdUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdUsuario"]) : 0;
+                    objNovoHistorico.Usuario = new AcessoDados.Usuario().Consultar(objNovoHistorico.Usuario).First();
+
                     objNovoHistorico.StatusNoticia = new Entidades.StatusNoticia();
                     objNovoHistorico.StatusNoticia.IdStatus = objLinha["IdStatus"] != DBNull.Value ? Convert.ToInt32(objLinha["IdStatus"]) : 0;
+                    objNovoHistorico.StatusNoticia = new AcessoDados.StatusNoticia().Consultar(objNovoHistorico.StatusNoticia).First();
+
                     objNovoHistorico.DataHora = objLinha["DataHora"] != DBNull.Value ? (DateTime?)objLinha["DataHora"] : (DateTime?)null;
 
                     objRetorno.Add(objNovoHistorico);

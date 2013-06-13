@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Noticia.AcessoDados
 {
-    public class Contratacao
+    public class DiasTrabalhados
     {
         AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
 
-        public List<Entidades.Contratacao> Consultar(Entidades.Contratacao entidade)
+        public List<Entidades.DiasTrabalhados> Consultar(Entidades.DiasTrabalhados entidade)
         {
             try
             {
@@ -19,10 +19,11 @@ namespace Noticia.AcessoDados
                 objDados.LimparParametros();
                 objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
                 objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                objDados.AdicionarParametros("@intIdDia", entidade.DiaSemana.IdDia);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spContratacao");
+                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spDiasTrabalhados");
 
-                List<Entidades.Contratacao> objRetorno = new List<Entidades.Contratacao>();
+                List<Entidades.DiasTrabalhados> objRetorno = new List<Entidades.DiasTrabalhados>();
 
                 if (objDataTable.Rows.Count <= 0)
                 {
@@ -31,16 +32,17 @@ namespace Noticia.AcessoDados
 
                 foreach (DataRow objLinha in objDataTable.Rows)
                 {
-                    Entidades.Contratacao objNovoContratacao = new Entidades.Contratacao();
+                    Entidades.DiasTrabalhados objNovoDiasTrabalhados = new Entidades.DiasTrabalhados();
 
-                    objNovoContratacao.Usuario = new Entidades.Usuario()
-                    {
-                        IdUsuario = objLinha["IdUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdUsuario"]) : 0
-                    };
-                    objNovoContratacao.Usuario = new AcessoDados.Usuario().Consultar(objNovoContratacao.Usuario).First();
-                    objNovoContratacao.DataHora = objLinha["DataHora"] != DBNull.Value ? Convert.ToDateTime(objLinha["DataHora"]) : (DateTime?)null;
+                    objNovoDiasTrabalhados.Usuario = new Entidades.Usuario();
+                    objNovoDiasTrabalhados.Usuario.IdUsuario = objLinha["IdUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdUsuario"]) : 0;
+                    objNovoDiasTrabalhados.Usuario = new AcessoDados.Usuario().Consultar(objNovoDiasTrabalhados.Usuario).First();
 
-                    objRetorno.Add(objNovoContratacao);
+                    objNovoDiasTrabalhados.DiaSemana = new Entidades.DiaSemana();
+                    objNovoDiasTrabalhados.DiaSemana.IdDia = objLinha["IdDia"] != DBNull.Value ? Convert.ToInt32(objLinha["IdDia"]) : 0;
+                    objNovoDiasTrabalhados.DiaSemana = new AcessoDados.DiaSemana().Consultar(objNovoDiasTrabalhados.DiaSemana).First();
+
+                    objRetorno.Add(objNovoDiasTrabalhados);
                 }
 
                 return objRetorno;
@@ -51,7 +53,7 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Inserir(Entidades.Contratacao entidade)
+        public string Inserir(Entidades.DiasTrabalhados entidade)
         {
             try
             {
@@ -61,9 +63,9 @@ namespace Noticia.AcessoDados
                 {
                     objDados.AdicionarParametros("@vchAcao", "INSERIR");
                     objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                    objDados.AdicionarParametros("@datDataHora", entidade.DataHora);
+                    objDados.AdicionarParametros("@intIdDia", entidade.DiaSemana.IdDia);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spContratacao");
+                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spDiasTrabalhados");
                 }
 
                 int intResultado = 0;
@@ -86,33 +88,11 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Alterar(Entidades.Contratacao entidade)
+        public string Alterar(Entidades.DiasTrabalhados entidade)
         {
             try
             {
-                objDados.LimparParametros();
-                object objRetorno = null;
-                if (entidade != null && entidade.Usuario != null && entidade.Usuario.IdUsuario > 0)
-                {
-                    objDados.AdicionarParametros("@vchAcao", "ALTERAR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                    objDados.AdicionarParametros("@datDataHora", entidade.DataHora);
-
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spContratacao");
-                }
-
-                int intResultado = 0;
-                if (objRetorno != null)
-                {
-                    if (int.TryParse(objRetorno.ToString(), out intResultado))
-                        return intResultado.ToString();
-                    else
-                        throw new Exception(objRetorno.ToString());
-                }
-                else
-                {
-                    return "Não foi possível executar";
-                }
+                return "Utilize o excluir depois inserir";
             }
             catch (Exception ex)
             {
@@ -120,20 +100,21 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Excluir(Entidades.Contratacao entidade)
+        public string Excluir(Entidades.DiasTrabalhados entidade)
         {
             try
             {
                 objDados.LimparParametros();
                 object objRetorno = null;
-                if (entidade != null && entidade.Usuario != null && entidade.Usuario.IdUsuario > 0)
+                if (entidade != null && entidade.Usuario != null && entidade.Usuario.IdUsuario > 0 &&
+                    entidade.DiaSemana != null && entidade.DiaSemana.IdDia > 0)
                 {
                     objDados.AdicionarParametros("@vchAcao", "DELETAR");
                     objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                    objDados.AdicionarParametros("@intIdDia", entidade.DiaSemana.IdDia);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spContratacao");
+                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spDiasTrabalhados");
                 }
-
 
                 int intResultado = 0;
                 if (objRetorno != null)

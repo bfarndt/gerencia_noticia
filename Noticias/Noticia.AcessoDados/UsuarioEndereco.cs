@@ -37,6 +37,8 @@ namespace Noticia.AcessoDados
 
                     objNovoUsuarioEndereco.Usuario = new Entidades.Usuario();
                     objNovoUsuarioEndereco.Usuario.IdUsuario = objLinha["IdUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdUsuario"]) : 0;
+                    objNovoUsuarioEndereco.Usuario = new AcessoDados.Usuario().Consultar(objNovoUsuarioEndereco.Usuario).First();
+
                     objNovoUsuarioEndereco.Email = objLinha["Email"] != DBNull.Value ? Convert.ToString(objLinha["Email"]) : null;
                     objNovoUsuarioEndereco.Telefone = objLinha["Telefone"] != DBNull.Value ? Convert.ToString(objLinha["Telefone"]) : null;
 

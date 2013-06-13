@@ -9,7 +9,7 @@ namespace Noticia.AcessoDados
     public class ImagemArquivoArquivo
     {
         AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
-        
+
         public List<Entidades.ImagemArquivo> Consultar(Entidades.ImagemArquivo entidade)
         {
             try
@@ -39,10 +39,12 @@ namespace Noticia.AcessoDados
 
                     objNovoImagemArquivo.Imagem = new Entidades.Imagem();
                     objNovoImagemArquivo.Imagem.IdImagem = objLinha["IdImagem"] != DBNull.Value ? Convert.ToInt32(objLinha["IdImagem"]) : 0;
+                    objNovoImagemArquivo.Imagem = new AcessoDados.Imagem().Consultar(objNovoImagemArquivo.Imagem).First();
+
                     objNovoImagemArquivo.ImagemBytes = objLinha["Imagem"] != DBNull.Value ? objLinha["Imagem"] as byte[] : null;
                     objNovoImagemArquivo.Extensao = objLinha["Extensao"] != DBNull.Value ? Convert.ToString(objLinha["Extensao"]) : "";
-                    objNovoImagemArquivo.Extensao = objLinha["Tamanho"] != DBNull.Value ? Convert.ToString(objLinha["Tamanho"]) : "";
-                    objNovoImagemArquivo.Extensao = objLinha["Formato"] != DBNull.Value ? Convert.ToString(objLinha["Formato"]) : "";
+                    objNovoImagemArquivo.Tamanho = objLinha["Tamanho"] != DBNull.Value ? Convert.ToString(objLinha["Tamanho"]) : "";
+                    objNovoImagemArquivo.Formato = objLinha["Formato"] != DBNull.Value ? Convert.ToString(objLinha["Formato"]) : "";
 
                     objRetorno.Add(objNovoImagemArquivo);
                 }

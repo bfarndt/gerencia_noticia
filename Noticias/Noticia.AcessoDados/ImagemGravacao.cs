@@ -36,6 +36,8 @@ namespace Noticia.AcessoDados
 
                     objNovoImagemGravacao.Imagem = new Entidades.Imagem();
                     objNovoImagemGravacao.Imagem.IdImagem = objLinha["IdImagem"] != DBNull.Value ? Convert.ToInt32(objLinha["IdImagem"]) : 0;
+                    objNovoImagemGravacao.Imagem = new AcessoDados.Imagem().Consultar(objNovoImagemGravacao.Imagem).First();
+                    
                     objNovoImagemGravacao.DataHoraGravacao = objLinha["DataHoraGravacao"] != DBNull.Value ? Convert.ToDateTime(objLinha["DataHoraGravacao"]) : (DateTime?)null;
                     objNovoImagemGravacao.LocalGravacao = objLinha["LocalGravacao"] != DBNull.Value ? Convert.ToString(objLinha["LocalGravacao"]) : "";
 

@@ -45,6 +45,7 @@ namespace Noticia.AcessoDados
                     {
                         IdTipoUsuario = objLinha["IdTipoUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdTipoUsuario"]) : 0
                     };
+                    objNovoUsuario.TipoUsuario = new AcessoDados.TipoUsuario().Consultar(objNovoUsuario.TipoUsuario).First();
 
                     objRetorno.Add(objNovoUsuario);
                 }

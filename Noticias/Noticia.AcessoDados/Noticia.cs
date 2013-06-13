@@ -35,7 +35,7 @@ namespace Noticia.AcessoDados
                 {
                     Entidades.Noticia objNovaNoticia = new Entidades.Noticia();
 
-                      objNovaNoticia.IdNoticia = objLinha["IdNoticia"] != DBNull.Value ? Convert.ToInt32(objLinha["IdNoticia"]) : 0;
+                    objNovaNoticia.IdNoticia = objLinha["IdNoticia"] != DBNull.Value ? Convert.ToInt32(objLinha["IdNoticia"]) : 0;
                     objNovaNoticia.Titulo = objLinha["Titulo"] != DBNull.Value ? Convert.ToString(objLinha["Titulo"]) : null;
                     objNovaNoticia.Conteudo = objLinha["Conteudo"] != DBNull.Value ? Convert.ToString(objLinha["Conteudo"]) : null;
 
@@ -133,7 +133,7 @@ namespace Noticia.AcessoDados
 
                     objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spNoticia");
                 }
-              
+
 
                 int intResultado = 0;
                 if (objRetorno != null)

@@ -36,8 +36,11 @@ namespace Noticia.AcessoDados
 
                     objNovoUsuarioPermissao.Usuario = new Entidades.Usuario();
                     objNovoUsuarioPermissao.Usuario.IdUsuario = objLinha["IdUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdUsuario"]) : 0;
+                    objNovoUsuarioPermissao.Usuario = new AcessoDados.Usuario().Consultar(objNovoUsuarioPermissao.Usuario).First();
+
                     objNovoUsuarioPermissao.Permissao = new Entidades.Permissao();
                     objNovoUsuarioPermissao.Permissao.IdPermissao = objLinha["IdPermissao"] != DBNull.Value ? Convert.ToInt32(objLinha["IdPermissao"]) : 0;
+                    objNovoUsuarioPermissao.Permissao = new AcessoDados.Permissao().Consultar(objNovoUsuarioPermissao.Permissao).First();
 
                     objRetorno.Add(objNovoUsuarioPermissao);
                 }

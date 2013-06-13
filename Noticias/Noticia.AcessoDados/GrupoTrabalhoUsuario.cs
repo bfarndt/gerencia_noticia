@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Noticia.AcessoDados
 {
-    public class Contratacao
+    public class GrupoTrabalhoUsuario
     {
         AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
 
-        public List<Entidades.Contratacao> Consultar(Entidades.Contratacao entidade)
+        public List<Entidades.GrupoTrabalhoUsuario> Consultar(Entidades.GrupoTrabalhoUsuario entidade)
         {
             try
             {
@@ -19,10 +19,11 @@ namespace Noticia.AcessoDados
                 objDados.LimparParametros();
                 objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
                 objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                objDados.AdicionarParametros("@intIdGrupoTrabalho", entidade.GrupoTrabalho.IdGrupoTrabalho);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spContratacao");
+                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spGrupoTrabalhoUsuario");
 
-                List<Entidades.Contratacao> objRetorno = new List<Entidades.Contratacao>();
+                List<Entidades.GrupoTrabalhoUsuario> objRetorno = new List<Entidades.GrupoTrabalhoUsuario>();
 
                 if (objDataTable.Rows.Count <= 0)
                 {
@@ -31,16 +32,17 @@ namespace Noticia.AcessoDados
 
                 foreach (DataRow objLinha in objDataTable.Rows)
                 {
-                    Entidades.Contratacao objNovoContratacao = new Entidades.Contratacao();
+                    Entidades.GrupoTrabalhoUsuario objNovoGrupoTrabalhoUsuario = new Entidades.GrupoTrabalhoUsuario();
 
-                    objNovoContratacao.Usuario = new Entidades.Usuario()
-                    {
-                        IdUsuario = objLinha["IdUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdUsuario"]) : 0
-                    };
-                    objNovoContratacao.Usuario = new AcessoDados.Usuario().Consultar(objNovoContratacao.Usuario).First();
-                    objNovoContratacao.DataHora = objLinha["DataHora"] != DBNull.Value ? Convert.ToDateTime(objLinha["DataHora"]) : (DateTime?)null;
+                    objNovoGrupoTrabalhoUsuario.Usuario = new Entidades.Usuario();
+                    objNovoGrupoTrabalhoUsuario.Usuario.IdUsuario = objLinha["IdUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdUsuario"]) : 0;
+                    objNovoGrupoTrabalhoUsuario.Usuario = new AcessoDados.Usuario().Consultar(objNovoGrupoTrabalhoUsuario.Usuario).First();
 
-                    objRetorno.Add(objNovoContratacao);
+                    objNovoGrupoTrabalhoUsuario.GrupoTrabalho = new Entidades.GrupoTrabalho();
+                    objNovoGrupoTrabalhoUsuario.GrupoTrabalho.IdGrupoTrabalho = objLinha["IdGrupoTrabalho"] != DBNull.Value ? Convert.ToInt32(objLinha["IdGrupoTrabalho"]) : 0;
+                    objNovoGrupoTrabalhoUsuario.GrupoTrabalho = new AcessoDados.GrupoTrabalho().Consultar(objNovoGrupoTrabalhoUsuario.GrupoTrabalho).First();
+
+                    objRetorno.Add(objNovoGrupoTrabalhoUsuario);
                 }
 
                 return objRetorno;
@@ -51,7 +53,7 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Inserir(Entidades.Contratacao entidade)
+        public string Inserir(Entidades.GrupoTrabalhoUsuario entidade)
         {
             try
             {
@@ -61,9 +63,9 @@ namespace Noticia.AcessoDados
                 {
                     objDados.AdicionarParametros("@vchAcao", "INSERIR");
                     objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                    objDados.AdicionarParametros("@datDataHora", entidade.DataHora);
+                    objDados.AdicionarParametros("@intIdGrupoTrabalho", entidade.GrupoTrabalho.IdGrupoTrabalho);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spContratacao");
+                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spGrupoTrabalhoUsuario");
                 }
 
                 int intResultado = 0;
@@ -86,33 +88,11 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Alterar(Entidades.Contratacao entidade)
+        public string Alterar(Entidades.GrupoTrabalhoUsuario entidade)
         {
             try
             {
-                objDados.LimparParametros();
-                object objRetorno = null;
-                if (entidade != null && entidade.Usuario != null && entidade.Usuario.IdUsuario > 0)
-                {
-                    objDados.AdicionarParametros("@vchAcao", "ALTERAR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                    objDados.AdicionarParametros("@datDataHora", entidade.DataHora);
-
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spContratacao");
-                }
-
-                int intResultado = 0;
-                if (objRetorno != null)
-                {
-                    if (int.TryParse(objRetorno.ToString(), out intResultado))
-                        return intResultado.ToString();
-                    else
-                        throw new Exception(objRetorno.ToString());
-                }
-                else
-                {
-                    return "Não foi possível executar";
-                }
+                return "Utilize o excluir depois inserir";
             }
             catch (Exception ex)
             {
@@ -120,20 +100,21 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Excluir(Entidades.Contratacao entidade)
+        public string Excluir(Entidades.GrupoTrabalhoUsuario entidade)
         {
             try
             {
                 objDados.LimparParametros();
                 object objRetorno = null;
-                if (entidade != null && entidade.Usuario != null && entidade.Usuario.IdUsuario > 0)
+                if (entidade != null && entidade.Usuario != null && entidade.Usuario.IdUsuario > 0 &&
+                    entidade.GrupoTrabalho != null && entidade.GrupoTrabalho.IdGrupoTrabalho > 0)
                 {
                     objDados.AdicionarParametros("@vchAcao", "DELETAR");
                     objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                    objDados.AdicionarParametros("@intIdGrupoTrabalho", entidade.GrupoTrabalho.IdGrupoTrabalho);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spContratacao");
+                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spGrupoTrabalhoUsuario");
                 }
-
 
                 int intResultado = 0;
                 if (objRetorno != null)
