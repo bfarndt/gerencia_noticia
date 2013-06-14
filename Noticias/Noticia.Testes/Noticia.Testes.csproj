@@ -45,8 +45,27 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UC_AssociarImagens.cs" />
+    <Compile Include="UC_AvaliarNoticia.cs" />
+    <Compile Include="UC_CriarNoticia.cs" />
+    <Compile Include="UC_EditarNoticia.cs" />
+    <Compile Include="UC_EfetuarAcesso.cs" />
+    <Compile Include="UC_ManterGrupoTrabalho.cs" />
+    <Compile Include="UC_ManterUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="UC_SelecionarImagens.cs" />
+    <Compile Include="UC_SubmeterImagens.cs" />
+    <Compile Include="UC_SubmeterNoticia.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Noticia.Entidades\Noticia.Entidades.csproj">
+      <Project>{8abbe704-14c1-4474-ae20-418c6f988df9}</Project>
+      <Name>Noticia.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Noticia.Negocios\Noticia.Negocios.csproj">
+      <Project>{fe15bc13-cd33-4391-981a-4743e40219e1}</Project>
+      <Name>Noticia.Negocios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

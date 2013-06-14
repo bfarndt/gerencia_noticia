@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Noticia.Negocios.Noticia
+namespace Noticia.Negocios
 {
     public class Noticia
     {
