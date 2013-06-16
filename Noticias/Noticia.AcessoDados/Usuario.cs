@@ -22,7 +22,8 @@ namespace Noticia.AcessoDados
                 objDados.AdicionarParametros("@vchLogin", entidade.Login);
                 objDados.AdicionarParametros("@vchSenha", entidade.Senha);
                 objDados.AdicionarParametros("@vchNome", entidade.Nome);
-                objDados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
+                if (entidade.TipoUsuario != null && entidade.TipoUsuario.IdTipoUsuario > 0)
+                    objDados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
 
                 objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spUsuario");
 
@@ -37,7 +38,7 @@ namespace Noticia.AcessoDados
                 {
                     Entidades.Usuario objNovoUsuario = new Entidades.Usuario();
 
-                    objNovoUsuario.IdUsuario = objLinha["IdUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdNoticia"]) : 0;
+                    objNovoUsuario.IdUsuario = objLinha["IdUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdUsuario"]) : 0;
                     objNovoUsuario.Login = objLinha["Login"] != DBNull.Value ? Convert.ToString(objLinha["Login"]) : null;
                     objNovoUsuario.Senha = objLinha["Senha"] != DBNull.Value ? Convert.ToString(objLinha["Senha"]) : null;
                     objNovoUsuario.Nome = objLinha["Nome"] != DBNull.Value ? Convert.ToString(objLinha["Nome"]) : null;

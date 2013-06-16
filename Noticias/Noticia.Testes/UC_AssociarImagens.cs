@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Noticia.Testes
 {
-    class UC_AssociarImagens
+    public class UC_AssociarImagens
     {
     }
 }

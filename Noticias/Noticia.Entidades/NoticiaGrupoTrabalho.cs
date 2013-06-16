@@ -6,9 +6,9 @@ using System.Text;
 namespace Noticia.Entidades
 {
     [Serializable]
-    public class UsuarioPermissao
+    public class NoticiaGrupoTrabalho
     {
-        public Usuario Usuario { get; set; }
-        public Permissao Permissao { get; set; }
+        public Noticia Noticia { get; set; }
+        public GrupoTrabalho GrupoTrabalho { get; set; }
     }
 }

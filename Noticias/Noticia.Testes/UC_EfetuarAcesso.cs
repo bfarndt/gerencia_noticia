@@ -15,6 +15,7 @@ namespace Noticia.Testes
         [TestInitialize]
         public void IniciarTestes()
         {
+            Negocios.Sessao.IniciarSessao();
             this.NegUsuario = new Negocios.Usuario();
         }
 
@@ -29,7 +30,7 @@ namespace Noticia.Testes
         [TestMethod]
         public void Login_Senha_Existente()
         {
-            this.NegUsuario.usuarioLogado = new Entidades.Usuario();
+            Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { Login = "Bento", Senha="senha" };
             var retorno = NegUsuario.ValidarUsuario();
             Assert.AreEqual(true, retorno);
         }
@@ -38,7 +39,7 @@ namespace Noticia.Testes
         [TestMethod]
         public void Login_Senha_Inexistente()
         {
-            this.NegUsuario.usuarioLogado = null;
+            Negocios.Sessao.UsuarioLogado = null;
             var retorno = NegUsuario.ValidarUsuario();
             Assert.AreEqual(false, retorno);
         }
@@ -47,8 +48,9 @@ namespace Noticia.Testes
         [TestMethod]
         public void Retorno_Opcoes_Logado()
         {
-            this.NegUsuario.usuarioLogado = new Entidades.Usuario();
-            var retorno = NegUsuario.Permissoes();
+            Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { IdUsuario = 1, Login = "Bento", Senha = "senha" };
+            NegUsuario.CarregarPermissoes();
+            var retorno = Negocios.Sessao.UsuarioPermissoes;
             Assert.IsNotNull(retorno, "Com permissões");
         }
 
@@ -56,8 +58,9 @@ namespace Noticia.Testes
         [TestMethod]
         public void Retorno_Nao_Logado()
         {
-            this.NegUsuario.usuarioLogado = null;
-            var retorno = NegUsuario.Permissoes();
+            Negocios.Sessao.UsuarioLogado = null;
+            NegUsuario.CarregarPermissoes();
+            var retorno = Negocios.Sessao.UsuarioPermissoes;
             Assert.IsNull(retorno, "Sem permissões");
         }
 
@@ -65,7 +68,7 @@ namespace Noticia.Testes
         [TestMethod]
         public void ComAcesso_CincoMinutos()
         {
-            NegUsuario.usuarioLogado = new Entidades.Usuario();
+            Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { Login = "Bento", Senha = "senha" };
             NegUsuario.ValidarUsuario();
             Thread.Sleep(1); //Tempo de espera
             var retorno = NegUsuario.ComSessao();
@@ -77,7 +80,7 @@ namespace Noticia.Testes
         [TestMethod]
         public void SemAcesso_CincoMinutos()
         {
-            NegUsuario.usuarioLogado = new Entidades.Usuario();
+            Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { Login ="Bento", Senha = "senhas" };
             NegUsuario.ValidarUsuario();
             Thread.Sleep(2000);//Tempo de espera
             var retorno = NegUsuario.ComSessao();

@@ -11,4 +11,14 @@ namespace Noticia.Entidades
         public int? IdStatus { get; set; }
         public string Descricao { get; set; }
     }
+
+    public enum StatusNoticiaEnum
+    {
+        Criada = 1,
+        GrupoVinculado = 2,
+        ImagensAssociadas = 3,
+        Editada = 4,
+        Submetida = 5,
+        Aprovada = 6
+    }
 }

@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Noticia.AcessoDados
 {
-    public class UsuarioPermissao : ICrud<Entidades.UsuarioPermissao>
+    public class NoticiaGrupoTrabalho
     {
         AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
 
-        public List<Entidades.UsuarioPermissao> Consultar(Entidades.UsuarioPermissao entidade)
+        public List<Entidades.NoticiaGrupoTrabalho> Consultar(Entidades.NoticiaGrupoTrabalho entidade)
         {
             try
             {
@@ -18,14 +18,12 @@ namespace Noticia.AcessoDados
 
                 objDados.LimparParametros();
                 objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                if (entidade.Usuario != null)
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                if (entidade.Permissao != null)
-                    objDados.AdicionarParametros("@intIdPermissao", entidade.Permissao.IdPermissao);
+                objDados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
+                objDados.AdicionarParametros("@intIdGrupoTrabalho", entidade.GrupoTrabalho.IdGrupoTrabalho);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spUsuarioPermissao");
+                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spNoticiaGrupoTrabalho");
 
-                List<Entidades.UsuarioPermissao> objRetorno = new List<Entidades.UsuarioPermissao>();
+                List<Entidades.NoticiaGrupoTrabalho> objRetorno = new List<Entidades.NoticiaGrupoTrabalho>();
 
                 if (objDataTable.Rows.Count <= 0)
                 {
@@ -34,17 +32,17 @@ namespace Noticia.AcessoDados
 
                 foreach (DataRow objLinha in objDataTable.Rows)
                 {
-                    Entidades.UsuarioPermissao objNovoUsuarioPermissao = new Entidades.UsuarioPermissao();
+                    Entidades.NoticiaGrupoTrabalho objNovoNoticiaGrupoTrabalho = new Entidades.NoticiaGrupoTrabalho();
 
-                    objNovoUsuarioPermissao.Usuario = new Entidades.Usuario();
-                    objNovoUsuarioPermissao.Usuario.IdUsuario = objLinha["IdUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdUsuario"]) : 0;
-                    objNovoUsuarioPermissao.Usuario = new AcessoDados.Usuario().Consultar(objNovoUsuarioPermissao.Usuario).First();
+                    objNovoNoticiaGrupoTrabalho.Noticia = new Entidades.Noticia();
+                    objNovoNoticiaGrupoTrabalho.Noticia.IdNoticia = objLinha["IdNoticia"] != DBNull.Value ? Convert.ToInt32(objLinha["IdNoticia"]) : 0;
+                    objNovoNoticiaGrupoTrabalho.Noticia = new AcessoDados.Noticia().Consultar(objNovoNoticiaGrupoTrabalho.Noticia).First();
 
-                    objNovoUsuarioPermissao.Permissao = new Entidades.Permissao();
-                    objNovoUsuarioPermissao.Permissao.IdPermissao = objLinha["IdPermissao"] != DBNull.Value ? Convert.ToInt32(objLinha["IdPermissao"]) : 0;
-                    objNovoUsuarioPermissao.Permissao = new AcessoDados.Permissao().Consultar(objNovoUsuarioPermissao.Permissao).First();
+                    objNovoNoticiaGrupoTrabalho.GrupoTrabalho = new Entidades.GrupoTrabalho();
+                    objNovoNoticiaGrupoTrabalho.GrupoTrabalho.IdGrupoTrabalho = objLinha["IdGrupoTrabalho"] != DBNull.Value ? Convert.ToInt32(objLinha["IdGrupoTrabalho"]) : 0;
+                    objNovoNoticiaGrupoTrabalho.GrupoTrabalho = new AcessoDados.GrupoTrabalho().Consultar(objNovoNoticiaGrupoTrabalho.GrupoTrabalho).First();
 
-                    objRetorno.Add(objNovoUsuarioPermissao);
+                    objRetorno.Add(objNovoNoticiaGrupoTrabalho);
                 }
 
                 return objRetorno;
@@ -55,7 +53,7 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Inserir(Entidades.UsuarioPermissao entidade)
+        public string Inserir(Entidades.NoticiaGrupoTrabalho entidade)
         {
             try
             {
@@ -64,10 +62,10 @@ namespace Noticia.AcessoDados
                 if (entidade != null)
                 {
                     objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                    objDados.AdicionarParametros("@intIdPermissao", entidade.Permissao.IdPermissao);
+                    objDados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
+                    objDados.AdicionarParametros("@intIdGrupoTrabalho", entidade.GrupoTrabalho.IdGrupoTrabalho);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuarioPermissao");
+                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spNoticiaGrupoTrabalho");
                 }
 
                 int intResultado = 0;
@@ -90,7 +88,7 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Alterar(Entidades.UsuarioPermissao entidade)
+        public string Alterar(Entidades.NoticiaGrupoTrabalho entidade)
         {
             try
             {
@@ -102,20 +100,20 @@ namespace Noticia.AcessoDados
             }
         }
 
-        public string Excluir(Entidades.UsuarioPermissao entidade)
+        public string Excluir(Entidades.NoticiaGrupoTrabalho entidade)
         {
             try
             {
                 objDados.LimparParametros();
                 object objRetorno = null;
-                if (entidade != null && entidade.Usuario != null && entidade.Usuario.IdUsuario > 0 &&
-                    entidade.Permissao != null && entidade.Permissao.IdPermissao > 0)
+                if (entidade != null && entidade.Noticia != null && entidade.Noticia.IdNoticia > 0 &&
+                    entidade.GrupoTrabalho != null && entidade.GrupoTrabalho.IdGrupoTrabalho > 0)
                 {
                     objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                    objDados.AdicionarParametros("@intIdPermissao", entidade.Permissao.IdPermissao);
+                    objDados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
+                    objDados.AdicionarParametros("@intIdGrupoTrabalho", entidade.GrupoTrabalho.IdGrupoTrabalho);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuarioPermissao");
+                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spNoticiaGrupoTrabalho");
                 }
 
                 int intResultado = 0;
@@ -136,5 +134,6 @@ namespace Noticia.AcessoDados
                 throw ex;
             }
         }
+
     }
 }

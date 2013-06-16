@@ -50,6 +50,7 @@
     <Compile Include="ImagemArquivo.cs" />
     <Compile Include="ImagemGravacao.cs" />
     <Compile Include="Noticia.cs" />
+    <Compile Include="NoticiaGrupoTrabalho.cs" />
     <Compile Include="NoticiaImagem.cs" />
     <Compile Include="PalavraChave.cs" />
     <Compile Include="Permissao.cs" />

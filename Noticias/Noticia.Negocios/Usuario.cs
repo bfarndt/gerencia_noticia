@@ -8,54 +8,73 @@ namespace Noticia.Negocios
 {
     public class Usuario
     {
-        public Entidades.Usuario usuarioLogado { get; set; }
-        private Timer TempoSessao;
-        private bool comSessao = false;
+        AcessoDados.Usuario dalUsuario = new AcessoDados.Usuario();
+        AcessoDados.UsuarioPermissao dalUsuarioPermissao = new AcessoDados.UsuarioPermissao();
 
         public Usuario()
         {
-            this.TempoSessao = new Timer() { Enabled = true, Interval = 1000 };
-            this.TempoSessao.Elapsed += TempoSessao_Elapsed;
+
         }
 
-        void TempoSessao_Elapsed(object sender, ElapsedEventArgs e)
+        public void EfetuarAcesso()
         {
-            this.TempoSessao.Stop();
-            this.comSessao = false;
-        }
-
-        public string EfetuarAcesso()
-        {
-            ComSessao();
-            ValidarUsuario();
-            Permissoes();
-
-            return string.Empty;
+            CarregarPermissoes();
         }
 
         public bool ValidarUsuario()
         {
-            if (this.usuarioLogado != null)
+            if (Sessao.UsuarioLogado != null)
             {
-                this.TempoSessao.Start();
-                this.comSessao = true;
-                return this.comSessao;
+                List<Entidades.Usuario> usuarios = dalUsuario.Consultar(Sessao.UsuarioLogado);
+
+                var found = (from f in usuarios
+                             where f.Senha == Sessao.UsuarioLogado.Senha
+                             select f);
+
+                if (found.Count() > 0)
+                {
+                    Sessao.UsuarioLogado = found.First();
+
+                    Sessao.TempoSessao.Start();
+                    Sessao.comSessao = true;
+                }
+
+                return Sessao.comSessao;
             }
+
             else
                 return false;
         }
 
-        public List<Entidades.Permissao> Permissoes()
+        public void CarregarPermissoes()
         {
             if (ValidarUsuario())
-                return new List<Entidades.Permissao>();
+            {
+                Sessao.UsuarioPermissoes = dalUsuarioPermissao.Consultar(new Entidades.UsuarioPermissao() { Usuario = Sessao.UsuarioLogado });
+            }
             else
-                return null;
+                Sessao.UsuarioPermissoes = null;
         }
 
         public bool ComSessao()
         {
-            return this.comSessao;
+            return Sessao.comSessao;
+        }
+
+        public bool TemPermissao(Entidades.PermissaoEnum permissao)
+        {
+            if (Sessao.UsuarioPermissoes != null)
+            {
+                int Count = (from f in Sessao.UsuarioPermissoes
+                             where f.Permissao.IdPermissao == (int)permissao
+                             select f).Count();
+
+                return Count > 0;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

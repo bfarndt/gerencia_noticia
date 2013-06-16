@@ -10,7 +10,7 @@ namespace Noticia.AcessoDados
     {
         AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
 
-        public List<Entidades.Historico> Consultar(Entidades.Historico entidade)
+        public List<Entidades.Historico> Consultar(Entidades.Historico entidade, List<Entidades.StatusNoticia> VariosStatusNoticia)
         {
             try
             {
@@ -18,10 +18,28 @@ namespace Noticia.AcessoDados
 
                 objDados.LimparParametros();
                 objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdHistorico", entidade.IdHistorico);
-                objDados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
-                objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                objDados.AdicionarParametros("@intIdStatus", entidade.StatusNoticia.IdStatus);
+
+                if (entidade != null)
+                {
+                    objDados.AdicionarParametros("@intIdHistorico", entidade.IdHistorico);
+                    objDados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
+                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                }
+
+                string strVariosStatus = string.Empty;
+                if (VariosStatusNoticia != null)
+                {
+                    foreach (var item in VariosStatusNoticia)
+                    {
+                        strVariosStatus = strVariosStatus + item.IdStatus.ToString() + ",";
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(strVariosStatus))
+                    {
+                        strVariosStatus = strVariosStatus.Remove(strVariosStatus.Length - 1, 1);
+                        objDados.AdicionarParametros("@vchVariosIdStatus", strVariosStatus);
+                    }
+                }
 
                 objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spHistorico");
 
@@ -121,6 +139,11 @@ namespace Noticia.AcessoDados
             {
                 throw ex;
             }
+        }
+
+        public List<Entidades.Historico> Consultar(Entidades.Historico entidade)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -25,3 +25,12 @@ E:\Materias\Mestrado\OP2_ENG\Projeto\Noticias\Noticia.Negocios\bin\Debug\Noticia
 E:\Materias\Mestrado\OP2_ENG\Projeto\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.csprojResolveAssemblyReference.cache
 E:\Materias\Mestrado\OP2_ENG\Projeto\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.dll
 E:\Materias\Mestrado\OP2_ENG\Projeto\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.pdb
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Negocios\bin\Debug\Noticia.Negocios.dll
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Negocios\bin\Debug\Noticia.Negocios.pdb
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Negocios\bin\Debug\Noticia.AcessoDados.dll
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Negocios\bin\Debug\Noticia.Entidades.dll
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Negocios\bin\Debug\Noticia.AcessoDados.pdb
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Negocios\bin\Debug\Noticia.Entidades.pdb
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.csprojResolveAssemblyReference.cache
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.dll
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.pdb
