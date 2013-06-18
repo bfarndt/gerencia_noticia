@@ -8,7 +8,6 @@ namespace Noticia.AcessoDados
 {
     public class StatusNoticia : ICrud<Entidades.StatusNoticia>
     {
-        AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
 
         public List<Entidades.StatusNoticia> Consultar(Entidades.StatusNoticia entidade)
         {
@@ -16,12 +15,12 @@ namespace Noticia.AcessoDados
             {
                 DataTable objDataTable = null;
 
-                objDados.LimparParametros();
-                objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdStatusNoticia", entidade.IdStatus);
-                objDados.AdicionarParametros("@vchDescricao", entidade.Descricao);
+                Dados.LimparParametros();
+                Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
+                Dados.AdicionarParametros("@intIdStatus", entidade.IdStatus);
+                Dados.AdicionarParametros("@vchDescricao", entidade.Descricao);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spStatusNoticia");
+                objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spStatusNoticia");
 
                 List<Entidades.StatusNoticia> objRetorno = new List<Entidades.StatusNoticia>();
 
@@ -52,14 +51,14 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@vchDescricao", entidade.Descricao);
+                    Dados.AdicionarParametros("@vchAcao", "INSERIR");
+                    Dados.AdicionarParametros("@vchDescricao", entidade.Descricao);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spStatusNoticia");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spStatusNoticia");
                 }
 
                 int intResultado = 0;
@@ -86,15 +85,15 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.IdStatus > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "ALTERAR");
-                    objDados.AdicionarParametros("@intIdStatus", entidade.IdStatus);
-                    objDados.AdicionarParametros("@vchDescricao", entidade.Descricao);
+                    Dados.AdicionarParametros("@vchAcao", "ALTERAR");
+                    Dados.AdicionarParametros("@intIdStatus", entidade.IdStatus);
+                    Dados.AdicionarParametros("@vchDescricao", entidade.Descricao);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spStatusNoticia");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spStatusNoticia");
                 }
 
                 int intResultado = 0;
@@ -120,14 +119,14 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.IdStatus > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdStatus", entidade.IdStatus);
+                    Dados.AdicionarParametros("@vchAcao", "DELETAR");
+                    Dados.AdicionarParametros("@intIdStatus", entidade.IdStatus);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spStatusNoticia");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spStatusNoticia");
                 }
 
                 int intResultado = 0;

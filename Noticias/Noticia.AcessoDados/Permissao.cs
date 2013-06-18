@@ -8,20 +8,18 @@ namespace Noticia.AcessoDados
 {
     public class Permissao : ICrud<Entidades.Permissao>
     {
-        AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
-
         public List<Entidades.Permissao> Consultar(Entidades.Permissao entidade)
         {
             try
             {
                 DataTable objDataTable = null;
 
-                objDados.LimparParametros();
-                objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdPermissao", entidade.IdPermissao);
-                objDados.AdicionarParametros("@vchDescricao", entidade.Descricao);
+                Dados.LimparParametros();
+                Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
+                Dados.AdicionarParametros("@intIdPermissao", entidade.IdPermissao);
+                Dados.AdicionarParametros("@vchDescricao", entidade.Descricao);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spPermissao");
+                objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spPermissao");
 
                 List<Entidades.Permissao> objRetorno = new List<Entidades.Permissao>();
 
@@ -52,14 +50,14 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@vchDescricao", entidade.Descricao);
+                    Dados.AdicionarParametros("@vchAcao", "INSERIR");
+                    Dados.AdicionarParametros("@vchDescricao", entidade.Descricao);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spPermissao");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spPermissao");
                 }
 
                 int intResultado = 0;
@@ -86,15 +84,15 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.IdPermissao > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "ALTERAR");
-                    objDados.AdicionarParametros("@intIdPermissao", entidade.IdPermissao);
-                    objDados.AdicionarParametros("@vchDescricao", entidade.Descricao);
+                    Dados.AdicionarParametros("@vchAcao", "ALTERAR");
+                    Dados.AdicionarParametros("@intIdPermissao", entidade.IdPermissao);
+                    Dados.AdicionarParametros("@vchDescricao", entidade.Descricao);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spPermissao");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spPermissao");
                 }
 
                 int intResultado = 0;
@@ -120,14 +118,14 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.IdPermissao > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdPermissao", entidade.IdPermissao);
+                    Dados.AdicionarParametros("@vchAcao", "DELETAR");
+                    Dados.AdicionarParametros("@intIdPermissao", entidade.IdPermissao);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spPermissao");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spPermissao");
                 }
 
                 int intResultado = 0;

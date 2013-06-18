@@ -1,0 +1,83 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1232" measuredH="443" mockupW="922" mockupH="400">
+  <controls>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="556" y="43" w="-1" h="-1" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Editar%20not%EDcia%20-%20Projeto%20Not%EDcia%0Ahttp%3A/projetonoticia.com/editar</text>
+      </controlProperties>
+    </control>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::Label" x="715" y="391" w="-1" h="-1" measuredW="133" measuredH="18" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>Todos%20os%20direitos%20reservados.</text>
+      </controlProperties>
+    </control>
+    <control controlID="87" controlTypeID="com.balsamiq.mockups::Label" x="715" y="391" w="-1" h="-1" measuredW="133" measuredH="18" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>Todos%20os%20direitos%20reservados.</text>
+      </controlProperties>
+    </control>
+    <control controlID="88" controlTypeID="com.balsamiq.mockups::Calendar" x="896" y="127" w="-1" h="-1" measuredW="96" measuredH="96" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::Link" x="929" y="249" w="-1" h="-1" measuredW="25" measuredH="19" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sair</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="93" controlTypeID="com.balsamiq.mockups::SubTitle" x="613" y="131" w="-1" h="-1" measuredW="217" measuredH="27" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Editar%20not%EDcia%3A%20T%EDtulo</text>
+      </controlProperties>
+    </control>
+    <control controlID="97" controlTypeID="com.balsamiq.mockups::Button" x="688" y="345" w="-1" h="-1" measuredW="57" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Voltar</text>
+      </controlProperties>
+    </control>
+    <control controlID="103" controlTypeID="com.balsamiq.mockups::Label" x="582" y="174" w="-1" h="-1" measuredW="39" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Corpo%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="106" controlTypeID="com.balsamiq.mockups::Button" x="765" y="344" w="-1" h="-1" measuredW="60" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Salvar</text>
+      </controlProperties>
+    </control>
+    <control controlID="126" controlTypeID="com.balsamiq.mockups::TextArea" x="635" y="165" w="-1" h="-1" measuredW="200" measuredH="140" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Corpo%20da%20not%EDcia.%20Utiliza%E7%E3o%20de%20um%20editor%20de%20texto%20para%20cria%E7%E3o%20das%20not%EDcias%2C%20identa%E7%E3o%2C%20cria%E7%E3o%20de%20links%20e%20etc.</text>
+      </controlProperties>
+    </control>
+    <control controlID="127" controlTypeID="com.balsamiq.mockups::Button" x="742" y="309" w="-1" h="-1" measuredW="134" measuredH="27" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Submeter%20imagens</text>
+      </controlProperties>
+    </control>
+    <control controlID="128" controlTypeID="com.balsamiq.mockups::Button" x="597" y="308" w="-1" h="-1" measuredW="139" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Selecionar%20imagens</text>
+      </controlProperties>
+    </control>
+    <control controlID="129" controlTypeID="com.balsamiq.mockups::Arrow" x="869" y="316" w="166" h="10" measuredW="150" measuredH="100" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="131" controlTypeID="com.balsamiq.mockups::TextArea" x="1032" y="284" w="200" h="73" measuredW="200" measuredH="140" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S%F3%20aparece%20quando%20fot%F3grafo%20acessar.%0ASubmete%20imagens%20para%20serem%20utilizadas%20pela%20not%EDcia.</text>
+      </controlProperties>
+    </control>
+    <control controlID="132" controlTypeID="com.balsamiq.mockups::Arrow" x="508" y="314" w="92" h="10" measuredW="150" measuredH="100" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="133" controlTypeID="com.balsamiq.mockups::TextArea" x="310" y="279" w="200" h="93" measuredW="200" measuredH="140" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S%F3%20aparece%20para%20o%20jornalista.%0AA%20partir%20das%20imagens%20j%E1%20submetidas%20para%20essa%20not%EDcia%2C%20o%20mesmo%20pode%20escolher%20as%20que%20deseja%20utilizar.</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

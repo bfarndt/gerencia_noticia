@@ -1,0 +1,43 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1006" measuredH="443" mockupW="450" mockupH="400">
+  <controls>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="556" y="43" w="-1" h="-1" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Admin%20-%20Projeto%20Not%EDcia%0Ahttp%3A/projetonoticia.com/admin</text>
+      </controlProperties>
+    </control>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::Label" x="715" y="391" w="-1" h="-1" measuredW="133" measuredH="18" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>Todos%20os%20direitos%20reservados.</text>
+      </controlProperties>
+    </control>
+    <control controlID="87" controlTypeID="com.balsamiq.mockups::Label" x="715" y="391" w="-1" h="-1" measuredW="133" measuredH="18" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>Todos%20os%20direitos%20reservados.</text>
+      </controlProperties>
+    </control>
+    <control controlID="88" controlTypeID="com.balsamiq.mockups::Calendar" x="896" y="127" w="-1" h="-1" measuredW="96" measuredH="96" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="89" controlTypeID="com.balsamiq.mockups::List" x="565" y="184" w="120" h="134" measuredW="100" measuredH="132" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Criar%20not%EDcia%0AEditar%20not%EDcia%0AVincular%20imagens%0AValidar%20not%EDcia%0AManter%20usu%E1rios%0A...</text>
+      </controlProperties>
+    </control>
+    <control controlID="90" controlTypeID="com.balsamiq.mockups::TextArea" x="691" y="178" w="-1" h="-1" measuredW="200" measuredH="140" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Essa%20%E1rea%20do%20lado%20esquerdo%2C%20ser%E3o%20links%20que%20ir%E3o%20depender%20das%20restri%E7%F5es%20de%20acesso%20do%20usu%E1rio%2C%20definidas%20no%20documento%20de%20casos%20de%20uso.</text>
+      </controlProperties>
+    </control>
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::SubTitle" x="597" y="131" w="-1" h="-1" measuredW="268" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Escolha%20uma%20das%20op%E7%F5es</text>
+      </controlProperties>
+    </control>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::Link" x="929" y="249" w="-1" h="-1" measuredW="25" measuredH="19" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sair</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

@@ -8,7 +8,8 @@ namespace Noticia.AcessoDados
 {
     public class Usuario : ICrud<Entidades.Usuario>
     {
-        AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
+
+        AcessoDados.TipoUsuario dadosTipoUsuario = new AcessoDados.TipoUsuario();
 
         public List<Entidades.Usuario> Consultar(Entidades.Usuario entidade)
         {
@@ -16,16 +17,16 @@ namespace Noticia.AcessoDados
             {
                 DataTable objDataTable = null;
 
-                objDados.LimparParametros();
-                objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdUsuario", entidade.IdUsuario);
-                objDados.AdicionarParametros("@vchLogin", entidade.Login);
-                objDados.AdicionarParametros("@vchSenha", entidade.Senha);
-                objDados.AdicionarParametros("@vchNome", entidade.Nome);
+                Dados.LimparParametros();
+                Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
+                Dados.AdicionarParametros("@intIdUsuario", entidade.IdUsuario);
+                Dados.AdicionarParametros("@vchLogin", entidade.Login);
+                Dados.AdicionarParametros("@vchSenha", entidade.Senha);
+                Dados.AdicionarParametros("@vchNome", entidade.Nome);
                 if (entidade.TipoUsuario != null && entidade.TipoUsuario.IdTipoUsuario > 0)
-                    objDados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
+                    Dados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spUsuario");
+                objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spUsuario");
 
                 List<Entidades.Usuario> objRetorno = new List<Entidades.Usuario>();
 
@@ -46,7 +47,7 @@ namespace Noticia.AcessoDados
                     {
                         IdTipoUsuario = objLinha["IdTipoUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdTipoUsuario"]) : 0
                     };
-                    objNovoUsuario.TipoUsuario = new AcessoDados.TipoUsuario().Consultar(objNovoUsuario.TipoUsuario).First();
+                    objNovoUsuario.TipoUsuario = dadosTipoUsuario.Consultar(objNovoUsuario.TipoUsuario).First();
 
                     objRetorno.Add(objNovoUsuario);
                 }
@@ -63,17 +64,17 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@vchLogin", entidade.Login);
-                    objDados.AdicionarParametros("@vchSenha", entidade.Senha);
-                    objDados.AdicionarParametros("@vchNome", entidade.Nome);
-                    objDados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
+                    Dados.AdicionarParametros("@vchAcao", "INSERIR");
+                    Dados.AdicionarParametros("@vchLogin", entidade.Login);
+                    Dados.AdicionarParametros("@vchSenha", entidade.Senha);
+                    Dados.AdicionarParametros("@vchNome", entidade.Nome);
+                    Dados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuario");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuario");
                 }
 
                 int intResultado = 0;
@@ -100,18 +101,18 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.IdUsuario > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "ALTERAR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.IdUsuario);
-                    objDados.AdicionarParametros("@vchLogin", entidade.Login);
-                    objDados.AdicionarParametros("@vchSenha", entidade.Senha);
-                    objDados.AdicionarParametros("@vchNome", entidade.Nome);
-                    objDados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
+                    Dados.AdicionarParametros("@vchAcao", "ALTERAR");
+                    Dados.AdicionarParametros("@intIdUsuario", entidade.IdUsuario);
+                    Dados.AdicionarParametros("@vchLogin", entidade.Login);
+                    Dados.AdicionarParametros("@vchSenha", entidade.Senha);
+                    Dados.AdicionarParametros("@vchNome", entidade.Nome);
+                    Dados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuario");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuario");
                 }
 
                 int intResultado = 0;
@@ -137,14 +138,14 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.IdUsuario > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.IdUsuario);
+                    Dados.AdicionarParametros("@vchAcao", "DELETAR");
+                    Dados.AdicionarParametros("@intIdUsuario", entidade.IdUsuario);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuario");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuario");
                 }
 
 

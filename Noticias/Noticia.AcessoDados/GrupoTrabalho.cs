@@ -8,20 +8,18 @@ namespace Noticia.AcessoDados
 {
     public class GrupoTrabalho
     {
-        AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
-
         public List<Entidades.GrupoTrabalho> Consultar(Entidades.GrupoTrabalho entidade)
         {
             try
             {
                 DataTable objDataTable = null;
 
-                objDados.LimparParametros();
-                objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdGrupoTrabalho", entidade.IdGrupoTrabalho);
-                objDados.AdicionarParametros("@vchDescricao", entidade.Descricao);
+                Dados.LimparParametros();
+                Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
+                Dados.AdicionarParametros("@intIdGrupoTrabalho", entidade.IdGrupoTrabalho);
+                Dados.AdicionarParametros("@vchDescricao", entidade.Descricao);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spGrupoTrabalho");
+                objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spGrupoTrabalho");
 
                 List<Entidades.GrupoTrabalho> objRetorno = new List<Entidades.GrupoTrabalho>();
 
@@ -52,14 +50,14 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@vchDescricao", entidade.Descricao);
+                    Dados.AdicionarParametros("@vchAcao", "INSERIR");
+                    Dados.AdicionarParametros("@vchDescricao", entidade.Descricao);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spGrupoTrabalho");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spGrupoTrabalho");
                 }
 
                 int intResultado = 0;
@@ -86,15 +84,15 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.IdGrupoTrabalho > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "ALTERAR");
-                    objDados.AdicionarParametros("@intIdGrupoTrabalho", entidade.IdGrupoTrabalho);
-                    objDados.AdicionarParametros("@vchDescricao", entidade.Descricao);
+                    Dados.AdicionarParametros("@vchAcao", "ALTERAR");
+                    Dados.AdicionarParametros("@intIdGrupoTrabalho", entidade.IdGrupoTrabalho);
+                    Dados.AdicionarParametros("@vchDescricao", entidade.Descricao);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spGrupoTrabalho");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spGrupoTrabalho");
                 }
 
                 int intResultado = 0;
@@ -120,14 +118,14 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.IdGrupoTrabalho > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdGrupoTrabalho", entidade.IdGrupoTrabalho);
+                    Dados.AdicionarParametros("@vchAcao", "DELETAR");
+                    Dados.AdicionarParametros("@intIdGrupoTrabalho", entidade.IdGrupoTrabalho);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spGrupoTrabalho");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spGrupoTrabalho");
                 }
 
                 int intResultado = 0;

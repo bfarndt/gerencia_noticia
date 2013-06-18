@@ -8,21 +8,19 @@ namespace Noticia.AcessoDados
 {
     public class UsuarioEndereco : ICrud<Entidades.UsuarioEndereco>
     {
-        AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
-
         public List<Entidades.UsuarioEndereco> Consultar(Entidades.UsuarioEndereco entidade)
         {
             try
             {
                 DataTable objDataTable = null;
 
-                objDados.LimparParametros();
-                objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                objDados.AdicionarParametros("@vchEmail", entidade.Email);
-                objDados.AdicionarParametros("@vchTelefone", entidade.Telefone);
+                Dados.LimparParametros();
+                Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
+                Dados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                Dados.AdicionarParametros("@vchEmail", entidade.Email);
+                Dados.AdicionarParametros("@vchTelefone", entidade.Telefone);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spUsuarioEndereco");
+                objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spUsuarioEndereco");
 
                 List<Entidades.UsuarioEndereco> objRetorno = new List<Entidades.UsuarioEndereco>();
 
@@ -57,16 +55,16 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                    objDados.AdicionarParametros("@vchEmail", entidade.Email);
-                    objDados.AdicionarParametros("@vchTelefone", entidade.Telefone);
+                    Dados.AdicionarParametros("@vchAcao", "INSERIR");
+                    Dados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                    Dados.AdicionarParametros("@vchEmail", entidade.Email);
+                    Dados.AdicionarParametros("@vchTelefone", entidade.Telefone);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuarioEndereco");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuarioEndereco");
                 }
 
                 int intResultado = 0;
@@ -93,16 +91,16 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.Usuario.IdUsuario > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "ALTERAR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                    objDados.AdicionarParametros("@vchEmail", entidade.Email);
-                    objDados.AdicionarParametros("@vchTelefone", entidade.Telefone);
+                    Dados.AdicionarParametros("@vchAcao", "ALTERAR");
+                    Dados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                    Dados.AdicionarParametros("@vchEmail", entidade.Email);
+                    Dados.AdicionarParametros("@vchTelefone", entidade.Telefone);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuarioEndereco");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuarioEndereco");
                 }
 
                 int intResultado = 0;
@@ -128,14 +126,14 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.Usuario.IdUsuario > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                    Dados.AdicionarParametros("@vchAcao", "DELETAR");
+                    Dados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuarioEndereco");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuarioEndereco");
                 }
 
                 int intResultado = 0;

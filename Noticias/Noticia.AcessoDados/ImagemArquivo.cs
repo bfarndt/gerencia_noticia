@@ -6,25 +6,23 @@ using System.Text;
 
 namespace Noticia.AcessoDados
 {
-    public class ImagemArquivoArquivo
+    public class ImagemArquivo
     {
-        AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
-
         public List<Entidades.ImagemArquivo> Consultar(Entidades.ImagemArquivo entidade)
         {
             try
             {
                 DataTable objDataTable = null;
 
-                objDados.LimparParametros();
-                objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
-                objDados.AdicionarParametros("@binImagem", entidade.ImagemBytes);
-                objDados.AdicionarParametros("@vchExtensao", entidade.Extensao);
-                objDados.AdicionarParametros("@vchTamanho", entidade.Tamanho);
-                objDados.AdicionarParametros("@vchFormato", entidade.Formato);
+                Dados.LimparParametros();
+                Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
+                Dados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
+                Dados.AdicionarParametros("@binImagem", entidade.ImagemBytes);
+                Dados.AdicionarParametros("@vchExtensao", entidade.Extensao);
+                Dados.AdicionarParametros("@vchTamanho", entidade.Tamanho);
+                Dados.AdicionarParametros("@vchFormato", entidade.Formato);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spImagemArquivo");
+                objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spImagemArquivo");
 
                 List<Entidades.ImagemArquivo> objRetorno = new List<Entidades.ImagemArquivo>();
 
@@ -61,18 +59,18 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
-                    objDados.AdicionarParametros("@binImagem", entidade.ImagemBytes);
-                    objDados.AdicionarParametros("@vchExtensao", entidade.Extensao);
-                    objDados.AdicionarParametros("@vchTamanho", entidade.Tamanho);
-                    objDados.AdicionarParametros("@vchFormato", entidade.Formato);
+                    Dados.AdicionarParametros("@vchAcao", "INSERIR");
+                    Dados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
+                    Dados.AdicionarParametros("@binImagem", entidade.ImagemBytes);
+                    Dados.AdicionarParametros("@vchExtensao", entidade.Extensao);
+                    Dados.AdicionarParametros("@vchTamanho", entidade.Tamanho);
+                    Dados.AdicionarParametros("@vchFormato", entidade.Formato);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagemArquivo");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagemArquivo");
                 }
 
                 int intResultado = 0;
@@ -99,15 +97,15 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.Imagem != null && entidade.Imagem.IdImagem > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "ALTERAR");
-                    objDados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
-                    objDados.AdicionarParametros("@vchFormato", entidade.Formato);
+                    Dados.AdicionarParametros("@vchAcao", "ALTERAR");
+                    Dados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
+                    Dados.AdicionarParametros("@vchFormato", entidade.Formato);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagemArquivo");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagemArquivo");
                 }
 
                 int intResultado = 0;
@@ -133,14 +131,14 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.Imagem != null && entidade.Imagem.IdImagem > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
+                    Dados.AdicionarParametros("@vchAcao", "DELETAR");
+                    Dados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagemArquivo");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagemArquivo");
                 }
 
                 int intResultado = 0;

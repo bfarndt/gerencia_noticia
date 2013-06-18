@@ -30,7 +30,7 @@ namespace Noticia.Testes
         [TestMethod]
         public void Login_Senha_Existente()
         {
-            Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { Login = "Bento", Senha="senha" };
+            Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { Login = "Bento", Senha = "senha" };
             var retorno = NegUsuario.ValidarUsuario();
             Assert.AreEqual(true, retorno);
         }
@@ -71,7 +71,7 @@ namespace Noticia.Testes
             Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { Login = "Bento", Senha = "senha" };
             NegUsuario.ValidarUsuario();
             Thread.Sleep(1); //Tempo de espera
-            var retorno = NegUsuario.ComSessao();
+            var retorno = Negocios.Sessao.comSessao;
 
             Assert.AreEqual(true, retorno);
         }
@@ -80,10 +80,10 @@ namespace Noticia.Testes
         [TestMethod]
         public void SemAcesso_CincoMinutos()
         {
-            Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { Login ="Bento", Senha = "senhas" };
+            Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { Login = "Bento", Senha = "senhas" };
             NegUsuario.ValidarUsuario();
             Thread.Sleep(2000);//Tempo de espera
-            var retorno = NegUsuario.ComSessao();
+            var retorno = Negocios.Sessao.comSessao;
 
             Assert.AreEqual(false, retorno);
         }

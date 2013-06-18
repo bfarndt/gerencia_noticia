@@ -8,20 +8,18 @@ namespace Noticia.AcessoDados
 {
     public class ImagemGravacao
     {
-        AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
-
         public List<Entidades.ImagemGravacao> Consultar(Entidades.ImagemGravacao entidade)
         {
             try
             {
                 DataTable objDataTable = null;
 
-                objDados.LimparParametros();
-                objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
-                objDados.AdicionarParametros("@vchLocalGravacao", entidade.LocalGravacao);
+                Dados.LimparParametros();
+                Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
+                Dados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
+                Dados.AdicionarParametros("@vchLocalGravacao", entidade.LocalGravacao);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spImagemGravacao");
+                objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spImagemGravacao");
 
                 List<Entidades.ImagemGravacao> objRetorno = new List<Entidades.ImagemGravacao>();
 
@@ -56,16 +54,16 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
-                    objDados.AdicionarParametros("@datDataHoraGravacao", entidade.DataHoraGravacao);
-                    objDados.AdicionarParametros("@vchLocalGravacao", entidade.LocalGravacao);
+                    Dados.AdicionarParametros("@vchAcao", "INSERIR");
+                    Dados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
+                    Dados.AdicionarParametros("@datDataHoraGravacao", entidade.DataHoraGravacao);
+                    Dados.AdicionarParametros("@vchLocalGravacao", entidade.LocalGravacao);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagemGravacao");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagemGravacao");
                 }
 
                 int intResultado = 0;
@@ -92,16 +90,16 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.Imagem != null && entidade.Imagem.IdImagem > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "ALTERAR");
-                    objDados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
-                    objDados.AdicionarParametros("@datDataHoraGravacao", entidade.DataHoraGravacao);
-                    objDados.AdicionarParametros("@vchLocalGravacao", entidade.LocalGravacao);
+                    Dados.AdicionarParametros("@vchAcao", "ALTERAR");
+                    Dados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
+                    Dados.AdicionarParametros("@datDataHoraGravacao", entidade.DataHoraGravacao);
+                    Dados.AdicionarParametros("@vchLocalGravacao", entidade.LocalGravacao);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagemGravacao");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagemGravacao");
                 }
 
                 int intResultado = 0;
@@ -127,14 +125,14 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.Imagem != null && entidade.Imagem.IdImagem > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
+                    Dados.AdicionarParametros("@vchAcao", "DELETAR");
+                    Dados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagemGravacao");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagemGravacao");
                 }
 
                 int intResultado = 0;

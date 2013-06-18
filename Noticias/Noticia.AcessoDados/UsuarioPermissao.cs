@@ -8,22 +8,20 @@ namespace Noticia.AcessoDados
 {
     public class UsuarioPermissao : ICrud<Entidades.UsuarioPermissao>
     {
-        AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
-
         public List<Entidades.UsuarioPermissao> Consultar(Entidades.UsuarioPermissao entidade)
         {
             try
             {
                 DataTable objDataTable = null;
 
-                objDados.LimparParametros();
-                objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
+                Dados.LimparParametros();
+                Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
                 if (entidade.Usuario != null)
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                    Dados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
                 if (entidade.Permissao != null)
-                    objDados.AdicionarParametros("@intIdPermissao", entidade.Permissao.IdPermissao);
+                    Dados.AdicionarParametros("@intIdPermissao", entidade.Permissao.IdPermissao);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spUsuarioPermissao");
+                objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spUsuarioPermissao");
 
                 List<Entidades.UsuarioPermissao> objRetorno = new List<Entidades.UsuarioPermissao>();
 
@@ -59,15 +57,15 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                    objDados.AdicionarParametros("@intIdPermissao", entidade.Permissao.IdPermissao);
+                    Dados.AdicionarParametros("@vchAcao", "INSERIR");
+                    Dados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                    Dados.AdicionarParametros("@intIdPermissao", entidade.Permissao.IdPermissao);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuarioPermissao");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuarioPermissao");
                 }
 
                 int intResultado = 0;
@@ -106,16 +104,16 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.Usuario != null && entidade.Usuario.IdUsuario > 0 &&
                     entidade.Permissao != null && entidade.Permissao.IdPermissao > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                    objDados.AdicionarParametros("@intIdPermissao", entidade.Permissao.IdPermissao);
+                    Dados.AdicionarParametros("@vchAcao", "DELETAR");
+                    Dados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                    Dados.AdicionarParametros("@intIdPermissao", entidade.Permissao.IdPermissao);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuarioPermissao");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spUsuarioPermissao");
                 }
 
                 int intResultado = 0;

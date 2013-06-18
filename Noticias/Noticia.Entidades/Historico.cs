@@ -13,5 +13,6 @@ namespace Noticia.Entidades
         public Usuario Usuario { get; set; }
         public StatusNoticia StatusNoticia { get; set; }
         public DateTime? DataHora { get; set; }
+        public string Descricao { get; set; }
     }
 }

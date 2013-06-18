@@ -8,20 +8,20 @@ namespace Noticia.AcessoDados
 {
     public class NoticiaGrupoTrabalho
     {
-        AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
-
         public List<Entidades.NoticiaGrupoTrabalho> Consultar(Entidades.NoticiaGrupoTrabalho entidade)
         {
             try
             {
                 DataTable objDataTable = null;
 
-                objDados.LimparParametros();
-                objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
-                objDados.AdicionarParametros("@intIdGrupoTrabalho", entidade.GrupoTrabalho.IdGrupoTrabalho);
+                Dados.LimparParametros();
+                Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
+                if (entidade.Noticia != null)
+                    Dados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
+                if (entidade.GrupoTrabalho != null)
+                    Dados.AdicionarParametros("@intIdGrupoTrabalho", entidade.GrupoTrabalho.IdGrupoTrabalho);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spNoticiaGrupoTrabalho");
+                objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spNoticiaGrupoTrabalho");
 
                 List<Entidades.NoticiaGrupoTrabalho> objRetorno = new List<Entidades.NoticiaGrupoTrabalho>();
 
@@ -57,15 +57,15 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
-                    objDados.AdicionarParametros("@intIdGrupoTrabalho", entidade.GrupoTrabalho.IdGrupoTrabalho);
+                    Dados.AdicionarParametros("@vchAcao", "INSERIR");
+                    Dados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
+                    Dados.AdicionarParametros("@intIdGrupoTrabalho", entidade.GrupoTrabalho.IdGrupoTrabalho);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spNoticiaGrupoTrabalho");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spNoticiaGrupoTrabalho");
                 }
 
                 int intResultado = 0;
@@ -104,16 +104,16 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.Noticia != null && entidade.Noticia.IdNoticia > 0 &&
                     entidade.GrupoTrabalho != null && entidade.GrupoTrabalho.IdGrupoTrabalho > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
-                    objDados.AdicionarParametros("@intIdGrupoTrabalho", entidade.GrupoTrabalho.IdGrupoTrabalho);
+                    Dados.AdicionarParametros("@vchAcao", "DELETAR");
+                    Dados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
+                    Dados.AdicionarParametros("@intIdGrupoTrabalho", entidade.GrupoTrabalho.IdGrupoTrabalho);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spNoticiaGrupoTrabalho");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spNoticiaGrupoTrabalho");
                 }
 
                 int intResultado = 0;

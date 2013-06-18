@@ -8,30 +8,19 @@ namespace Noticia.AcessoDados
 {
     public class PalavraChave
     {
-        /*
-         	@intIdPalavraChave INT = NULL,
-	@intIdNoticia INT = NULL,
-	@vchPalavraChave VARCHAR(50) = NULL
-         * 
-         * 	tblPal.IdPalavraChave,
-			tblPal.IdNoticia,
-			tblPal.PalavraChave
-         */
-        AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
-
         public List<Entidades.PalavraChave> Consultar(Entidades.PalavraChave entidade)
         {
             try
             {
                 DataTable objDataTable = null;
 
-                objDados.LimparParametros();
-                objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdPalavraChave", entidade.IdPalavraChave);
-                objDados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
-                objDados.AdicionarParametros("@vchPalavraChave", entidade.PalavraChaveTexto);
+                Dados.LimparParametros();
+                Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
+                Dados.AdicionarParametros("@intIdPalavraChave", entidade.IdPalavraChave);
+                Dados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
+                Dados.AdicionarParametros("@vchPalavraChave", entidade.PalavraChaveTexto);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spPalavraChave");
+                objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spPalavraChave");
 
                 List<Entidades.PalavraChave> objRetorno = new List<Entidades.PalavraChave>();
 
@@ -65,16 +54,16 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@intIdPalavraChave", entidade.IdPalavraChave);
-                    objDados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
-                    objDados.AdicionarParametros("@vchPalavraChave", entidade.PalavraChaveTexto);
+                    Dados.AdicionarParametros("@vchAcao", "INSERIR");
+                    Dados.AdicionarParametros("@intIdPalavraChave", entidade.IdPalavraChave);
+                    Dados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
+                    Dados.AdicionarParametros("@vchPalavraChave", entidade.PalavraChaveTexto);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spPalavraChave");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spPalavraChave");
                 }
 
                 int intResultado = 0;
@@ -101,16 +90,16 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.IdPalavraChave > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "ALTERAR");
-                    objDados.AdicionarParametros("@intIdPalavraChave", entidade.IdPalavraChave);
-                    objDados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
-                    objDados.AdicionarParametros("@vchPalavraChave", entidade.PalavraChaveTexto);
+                    Dados.AdicionarParametros("@vchAcao", "ALTERAR");
+                    Dados.AdicionarParametros("@intIdPalavraChave", entidade.IdPalavraChave);
+                    Dados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
+                    Dados.AdicionarParametros("@vchPalavraChave", entidade.PalavraChaveTexto);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spPalavraChave");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spPalavraChave");
                 }
 
                 int intResultado = 0;
@@ -136,14 +125,14 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.IdPalavraChave > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdPalavraChave", entidade.IdPalavraChave);
+                    Dados.AdicionarParametros("@vchAcao", "DELETAR");
+                    Dados.AdicionarParametros("@intIdPalavraChave", entidade.IdPalavraChave);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spPalavraChave");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spPalavraChave");
                 }
 
                 int intResultado = 0;

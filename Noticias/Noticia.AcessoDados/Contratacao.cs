@@ -8,19 +8,17 @@ namespace Noticia.AcessoDados
 {
     public class Contratacao
     {
-        AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
-
         public List<Entidades.Contratacao> Consultar(Entidades.Contratacao entidade)
         {
             try
             {
                 DataTable objDataTable = null;
 
-                objDados.LimparParametros();
-                objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                Dados.LimparParametros();
+                Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
+                Dados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spContratacao");
+                objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spContratacao");
 
                 List<Entidades.Contratacao> objRetorno = new List<Entidades.Contratacao>();
 
@@ -55,15 +53,15 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                    objDados.AdicionarParametros("@datDataHora", entidade.DataHora);
+                    Dados.AdicionarParametros("@vchAcao", "INSERIR");
+                    Dados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                    Dados.AdicionarParametros("@datDataHora", entidade.DataHora);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spContratacao");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spContratacao");
                 }
 
                 int intResultado = 0;
@@ -90,15 +88,15 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.Usuario != null && entidade.Usuario.IdUsuario > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "ALTERAR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                    objDados.AdicionarParametros("@datDataHora", entidade.DataHora);
+                    Dados.AdicionarParametros("@vchAcao", "ALTERAR");
+                    Dados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                    Dados.AdicionarParametros("@datDataHora", entidade.DataHora);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spContratacao");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spContratacao");
                 }
 
                 int intResultado = 0;
@@ -124,14 +122,14 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.Usuario != null && entidade.Usuario.IdUsuario > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                    Dados.AdicionarParametros("@vchAcao", "DELETAR");
+                    Dados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spContratacao");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spContratacao");
                 }
 
 

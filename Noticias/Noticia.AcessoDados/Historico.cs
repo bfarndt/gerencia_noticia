@@ -8,22 +8,24 @@ namespace Noticia.AcessoDados
 {
     public class Historico : ICrud<Entidades.Historico>
     {
-        AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
-
         public List<Entidades.Historico> Consultar(Entidades.Historico entidade, List<Entidades.StatusNoticia> VariosStatusNoticia)
         {
             try
             {
                 DataTable objDataTable = null;
 
-                objDados.LimparParametros();
-                objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
+                AcessoDados.Noticia dadosNoticias = new AcessoDados.Noticia();
+                AcessoDados.Usuario dadosUsuarios = new AcessoDados.Usuario();
+                AcessoDados.StatusNoticia dadosStatus = new AcessoDados.StatusNoticia();
+
+                Dados.LimparParametros();
+                Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
 
                 if (entidade != null)
                 {
-                    objDados.AdicionarParametros("@intIdHistorico", entidade.IdHistorico);
-                    objDados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                    Dados.AdicionarParametros("@intIdHistorico", entidade.IdHistorico);
+                    Dados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
+                    Dados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
                 }
 
                 string strVariosStatus = string.Empty;
@@ -37,11 +39,11 @@ namespace Noticia.AcessoDados
                     if (!string.IsNullOrWhiteSpace(strVariosStatus))
                     {
                         strVariosStatus = strVariosStatus.Remove(strVariosStatus.Length - 1, 1);
-                        objDados.AdicionarParametros("@vchVariosIdStatus", strVariosStatus);
+                        Dados.AdicionarParametros("@vchVariosIdStatus", strVariosStatus);
                     }
                 }
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spHistorico");
+                objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spHistorico");
 
                 List<Entidades.Historico> objRetorno = new List<Entidades.Historico>();
 
@@ -57,17 +59,18 @@ namespace Noticia.AcessoDados
                     objNovoHistorico.IdHistorico = objLinha["IdHistorico"] != DBNull.Value ? Convert.ToInt32(objLinha["IdHistorico"]) : 0;
                     objNovoHistorico.Noticia = new Entidades.Noticia();
                     objNovoHistorico.Noticia.IdNoticia = objLinha["IdNoticia"] != DBNull.Value ? Convert.ToInt32(objLinha["IdNoticia"]) : 0;
-                    objNovoHistorico.Noticia = new AcessoDados.Noticia().Consultar(objNovoHistorico.Noticia).First();
+                    objNovoHistorico.Noticia = dadosNoticias.Consultar(objNovoHistorico.Noticia).First();
 
                     objNovoHistorico.Usuario = new Entidades.Usuario();
                     objNovoHistorico.Usuario.IdUsuario = objLinha["IdUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdUsuario"]) : 0;
-                    objNovoHistorico.Usuario = new AcessoDados.Usuario().Consultar(objNovoHistorico.Usuario).First();
+                    objNovoHistorico.Usuario = dadosUsuarios.Consultar(objNovoHistorico.Usuario).First();
 
                     objNovoHistorico.StatusNoticia = new Entidades.StatusNoticia();
                     objNovoHistorico.StatusNoticia.IdStatus = objLinha["IdStatus"] != DBNull.Value ? Convert.ToInt32(objLinha["IdStatus"]) : 0;
-                    objNovoHistorico.StatusNoticia = new AcessoDados.StatusNoticia().Consultar(objNovoHistorico.StatusNoticia).First();
+                    objNovoHistorico.StatusNoticia = dadosStatus.Consultar(objNovoHistorico.StatusNoticia).First();
 
                     objNovoHistorico.DataHora = objLinha["DataHora"] != DBNull.Value ? (DateTime?)objLinha["DataHora"] : (DateTime?)null;
+                    objNovoHistorico.Descricao = objLinha["Descricao"] != DBNull.Value ? (string)objLinha["Descricao"] : (string)null;
 
                     objRetorno.Add(objNovoHistorico);
                 }
@@ -84,17 +87,18 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
-                    objDados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                    objDados.AdicionarParametros("@intIdStatus", entidade.StatusNoticia.IdStatus);
-                    objDados.AdicionarParametros("@datDataHora", entidade.DataHora);
+                    Dados.AdicionarParametros("@vchAcao", "INSERIR");
+                    Dados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
+                    Dados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                    Dados.AdicionarParametros("@intIdStatus", entidade.StatusNoticia.IdStatus);
+                    Dados.AdicionarParametros("@datDataHora", entidade.DataHora);
+                    Dados.AdicionarParametros("@vchDescricao", entidade.Descricao);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spHistorico");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spHistorico");
                 }
 
                 int intResultado = 0;

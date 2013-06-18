@@ -11,6 +11,7 @@ namespace Noticia.Testes
     {
         Negocios.Usuario NegUsuario;
         Negocios.Noticia NegNoticia;
+        Negocios.Reporter NegReporter;
 
         [TestInitialize]
         public void IniciarTestes()
@@ -21,6 +22,7 @@ namespace Noticia.Testes
             this.NegUsuario = new Negocios.Usuario();
             this.NegUsuario.EfetuarAcesso();
             this.NegNoticia = new Negocios.Noticia();
+            this.NegReporter = new Negocios.Reporter();
         }
 
         [TestCleanup]
@@ -62,7 +64,7 @@ namespace Noticia.Testes
             Negocios.Sessao.NoticiaAtual.IdNoticia = 1;
             Negocios.Sessao.NoticiaAtual.Titulo = "São Paulo";
             Negocios.Sessao.NoticiaAtual.Conteudo = "Melhor Time do Brasil";
-            var retorno = NegNoticia.SubmeterEdicao();
+            var retorno = NegReporter.SubmeterEdicao();
             Assert.AreEqual(true, retorno);
         }
 
@@ -72,7 +74,7 @@ namespace Noticia.Testes
         {
             Negocios.Sessao.NoticiaAtual.Titulo = "";
             Negocios.Sessao.NoticiaAtual.Conteudo = "Melhor Time do Brasil";
-            var retorno = NegNoticia.SubmeterEdicao();
+            var retorno = NegReporter.SubmeterEdicao();
             Assert.AreEqual(false, retorno);
         }
     }

@@ -8,20 +8,18 @@ namespace Noticia.AcessoDados
 {
     public class DiaSemana : ICrud<Entidades.DiaSemana>
     {
-        AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
-
         public List<Entidades.DiaSemana> Consultar(Entidades.DiaSemana entidade)
         {
             try
             {
                 DataTable objDataTable = null;
 
-                objDados.LimparParametros();
-                objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdDia", entidade.IdDia);
-                objDados.AdicionarParametros("@vchDescricao", entidade.Descricao);
+                Dados.LimparParametros();
+                Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
+                Dados.AdicionarParametros("@intIdDia", entidade.IdDia);
+                Dados.AdicionarParametros("@vchDescricao", entidade.Descricao);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spDiaSemana");
+                objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spDiaSemana");
 
                 List<Entidades.DiaSemana> objRetorno = new List<Entidades.DiaSemana>();
 

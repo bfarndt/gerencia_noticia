@@ -8,20 +8,20 @@ namespace Noticia.AcessoDados
 {
     public class NoticiaImagem : ICrud<Entidades.NoticiaImagem>
     {
-        AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
-
         public List<Entidades.NoticiaImagem> Consultar(Entidades.NoticiaImagem entidade)
         {
             try
             {
                 DataTable objDataTable = null;
 
-                objDados.LimparParametros();
-                objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
-                objDados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
+                Dados.LimparParametros();
+                Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
+                if (entidade.Noticia != null)
+                    Dados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
+                if (entidade.Imagem != null)
+                    Dados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spNoticiaImagem");
+                objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spNoticiaImagem");
 
                 List<Entidades.NoticiaImagem> objRetorno = new List<Entidades.NoticiaImagem>();
 
@@ -56,15 +56,15 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
-                    objDados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
+                    Dados.AdicionarParametros("@vchAcao", "INSERIR");
+                    Dados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
+                    Dados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spNoticiaImagem");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spNoticiaImagem");
                 }
 
                 int intResultado = 0;
@@ -103,16 +103,16 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.Noticia != null && entidade.Noticia.IdNoticia > 0 &&
                     entidade.Imagem != null && entidade.Imagem.IdImagem > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
-                    objDados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
+                    Dados.AdicionarParametros("@vchAcao", "DELETAR");
+                    Dados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
+                    Dados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spNoticiaImagem");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spNoticiaImagem");
                 }
 
                 int intResultado = 0;

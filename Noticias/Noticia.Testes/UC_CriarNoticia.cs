@@ -11,6 +11,7 @@ namespace Noticia.Testes
     {
         Negocios.Noticia NegNoticia;
         Negocios.Usuario NegUsuario;
+        Negocios.Diretor NegDiretor;
 
         [TestInitialize]
         public void IniciarTestes()
@@ -19,6 +20,7 @@ namespace Noticia.Testes
             Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { IdUsuario = 1, Nome = "Bento" };
             NegNoticia = new Negocios.Noticia();
             NegUsuario = new Negocios.Usuario();
+            NegDiretor = new Negocios.Diretor();
         }
 
         [TestCleanup]
@@ -31,21 +33,21 @@ namespace Noticia.Testes
 
         //Acessar opção de criar notícia com um usuário que contém a permissão desta:  Apresentar a opção de criar notícias;
         [TestMethod]
-        public void Permite_Acesso_Noticia()
+        public void Permite_Acesso_CriarNoticia()
         {
             Negocios.Sessao.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
             Negocios.Sessao.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Criar_Noticia } });
-            var retorno = NegUsuario.TemPermissao(Entidades.PermissaoEnum.Criar_Noticia);
+            var retorno = NegUsuario.TenhoPermissao(Entidades.PermissaoEnum.Criar_Noticia);
             Assert.AreEqual(true, retorno);
         }
 
         //Acessar opção de criar notícia com um usuário que não contém a permissão desta:  Apresentar uma mensagem de acesso negado ao usuário;
         [TestMethod]
-        public void NaoPermite_Acesso_Noticia()
+        public void NaoPermite_Acesso_CriarNoticia()
         {
             Negocios.Sessao.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
             Negocios.Sessao.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Efetuar_Acesso } });
-            var retorno = NegUsuario.TemPermissao(Entidades.PermissaoEnum.Criar_Noticia);
+            var retorno = NegUsuario.TenhoPermissao(Entidades.PermissaoEnum.Criar_Noticia);
             Assert.AreEqual(false, retorno);
         }
 
@@ -54,7 +56,7 @@ namespace Noticia.Testes
         public void Validar_Inclusao_Noticia()
         {
             Negocios.Sessao.NoticiaAtual = new Entidades.Noticia() { Titulo = "São Paulo", Conteudo = "Melhor time do Brasil" };
-            var retorno = NegNoticia.ValidarCampos();
+            var retorno = Negocios.Noticia.ValidarNoticia();
             Assert.AreEqual(true, retorno);
         }
 
@@ -63,7 +65,7 @@ namespace Noticia.Testes
         public void NaoValidar_Inclusao_Noticia()
         {
             Negocios.Sessao.NoticiaAtual = new Entidades.Noticia() { Titulo = "", Conteudo = "Melhor time do Brasil" };
-            var retorno = NegNoticia.ValidarCampos();
+            var retorno = Negocios.Noticia.ValidarNoticia();
             Assert.AreEqual(false, retorno);
         }
 
@@ -72,7 +74,7 @@ namespace Noticia.Testes
         public void Finalizar_Cadastro_Noticia()
         {
             Negocios.Sessao.NoticiaAtual = new Entidades.Noticia() { Titulo = "Microsoft Vs Apple", Conteudo = "Popularidade, qualidade e custo" };
-            var retorno = NegNoticia.CriarNoticia();
+            var retorno = NegDiretor.CriarNoticia();
             Assert.AreEqual(true, retorno);
         }
 
@@ -81,7 +83,7 @@ namespace Noticia.Testes
         public void Falha_Cadastro_Noticia()
         {
             Negocios.Sessao.NoticiaAtual = null;
-            var retorno = NegNoticia.CriarNoticia();
+            var retorno = NegDiretor.CriarNoticia();
             Assert.AreEqual(false, retorno);
         }
 
@@ -90,9 +92,9 @@ namespace Noticia.Testes
         public void AssociarGrupoTrabalho()
         {
             Negocios.Sessao.NoticiaAtual = new Entidades.Noticia() { Titulo = "Microsoft Vs Apple", Conteudo = "Popularidade, qualidade e custo" };
-            NegNoticia.CriarNoticia();
+            NegDiretor.CriarNoticia();
             Entidades.GrupoTrabalho grupoTrabalho = new Entidades.GrupoTrabalho() { IdGrupoTrabalho = 1, Descricao = "Grupo 1" };
-            var retorno = NegNoticia.AssociarGrupoTrabalho(grupoTrabalho);
+            var retorno = NegDiretor.AssociarGrupoTrabalho(grupoTrabalho);
 
             Assert.AreEqual(true, retorno);
         }

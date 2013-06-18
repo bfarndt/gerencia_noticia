@@ -23,45 +23,66 @@ namespace Noticia.Negocios
 
         public bool ValidarUsuario()
         {
-            if (Sessao.UsuarioLogado != null)
+            try
             {
-                List<Entidades.Usuario> usuarios = dalUsuario.Consultar(Sessao.UsuarioLogado);
-
-                var found = (from f in usuarios
-                             where f.Senha == Sessao.UsuarioLogado.Senha
-                             select f);
-
-                if (found.Count() > 0)
+                if (Sessao.UsuarioLogado != null)
                 {
-                    Sessao.UsuarioLogado = found.First();
+                    List<Entidades.Usuario> usuarios = dalUsuario.Consultar(Sessao.UsuarioLogado);
 
-                    Sessao.TempoSessao.Start();
-                    Sessao.comSessao = true;
+                    var found = (from f in usuarios
+                                 where f.Senha == Sessao.UsuarioLogado.Senha
+                                 select f);
+
+                    if (found.Count() > 0)
+                    {
+                        Sessao.UsuarioLogado = found.First();
+
+                        Sessao.TempoSessao.Start();
+                        Sessao.comSessao = true;
+                    }
+
+                    return Sessao.comSessao;
                 }
 
-                return Sessao.comSessao;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                AcessoDados.Dados.FecharConexao();
             }
 
-            else
-                return false;
+
         }
 
         public void CarregarPermissoes()
         {
-            if (ValidarUsuario())
+
+            try
             {
-                Sessao.UsuarioPermissoes = dalUsuarioPermissao.Consultar(new Entidades.UsuarioPermissao() { Usuario = Sessao.UsuarioLogado });
+                if (ValidarUsuario())
+                {
+                    Sessao.UsuarioPermissoes = dalUsuarioPermissao.Consultar(new Entidades.UsuarioPermissao() { Usuario = Sessao.UsuarioLogado });
+                }
+                else
+                    Sessao.UsuarioPermissoes = null;
             }
-            else
-                Sessao.UsuarioPermissoes = null;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                AcessoDados.Dados.FecharConexao();
+            }
+
         }
 
-        public bool ComSessao()
-        {
-            return Sessao.comSessao;
-        }
-
-        public bool TemPermissao(Entidades.PermissaoEnum permissao)
+        public bool TenhoPermissao(Entidades.PermissaoEnum permissao)
         {
             if (Sessao.UsuarioPermissoes != null)
             {

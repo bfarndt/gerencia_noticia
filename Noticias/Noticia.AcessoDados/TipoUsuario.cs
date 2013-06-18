@@ -8,20 +8,18 @@ namespace Noticia.AcessoDados
 {
     public class TipoUsuario : ICrud<Entidades.TipoUsuario>
     {
-        AcessoDadosSqlServer objDados = new AcessoDadosSqlServer();
-
         public List<Entidades.TipoUsuario> Consultar(Entidades.TipoUsuario entidade)
         {
             try
             {
                 DataTable objDataTable = null;
 
-                objDados.LimparParametros();
-                objDados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                objDados.AdicionarParametros("@intIdTipoUsuario", entidade.IdTipoUsuario);
-                objDados.AdicionarParametros("@vchDescricao", entidade.Descricao);
+                Dados.LimparParametros();
+                Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
+                Dados.AdicionarParametros("@intIdTipoUsuario", entidade.IdTipoUsuario);
+                Dados.AdicionarParametros("@vchDescricao", entidade.Descricao);
 
-                objDataTable = objDados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spTipoUsuario");
+                objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spTipoUsuario");
 
                 List<Entidades.TipoUsuario> objRetorno = new List<Entidades.TipoUsuario>();
 
@@ -52,14 +50,14 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "INSERIR");
-                    objDados.AdicionarParametros("@vchDescricao", entidade.Descricao);
+                    Dados.AdicionarParametros("@vchAcao", "INSERIR");
+                    Dados.AdicionarParametros("@vchDescricao", entidade.Descricao);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spTipoUsuario");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spTipoUsuario");
                 }
 
                 int intResultado = 0;
@@ -86,15 +84,15 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.IdTipoUsuario > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "ALTERAR");
-                    objDados.AdicionarParametros("@intIdTipoUsuario", entidade.IdTipoUsuario);
-                    objDados.AdicionarParametros("@vchDescricao", entidade.Descricao);
+                    Dados.AdicionarParametros("@vchAcao", "ALTERAR");
+                    Dados.AdicionarParametros("@intIdTipoUsuario", entidade.IdTipoUsuario);
+                    Dados.AdicionarParametros("@vchDescricao", entidade.Descricao);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spTipoUsuario");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spTipoUsuario");
                 }
 
                 int intResultado = 0;
@@ -120,14 +118,14 @@ namespace Noticia.AcessoDados
         {
             try
             {
-                objDados.LimparParametros();
+                Dados.LimparParametros();
                 object objRetorno = null;
                 if (entidade != null && entidade.IdTipoUsuario > 0)
                 {
-                    objDados.AdicionarParametros("@vchAcao", "DELETAR");
-                    objDados.AdicionarParametros("@intIdTipoUsuario", entidade.IdTipoUsuario);
+                    Dados.AdicionarParametros("@vchAcao", "DELETAR");
+                    Dados.AdicionarParametros("@intIdTipoUsuario", entidade.IdTipoUsuario);
 
-                    objRetorno = objDados.ExecutarManipulacao(CommandType.StoredProcedure, "spTipoUsuario");
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spTipoUsuario");
                 }
 
                 int intResultado = 0;
