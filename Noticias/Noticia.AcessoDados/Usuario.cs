@@ -49,6 +49,16 @@ namespace Noticia.AcessoDados
                     };
                     objNovoUsuario.TipoUsuario = dadosTipoUsuario.Consultar(objNovoUsuario.TipoUsuario).First();
 
+                    List<Entidades.UsuarioEndereco> enderecos = new AcessoDados.UsuarioEndereco().Consultar(new Entidades.UsuarioEndereco() { Usuario = objNovoUsuario, Email = null, Telefone = null });
+
+                    if (enderecos.Count > 0)
+                        objNovoUsuario.UsuarioEndereco = enderecos.First();
+
+                    List<Entidades.Contratacao> contratacoes = new AcessoDados.Contratacao().Consultar(new Entidades.Contratacao() { Usuario = objNovoUsuario, DataHora = null });
+
+                    if (contratacoes.Count > 0)
+                        objNovoUsuario.Contratacao = contratacoes.First();
+
                     objRetorno.Add(objNovoUsuario);
                 }
 

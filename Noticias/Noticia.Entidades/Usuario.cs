@@ -13,5 +13,7 @@ namespace Noticia.Entidades
         public string Senha { get; set; }
         public string Nome { get; set; }
         public TipoUsuario TipoUsuario { get; set; }
+        public UsuarioEndereco UsuarioEndereco { get; set; }
+        public Contratacao Contratacao { get; set; }
     }
 }

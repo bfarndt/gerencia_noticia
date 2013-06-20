@@ -135,5 +135,38 @@ namespace Noticia.AcessoDados
             }
         }
 
+        public string ExcluirPorUsuario(Entidades.Usuario entidade)
+        {
+            try
+            {
+                Dados.LimparParametros();
+                object objRetorno = null;
+                if (entidade != null && entidade.IdUsuario > 0)
+                {
+                    Dados.AdicionarParametros("@vchAcao", "DELETAR_POR_USUARIO");
+                    Dados.AdicionarParametros("@intIdUsuario", entidade.IdUsuario);
+
+                    objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spGrupoTrabalhoUsuario");
+                }
+
+                int intResultado = 0;
+                if (objRetorno != null)
+                {
+                    if (int.TryParse(objRetorno.ToString(), out intResultado))
+                        return intResultado.ToString();
+                    else
+                        throw new Exception(objRetorno.ToString());
+                }
+                else
+                {
+                    return "Não foi possível executar";
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

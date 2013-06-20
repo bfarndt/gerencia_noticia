@@ -8,7 +8,7 @@ namespace Noticia.Entidades
     [Serializable]
     public class GrupoTrabalho
     {
-        public int IdGrupoTrabalho { get; set; }
+        public int? IdGrupoTrabalho { get; set; }
         public string Descricao { get; set; }
     }
 }

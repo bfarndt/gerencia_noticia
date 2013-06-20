@@ -1,7 +1,7 @@
 select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'tblUsuarioPermissao'
 go
 
-CREATE PROCEDURE [dbo].[spUsuarioPermissao]
+ALTER PROCEDURE [dbo].[spUsuarioPermissao]
 	@vchAcao VARCHAR(50),
 	@intIdUsuario INT = NULL,
 	@intIdPermissao INT = NULL
@@ -24,17 +24,19 @@ BEGIN
 	END
 	ELSE IF(upper(@vchAcao) = 'INSERIR')
 	BEGIN
-		INSERT INTO tblUsuarioPermissao
-					(
-						IdUsuario,
-						IdPermissao
-					)
-					VALUES
-					(
-						@intIdUsuario,
-						@intIdPermissao
-					)
-					
+		IF NOT EXISTS(SELECT 1 FROM tblUsuarioPermissao WHERE IdUsuario = @intIdUsuario AND IdPermissao = @intIdPermissao)
+		BEGIN
+			INSERT INTO tblUsuarioPermissao
+						(
+							IdUsuario,
+							IdPermissao
+						)
+						VALUES
+						(
+							@intIdUsuario,
+							@intIdPermissao
+						)
+		END
 		SELECT @intIdUsuario AS Retorno
 	END
 	ELSE IF(upper(@vchAcao) = 'DELETAR')
@@ -47,6 +49,15 @@ BEGIN
 			
 		SELECT @intIdUsuario AS Retorno
 	END
+	ELSE IF(upper(@vchAcao) = 'DELETAR_POR_USUARIO')
+	BEGIN
+		DELETE FROM 
+			tblUsuarioPermissao 
+		WHERE
+			IdUsuario = @intIdUsuario
+			
+		SELECT @intIdUsuario AS Retorno
+	END	
 	ELSE
 	BEGIN
 		SELECT 'AÇÃO INEXISTENTE' AS Retorno

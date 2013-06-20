@@ -8,7 +8,7 @@ namespace Noticia.AcessoDados
 {
     public class ImagemGravacao
     {
-        public List<Entidades.ImagemGravacao> Consultar(Entidades.ImagemGravacao entidade)
+        public List<Entidades.ImagemGravacao> Consultar(Entidades.Imagem imagem)
         {
             try
             {
@@ -16,8 +16,7 @@ namespace Noticia.AcessoDados
 
                 Dados.LimparParametros();
                 Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                Dados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
-                Dados.AdicionarParametros("@vchLocalGravacao", entidade.LocalGravacao);
+                Dados.AdicionarParametros("@intIdImagem", imagem.IdImagem);
 
                 objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spImagemGravacao");
 
@@ -34,8 +33,6 @@ namespace Noticia.AcessoDados
 
                     objNovoImagemGravacao.Imagem = new Entidades.Imagem();
                     objNovoImagemGravacao.Imagem.IdImagem = objLinha["IdImagem"] != DBNull.Value ? Convert.ToInt32(objLinha["IdImagem"]) : 0;
-                    objNovoImagemGravacao.Imagem = new AcessoDados.Imagem().Consultar(objNovoImagemGravacao.Imagem).First();
-                    
                     objNovoImagemGravacao.DataHoraGravacao = objLinha["DataHoraGravacao"] != DBNull.Value ? Convert.ToDateTime(objLinha["DataHoraGravacao"]) : (DateTime?)null;
                     objNovoImagemGravacao.LocalGravacao = objLinha["LocalGravacao"] != DBNull.Value ? Convert.ToString(objLinha["LocalGravacao"]) : "";
 

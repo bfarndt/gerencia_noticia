@@ -16,11 +16,10 @@ namespace Noticia.Testes
         [TestInitialize]
         public void IniciarTestes()
         {
-            Negocios.Sessao.IniciarSessao();
-            Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { IdUsuario = 1, Nome = "Bento", Senha = "senha" };
-            Negocios.Sessao.NoticiaAtual = new Entidades.Noticia();
+            Negocios.Singleton.IniciarSessao();
+            Negocios.Singleton.UsuarioLogado = new Entidades.Usuario() { IdUsuario = 1, Nome = "Bento", Senha = "senha" };
             this.NegUsuario = new Negocios.Usuario();
-            this.NegUsuario.EfetuarAcesso();
+            this.NegUsuario.Logar();
             this.NegNoticia = new Negocios.Noticia();
             this.NegEditor = new Negocios.Editor();
         }
@@ -30,6 +29,7 @@ namespace Noticia.Testes
         {
             NegNoticia = null;
             NegUsuario = null;
+            NegEditor = null;
             Console.WriteLine("Finalizando testes");
         }
 
@@ -37,8 +37,8 @@ namespace Noticia.Testes
         [TestMethod]
         public void ComAcesso_Visualizar_Noticias_A_serem_Avaliadas()
         {
-            Negocios.Sessao.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
-            Negocios.Sessao.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Avaliar_Noticia } });
+            Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
+            Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Avaliar_Noticia } });
 
             var retorno = NegNoticia.NoticiasParaAvaliacao();
 
@@ -49,8 +49,8 @@ namespace Noticia.Testes
         [TestMethod]
         public void SemAcesso_Visualizar_Noticias_A_serem_Avaliadas()
         {
-            Negocios.Sessao.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
-            Negocios.Sessao.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Efetuar_Acesso } });
+            Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
+            Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Efetuar_Acesso } });
 
             var retorno = NegNoticia.NoticiasParaAvaliacao();
 
@@ -61,10 +61,11 @@ namespace Noticia.Testes
         [TestMethod]
         public void Aprovar_Noticia()
         {
-            Negocios.Sessao.NoticiaAtual.IdNoticia = 1;
-            Negocios.Sessao.NoticiaAtual.Titulo = "São Paulo";
-            Negocios.Sessao.NoticiaAtual.Conteudo = "Melhor Time do Brasil";
-            var retorno = NegEditor.AprovarNoticia("Ficou boa");
+            Entidades.Noticia noticia = new Entidades.Noticia();
+            noticia.IdNoticia = 1;
+            noticia.Titulo = "São Paulo";
+            noticia.Conteudo = "Melhor Time do Brasil";
+            var retorno = NegEditor.AprovarNoticia(noticia, "Ficou boa");
             Assert.AreEqual(true, retorno);
         }
 
@@ -72,10 +73,11 @@ namespace Noticia.Testes
         [TestMethod]
         public void Reprovar_Noticia()
         {
-            Negocios.Sessao.NoticiaAtual.IdNoticia = 1;
-            Negocios.Sessao.NoticiaAtual.Titulo = "São Paulo";
-            Negocios.Sessao.NoticiaAtual.Conteudo = "Melhor Time do Brasil";
-            var retorno = NegEditor.ReprovarNoticia("Ficou Ruim");
+            Entidades.Noticia noticia = new Entidades.Noticia();
+            noticia.IdNoticia = 1;
+            noticia.Titulo = "São Paulo";
+            noticia.Conteudo = "Melhor Time do Brasil";
+            var retorno = NegEditor.ReprovarNoticia(noticia,"Ficou Ruim");
             Assert.AreEqual(true, retorno);
         }
 

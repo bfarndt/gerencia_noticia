@@ -10,28 +10,40 @@ namespace Noticia.Negocios
         AcessoDados.Noticia dalNoticia = new AcessoDados.Noticia();
         AcessoDados.Historico dalHistorico = new AcessoDados.Historico();
         AcessoDados.Imagem dalImagem = new AcessoDados.Imagem();
+        AcessoDados.ImagemGravacao dalImagemGravacao = new AcessoDados.ImagemGravacao();
+        AcessoDados.PalavraChave dalPalavraChave = new AcessoDados.PalavraChave();
+
+        Negocios.Noticia NegNoticia = new Noticia();
 
         Negocios.Imagem NegImagem = new Imagem();
 
-        public bool SubmeterEdicao()
+        public bool SubmeterEdicao(Entidades.Noticia noticia)
         {
             try
             {
-                if (Noticia.ValidarNoticia())
+                if (NegNoticia.TemTituloEConteudo(noticia))
                 {
                     //Executar update
                     string strRetorno = string.Empty;
 
-                    strRetorno = dalNoticia.Alterar(Sessao.NoticiaAtual);
+                    strRetorno = dalNoticia.Alterar(noticia);
+                    if (noticia.PalavrasChave != null)
+                    {
+                        strRetorno = dalPalavraChave.Excluir(new Entidades.PalavraChave() { Noticia = noticia });
+                        foreach (var palavraChave in noticia.PalavrasChave)
+                        {
+                            strRetorno = dalPalavraChave.Inserir(palavraChave);
+                        }
+                    }
 
                     int intResult = 0;
                     if (int.TryParse(strRetorno, out intResult))
                     {
-                        Sessao.NoticiaAtual.IdNoticia = intResult;
+                        noticia.IdNoticia = intResult;
                         Entidades.Historico historico = new Entidades.Historico();
 
-                        historico.Noticia = Sessao.NoticiaAtual;
-                        historico.Usuario = Sessao.UsuarioLogado;
+                        historico.Noticia = noticia;
+                        historico.Usuario = Singleton.UsuarioLogado;
                         historico.DataHora = DateTime.Now;
                         historico.StatusNoticia = new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Editada };
 
@@ -42,7 +54,6 @@ namespace Noticia.Negocios
                 }
                 else
                 {
-                    Sessao.NoticiaAtual = null;
                     return false;
                 }
             }
@@ -56,25 +67,33 @@ namespace Noticia.Negocios
             }
         }
 
-        public bool SubmeterNoticia()
+        public bool SubmeterNoticia(Entidades.Noticia noticia)
         {
             try
             {
-                if (Noticia.ValidarNoticia())
+                if (NegNoticia.TemTituloEConteudo(noticia))
                 {
                     //Executar update
                     string strRetorno = string.Empty;
 
-                    strRetorno = dalNoticia.Alterar(Sessao.NoticiaAtual);
+                    strRetorno = dalNoticia.Alterar(noticia);
+                    if (noticia.PalavrasChave != null)
+                    {
+                        strRetorno = dalPalavraChave.Excluir(new Entidades.PalavraChave() { Noticia = noticia });
+                        foreach (var palavraChave in noticia.PalavrasChave)
+                        {
+                            strRetorno = dalPalavraChave.Inserir(palavraChave);
+                        }
+                    }
 
                     int intResult = 0;
                     if (int.TryParse(strRetorno, out intResult))
                     {
-                        Sessao.NoticiaAtual.IdNoticia = intResult;
+                        noticia.IdNoticia = intResult;
                         Entidades.Historico historico = new Entidades.Historico();
 
-                        historico.Noticia = Sessao.NoticiaAtual;
-                        historico.Usuario = Sessao.UsuarioLogado;
+                        historico.Noticia = noticia;
+                        historico.Usuario = Singleton.UsuarioLogado;
                         historico.DataHora = DateTime.Now;
                         historico.StatusNoticia = new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Submetida };
 
@@ -85,7 +104,6 @@ namespace Noticia.Negocios
                 }
                 else
                 {
-                    Sessao.NoticiaAtual = null;
                     return false;
                 }
             }
@@ -111,13 +129,14 @@ namespace Noticia.Negocios
                     imagem.Selecionada = true;
 
                     strRetorno = dalImagem.Alterar(imagem);
+                    strRetorno = dalImagemGravacao.Excluir(imagem.ImagemGravacao);
+                    strRetorno = dalImagemGravacao.Inserir(imagem.ImagemGravacao);
 
                     int intResult = 0;
                     return (int.TryParse(strRetorno, out intResult));
                 }
                 else
                 {
-                    Sessao.NoticiaAtual = null;
                     return false;
                 }
             }

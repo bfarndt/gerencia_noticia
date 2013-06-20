@@ -59,7 +59,6 @@ namespace Noticia.AcessoDados
                     objNovoHistorico.IdHistorico = objLinha["IdHistorico"] != DBNull.Value ? Convert.ToInt32(objLinha["IdHistorico"]) : 0;
                     objNovoHistorico.Noticia = new Entidades.Noticia();
                     objNovoHistorico.Noticia.IdNoticia = objLinha["IdNoticia"] != DBNull.Value ? Convert.ToInt32(objLinha["IdNoticia"]) : 0;
-                    objNovoHistorico.Noticia = dadosNoticias.Consultar(objNovoHistorico.Noticia).First();
 
                     objNovoHistorico.Usuario = new Entidades.Usuario();
                     objNovoHistorico.Usuario.IdUsuario = objLinha["IdUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdUsuario"]) : 0;

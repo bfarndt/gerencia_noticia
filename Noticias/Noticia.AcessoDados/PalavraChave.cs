@@ -36,7 +36,6 @@ namespace Noticia.AcessoDados
                     objNovoPalavraChave.IdPalavraChave = objLinha["IdPalavraChave"] != DBNull.Value ? Convert.ToInt32(objLinha["IdPalavraChave"]) : 0;
                     objNovoPalavraChave.Noticia = new Entidades.Noticia();
                     objNovoPalavraChave.Noticia.IdNoticia = objLinha["IdNoticia"] != DBNull.Value ? Convert.ToInt32(objLinha["IdNoticia"]) : 0;
-                    objNovoPalavraChave.Noticia = new AcessoDados.Noticia().Consultar(objNovoPalavraChave.Noticia).First();
                     objNovoPalavraChave.PalavraChaveTexto = objLinha["PalavraChave"] != DBNull.Value ? Convert.ToString(objLinha["PalavraChave"]) : "";
 
                     objRetorno.Add(objNovoPalavraChave);
@@ -130,7 +129,7 @@ namespace Noticia.AcessoDados
                 if (entidade != null && entidade.IdPalavraChave > 0)
                 {
                     Dados.AdicionarParametros("@vchAcao", "DELETAR");
-                    Dados.AdicionarParametros("@intIdPalavraChave", entidade.IdPalavraChave);
+                    Dados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);
 
                     objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spPalavraChave");
                 }

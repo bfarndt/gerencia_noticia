@@ -1,7 +1,7 @@
 select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'tblPalavraChave'
 go
 
-CREATE PROCEDURE [dbo].[spPalavraChave]
+ALTER PROCEDURE [dbo].[spPalavraChave]
 	@vchAcao VARCHAR(50),
 	@intIdPalavraChave INT = NULL,
 	@intIdNoticia INT = NULL,
@@ -27,18 +27,23 @@ BEGIN
 	END
 	ELSE IF(upper(@vchAcao) = 'INSERIR')
 	BEGIN
-		INSERT INTO tblPalavraChave
-					(
-						IdNoticia,
-						PalavraChave
-					)
-					VALUES
-					(
-						@intIdNoticia,
-						@vchPalavraChave
-					)
+		IF NOT EXISTS(SELECT 1 FROM tblPalavraChave WHERE IdNoticia = @intIdNoticia AND PalavraChave = @vchPalavraChave)
+		BEGIN
+			INSERT INTO tblPalavraChave
+						(
+							IdNoticia,
+							PalavraChave
+						)
+						VALUES
+						(
+							@intIdNoticia,
+							@vchPalavraChave
+						)
+						
+			SET @intIdPalavraChave = @@IDENTITY
+		END
 					
-		SELECT @@IDENTITY AS Retorno
+		SELECT @intIdNoticia AS Retorno
 	END
 	ELSE IF(upper(@vchAcao) = 'ALTERAR')
 	BEGIN
@@ -56,7 +61,7 @@ BEGIN
 		DELETE FROM 
 			tblPalavraChave 
 		WHERE
-			IdPalavraChave = @intIdPalavraChave
+			IdNoticia = @intIdNoticia
 			
 		SELECT @intIdPalavraChave AS Retorno
 	END

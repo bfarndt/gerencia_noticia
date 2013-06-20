@@ -35,7 +35,6 @@ namespace Noticia.AcessoDados
                     {
                         IdUsuario = objLinha["IdUsuario"] != DBNull.Value ? Convert.ToInt32(objLinha["IdUsuario"]) : 0
                     };
-                    objNovoContratacao.Usuario = new AcessoDados.Usuario().Consultar(objNovoContratacao.Usuario).First();
                     objNovoContratacao.DataHora = objLinha["DataHora"] != DBNull.Value ? Convert.ToDateTime(objLinha["DataHora"]) : (DateTime?)null;
 
                     objRetorno.Add(objNovoContratacao);

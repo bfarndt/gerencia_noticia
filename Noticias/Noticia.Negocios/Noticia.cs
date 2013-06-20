@@ -13,9 +13,9 @@ namespace Noticia.Negocios
         AcessoDados.GrupoTrabalhoUsuario dalGrupoTrabalhoUsuario = new AcessoDados.GrupoTrabalhoUsuario();
         Negocios.Usuario NegUsuario = new Usuario();
 
-        public static bool ValidarNoticia()
+        public bool TemTituloEConteudo(Entidades.Noticia noticia)
         {
-            return Sessao.NoticiaAtual != null && !((string.IsNullOrWhiteSpace(Sessao.NoticiaAtual.Titulo) || string.IsNullOrWhiteSpace(Sessao.NoticiaAtual.Conteudo)));
+            return noticia != null && !((string.IsNullOrWhiteSpace(noticia.Titulo) || string.IsNullOrWhiteSpace(noticia.Conteudo)));
         }
 
         public List<Entidades.Noticia> NoticiasParaEdicao()
@@ -153,7 +153,7 @@ namespace Noticia.Negocios
                     List<Entidades.Noticia> noticiasDoGrupo = new List<Entidades.Noticia>();
 
                     Entidades.GrupoTrabalhoUsuario consultaPorUsuario = new Entidades.GrupoTrabalhoUsuario();
-                    consultaPorUsuario.Usuario = Sessao.UsuarioLogado;
+                    consultaPorUsuario.Usuario = Singleton.UsuarioLogado;
 
                     Entidades.NoticiaGrupoTrabalho consultaPorGrupo;
                     foreach (var grupo in dalGrupoTrabalhoUsuario.Consultar(consultaPorUsuario))

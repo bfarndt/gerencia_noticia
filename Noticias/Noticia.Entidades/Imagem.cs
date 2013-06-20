@@ -11,5 +11,6 @@ namespace Noticia.Entidades
         public int? IdImagem { get; set; }
         public string Legenda { get; set; }
         public bool Selecionada { get; set; }
+        public ImagemGravacao ImagemGravacao { get; set; }
     }
 }

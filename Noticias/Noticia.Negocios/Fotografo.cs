@@ -12,6 +12,7 @@ namespace Noticia.Negocios
         AcessoDados.ImagemArquivo dalImagemArquivo = new AcessoDados.ImagemArquivo();
         AcessoDados.NoticiaImagem dalNoticiaImagem = new AcessoDados.NoticiaImagem();
         AcessoDados.Historico dalHistorico = new AcessoDados.Historico();
+        
 
         Negocios.Imagem NegImagem = new Imagem();
 
@@ -42,7 +43,7 @@ namespace Noticia.Negocios
 
                         return int.TryParse(strRetorno, out intResult);
                     }
-                    else 
+                    else
                     {
                         return false;
                     }
@@ -62,7 +63,7 @@ namespace Noticia.Negocios
             }
         }
 
-        public bool AssociarImagem( Entidades.Noticia noticia,Entidades.Imagem imagem)
+        public bool AssociarImagem(Entidades.Noticia noticia, Entidades.Imagem imagem)
         {
             try
             {
@@ -74,13 +75,15 @@ namespace Noticia.Negocios
                 noticiaImagem.Imagem = imagem;
 
                 strRetorno = dalNoticiaImagem.Inserir(noticiaImagem);
+                
+
                 int intResult = 0;
 
                 if (int.TryParse(strRetorno, out intResult))
                 {
                     Entidades.Historico historico = new Entidades.Historico();
                     historico.Noticia = noticia;
-                    historico.Usuario = Sessao.UsuarioLogado;
+                    historico.Usuario = Singleton.UsuarioLogado;
                     historico.DataHora = DateTime.Now;
                     historico.StatusNoticia = new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.ImagensAssociadas };
 

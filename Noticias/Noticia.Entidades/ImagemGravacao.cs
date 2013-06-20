@@ -8,6 +8,7 @@ namespace Noticia.Entidades
     [Serializable]
     public class ImagemGravacao
     {
+
         public Imagem Imagem { get; set; }
         public DateTime? DataHoraGravacao { get; set; }
         public String LocalGravacao { get; set; }

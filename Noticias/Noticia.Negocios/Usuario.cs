@@ -16,32 +16,27 @@ namespace Noticia.Negocios
 
         }
 
-        public void EfetuarAcesso()
-        {
-            CarregarPermissoes();
-        }
-
-        public bool ValidarUsuario()
+        public bool Logar()
         {
             try
             {
-                if (Sessao.UsuarioLogado != null)
+                if (Singleton.UsuarioLogado != null)
                 {
-                    List<Entidades.Usuario> usuarios = dalUsuario.Consultar(Sessao.UsuarioLogado);
+                    List<Entidades.Usuario> usuarios = dalUsuario.Consultar(Singleton.UsuarioLogado);
 
                     var found = (from f in usuarios
-                                 where f.Senha == Sessao.UsuarioLogado.Senha
+                                 where f.Senha == Singleton.UsuarioLogado.Senha
                                  select f);
 
                     if (found.Count() > 0)
                     {
-                        Sessao.UsuarioLogado = found.First();
-
-                        Sessao.TempoSessao.Start();
-                        Sessao.comSessao = true;
+                        Singleton.UsuarioLogado = found.First();
+                        CarregarPermissoes();
+                        Singleton.TempoSessao.Start();
+                        Singleton.comSessao = true;
                     }
 
-                    return Sessao.comSessao;
+                    return Singleton.comSessao;
                 }
 
                 else
@@ -64,12 +59,7 @@ namespace Noticia.Negocios
 
             try
             {
-                if (ValidarUsuario())
-                {
-                    Sessao.UsuarioPermissoes = dalUsuarioPermissao.Consultar(new Entidades.UsuarioPermissao() { Usuario = Sessao.UsuarioLogado });
-                }
-                else
-                    Sessao.UsuarioPermissoes = null;
+                Singleton.UsuarioPermissoes = dalUsuarioPermissao.Consultar(new Entidades.UsuarioPermissao() { Usuario = Singleton.UsuarioLogado });
             }
             catch (Exception ex)
             {
@@ -84,9 +74,9 @@ namespace Noticia.Negocios
 
         public bool TenhoPermissao(Entidades.PermissaoEnum permissao)
         {
-            if (Sessao.UsuarioPermissoes != null)
+            if (Singleton.UsuarioPermissoes != null)
             {
-                int Count = (from f in Sessao.UsuarioPermissoes
+                int Count = (from f in Singleton.UsuarioPermissoes
                              where f.Permissao.IdPermissao == (int)permissao
                              select f).Count();
 
@@ -95,6 +85,27 @@ namespace Noticia.Negocios
             else
             {
                 return false;
+            }
+        }
+
+        public bool TemNomeELogin(Entidades.Usuario usuario)
+        {
+            return !((string.IsNullOrWhiteSpace(usuario.Nome) || (string.IsNullOrWhiteSpace(usuario.Login))));
+        }
+
+        public bool TemNomeExistente(Entidades.Usuario usuario)
+        {
+            var usuariosAproximados = dalUsuario.Consultar(usuario);
+            if (usuariosAproximados.Count > 0)
+            {
+                int found = (from f in usuariosAproximados
+                             where f.Nome == usuario.Nome
+                             select f).Count();
+                return (found > 0);
+            }
+            else
+            {
+                return true;
             }
         }
     }

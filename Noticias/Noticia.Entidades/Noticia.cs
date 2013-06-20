@@ -11,5 +11,7 @@ namespace Noticia.Entidades
         public int? IdNoticia { get; set; }
         public string Titulo { get; set; }
         public string Conteudo { get; set; }
+        public List<PalavraChave> PalavrasChave { get; set; }
+        public StatusNoticia StatusNoticia { get; set; }
     }
 }

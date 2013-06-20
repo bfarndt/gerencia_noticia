@@ -17,12 +17,14 @@ namespace Noticia.Testes
         {
             NegReporter = new Negocios.Reporter();
             NegImagem = new Negocios.Imagem();
-            Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { IdUsuario = 1, Login = "Bento", Senha = "senha" };
+            Negocios.Singleton.UsuarioLogado = new Entidades.Usuario() { IdUsuario = 1, Login = "Bento", Senha = "senha" };
         }
 
         [TestCleanup]
         public void FinalizarTestes()
         {
+            this.NegReporter = null;
+            this.NegImagem = null;
             Console.WriteLine("Finalizando testes");
         }
 
@@ -30,8 +32,8 @@ namespace Noticia.Testes
         [TestMethod]
         public void ComAcesso_Para_SelecionarImagens()
         {
-            Negocios.Sessao.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
-            Negocios.Sessao.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Selecionar_Imagens } });
+            Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
+            Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Selecionar_Imagens } });
 
             var retorno = NegReporter.TenhoPermissao(Entidades.PermissaoEnum.Selecionar_Imagens);
 
@@ -42,8 +44,8 @@ namespace Noticia.Testes
         [TestMethod]
         public void SemAcesso_Para_SelecionarImagens()
         {
-            Negocios.Sessao.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
-            Negocios.Sessao.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Efetuar_Acesso } });
+            Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
+            Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Efetuar_Acesso } });
 
             var retorno = NegReporter.TenhoPermissao(Entidades.PermissaoEnum.Selecionar_Imagens);
 
@@ -73,8 +75,8 @@ namespace Noticia.Testes
         [TestMethod]
         public void Visualizar_Imagem_Associadas()
         {
-            Negocios.Sessao.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
-            Negocios.Sessao.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Selecionar_Imagens } });
+            Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
+            Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Selecionar_Imagens } });
 
             var retorno = NegImagem.ImagensDeNoticiasAssociadas();
             Assert.IsNotNull(retorno);
@@ -87,6 +89,8 @@ namespace Noticia.Testes
             Entidades.Imagem imagem = new Entidades.Imagem();
             imagem.IdImagem = 2;
             imagem.Legenda = "São Paulo";
+            imagem.ImagemGravacao = new Entidades.ImagemGravacao() { Imagem = imagem, LocalGravacao = "Ribeirão Preto", DataHoraGravacao = DateTime.Now };
+
 
             var retorno = NegReporter.SelecionarImagem(imagem);
 

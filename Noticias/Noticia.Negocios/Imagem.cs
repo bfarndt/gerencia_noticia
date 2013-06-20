@@ -65,7 +65,7 @@ namespace Noticia.Negocios
                     List<Entidades.Imagem> imagensAssociadas = new List<Entidades.Imagem>();
 
                     Entidades.GrupoTrabalhoUsuario consultaPorUsuario = new Entidades.GrupoTrabalhoUsuario();
-                    consultaPorUsuario.Usuario = Sessao.UsuarioLogado;
+                    consultaPorUsuario.Usuario = Singleton.UsuarioLogado;
 
                     Entidades.NoticiaGrupoTrabalho consultaPorGrupo;
                     Entidades.NoticiaImagem consultaPorNoticia;

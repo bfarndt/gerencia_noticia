@@ -37,6 +37,36 @@ namespace Noticia.AcessoDados
                     objNovaNoticia.IdNoticia = objLinha["IdNoticia"] != DBNull.Value ? Convert.ToInt32(objLinha["IdNoticia"]) : 0;
                     objNovaNoticia.Titulo = objLinha["Titulo"] != DBNull.Value ? Convert.ToString(objLinha["Titulo"]) : null;
                     objNovaNoticia.Conteudo = objLinha["Conteudo"] != DBNull.Value ? Convert.ToString(objLinha["Conteudo"]) : null;
+                    objNovaNoticia.PalavrasChave = new AcessoDados.PalavraChave().Consultar(new Entidades.PalavraChave()
+                    {
+                        IdPalavraChave = null,
+                        Noticia = objNovaNoticia,
+                        PalavraChaveTexto = null
+                    });
+
+                    List<Entidades.StatusNoticia> statusConsulta = new List<Entidades.StatusNoticia>();
+
+                    statusConsulta.Add(new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Aprovada });
+                    statusConsulta.Add(new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Criada });
+                    statusConsulta.Add(new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Editada });
+                    statusConsulta.Add(new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.GrupoVinculado });
+                    statusConsulta.Add(new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.ImagensAssociadas });
+                    statusConsulta.Add(new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Submetida });
+
+                    List<Entidades.Historico> historicos = new AcessoDados.Historico().Consultar(new Entidades.Historico()
+                    {
+                        Noticia = objNovaNoticia,
+                        Usuario = new Entidades.Usuario() { IdUsuario = null }
+                    }, statusConsulta);
+
+                    if (historicos.Count > 0)
+                    {
+                        var statusNoticia = (from f in historicos
+                                             select f).OrderByDescending(p => p.DataHora).First().StatusNoticia;
+
+                        objNovaNoticia.StatusNoticia = statusNoticia;
+                    }
+
 
                     objRetorno.Add(objNovaNoticia);
                 }

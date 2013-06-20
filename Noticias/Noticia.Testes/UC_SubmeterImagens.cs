@@ -23,6 +23,8 @@ namespace Noticia.Testes
         [TestCleanup]
         public void FinalizarTestes()
         {
+            this.NegImagem = null;
+            this.NegFotografo = null;
             Console.WriteLine("Finalizando testes");
         }
 
@@ -30,8 +32,8 @@ namespace Noticia.Testes
         [TestMethod]
         public void ComAcesso_Para_SubmeterImagens()
         {
-            Negocios.Sessao.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
-            Negocios.Sessao.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Submeter_Imagens } });
+            Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
+            Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Submeter_Imagens } });
 
             var retorno = NegFotografo.TenhoPermissao(Entidades.PermissaoEnum.Submeter_Imagens);
 
@@ -42,8 +44,8 @@ namespace Noticia.Testes
         [TestMethod]
         public void SemAcesso_Para_SubmeterImagens()
         {
-            Negocios.Sessao.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
-            Negocios.Sessao.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Efetuar_Acesso } });
+            Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
+            Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Efetuar_Acesso } });
 
             var retorno = NegFotografo.TenhoPermissao(Entidades.PermissaoEnum.Submeter_Imagens);
 

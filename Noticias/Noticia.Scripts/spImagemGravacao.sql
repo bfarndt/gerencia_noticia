@@ -1,7 +1,7 @@
 select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'tblImagemGravacao'
 go
 
-CREATE PROCEDURE [dbo].[spImagemGravacao]
+ALTER PROCEDURE [dbo].[spImagemGravacao]
 	@vchAcao VARCHAR(50),
 	@intIdImagem INT = NULL,
 	@datDataHoraGravacao DATETIME = NULL,
@@ -20,26 +20,39 @@ BEGIN
 			tblImagemGravacao tblImg
 		WHERE
 		(
-			((tblImg.IdImagem = @intIdImagem) OR (@intIdImagem IS NULL)) AND
-			((tblImg.LocalGravacao LIKE '%' + @vchLocalGravacao + '%') OR (@vchLocalGravacao IS NULL))
+			((tblImg.IdImagem = @intIdImagem) OR (@intIdImagem IS NULL))
 		)
 	END
 	ELSE IF(upper(@vchAcao) = 'INSERIR')
 	BEGIN
-		INSERT INTO tblImagemGravacao
-					(
-						IdImagem,
-						DataHoraGravacao,
-						LocalGravacao
-					)
-					VALUES
-					(
-						@intIdImagem,
-						@datDataHoraGravacao,
-						@vchLocalGravacao
-					)
+	
+		IF NOT EXISTS(SELECT 1 FROM tblImagemGravacao WHERE IdImagem = @intIdImagem)
+		BEGIN
+			INSERT INTO tblImagemGravacao
+						(
+							IdImagem,
+							DataHoraGravacao,
+							LocalGravacao
+						)
+						VALUES
+						(
+							@intIdImagem,
+							@datDataHoraGravacao,
+							@vchLocalGravacao
+						)
+		END
+		ELSE
+		BEGIN
+			UPDATE
+				tblImagemGravacao
+			SET
+				DataHoraGravacao = @datDataHoraGravacao,
+				LocalGravacao = @vchLocalGravacao
+			WHERE
+				IdImagem = @intIdImagem
+		END
 					
-		SELECT @@IDENTITY AS Retorno
+		SELECT @intIdImagem AS Retorno
 	END
 	ELSE IF(upper(@vchAcao) = 'ALTERAR')
 	BEGIN

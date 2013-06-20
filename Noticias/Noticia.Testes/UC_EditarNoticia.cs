@@ -16,11 +16,10 @@ namespace Noticia.Testes
         [TestInitialize]
         public void IniciarTestes()
         {
-            Negocios.Sessao.IniciarSessao();
-            Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { IdUsuario = 1, Nome = "Bento", Senha = "senha" };
-            Negocios.Sessao.NoticiaAtual = new Entidades.Noticia();
+            Negocios.Singleton.IniciarSessao();
+            Negocios.Singleton.UsuarioLogado = new Entidades.Usuario() { IdUsuario = 1, Nome = "Bento", Senha = "senha" };
             this.NegUsuario = new Negocios.Usuario();
-            this.NegUsuario.EfetuarAcesso();
+            this.NegUsuario.CarregarPermissoes();
             this.NegNoticia = new Negocios.Noticia();
             this.NegReporter = new Negocios.Reporter();
         }
@@ -37,8 +36,8 @@ namespace Noticia.Testes
         [TestMethod]
         public void ComAcesso_Noticias_Para_Edicao()
         {
-            Negocios.Sessao.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
-            Negocios.Sessao.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Editar_Noticia } });
+            Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
+            Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Editar_Noticia } });
 
             var retorno = NegNoticia.NoticiasParaEdicao();
 
@@ -49,8 +48,8 @@ namespace Noticia.Testes
         [TestMethod]
         public void SemAcesso_Noticias_Para_Edicao()
         {
-            Negocios.Sessao.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
-            Negocios.Sessao.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Efetuar_Acesso } });
+            Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
+            Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Efetuar_Acesso } });
 
             var retorno = NegNoticia.NoticiasParaEdicao();
 
@@ -61,10 +60,14 @@ namespace Noticia.Testes
         [TestMethod]
         public void Submeter_Edicao_Complemente()
         {
-            Negocios.Sessao.NoticiaAtual.IdNoticia = 1;
-            Negocios.Sessao.NoticiaAtual.Titulo = "São Paulo";
-            Negocios.Sessao.NoticiaAtual.Conteudo = "Melhor Time do Brasil";
-            var retorno = NegReporter.SubmeterEdicao();
+            Entidades.Noticia noticia = new Entidades.Noticia();
+            noticia.IdNoticia = 1;
+            noticia.Titulo = "São Paulo";
+            noticia.Conteudo = "Melhor Time do Brasil";
+            noticia.PalavrasChave = new List<Entidades.PalavraChave>();
+            noticia.PalavrasChave.Add(new Entidades.PalavraChave() { Noticia = noticia, PalavraChaveTexto = "Qualquer" });
+            noticia.PalavrasChave.Add(new Entidades.PalavraChave() { Noticia = noticia, PalavraChaveTexto = "QualquerOUtra" });
+            var retorno = NegReporter.SubmeterEdicao(noticia);
             Assert.AreEqual(true, retorno);
         }
 
@@ -72,9 +75,10 @@ namespace Noticia.Testes
         [TestMethod]
         public void Submeter_Edicao_incomplemente()
         {
-            Negocios.Sessao.NoticiaAtual.Titulo = "";
-            Negocios.Sessao.NoticiaAtual.Conteudo = "Melhor Time do Brasil";
-            var retorno = NegReporter.SubmeterEdicao();
+            Entidades.Noticia noticia = new Entidades.Noticia();
+            noticia.Titulo = "";
+            noticia.Conteudo = "Melhor Time do Brasil";
+            var retorno = NegReporter.SubmeterEdicao(noticia);
             Assert.AreEqual(false, retorno);
         }
     }

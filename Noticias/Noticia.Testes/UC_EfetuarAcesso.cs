@@ -15,7 +15,7 @@ namespace Noticia.Testes
         [TestInitialize]
         public void IniciarTestes()
         {
-            Negocios.Sessao.IniciarSessao();
+            Negocios.Singleton.IniciarSessao();
             this.NegUsuario = new Negocios.Usuario();
         }
 
@@ -30,8 +30,8 @@ namespace Noticia.Testes
         [TestMethod]
         public void Login_Senha_Existente()
         {
-            Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { Login = "Bento", Senha = "senha" };
-            var retorno = NegUsuario.ValidarUsuario();
+            Negocios.Singleton.UsuarioLogado = new Entidades.Usuario() { Login = "Bento", Senha = "senha" };
+            var retorno = NegUsuario.Logar();
             Assert.AreEqual(true, retorno);
         }
 
@@ -39,8 +39,8 @@ namespace Noticia.Testes
         [TestMethod]
         public void Login_Senha_Inexistente()
         {
-            Negocios.Sessao.UsuarioLogado = null;
-            var retorno = NegUsuario.ValidarUsuario();
+            Negocios.Singleton.UsuarioLogado = null;
+            var retorno = NegUsuario.Logar();
             Assert.AreEqual(false, retorno);
         }
 
@@ -48,30 +48,29 @@ namespace Noticia.Testes
         [TestMethod]
         public void Retorno_Opcoes_Logado()
         {
-            Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { IdUsuario = 1, Login = "Bento", Senha = "senha" };
-            NegUsuario.CarregarPermissoes();
-            var retorno = Negocios.Sessao.UsuarioPermissoes;
-            Assert.IsNotNull(retorno, "Com permissões");
+            Negocios.Singleton.UsuarioLogado = new Entidades.Usuario() { IdUsuario = 1, Login = "Bento", Senha = "senha" };
+            var retorno = NegUsuario.Logar(); ;
+            Assert.AreEqual(true, retorno);
         }
 
         //Clicar nas opções sem ter tido lgado no sistema: Apresentar tela de login;
         [TestMethod]
         public void Retorno_Nao_Logado()
         {
-            Negocios.Sessao.UsuarioLogado = null;
-            NegUsuario.CarregarPermissoes();
-            var retorno = Negocios.Sessao.UsuarioPermissoes;
-            Assert.IsNull(retorno, "Sem permissões");
+            Negocios.Singleton.UsuarioLogado = null;
+
+            var retorno = NegUsuario.Logar(); ;
+            Assert.AreEqual(false, retorno);
         }
 
         //Acessar constantemente o sistema: Sistema não expirará sessão;
         [TestMethod]
         public void ComAcesso_CincoMinutos()
         {
-            Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { Login = "Bento", Senha = "senha" };
-            NegUsuario.ValidarUsuario();
+            Negocios.Singleton.UsuarioLogado = new Entidades.Usuario() { Login = "Bento", Senha = "senha" };
+            NegUsuario.Logar();
             Thread.Sleep(1); //Tempo de espera
-            var retorno = Negocios.Sessao.comSessao;
+            var retorno = Negocios.Singleton.comSessao;
 
             Assert.AreEqual(true, retorno);
         }
@@ -80,10 +79,10 @@ namespace Noticia.Testes
         [TestMethod]
         public void SemAcesso_CincoMinutos()
         {
-            Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { Login = "Bento", Senha = "senhas" };
-            NegUsuario.ValidarUsuario();
+            Negocios.Singleton.UsuarioLogado = new Entidades.Usuario() { Login = "Bento", Senha = "senhas" };
+            NegUsuario.Logar();
             Thread.Sleep(2000);//Tempo de espera
-            var retorno = Negocios.Sessao.comSessao;
+            var retorno = Negocios.Singleton.comSessao;
 
             Assert.AreEqual(false, retorno);
         }

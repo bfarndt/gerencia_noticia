@@ -16,8 +16,8 @@ namespace Noticia.Testes
         [TestInitialize]
         public void IniciarTestes()
         {
-            Negocios.Sessao.IniciarSessao();
-            Negocios.Sessao.UsuarioLogado = new Entidades.Usuario() { IdUsuario = 1, Nome = "Bento" };
+            Negocios.Singleton.IniciarSessao();
+            Negocios.Singleton.UsuarioLogado = new Entidades.Usuario() { IdUsuario = 1, Nome = "Bento" };
             NegNoticia = new Negocios.Noticia();
             NegUsuario = new Negocios.Usuario();
             NegDiretor = new Negocios.Diretor();
@@ -28,6 +28,7 @@ namespace Noticia.Testes
         {
             NegNoticia = null;
             NegUsuario = null;
+            NegDiretor = null;
             Console.WriteLine("Finalizando testes");
         }
 
@@ -35,8 +36,8 @@ namespace Noticia.Testes
         [TestMethod]
         public void Permite_Acesso_CriarNoticia()
         {
-            Negocios.Sessao.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
-            Negocios.Sessao.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Criar_Noticia } });
+            Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
+            Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Criar_Noticia } });
             var retorno = NegUsuario.TenhoPermissao(Entidades.PermissaoEnum.Criar_Noticia);
             Assert.AreEqual(true, retorno);
         }
@@ -45,8 +46,8 @@ namespace Noticia.Testes
         [TestMethod]
         public void NaoPermite_Acesso_CriarNoticia()
         {
-            Negocios.Sessao.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
-            Negocios.Sessao.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Efetuar_Acesso } });
+            Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
+            Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Efetuar_Acesso } });
             var retorno = NegUsuario.TenhoPermissao(Entidades.PermissaoEnum.Criar_Noticia);
             Assert.AreEqual(false, retorno);
         }
@@ -55,8 +56,8 @@ namespace Noticia.Testes
         [TestMethod]
         public void Validar_Inclusao_Noticia()
         {
-            Negocios.Sessao.NoticiaAtual = new Entidades.Noticia() { Titulo = "São Paulo", Conteudo = "Melhor time do Brasil" };
-            var retorno = Negocios.Noticia.ValidarNoticia();
+            Entidades.Noticia noticia = new Entidades.Noticia() { Titulo = "São Paulo", Conteudo = "Melhor time do Brasil" };
+            var retorno = NegNoticia.TemTituloEConteudo(noticia);
             Assert.AreEqual(true, retorno);
         }
 
@@ -64,8 +65,8 @@ namespace Noticia.Testes
         [TestMethod]
         public void NaoValidar_Inclusao_Noticia()
         {
-            Negocios.Sessao.NoticiaAtual = new Entidades.Noticia() { Titulo = "", Conteudo = "Melhor time do Brasil" };
-            var retorno = Negocios.Noticia.ValidarNoticia();
+            Entidades.Noticia noticia = new Entidades.Noticia() { Titulo = "", Conteudo = "Melhor time do Brasil" };
+            var retorno = NegNoticia.TemTituloEConteudo(noticia);
             Assert.AreEqual(false, retorno);
         }
 
@@ -73,8 +74,9 @@ namespace Noticia.Testes
         [TestMethod]
         public void Finalizar_Cadastro_Noticia()
         {
-            Negocios.Sessao.NoticiaAtual = new Entidades.Noticia() { Titulo = "Microsoft Vs Apple", Conteudo = "Popularidade, qualidade e custo" };
-            var retorno = NegDiretor.CriarNoticia();
+            Entidades.Noticia noticia = new Entidades.Noticia();
+            noticia = new Entidades.Noticia() { Titulo = "Microsoft Vs Apple", Conteudo = "Popularidade, qualidade e custo" };
+            var retorno = NegDiretor.CriarNoticia(noticia);
             Assert.AreEqual(true, retorno);
         }
 
@@ -82,8 +84,8 @@ namespace Noticia.Testes
         [TestMethod]
         public void Falha_Cadastro_Noticia()
         {
-            Negocios.Sessao.NoticiaAtual = null;
-            var retorno = NegDiretor.CriarNoticia();
+            Entidades.Noticia noticia = new Entidades.Noticia();
+            var retorno = NegDiretor.CriarNoticia(noticia);
             Assert.AreEqual(false, retorno);
         }
 
@@ -91,10 +93,10 @@ namespace Noticia.Testes
         [TestMethod]
         public void AssociarGrupoTrabalho()
         {
-            Negocios.Sessao.NoticiaAtual = new Entidades.Noticia() { Titulo = "Microsoft Vs Apple", Conteudo = "Popularidade, qualidade e custo" };
-            NegDiretor.CriarNoticia();
+            Entidades.Noticia noticia = new Entidades.Noticia() { Titulo = "Microsoft Vs Apple", Conteudo = "Popularidade, qualidade e custo" };
+            NegDiretor.CriarNoticia(noticia);
             Entidades.GrupoTrabalho grupoTrabalho = new Entidades.GrupoTrabalho() { IdGrupoTrabalho = 1, Descricao = "Grupo 1" };
-            var retorno = NegDiretor.AssociarGrupoTrabalho(grupoTrabalho);
+            var retorno = NegDiretor.AssociarGrupoTrabalhoParaNoticia(grupoTrabalho, noticia);
 
             Assert.AreEqual(true, retorno);
         }
