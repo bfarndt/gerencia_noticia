@@ -8,7 +8,7 @@ namespace Noticia.Entidades
     [Serializable]
     public class TipoUsuario
     {
-        public int IdTipoUsuario { get; set; }
+        public int? IdTipoUsuario { get; set; }
         public string Descricao { get; set; }
     }
 

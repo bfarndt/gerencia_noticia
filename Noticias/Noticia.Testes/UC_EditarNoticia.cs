@@ -67,7 +67,7 @@ namespace Noticia.Testes
             noticia.PalavrasChave = new List<Entidades.PalavraChave>();
             noticia.PalavrasChave.Add(new Entidades.PalavraChave() { Noticia = noticia, PalavraChaveTexto = "Qualquer" });
             noticia.PalavrasChave.Add(new Entidades.PalavraChave() { Noticia = noticia, PalavraChaveTexto = "QualquerOUtra" });
-            var retorno = NegReporter.SubmeterEdicao(noticia);
+            var retorno = NegReporter.EditarNoticia(noticia);
             Assert.AreEqual(true, retorno);
         }
 
@@ -78,7 +78,7 @@ namespace Noticia.Testes
             Entidades.Noticia noticia = new Entidades.Noticia();
             noticia.Titulo = "";
             noticia.Conteudo = "Melhor Time do Brasil";
-            var retorno = NegReporter.SubmeterEdicao(noticia);
+            var retorno = NegReporter.EditarNoticia(noticia);
             Assert.AreEqual(false, retorno);
         }
     }

@@ -63,7 +63,10 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Account\Login.aspx" />
-    <Content Include="frmNoticiaListagem.aspx" />
+    <Content Include="frmCriarNoticia.aspx" />
+    <Content Include="frmListarUsuario.aspx" />
+    <Content Include="frmManterUsuario.aspx" />
+    <Content Include="frmVincularGrupo.aspx" />
     <Content Include="Imagem\add.png" />
     <Content Include="Imagem\barra_cores.jpg" />
     <Content Include="Imagem\barra_verde.png" />
@@ -303,12 +306,33 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="frmNoticiaListagem.aspx.cs">
-      <DependentUpon>frmNoticiaListagem.aspx</DependentUpon>
+    <Compile Include="frmCriarNoticia.aspx.cs">
+      <DependentUpon>frmCriarNoticia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="frmNoticiaListagem.aspx.designer.cs">
-      <DependentUpon>frmNoticiaListagem.aspx</DependentUpon>
+    <Compile Include="frmCriarNoticia.aspx.designer.cs">
+      <DependentUpon>frmCriarNoticia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarUsuario.aspx.cs">
+      <DependentUpon>frmListarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmListarUsuario.aspx.designer.cs">
+      <DependentUpon>frmListarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmManterUsuario.aspx.cs">
+      <DependentUpon>frmManterUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmManterUsuario.aspx.designer.cs">
+      <DependentUpon>frmManterUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmVincularGrupo.aspx.cs">
+      <DependentUpon>frmVincularGrupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmVincularGrupo.aspx.designer.cs">
+      <DependentUpon>frmVincularGrupo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -350,6 +374,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagem\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\testes.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

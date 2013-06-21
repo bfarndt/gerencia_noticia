@@ -1,0 +1,12 @@
+﻿<asp:TextBox CssClass="TextBox" runat="server"></asp:TextBox>
+<asp:FileUpload runat="server" CssClass="TextBox"  /> 
+<asp:CheckBox CssClass="CheckBox" runat="server"></asp:CheckBox>
+<asp:DropDownList CssClass="DropDownList" runat="server"></asp:DropDownList>
+<asp:GridView CssClass="GridView" HeaderStyle-HorizontalAlign="Left" runat="server" BorderWidth="0" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False">
+        <RowStyle CssClass="grid-RowStyle" />
+        <AlternatingRowStyle CssClass="alt" />
+        <EditRowStyle CssClass="EditRowStyle" />
+        <SelectedRowStyle CssClass="SelectedRowStyle" />
+        <FooterStyle CssClass="FooterStyle" />
+</asp:GridView>
+<asp:ValidationSummary CssClass="ValidationSummary" DisplayMode="BulletList" runat="server" />

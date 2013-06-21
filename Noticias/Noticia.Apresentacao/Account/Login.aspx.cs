@@ -26,7 +26,7 @@ namespace Noticia.Apresentacao.Account
                 if (sucesso)
                 {
                     Session["NomeUsuario"] = Negocios.Singleton.UsuarioLogado.Nome;
-                    Response.Redirect("~/frmNoticiaListagem.aspx");
+                    Response.Redirect("~/Default.aspx");
                 }
                 else
                 {

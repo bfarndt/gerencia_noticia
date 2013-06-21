@@ -17,11 +17,11 @@ namespace Noticia.Negocios
 
         Negocios.Imagem NegImagem = new Imagem();
 
-        public bool SubmeterEdicao(Entidades.Noticia noticia)
+        public bool EditarNoticia(Entidades.Noticia noticia)
         {
             try
             {
-                if (NegNoticia.TemTituloEConteudo(noticia))
+                if (NegNoticia.TemTitulo(noticia) && NegNoticia.TemConteudo(noticia))
                 {
                     //Executar update
                     string strRetorno = string.Empty;
@@ -71,7 +71,7 @@ namespace Noticia.Negocios
         {
             try
             {
-                if (NegNoticia.TemTituloEConteudo(noticia))
+                if (NegNoticia.TemTitulo(noticia) && NegNoticia.TemConteudo(noticia))
                 {
                     //Executar update
                     string strRetorno = string.Empty;

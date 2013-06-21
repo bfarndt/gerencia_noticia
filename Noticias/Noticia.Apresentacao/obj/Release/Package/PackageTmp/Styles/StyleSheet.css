@@ -1,0 +1,199 @@
+﻿body {margin:0px; padding:0px; font-family:verdana,helvetica,sans-serif; color:#545454 ; font-size:8pt; }
+a{font-family:verdana,helvetica,sans-serif; color:#545454; font-size:8pt; text-decoration:none}
+a:hover{color:#777777; text-decoration:underline}
+h3{font-size:8pt}
+h4{font-size:8pt}
+#principal{width:995px; margin:auto}
+#topo-barras{ background:url('../../Imagem/topo_repeat.png') top right repeat-x; height:114px; float:left;  width:100%;  background-position:0px 0px;margin-top:5px; margin-bottom:10px}
+#topo{}
+#topo .topo-interno{background:url('../../Imagem/LogotipoSOL.png') top  left no-repeat ; background-position:0px 0px; height:114px; width:100%;}
+#topo .usp{float:right;}
+#topo .usp .link{height:35px; padding-top:5px; text-align:right}
+#topo .titulo{float:right; font-size:12pt; color:#FFF; font-weight:bold; padding:65px 5px 0px 0px;}
+#conteudo{}
+#conteudo .barra-esquerda{width:100px; float:left; border-right:1px solid #F0f0f0}
+#conteudo .corpo{width:885px;}
+
+fieldset{border:1px solid #f0f0f0; padding:5px}
+fieldset legend{text-transform:capitalize; padding-left:5px; padding-right:5px; color:#545454}
+
+/* Estrutura principal */
+.contentPage{background-color:#ffffff;height:553px; border:1px solid #f1f1f1; padding:5px 5px 10px 5px;}
+.contentNav{background-color:#ffffff;padding-bottom:10px;width:180px; border:1px solid #f1f1f1}
+.contentFooter{text-align:center;padding-top:5px;}
+.contentFinal{background-color:#ffffff;height:15px; border:1px solid #f1f1f1; padding:5px 5px 10px 5px;}
+.contentTop{height:50px}
+.contentTop .subTitulo{float:left; font-size:14pt; font-weight:normal;color:#545454}
+.TituloMenu{background-color:#CCCCCC; color:#FFF; font-size:8pt; font-weight:bold; padding:3px; margin-bottom:2px; margin-top:2px; width:100% }
+.ItemMenu{padding:3px;}
+.ItemMenu a{font-size:8pt}
+.Subtitulo{background:url('../Imagem/pageTitleBKGD.gif') top repeat-x;color:#333333;font-size:12pt;text-align:left;padding-top:40px}
+.TituloPagina{margin:0px 0px 4px; color:#999; font-size:13pt; font-weight:normal; text-align:left;}
+
+/* Controles */
+.TextBox, .TextBoxValor{border:1px solid #7f9db9;font-size:8pt;font-family: Tahoma;padding:1px 3px 1px 3px;}
+.CheckBox{font-size:8pt;font-family: Tahoma;padding:1px 0;}
+.DropDownList{border:1px solid #7f9db9;font-size:8pt;font-family: Tahoma;}
+.ValidationSummary{font-size:8pt;padding:5px; color:Red; margin:0px;border:1px solid #f1f1f1;background:#fcf8de url('../../imagem/ico_alert.gif') right center no-repeat;}
+
+/* Grid */
+.GridView, .DataList{font-size:8pt; border:1px solid black  }
+
+.GridView { width: 100%; background-color: #fff; margin: 5px 0 10px 0; border: solid 1px #525252; border-collapse:collapse; }
+    .GridView td { padding: 2px; border: solid 1px #c1c1c1; color: #717171; }
+    .GridView th { padding: 4px 2px; color: #0b5c10; background: #fcfcfc url(../../Imagem/grd_alt.png) repeat-x top; border: solid 1px #c1c1c1;  text-align:left }
+.GridView .alt { background: #fafafa; }
+
+.Calendario { width: 100%; background-color: #fff; margin: 5px 0 10px 0; border: solid 1px #525252; border-collapse:collapse; }
+.Calendario .titulo{border:0px; margin-bottom:5px; background-color:#f1f1f1;}
+.Calendario .titulo td{border:0px;}
+.Calendario tr td { padding: 2px; border: solid 1px #c1c1c1; background-color:#FFF }
+.Calendario th { padding: 4px 2px; color: #0b5c10; background: #fcfcfc url(../../Imagem/grd_alt.png) repeat-x top; border: solid 1px #c1c1c1;  text-align:left }
+.Calendario .dia{height:50px; vertical-align:top; text-align:left}
+.Calendario .dia:hover{background-color:#fcf8de;vertical-align:top; text-align:left}
+.Calendario .diaComEvento{background-color:#FEEFB3; vertical-align:top; text-align:left}
+.Calendario .diaDeNaoFuncionamento{background-color:#f9f9f9; vertical-align:top; text-align:left; }
+.Calendario .diaDeNaoFuncionamento a{color:red}
+.Calendario .diaPequeno{vertical-align:top; text-align:left}
+.Calendario .diaPequeno:hover{background-color:#fcf8de;vertical-align:top; text-align:left}
+
+
+
+.EditRowStyle td{background:#e2efff;border-top:1px solid #6 f9dd9;border-bottom:1px solid #6f9dd9;padding:4px 8px;font-size:8pt;}
+.SelectedRowStyle td{background:#fff8da;border-top:1px solid #c2a770;border-bottom:1px solid #c2a770;padding:4px 8px;font-size:8pt;}	
+.FooterStyle td{background:#f5f5f5;border-top:1px solid #dde1e5;border-bottom:1px solid #dde1e5;padding:4px 8px;font-size:8pt;}
+.HeaderStyle th, .HeaderDataListStyle th
+{
+	background:#dde1e5 url('../Imagem/viewheadergrad.gif') top repeat-x;
+	color:#808080;
+	padding:0px 8px;
+	height:24px;
+	font-size:8pt;
+	text-align:left;
+}
+
+.SelectedNodeStyle
+{
+	background:url('../Imagem/navPageBKGD.gif') bottom repeat-x;
+	border:1px solid #c2dcff;
+	color:#000000;
+	padding:4px;
+	font-size:8pt;
+	height:17px;
+}
+.legendFormulario{border-bottom:1px solid #f1f1f1; font-size:8pt; font-weight:bold; color:#0b5c10;   margin-bottom:10px; margin-top:10px; padding-bottom:4px; }	
+
+.diaCalendarioAmarelo
+{
+  border: 1px solid #f1f1f1;  
+  background-color: #FEEFB3;
+  padding:3px;
+  width:20px;
+  
+}
+.reserva
+{
+    text-align:right; 
+    font-size:8pt;
+    margin-top:5px;
+    padding:2px;
+}
+.reserva a{color:Blue;}
+
+.info, .success, .warning, .error, .validation {
+  border: 1px solid #f1f1f1;
+  padding:10px 5px 10px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+.info {
+  color: #00529B;
+  border-color:#f1f1f1;
+  background-color: #BDE5F8;
+  background-image: url('../../Imagem/info.png');
+}
+.success {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  background-image:url('../../Imagem/success.png');
+}
+.error {
+  color: #D8000C;
+  background-color: #FFBABA;
+  background-image: url('../../Imagem/error.png');
+}
+.warning {
+  color: #9F6000;
+  background-color: #FEEFB3;
+  background-image: url('../../Imagem/warning.png');
+  border-color:#f1f1f1;
+}
+.AcaoFormulario{padding-left:10px}
+.topo-portal-sistemas{text-align:center; padding-top:20px}
+.box-home{background:url('../../Imagem/fundo_tela_principal.jpg') top left no-repeat; width:395px; height:260px; text-align:center; padding: 0px 10px 0px 10px}
+.labelForm{ height:25px; border-bottom:1px solid #FFF; padding-right:5px; font-size:8pt; text-align:right; }
+#linkAbrirSistema{padding:0px;margin-bottom:2px; margin-right:3px;font-size:8pt; margin-top:5px; color:#FFF; }
+.areaSistemas{text-align:right; position:relative;padding-top:10px; padding-right:3px; color:#FFF; }
+.areaSistemas .linkMeusDados{color:#fff; }
+.meusSistemas{font-size:10pt}
+.todosSistemas {
+	z-index: 1; 
+	position: absolute; 
+	display: none; 
+	top: 26px; 
+    width:99%; 
+    left:3px;
+    border:1px solid #085a10;
+    background-color:#FFF;
+    margin:0px;
+    text-align:left;
+    height:270px
+}
+/*
+    Tabs
+*/
+.widget {width:950px; margin:10px; padding: 10px;background: #fff;border: 1px solid #fff;margin-bottom: 15px;}
+.widget a {	text-decoration: none;}
+.widget a:hover {text-decoration: underline;}
+.tabnav{margin:0px 0px 4px 0px;padding:0px}
+.tabnav li {display: inline;padding-right: 5px;}
+.tabnav li a {text-decoration: none;text-transform: uppercase;color: #085a10;font-weight: bold;padding: 4px 6px;outline: none; }
+.tabnav li a:hover, .tabnav li a:active, .tabnav li.ui-tabs-selected a {background: #f2f0f0;color: #085a10;text-decoration: none;}
+.tabdiv {margin-top: 2px;background: #fcfcfc;border: 1px solid #f2f0f0;padding: 5px;}
+
+.ui-tabs-hide {display: none;}		
+.table-opcoes-sistemas tr td{padding:0px 10px 0px 10px; border-right:1px solid #f2f0f0; color:#545454}
+.table-opcoes-sistemas ul{padding:0px; margin:0px}
+.table-opcoes-sistemas ul li{list-style:none; padding-left:10px; padding-top:5px}
+.table-opcoes-sistemas h3{color:#545454; font-size:8pt}
+.table-opcoes-sistemas a{}
+
+.labelForm{background-color:#f0f0f0; height:25px; border-bottom:1px solid #FFF; padding-left:3px;}
+.conteudoForm{margin-left:5px; margin-right:5px;}
+.display-none{display:none}
+
+#progressBackgroundFilter {
+    position:fixed; 
+    top:0px; 
+    bottom:0px; 
+    left:0px;
+    right:0px;
+    overflow:hidden; 
+    padding:0; 
+    margin:0; 
+    background-color:#FFF; 
+    filter:alpha(opacity=50); 
+    opacity:0.5; 
+    z-index:1000; 
+}
+
+#processMessage { 
+    position:fixed; 
+    top:30%; 
+    left:43%;
+    padding:10px; 
+    width:14%; 
+    z-index:1001; 
+    background-color:#fff;
+    text-align:center;
+}

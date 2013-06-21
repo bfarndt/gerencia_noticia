@@ -57,7 +57,7 @@ namespace Noticia.Testes
         public void Validar_Inclusao_Noticia()
         {
             Entidades.Noticia noticia = new Entidades.Noticia() { Titulo = "São Paulo", Conteudo = "Melhor time do Brasil" };
-            var retorno = NegNoticia.TemTituloEConteudo(noticia);
+            var retorno = NegNoticia.TemTitulo(noticia);
             Assert.AreEqual(true, retorno);
         }
 
@@ -66,7 +66,7 @@ namespace Noticia.Testes
         public void NaoValidar_Inclusao_Noticia()
         {
             Entidades.Noticia noticia = new Entidades.Noticia() { Titulo = "", Conteudo = "Melhor time do Brasil" };
-            var retorno = NegNoticia.TemTituloEConteudo(noticia);
+            var retorno = NegNoticia.TemTitulo(noticia);
             Assert.AreEqual(false, retorno);
         }
 

@@ -1,0 +1,84 @@
+﻿/*body, form, h1, h2, h3, h4, h5, table, tr, td, p, q, div, span, fieldset, legend, label, input, select, textarea 
+{ 
+    margin:0; padding:0; 
+}*/
+   
+/* mostra caixa com texto*/ 
+a.tooltip 
+{ 
+    position: relative; 
+}
+ 
+a.tooltip div 
+{ 
+    display: none; 
+}
+ 
+a.tooltip:hover 
+{ 
+    font-size: 100%; /* Fixes bug in IE5.x/Win */ 
+}
+  
+a.tooltip:hover div
+ 
+{ 
+    display: block; 
+    position: absolute; 
+    width: 430px; 
+}
+
+/* rounded corner box 
+================================== */
+ 
+.box { 
+  width: 424px; 
+  background: url(images/tile2.gif) repeat-y; 
+}
+ 
+.box h2 { 
+  background: url(images/top2.gif) no-repeat left top; 
+  padding-top: 20px; 
+}
+
+.box .last { 
+  background: url(images/bottom2.gif) no-repeat left bottom; 
+  padding-bottom: 20px; 
+}
+ 
+.box h2, .box p { 
+  padding-left: 20px; 
+  padding-right: 20px; 
+}
+ 
+/* mostra div com imagem */
+
+a.tooltip
+{
+    position: relative;
+}
+
+a.tooltip img
+{ 
+    display: none; 
+}
+ 
+a.tooltip:hover 
+{ 
+    font-size: 100%; /* Fixes bug in IE5.x/Win */ 
+}
+ 
+a.tooltip:hover img 
+{ 
+    display: block; 
+    position: absolute; 
+    width: 100px; 
+    height: 120px; 
+    border: 1px solid #1D599E; 
+    color: #000; 
+}
+
+/* --- */
+.row:hover
+{
+  
+}

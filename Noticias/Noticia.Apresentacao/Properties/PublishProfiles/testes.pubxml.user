@@ -1,0 +1,689 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="About.aspx">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Account/Login.aspx">
+      <publishTime>06/20/2013 13:00:10</publishTime>
+    </File>
+    <File Include="bin/Noticia.AcessoDados.dll">
+      <publishTime>06/21/2013 15:43:35</publishTime>
+    </File>
+    <File Include="bin/Noticia.Apresentacao.dll">
+      <publishTime>06/21/2013 15:43:35</publishTime>
+    </File>
+    <File Include="bin/Noticia.Entidades.dll">
+      <publishTime>06/21/2013 15:43:34</publishTime>
+    </File>
+    <File Include="bin/Noticia.Negocios.dll">
+      <publishTime>06/21/2013 15:43:35</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>06/20/2013 13:26:24</publishTime>
+    </File>
+    <File Include="frmCriarNoticia.aspx">
+      <publishTime>06/21/2013 12:38:56</publishTime>
+    </File>
+    <File Include="frmListarUsuario.aspx">
+      <publishTime>06/21/2013 14:05:17</publishTime>
+    </File>
+    <File Include="frmManterUsuario.aspx">
+      <publishTime>06/21/2013 11:48:55</publishTime>
+    </File>
+    <File Include="frmVincularGrupo.aspx">
+      <publishTime>06/21/2013 09:59:36</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/add.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/barra_cores.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/barra_verde.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/btnAcessar.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/btnEnviar.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/btnFiltrar.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/btnNovo.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/btnSalvar.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/btnVoltar.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/btn_excluir.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/btn_fechar.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/calendar.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/carregando.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/error.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/fundo_tela_principal.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/fundo_tela_principal.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/gestaodeacesso.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/gestaodeacessos.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/gestaodeacessos.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/grd_alt.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/grd_head.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/group.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/icone_lupa.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ico_adicionar_grid.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ico_cancel_grid.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ico_cfg_grid.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ico_delete_grid.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ico_edit_grid.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ico_habilitar.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ico_salvar_grid.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/info.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/loader.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/loader.white.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/LogotipoSOL.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/magnifier.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/Mail-48.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/mss.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/navPageBKGD.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/no-foto.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/no_photo.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/no_photo2.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/success.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/Thumbs.db">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/tick.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/topo_repeat.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ui-bg_diagonals-thick_18_b81900_40x40.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ui-bg_diagonals-thick_20_666666_40x40.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ui-bg_flat_10_000000_40x100.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ui-bg_glass_100_f6f6f6_1x400.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ui-bg_glass_100_fdf5ce_1x400.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ui-bg_gloss-wave_35_f6a828_500x100.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ui-bg_highlight-soft_100_eeeeee_1x100.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ui-bg_highlight-soft_75_ffe45c_1x100.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ui-icons_222222_256x240.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ui-icons_228ef1_256x240.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ui-icons_ef8c08_256x240.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ui-icons_ffd27a_256x240.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/ui-icons_ffffff_256x240.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/user.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/viewheadergrad.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/warning.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/easytooltip/01.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/easytooltip/02.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/easytooltip/03.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/easytooltip/bg.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/easytooltip/bg2.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/easytooltip/js/easyTooltip.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/easytooltip/js/_notes/dwsync.xml">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/Funcoes.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/ajax.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/flash.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/gallery-controls-in-heading.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/gallery-dark.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/gallery-floating-caption.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/gallery-floating-thumbs.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/gallery-horizontal-strip.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/gallery-in-box.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/gallery-in-page.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/gallery-thumbstrip-above.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/gallery-vertical-strip.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/gallery-white.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/headline.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/html.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/iframe.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/image-map.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/includes/ajax.htm">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/includes/Flash.swf">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/includes/include-short.htm">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/inline.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/mini-galleries.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/mini-gallery.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/no-border.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/no-outline.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/outer-glow.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/white-10px.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/examples/white-rounded-outline.html">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/close.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/closeX.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/controlbar-black-border.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/controlbar-text-buttons.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/controlbar-white-small.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/controlbar-white.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/controlbar2.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/controlbar3.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/controlbar4-hover.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/controlbar4.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/fullexpand.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/geckodimmer.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/icon.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/loader.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/loader.white.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/outlines/beveled.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/outlines/drop-shadow.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/outlines/glossy-dark.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/outlines/outer-glow.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/outlines/Outlines.psd">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/outlines/rounded-black.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/outlines/rounded-white.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/resize.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/scrollarrows.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/zoomin.cur">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/graphics/zoomout.cur">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/highslide-full.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/highslide-full.min.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/highslide-full.packed.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/highslide-ie6.css">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/highslide-with-gallery.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/highslide-with-gallery.min.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/highslide-with-gallery.packed.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/highslide-with-html.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/highslide-with-html.min.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/highslide-with-html.packed.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/highslide.css">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/highslide.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/highslide.min.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/highslide/highslide.packed.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/full-image.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/full6.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/gallery1.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/gallery1.thumb.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/gallery2.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/gallery2.thumb.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/gallery3.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/gallery3.thumb.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/nordic.gif">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumb6.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbnail.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/Thumbs.db">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip01.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip01.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip02.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip02.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip03.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip03.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip04.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip04.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip05.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip05.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip06.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip06.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip07.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip07.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip08.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip08.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip09.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip09.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip10.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip10.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip11.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip11.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip12.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip12.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip13.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip13.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip14.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip14.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip15.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip15.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip16.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip16.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip17.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip17.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip18.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip18.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip19.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip19.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip20.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip20.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip21.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip21.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip22.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip22.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip23.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip23.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip24.jpg">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/highslide-4.1.8/images/thumbstrip24.thumb.png">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.1-vsdoc.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.1.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.1.min.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.5.1.min.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.13.custom.min.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-personalized-1.5.2.packed.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery.tooltip.min.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Scripts/sprinkle.js">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>06/21/2013 12:39:33</publishTime>
+    </File>
+    <File Include="Styles/highslide.css">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Styles/jquery-ui-1.8.13.custom.css">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Styles/Site.css">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Styles/Skin.skin">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Styles/StyleSheet.css">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Styles/StyleSheetImagem.css">
+      <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/21/2013 15:43:36</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

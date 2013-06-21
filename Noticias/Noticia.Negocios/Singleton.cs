@@ -26,7 +26,7 @@ namespace Noticia.Negocios
             Singleton.comSessao = false;
         }
 
-        public enum AcaoEnum
+        public enum CRUDEnum
         {
             INSERIR = 1,
             ALTERAR = 2,

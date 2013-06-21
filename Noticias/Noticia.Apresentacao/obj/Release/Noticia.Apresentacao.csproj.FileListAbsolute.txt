@@ -1,0 +1,11 @@
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Apresentacao\bin\Noticia.Apresentacao.dll
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Apresentacao\bin\Noticia.Apresentacao.pdb
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Apresentacao\bin\Noticia.Entidades.dll
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Apresentacao\bin\Noticia.Negocios.dll
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Apresentacao\bin\Noticia.AcessoDados.dll
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Apresentacao\bin\Noticia.Entidades.pdb
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Apresentacao\bin\Noticia.Negocios.pdb
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Apresentacao\bin\Noticia.AcessoDados.pdb
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Apresentacao\obj\Release\Noticia.Apresentacao.csprojResolveAssemblyReference.cache
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Apresentacao\obj\Release\Noticia.Apresentacao.dll
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Apresentacao\obj\Release\Noticia.Apresentacao.pdb

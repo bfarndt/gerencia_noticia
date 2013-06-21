@@ -22,8 +22,9 @@ namespace Noticia.Apresentacao
             }
             else
             {
-                (Master.FindControl("litUsuarioLogado") as Literal).Text = "" + Session["NomeUsuario"];
-            }        
+                if (!url_solicitada.Contains("frmManterUsuario.aspx"))
+                    (Master.FindControl("litUsuarioLogado") as Literal).Text = "" + Session["NomeUsuario"];
+            }
 
             this.RegistrarHs();
         }

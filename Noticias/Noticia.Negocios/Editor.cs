@@ -15,7 +15,7 @@ namespace Noticia.Negocios
         {
             try
             {
-                if (NegNoticia.TemTituloEConteudo(noticia))
+                if (NegNoticia.TemTitulo(noticia) && NegNoticia.TemConteudo(noticia))
                 {
                     //Executar update
                     string strRetorno = string.Empty;
@@ -58,34 +58,27 @@ namespace Noticia.Negocios
         {
             try
             {
-                if (NegNoticia.TemTituloEConteudo(noticia))
+                //Executar update
+                string strRetorno = string.Empty;
+
+                strRetorno = dalNoticia.Alterar(noticia);
+
+                int intResult = 0;
+                if (int.TryParse(strRetorno, out intResult))
                 {
-                    //Executar update
-                    string strRetorno = string.Empty;
+                    noticia.IdNoticia = intResult;
+                    Entidades.Historico historico = new Entidades.Historico();
 
-                    strRetorno = dalNoticia.Alterar(noticia);
+                    historico.Noticia = noticia;
+                    historico.Usuario = Singleton.UsuarioLogado;
+                    historico.DataHora = DateTime.Now;
+                    historico.Descricao = feedback;
+                    historico.StatusNoticia = new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Editada };
 
-                    int intResult = 0;
-                    if (int.TryParse(strRetorno, out intResult))
-                    {
-                        noticia.IdNoticia = intResult;
-                        Entidades.Historico historico = new Entidades.Historico();
-
-                        historico.Noticia = noticia;
-                        historico.Usuario = Singleton.UsuarioLogado;
-                        historico.DataHora = DateTime.Now;
-                        historico.Descricao = feedback;
-                        historico.StatusNoticia = new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.GrupoVinculado };
-
-                        strRetorno = dalHistorico.Inserir(historico);
-                    }
-
-                    return intResult > 0;
+                    strRetorno = dalHistorico.Inserir(historico);
                 }
-                else
-                {
-                    return false;
-                }
+
+                return intResult > 0;
             }
             catch (Exception ex)
             {

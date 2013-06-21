@@ -109,5 +109,17 @@ namespace Noticia.Negocios
                 return true;
             }
         }
+
+        public List<Entidades.Usuario> Listar(Entidades.Usuario usuario)
+        {
+            try
+            {
+                return dalUsuario.Consultar(usuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

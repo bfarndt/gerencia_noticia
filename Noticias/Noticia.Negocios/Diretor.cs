@@ -25,7 +25,7 @@ namespace Noticia.Negocios
         {
             try
             {
-                if (NegNoticia.TemTituloEConteudo(noticia))
+                if (NegNoticia.TemTitulo(noticia))
                 {
                     //Executar insert
                     string strRetorno = string.Empty;
@@ -148,7 +148,7 @@ namespace Noticia.Negocios
             }
         }
 
-        public bool ManterUsuario(Entidades.Usuario usuario, Singleton.AcaoEnum acao)
+        public bool ManterUsuario(Entidades.Usuario usuario, Singleton.CRUDEnum acao)
         {
 
             try
@@ -162,26 +162,31 @@ namespace Noticia.Negocios
 
                     switch (acao)
                     {
-                        case Singleton.AcaoEnum.INSERIR:
+                        case Singleton.CRUDEnum.INSERIR:
                             strRetorno = dalUsuario.Inserir(usuario);
                             if (int.TryParse(strRetorno, out intResult))
                             {
                                 usuario.IdUsuario = intResult;
+                                usuario.UsuarioEndereco.Usuario = usuario;
                                 strRetorno = dalUsuarioEndereco.Inserir(usuario.UsuarioEndereco);
+                                usuario.Contratacao.Usuario = usuario;
                                 strRetorno = dalContratacao.Inserir(usuario.Contratacao);
                             }
 
                             break;
-                        case Singleton.AcaoEnum.ALTERAR:
+                        case Singleton.CRUDEnum.ALTERAR:
 
                             strRetorno = dalUsuario.Alterar(usuario);
+                            usuario.UsuarioEndereco.Usuario = usuario;
                             strRetorno = dalUsuarioEndereco.Alterar(usuario.UsuarioEndereco);
+                            usuario.Contratacao.Usuario = usuario;
                             strRetorno = dalContratacao.Alterar(usuario.Contratacao);
 
                             break;
-                        case Singleton.AcaoEnum.DELETAR:
-
+                        case Singleton.CRUDEnum.DELETAR:
+                            usuario.UsuarioEndereco.Usuario = usuario;
                             strRetorno = dalUsuarioEndereco.Excluir(usuario.UsuarioEndereco);
+                            usuario.Contratacao.Usuario = usuario;
                             strRetorno = dalContratacao.Excluir(usuario.Contratacao);
                             strRetorno = dalUsuarioPermissao.ExcluirPorUsuario(usuario);
                             strRetorno = dalGrupoTrabalhoUsuario.ExcluirPorUsuario(usuario);
@@ -286,7 +291,7 @@ namespace Noticia.Negocios
             }
         }
 
-        public bool ManterTrabalho(Entidades.Trabalho trabalho, Singleton.AcaoEnum acao)
+        public bool ManterTrabalho(Entidades.Trabalho trabalho, Singleton.CRUDEnum acao)
         {
             try
             {
@@ -295,15 +300,15 @@ namespace Noticia.Negocios
                 int intResult = 0;
                 switch (acao)
                 {
-                    case Singleton.AcaoEnum.INSERIR:
+                    case Singleton.CRUDEnum.INSERIR:
                         strRetorno = dalTrabalho.Inserir(trabalho);
                         int.TryParse(strRetorno, out intResult);
                         trabalho.IdTrabalho = intResult;
                         break;
-                    case Singleton.AcaoEnum.ALTERAR:
+                    case Singleton.CRUDEnum.ALTERAR:
                         strRetorno = dalTrabalho.Alterar(trabalho);
                         break;
-                    case Singleton.AcaoEnum.DELETAR:
+                    case Singleton.CRUDEnum.DELETAR:
                         strRetorno = dalTrabalho.Excluir(trabalho);
                         break;
                     default:
@@ -363,7 +368,7 @@ namespace Noticia.Negocios
             }
         }
 
-        public bool ManterGrupoTrabalho(Entidades.GrupoTrabalho grupoTrabalho, Singleton.AcaoEnum acao)
+        public bool ManterGrupoTrabalho(Entidades.GrupoTrabalho grupoTrabalho, Singleton.CRUDEnum acao)
         {
             try
             {
@@ -373,13 +378,13 @@ namespace Noticia.Negocios
 
                     switch (acao)
                     {
-                        case Singleton.AcaoEnum.INSERIR:
+                        case Singleton.CRUDEnum.INSERIR:
                             strRetorno = dalGrupoTrabalho.Inserir(grupoTrabalho);
                             break;
-                        case Singleton.AcaoEnum.ALTERAR:
+                        case Singleton.CRUDEnum.ALTERAR:
                             strRetorno = dalGrupoTrabalho.Alterar(grupoTrabalho);
                             break;
-                        case Singleton.AcaoEnum.DELETAR:
+                        case Singleton.CRUDEnum.DELETAR:
                             strRetorno = dalGrupoTrabalho.Excluir(grupoTrabalho);
                             break;
                         default:

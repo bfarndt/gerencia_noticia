@@ -65,7 +65,7 @@ namespace Noticia.Testes
         {
             Entidades.Usuario usuario = new Entidades.Usuario();
             usuario.IdUsuario = null;
-            usuario.Nome = "Bento";
+            usuario.Nome = "Bento Rafael Siqueira";
             var retorno = NegDiretor.TemNomeExistente(usuario);
             Assert.AreEqual(true, retorno);
         }
@@ -128,9 +128,9 @@ namespace Noticia.Testes
             trabalho.TipoUsuario = new Entidades.TipoUsuario() { IdTipoUsuario = (int)Entidades.TipoUsuarioEnum.Reporter };
             trabalho.ValorHoraTrabalhada = 999.00M;
 
-            var Ins = NegDiretor.ManterTrabalho(trabalho, Negocios.Singleton.AcaoEnum.INSERIR);
-            var Alt = NegDiretor.ManterTrabalho(trabalho, Negocios.Singleton.AcaoEnum.ALTERAR);
-            var Del = NegDiretor.ManterTrabalho(trabalho, Negocios.Singleton.AcaoEnum.DELETAR);
+            var Ins = NegDiretor.ManterTrabalho(trabalho, Negocios.Singleton.CRUDEnum.INSERIR);
+            var Alt = NegDiretor.ManterTrabalho(trabalho, Negocios.Singleton.CRUDEnum.ALTERAR);
+            var Del = NegDiretor.ManterTrabalho(trabalho, Negocios.Singleton.CRUDEnum.DELETAR);
 
             Assert.AreEqual(true, (Ins && Alt && Del));
         }
@@ -147,9 +147,9 @@ namespace Noticia.Testes
             usuario.UsuarioEndereco = new Entidades.UsuarioEndereco() { Usuario = usuario, Email = "bento@bento", Telefone = "9999" };
             usuario.Contratacao = new Entidades.Contratacao() { Usuario = usuario, DataHora = DateTime.Now };
 
-            var Ins = NegDiretor.ManterUsuario(usuario, Negocios.Singleton.AcaoEnum.INSERIR);
-            var Alt = NegDiretor.ManterUsuario(usuario, Negocios.Singleton.AcaoEnum.ALTERAR);
-            var Del = NegDiretor.ManterUsuario(usuario, Negocios.Singleton.AcaoEnum.DELETAR);
+            var Ins = NegDiretor.ManterUsuario(usuario, Negocios.Singleton.CRUDEnum.INSERIR);
+            var Alt = NegDiretor.ManterUsuario(usuario, Negocios.Singleton.CRUDEnum.ALTERAR);
+            var Del = NegDiretor.ManterUsuario(usuario, Negocios.Singleton.CRUDEnum.DELETAR);
 
             Assert.AreEqual(true, (Ins && Alt && Del));
         }
