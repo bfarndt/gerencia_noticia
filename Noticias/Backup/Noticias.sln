@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Noticia.Entidades", "Noticia.Entidades\Noticia.Entidades.csproj", "{8ABBE704-14C1-4474-AE20-418C6F988DF9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Noticia.AcessoDados", "Noticia.AcessoDados\Noticia.AcessoDados.csproj", "{1B79BAAA-C27C-4D5A-810D-2F272A688F60}"
