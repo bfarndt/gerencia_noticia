@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8039c290-2bd3-4b16-bfe7-fe6ac6f8ab97}</ProjectGuid>
+    <ArchitectureToolsVersion>1.0.0.0</ArchitectureToolsVersion>
+    <Name>Noticia.Modelagem</Name>
+    <RootNamespace>Noticia.Modelagem</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
+  <ItemGroup>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\Noticia.Modelagem.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="Camadas.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="Camadas.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Camadas.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Camadas.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>Camadas.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Noticia.AcessoDados\Noticia.AcessoDados.csproj">
+      <Name>Noticia.AcessoDados</Name>
+      <Project>{1b79baaa-c27c-4d5a-810d-2f272a688f60}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Noticia.Apresentacao\Noticia.Apresentacao.csproj">
+      <Name>Noticia.Apresentacao</Name>
+      <Project>{c6a279c9-51a1-404c-a24f-1678dd6f61b3}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Noticia.Entidades\Noticia.Entidades.csproj">
+      <Name>Noticia.Entidades</Name>
+      <Project>{8abbe704-14c1-4474-ae20-418c6f988df9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Noticia.Negocios\Noticia.Negocios.csproj">
+      <Name>Noticia.Negocios</Name>
+      <Project>{fe15bc13-cd33-4391-981a-4743e40219e1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Noticia.Testes\Noticia.Testes.csproj">
+      <Name>Noticia.Testes</Name>
+      <Project>{926940e2-8f3c-4606-af15-d06edd98f83e}</Project>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

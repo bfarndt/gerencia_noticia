@@ -13,5 +13,11 @@ namespace Noticia.Apresentacao
         {
 
         }
+
+        protected void lnkSair_Click(object sender, EventArgs e)
+        {
+            Session["NomeUsuario"] = null;
+            Response.Redirect("~/Account/Login.aspx");
+        }
     }
 }

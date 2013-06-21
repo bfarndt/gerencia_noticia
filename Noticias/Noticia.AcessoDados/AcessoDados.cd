@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Noticia.AcessoDados.Dados">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAABAAAAAAAAAAABAAAAEAAAAAAAFAAAABAI=</HashCode>
+      <FileName>AcessoDadosSqlServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.AcessoDados.Contratacao" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contratacao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.AcessoDados.DiaSemana" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DiaSemana.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Noticia.AcessoDados.DiasTrabalhados" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DiasTrabalhados.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.AcessoDados.GrupoTrabalho" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GrupoTrabalho.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.AcessoDados.GrupoTrabalhoUsuario" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACAhQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GrupoTrabalhoUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.AcessoDados.Historico" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Historico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Noticia.AcessoDados.Imagem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Imagem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Noticia.AcessoDados.ImagemArquivo" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ImagemArquivo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.AcessoDados.ImagemGravacao" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ImagemGravacao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.AcessoDados.Noticia" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Noticia.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Noticia.AcessoDados.NoticiaGrupoTrabalho" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NoticiaGrupoTrabalho.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.AcessoDados.NoticiaImagem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NoticiaImagem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Noticia.AcessoDados.PalavraChave" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PalavraChave.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.AcessoDados.Permissao" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Permissao.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Noticia.AcessoDados.StatusNoticia" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StatusNoticia.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Noticia.AcessoDados.TipoUsuario" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TipoUsuario.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Noticia.AcessoDados.Trabalho" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Trabalho.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Noticia.AcessoDados.Usuario" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Noticia.AcessoDados.UsuarioEndereco" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UsuarioEndereco.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Noticia.AcessoDados.UsuarioPermissao" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACAhQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UsuarioPermissao.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Noticia.AcessoDados.ICrud&lt;T&gt;">
+    <Position X="3.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICrud.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -4,7 +4,7 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-    <h2>
+   <h2>
         Autenticação
     </h2>
     <p>
@@ -34,7 +34,5 @@
         </fieldset>
         <p class="submitButton">
             <asp:ImageButton ID="LoginButton" AlternateText="Acessar sistema" ImageUrl="~/Imagem/btnAcessar.png" runat="server" onclick="LoginButton_Click" />
-            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
         </p>
-    </div>
-</asp:Content>
+    </div></asp:Content>

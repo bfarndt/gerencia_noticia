@@ -1,0 +1,11 @@
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Modelagem\bin\Debug\Noticia.AcessoDados.dll
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Modelagem\bin\Debug\Noticia.Apresentacao.dll
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Modelagem\bin\Debug\Noticia.Entidades.dll
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Modelagem\bin\Debug\Noticia.Negocios.dll
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Modelagem\bin\Debug\Noticia.Testes.dll
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Modelagem\bin\Debug\Noticia.AcessoDados.pdb
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Modelagem\bin\Debug\Noticia.Apresentacao.pdb
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Modelagem\bin\Debug\Noticia.Entidades.pdb
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Modelagem\bin\Debug\Noticia.Negocios.pdb
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Modelagem\bin\Debug\Noticia.Testes.pdb
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Modelagem\obj\Debug\Noticia.Modelagem.modelprojResolveAssemblyReference.cache

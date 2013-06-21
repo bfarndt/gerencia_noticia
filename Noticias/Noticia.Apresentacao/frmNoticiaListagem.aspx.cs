@@ -16,7 +16,8 @@ namespace Noticia.Apresentacao.Noticia
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            this.AbrirModal("www.google.com.br", "300", "Teste");
+            this.AbrirModal("www.google.com.br", "500", "Teste");
+            ExibirMensagem(TipoMensagem.Alerta, "Grupo .NET, :)");
         }
     }
 }

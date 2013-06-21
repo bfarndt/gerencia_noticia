@@ -15,19 +15,20 @@ namespace Noticia.Apresentacao
             String url_solicitada = this.Page.Request.Url.ToString();
             url_solicitada = url_solicitada.Remove(0, url_solicitada.LastIndexOf("/") + 1);
 
-            if (Session["NomeUsuario"] == null && url_solicitada.ToLower() != "login.aspx")
+            if ((Session["NomeUsuario"] == null && url_solicitada.ToLower() != "login.aspx") && !Negocios.Singleton.comSessao)
             {
+                ExibirMensagem(TipoMensagem.Informacao, "Sessão expirada");
                 Response.Redirect("~/Account/Login.aspx");
             }
             else
             {
-                //(Master.FindControl("litUsuarioLogado") as Literal).Text = "" + Session["NomeUsuario"];
-            }
+                (Master.FindControl("litUsuarioLogado") as Literal).Text = "" + Session["NomeUsuario"];
+            }        
 
             this.RegistrarHs();
         }
 
-        
+
         public void RegistrarHs()
         {
 

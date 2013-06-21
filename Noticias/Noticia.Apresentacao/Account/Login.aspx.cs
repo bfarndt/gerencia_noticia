@@ -9,7 +9,7 @@ namespace Noticia.Apresentacao.Account
 {
     public partial class Login : NoticiaPage
     {
-      protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
@@ -19,20 +19,21 @@ namespace Noticia.Apresentacao.Account
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-            //if (!string.IsNullOrWhiteSpace(this.UserName.Text) && (!string.IsNullOrWhiteSpace(this.Password.Text))) 
-            //{
-            //    string NomeUsuario = new Noticia..Usuario().Validar(this.UserName.Text, this.Password.Text);
-            //    if (NomeUsuario.ToLower() != "desconhecido")
-            //    {
-            //        Session["NomeUsuario"] = NomeUsuario;
-            //        Response.Redirect("~/Cadastro/FuncionarioListar.aspx");
-            //    }
-            //    else
-            //    {
-            //        Session["NomeUsuario"] = null;
-            //        this.ExibirMensagem(TipoMensagem.Informacao, "Usuário não encontrado!");
-            //    }
-            //}
+            if (!string.IsNullOrWhiteSpace(this.UserName.Text) && (!string.IsNullOrWhiteSpace(this.Password.Text)))
+            {
+                Negocios.Singleton.UsuarioLogado = new Entidades.Usuario() { Login = this.UserName.Text, Senha = this.Password.Text };
+                bool sucesso = new Negocios.Usuario().Logar();
+                if (sucesso)
+                {
+                    Session["NomeUsuario"] = Negocios.Singleton.UsuarioLogado.Nome;
+                    Response.Redirect("~/frmNoticiaListagem.aspx");
+                }
+                else
+                {
+                    Session["NomeUsuario"] = null;
+                    this.ExibirMensagem(TipoMensagem.Informacao, "Usuário/Senha incorreta!");
+                }
+            }
         }
 
         protected void Button2_Click(object sender, EventArgs e)

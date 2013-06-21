@@ -30,6 +30,7 @@ namespace Noticia.Negocios
 
                     if (found.Count() > 0)
                     {
+                        Singleton.IniciarSessao();
                         Singleton.UsuarioLogado = found.First();
                         CarregarPermissoes();
                         Singleton.TempoSessao.Start();

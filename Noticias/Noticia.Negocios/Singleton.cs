@@ -12,7 +12,7 @@ namespace Noticia.Negocios
         public static List<Entidades.UsuarioPermissao> UsuarioPermissoes;
 
         public static Timer TempoSessao { get; set; }
-        public static bool comSessao { get; set; }
+        public static bool comSessao = false;
 
         public static void IniciarSessao()
         {

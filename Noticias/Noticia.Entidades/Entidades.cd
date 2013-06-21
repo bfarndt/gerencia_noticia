@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Noticia.Entidades.Contratacao">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Contratacao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.DiaSemana">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DiaSemana.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.DiasTrabalhados">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>DiasTrabalhados.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.GrupoTrabalho">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GrupoTrabalho.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.GrupoTrabalhoUsuario">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEAAAAAAA=</HashCode>
+      <FileName>GrupoTrabalhoUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.Historico">
+    <Position X="1" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAACABAAAAEAAAAAAAAAAEAAAQAAA=</HashCode>
+      <FileName>Historico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.Imagem">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAEAAAICAAAAAAAAA=</HashCode>
+      <FileName>Imagem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.ImagemArquivo">
+    <Position X="4.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgQAAAAAAAAAAAAAAgBEAAAAAAAAAAAA=</HashCode>
+      <FileName>ImagemArquivo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.ImagemGravacao">
+    <Position X="6.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAEAAAAAAAI=</HashCode>
+      <FileName>ImagemGravacao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.Noticia">
+    <Position X="8" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAARAAAAAAAAAEABA=</HashCode>
+      <FileName>Noticia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.NoticiaGrupoTrabalho">
+    <Position X="1" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>NoticiaGrupoTrabalho.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.NoticiaImagem">
+    <Position X="2.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>NoticiaImagem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.PalavraChave">
+    <Position X="4.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAEBAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PalavraChave.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.Permissao">
+    <Position X="6.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Permissao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.StatusNoticia">
+    <Position X="8" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>StatusNoticia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.TipoUsuario">
+    <Position X="1" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TipoUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.Trabalho">
+    <Position X="2.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAABAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Trabalho.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.Usuario">
+    <Position X="4.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAQAAAAAAAAAAAAgAAAAACAAAAAAAAgQAAEAAAA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.UsuarioEndereco">
+    <Position X="6.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>UsuarioEndereco.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Entidades.UsuarioPermissao">
+    <Position X="8" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>UsuarioPermissao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Noticia.Entidades.DiaSemanaEnum">
+    <Position X="1" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAACAGAEAAAACAABAAAAAAAAAAAA=</HashCode>
+      <FileName>DiaSemana.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Noticia.Entidades.PermissaoEnum">
+    <Position X="2.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABABAAAAACAAAICAAAAAEAAEAAAAEAACAACAAA=</HashCode>
+      <FileName>Permissao.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Noticia.Entidades.StatusNoticiaEnum">
+    <Position X="4.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAgAAAAAAAAAAAAAAAAAAAAgAACAAAAAAAEAAgAAAAA=</HashCode>
+      <FileName>StatusNoticia.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Noticia.Entidades.TipoUsuarioEnum">
+    <Position X="6.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAQAAAAAAAAAAIQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TipoUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
