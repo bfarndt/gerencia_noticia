@@ -15,21 +15,31 @@ namespace Noticia.Apresentacao
         {
             if (!IsPostBack)
             {
+                this.CarregarCombos();
+
                 if (Request.QueryString["IdUsuario"] != null && Request.QueryString["IdUsuario"].ToString().Length > 0)
                 {
                     ViewState["IdUsuario"] = Convert.ToInt32(Request.QueryString["IdUsuario"]);
                     this.IdUsuario = Convert.ToInt32(Convert.ToInt32(ViewState["IdUsuario"]));
                     this.CarregarUsuario();
                 }
-
-                this.CarregarCombos();
             }
             else
             {
                 if (ViewState["IdUsuario"] != null)
+                {
                     this.IdUsuario = Convert.ToInt32(ViewState["IdUsuario"]);
+
+                    //if (ViewState["permissoes"] != null)
+                    //{
+                    //    grvPermissoes.DataSource = ViewState["permissoes"] as List<Entidades.Permissao>;
+                    //    grvPermissoes.DataBind();
+                    //}
+                }
                 else
                     this.IdUsuario = 0;
+
+
             }
         }
 
@@ -46,7 +56,7 @@ namespace Noticia.Apresentacao
                     {
                         ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Não foi possível completar a operação.');", true);
                     }
-                    else 
+                    else
                     {
                         Page.ClientScript.RegisterStartupScript(typeof(string), "fecha", "window.parent.post(); window.parent.hs.close();", true);
                         return;
@@ -54,10 +64,11 @@ namespace Noticia.Apresentacao
                 }
                 else
                 {
-                    if (!(new Negocios.Diretor().ManterUsuario(usuario, Negocios.Singleton.CRUDEnum.ALTERAR))) 
+                    if (!(new Negocios.Diretor().ManterUsuario(usuario, Negocios.Singleton.CRUDEnum.ALTERAR)))
                     {
                         ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Não foi possível completar a operação.');", true);
-                    }else
+                    }
+                    else
                     {
                         Page.ClientScript.RegisterStartupScript(typeof(string), "fecha", "window.parent.post(); window.parent.hs.close();", true);
                         return;
@@ -86,6 +97,8 @@ namespace Noticia.Apresentacao
                         txtEmail.Text = consulta.First().UsuarioEndereco.Email;
                         txtTelefone.Text = consulta.First().UsuarioEndereco.Telefone;
                     }
+
+                    this.AtualizarGrid(null, false);
                 }
             }
             catch (Exception ex)
@@ -96,12 +109,12 @@ namespace Noticia.Apresentacao
 
         private void PreencherUsuario(Entidades.Usuario usuario)
         {
+            usuario.IdUsuario = this.IdUsuario;
             usuario.TipoUsuario = new Entidades.TipoUsuario() { IdTipoUsuario = Convert.ToInt32(this.ddlTipo.SelectedValue), Descricao = this.ddlTipo.Text };
             usuario.Login = txtLogin.Text;
             usuario.Senha = txtSenha.Text;
             usuario.Nome = txtNome.Text;
             usuario.UsuarioEndereco = new Entidades.UsuarioEndereco() { Email = txtEmail.Text, Telefone = txtTelefone.Text };
-            usuario.Contratacao = new Entidades.Contratacao() { DataHora = DateTime.Now };
         }
 
         protected void btnNovo_Click(object sender, ImageClickEventArgs e)
@@ -128,10 +141,133 @@ namespace Noticia.Apresentacao
                 this.ddlTipo.DataBind();
                 this.ddlTipo.Items.Insert(0, new ListItem("Selecione", "0"));
                 this.ddlTipo.SelectedIndex = 0;
+
+                this.ddlPermissao.Items.Clear();
+                this.ddlPermissao.DataTextField = "Descricao";
+                this.ddlPermissao.DataValueField = "IdPermissao";
+                ViewState["comboPermissao"] = new Negocios.Permissao().Listar();
+                this.ddlPermissao.DataSource = ViewState["comboPermissao"] as List<Entidades.Permissao>;
+                this.ddlPermissao.DataBind();
+                this.ddlPermissao.Items.Insert(0, new ListItem("Selecione", "0"));
+                this.ddlPermissao.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('" + ex.Message +"');", true);
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('" + ex.Message + "');", true);
+            }
+        }
+
+        protected void grvPermissoes_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                if (e.CommandName.Trim().ToUpper() == "EXCLUIR")
+                {
+                    string cod = Convert.ToString(e.CommandArgument);
+                    List<Entidades.Permissao> PermissoesSelecionadas = ViewState["permissoes"] as List<Entidades.Permissao>;
+                    Entidades.Permissao permissaoSelecionada = new Entidades.Permissao();
+                    permissaoSelecionada.IdPermissao = Convert.ToInt32(cod);
+
+                    Entidades.UsuarioPermissao usuarioPermissao = new Entidades.UsuarioPermissao();
+                    usuarioPermissao.Permissao = permissaoSelecionada;
+                    usuarioPermissao.Usuario = new Entidades.Usuario() { IdUsuario = this.IdUsuario };
+                    if (new Negocios.Diretor().RemoverPermissaoDoUsuario(usuarioPermissao))
+                    {
+                        AtualizarGrid(permissaoSelecionada, true);
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Permissão removida.');", true);
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Não foi possível completar a operação.');", true);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('" + ex.Message + "');", true);
+            }
+        }
+
+        protected void grvPermissoes_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+        }
+
+        private void AtualizarGrid(Entidades.Permissao permissao, bool excluir)
+        {
+            try
+            {
+                if (this.IdUsuario > 0)
+                {
+                    if (excluir && permissao != null && permissao.IdPermissao > 0)
+                    {
+                        List<Entidades.Permissao> gridPermissoes = ViewState["permissoes"] as List<Entidades.Permissao>;
+                        var consulta = (from f in gridPermissoes
+                                        where f.IdPermissao == permissao.IdPermissao
+                                        select f);
+
+                        gridPermissoes.Remove(consulta.First());
+                        ViewState["permissoes"] = gridPermissoes;
+
+                        this.grvPermissoes.DataSource = gridPermissoes;
+                        this.grvPermissoes.DataBind();
+                    }
+                    else if (permissao != null)
+                    {
+                        List<Entidades.Permissao> gridPermissoes = ViewState["permissoes"] as List<Entidades.Permissao>;
+                        if (gridPermissoes == null)
+                            gridPermissoes = new List<Entidades.Permissao>();
+                        gridPermissoes.Add(permissao);
+
+                        ViewState["permissoes"] = gridPermissoes;
+                        this.grvPermissoes.DataSource = gridPermissoes;
+                        this.grvPermissoes.DataBind();
+                    }
+                    else
+                    {
+                        ViewState["permissoes"] = new Negocios.Permissao().PermissoesPorUsuario(new Entidades.Usuario() { IdUsuario = this.IdUsuario });
+                        this.grvPermissoes.DataSource = ViewState["permissoes"] as List<Entidades.Permissao>;
+                        this.grvPermissoes.DataBind();
+                    }
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('É necessário salvar o usuário antes desta operação.');", true);
+                }
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('" + ex.Message + "');", true);
+            }
+        }
+
+        protected void imgOK_permissao_Click(object sender, ImageClickEventArgs e)
+        {
+            try
+            {
+                if (this.IdUsuario > 0)
+                {
+                    Entidades.UsuarioPermissao usuarioPermissao = new Entidades.UsuarioPermissao();
+                    usuarioPermissao.Usuario = new Entidades.Usuario() { IdUsuario = this.IdUsuario };
+                    usuarioPermissao.Permissao = new Entidades.Permissao() { IdPermissao = Convert.ToInt32(ddlPermissao.SelectedValue), Descricao = ddlPermissao.SelectedItem.Text };
+                    if (new Negocios.Diretor().AssociarPermissaoParaUsuario(usuarioPermissao))
+                    {
+                        AtualizarGrid(usuarioPermissao.Permissao, false);
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Permissão adicionada com sucesso.');", true);
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Permissão não adicionada.');", true);
+                    }
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('É necessário salvar o usuário antes desta operação.');", true);
+                }
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('" + ex.Message + "');", true);
             }
         }
 

@@ -8,7 +8,7 @@ namespace Noticia.Entidades
     [Serializable]
     public class Permissao
     {
-        public int IdPermissao { get; set; }
+        public int? IdPermissao { get; set; }
         public string Descricao { get; set; }
     }
 

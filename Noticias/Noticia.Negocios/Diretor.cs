@@ -153,10 +153,8 @@ namespace Noticia.Negocios
 
             try
             {
-                if ((TemNomeExistente(usuario)) && TemNomeELogin(usuario))
+                if (!(acao == Singleton.CRUDEnum.INSERIR) || (TemNomeExistente(usuario)) && TemNomeELogin(usuario))
                 {
-
-                    //Executar insert
                     string strRetorno = string.Empty;
                     int intResult = 0;
 
@@ -169,6 +167,8 @@ namespace Noticia.Negocios
                                 usuario.IdUsuario = intResult;
                                 usuario.UsuarioEndereco.Usuario = usuario;
                                 strRetorno = dalUsuarioEndereco.Inserir(usuario.UsuarioEndereco);
+
+                                usuario.Contratacao = new Entidades.Contratacao() { DataHora = DateTime.Now };
                                 usuario.Contratacao.Usuario = usuario;
                                 strRetorno = dalContratacao.Inserir(usuario.Contratacao);
                             }
@@ -178,16 +178,34 @@ namespace Noticia.Negocios
 
                             strRetorno = dalUsuario.Alterar(usuario);
                             usuario.UsuarioEndereco.Usuario = usuario;
-                            strRetorno = dalUsuarioEndereco.Alterar(usuario.UsuarioEndereco);
-                            usuario.Contratacao.Usuario = usuario;
-                            strRetorno = dalContratacao.Alterar(usuario.Contratacao);
 
+                            if (dalUsuarioEndereco.Consultar(usuario.UsuarioEndereco).Count > 0)
+                            {
+                                strRetorno = dalUsuarioEndereco.Alterar(usuario.UsuarioEndereco);
+                            }
+                            else 
+                            {
+                                strRetorno = dalUsuarioEndereco.Inserir(usuario.UsuarioEndereco);
+                            }
                             break;
                         case Singleton.CRUDEnum.DELETAR:
-                            usuario.UsuarioEndereco.Usuario = usuario;
-                            strRetorno = dalUsuarioEndereco.Excluir(usuario.UsuarioEndereco);
-                            usuario.Contratacao.Usuario = usuario;
-                            strRetorno = dalContratacao.Excluir(usuario.Contratacao);
+
+                            List<Entidades.Usuario> usuarios = dalUsuario.Consultar(usuario);
+                            if (usuarios.Count > 0)
+                                usuario = usuarios.First();
+
+                            if (usuario.UsuarioEndereco != null)
+                            {
+                                usuario.UsuarioEndereco.Usuario = usuario;
+                                strRetorno = dalUsuarioEndereco.Excluir(usuario.UsuarioEndereco);
+                            }
+
+                            if (usuario.Contratacao != null)
+                            {
+                                usuario.Contratacao.Usuario = usuario;
+                                strRetorno = dalContratacao.Excluir(usuario.Contratacao);
+                            }
+
                             strRetorno = dalUsuarioPermissao.ExcluirPorUsuario(usuario);
                             strRetorno = dalGrupoTrabalhoUsuario.ExcluirPorUsuario(usuario);
 

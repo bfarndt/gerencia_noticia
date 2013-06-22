@@ -317,6 +317,7 @@
     </Compile>
     <Compile Include="frmListarGrupo.aspx.cs">
       <DependentUpon>frmListarGrupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="frmListarGrupo.aspx.designer.cs">
       <DependentUpon>frmListarGrupo.aspx</DependentUpon>
@@ -330,6 +331,7 @@
     </Compile>
     <Compile Include="frmManterGrupo.aspx.cs">
       <DependentUpon>frmManterGrupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="frmManterGrupo.aspx.designer.cs">
       <DependentUpon>frmManterGrupo.aspx</DependentUpon>
