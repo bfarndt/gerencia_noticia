@@ -17,8 +17,6 @@ namespace Noticia.AcessoDados
                 Dados.LimparParametros();
                 Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
                 Dados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                Dados.AdicionarParametros("@vchEmail", entidade.Email);
-                Dados.AdicionarParametros("@vchTelefone", entidade.Telefone);
 
                 objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spUsuarioEndereco");
 

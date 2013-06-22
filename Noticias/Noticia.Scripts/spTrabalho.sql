@@ -1,7 +1,7 @@
 select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'tblTrabalho'
 go
 
-CREATE PROCEDURE [dbo].[spTrabalho]
+ALTER PROCEDURE [dbo].[spTrabalho]
 	@vchAcao VARCHAR(50),
 	@intIdTrabalho INT = NULL,
 	@intIdTipoUsuario INT = NULL,
@@ -26,18 +26,32 @@ BEGIN
 	END
 	ELSE IF(upper(@vchAcao) = 'INSERIR')
 	BEGIN
-		INSERT INTO tblTrabalho
-					(
-						IdTipoUsuario,
-						ValorHoraTrabalhada
-					)
-					VALUES
-					(
-						@intIdTipoUsuario,
-						@decValorHoraTrabalhada
-					)
+		IF NOT EXISTS(SELECT 1 FROM tblTrabalho WHERE IdTipoUsuario = @intIdTipoUsuario)
+		BEGIN
+			INSERT INTO tblTrabalho
+						(
+							IdTipoUsuario,
+							ValorHoraTrabalhada
+						)
+						VALUES
+						(
+							@intIdTipoUsuario,
+							@decValorHoraTrabalhada
+						)
+			SET @intIdTipoUsuario = @@IDENTITY
+		END
+		ELSE
+		BEGIN
+			UPDATE
+				tblTrabalho
+			SET
+				
+				ValorHoraTrabalhada = @decValorHoraTrabalhada
+			WHERE
+				IdTipoUsuario = @intIdTipoUsuario
+		END
 					
-		SELECT @@IDENTITY AS Retorno
+		SELECT @intIdTipoUsuario AS Retorno
 	END
 	ELSE IF(upper(@vchAcao) = 'ALTERAR')
 	BEGIN

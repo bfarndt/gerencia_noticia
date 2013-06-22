@@ -17,10 +17,11 @@
     </script>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div class="contentPage">
-            <asp:ValidationSummary runat="server" ID="vs" ValidationGroup="validacao" />
+    <form id="form1" runat="server" >
 
+        <div class="contentPage" >
+            <asp:ValidationSummary runat="server" ID="vs" ValidationGroup="validacao" />
+            <asp:ValidationSummary runat="server" ID="vsPermissao" ValidationGroup="validacaoPermissao" />
             <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
 
@@ -86,19 +87,128 @@
                 </tr>
             </table>
 
+            <div class="legendFormulario">
+                Permissões
+            </div>
+
+            <table>
+                <tr>
+                    <td class="labelForm" style="width: 100px">Permissão:</td>
+                    <td>
+                        <asp:DropDownList ID="ddlPermissao" Width="320px"
+                            runat="server">
+                        </asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="rfvPermissao" runat="server"
+                            ControlToValidate="ddlPermissao"
+                            ErrorMessage="Informe a permissão" InitialValue="0"
+                            ValidationGroup="validacaoPermissao">*</asp:RequiredFieldValidator>
+                    </td>
+                    <td>
+                        <asp:ImageButton ID="imgOK_permissao" CausesValidation="true"
+                            ValidationGroup="validacaoPermissao" runat="server" ImageUrl="~/Imagem/add.png" OnClick="imgOK_permissao_Click" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:GridView runat="server" ID="grvPermissoes" Width="140%"
+                            AutoGenerateColumns="False" DataKeyNames="IdPermissao"
+                            AllowSorting="True"
+                            OnRowCommand="grvPermissoes_RowCommand"
+                            OnRowDataBound="grvPermissoes_RowDataBound"
+                            EmptyDataText="Nenhum registro encontrado.">
+
+                            <Columns>
+
+                                <asp:TemplateField HeaderText="Permissão" ConvertEmptyStringToNull="False">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblPermissao" runat="server" Text='<%# Bind("Descricao") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Excluir">
+                                    <ItemTemplate>
+                                        <asp:ImageButton runat="server" OnClientClick="if(confirm('Deseja realmente remover esta permissão?')){return true;}else{return false;}" ID="ibtExcluir" ImageUrl="~/Imagem/ico_delete_grid.gif"
+                                            CommandArgument='<%# Eval("IdPermissao") %>' CommandName="EXCLUIR" CausesValidation="true" />
+                                    </ItemTemplate>
+                                    <ItemStyle HorizontalAlign="Left" Width="30px" />
+                                </asp:TemplateField>
+                            </Columns>
+
+                        </asp:GridView>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="legendFormulario">
+                Grupo trabalho
+            </div>
+
+            <table>
+                <tr>
+                    <td class="labelForm" style="width: 100px">Grupo trabalho:</td>
+                    <td>
+                        <asp:DropDownList ID="ddlGrupoTrabalho" Width="320px"
+                            runat="server">
+                        </asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="rfvGrupo" runat="server"
+                            ControlToValidate="ddlPermissao"
+                            ErrorMessage="Informe a permissão" InitialValue="0"
+                            ValidationGroup="validacaoPermissao">*</asp:RequiredFieldValidator>
+                    </td>
+                    <td>
+                        <asp:ImageButton ID="ImageButton1" CausesValidation="true"
+                            ValidationGroup="validacaoPermissao" runat="server" ImageUrl="~/Imagem/add.png" OnClick="imgOK_permissao_Click" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:GridView runat="server" ID="GridView1" Width="140%"
+                            AutoGenerateColumns="False" DataKeyNames="IdPermissao"
+                            AllowSorting="True"
+                            OnRowCommand="grvPermissoes_RowCommand"
+                            OnRowDataBound="grvPermissoes_RowDataBound"
+                            EmptyDataText="Nenhum registro encontrado.">
+
+                            <Columns>
+
+                                <asp:TemplateField HeaderText="Permissão" ConvertEmptyStringToNull="False">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblPermissao" runat="server" Text='<%# Bind("Descricao") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Excluir">
+                                    <ItemTemplate>
+                                        <asp:ImageButton runat="server" OnClientClick="if(confirm('Deseja realmente remover esta permissão?')){return true;}else{return false;}" ID="ibtExcluir" ImageUrl="~/Imagem/ico_delete_grid.gif"
+                                            CommandArgument='<%# Eval("IdPermissao") %>' CommandName="EXCLUIR" CausesValidation="true" />
+                                    </ItemTemplate>
+                                    <ItemStyle HorizontalAlign="Left" Width="30px" />
+                                </asp:TemplateField>
+                            </Columns>
+
+                        </asp:GridView>
+                    </td>
+                </tr>
+            </table>
+
             <br />
 
-            <div class="contentFinal">
+
+
+        </div>
+
+        <div class="contentFinal">
+            
                 <div class="AcaoFormulario">
-                    <asp:Panel runat="server" ID="pnlAcao">
-                        <asp:ImageButton ID="btn_salvar" CausesValidation="true"
-                            ValidationGroup="validacao" runat="server" ImageUrl="../imagem/btnSalvar.png"
-                            OnClick="btn_salvar_Click" />
-                        <asp:ImageButton ID="btnNovo" Visible="false" runat="server" ImageUrl="../imagem/btnNovo.png"
-                            OnClick="btnNovo_Click" />
-                    </asp:Panel>
+                <asp:Panel runat="server" ID="pnlAcao">
+                    <asp:ImageButton ID="btn_salvar" CausesValidation="true"
+                        ValidationGroup="validacao" runat="server" ImageUrl="../imagem/btnSalvar.png"
+                        OnClick="btn_salvar_Click" />
+                    <asp:ImageButton ID="btnNovo" Visible="false" runat="server" ImageUrl="../imagem/btnNovo.png"
+                        OnClick="btnNovo_Click" />
+                </asp:Panel>
                 </div>
-            </div>
+
         </div>
 
     </form>
