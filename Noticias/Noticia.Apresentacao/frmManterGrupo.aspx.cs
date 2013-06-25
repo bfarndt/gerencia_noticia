@@ -51,6 +51,7 @@ namespace Noticia.Apresentacao
 
         private void PreencherGrupoTrabalho(Entidades.GrupoTrabalho GrupoTrabalho)
         {
+            GrupoTrabalho.IdGrupoTrabalho = this.IdGrupoTrabalho;
             GrupoTrabalho.Descricao = txtDescricao.Text;
         }
 

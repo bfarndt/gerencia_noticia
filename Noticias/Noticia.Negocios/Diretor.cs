@@ -309,6 +309,36 @@ namespace Noticia.Negocios
             }
         }
 
+        public bool RemoverPermissaoDoTipoUsuario(Entidades.TipoUsuario tipoUsuario, Entidades.Permissao permissao)
+        {
+            try
+            {
+                //Executar insert
+                string strRetorno = string.Empty;
+                Entidades.UsuarioPermissao usuarioPermissao;
+                int intResult = 0;
+                foreach (var usuario in dalUsuario.Consultar(new Entidades.Usuario() { TipoUsuario = tipoUsuario }))
+                {
+                    usuarioPermissao = new Entidades.UsuarioPermissao();
+                    usuarioPermissao.Usuario = usuario;
+                    usuarioPermissao.Permissao = permissao;
+
+                    strRetorno = dalUsuarioPermissao.Excluir(usuarioPermissao);
+                }
+
+                return (int.TryParse(strRetorno, out intResult));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                AcessoDados.Dados.FecharConexao();
+            }
+        }
+
+
         public bool ManterTrabalho(Entidades.Trabalho trabalho, Singleton.CRUDEnum acao)
         {
             try
@@ -390,7 +420,7 @@ namespace Noticia.Negocios
         {
             try
             {
-                if (!(acao != Singleton.CRUDEnum.INSERIR) || !NegGrupoTrabalho.TemGrupoTrabalhoEmBranco(grupoTrabalho) && !NegGrupoTrabalho.TemGrupoTrabalhoExistente(grupoTrabalho))
+                if ((acao != Singleton.CRUDEnum.INSERIR) || !NegGrupoTrabalho.TemGrupoTrabalhoEmBranco(grupoTrabalho) && !NegGrupoTrabalho.TemGrupoTrabalhoExistente(grupoTrabalho))
                 {
                     string strRetorno = string.Empty;
 

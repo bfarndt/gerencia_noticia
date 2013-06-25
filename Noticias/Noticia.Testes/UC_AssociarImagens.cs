@@ -78,7 +78,7 @@ namespace Noticia.Testes
             Entidades.Noticia noticia = new Entidades.Noticia() { IdNoticia = 1, Titulo = "Copa do Mundo", Conteudo = "Brazil :)" };
             this.NegDiretor.CriarNoticia(noticia);
 
-            Entidades.Imagem imagem = new Entidades.Imagem() { IdImagem = 5 };
+            Entidades.Imagem imagem = new Entidades.Imagem() { IdImagem = 99 };
 
             var retorno = NegFotografo.AssociarImagem(noticia, imagem);
             Assert.AreEqual(true, retorno);

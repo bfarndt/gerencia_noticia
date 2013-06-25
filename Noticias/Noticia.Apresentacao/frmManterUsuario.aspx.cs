@@ -17,12 +17,16 @@ namespace Noticia.Apresentacao
             {
                 this.CarregarCombos();
 
+
+
                 if (Request.QueryString["IdUsuario"] != null && Request.QueryString["IdUsuario"].ToString().Length > 0)
                 {
                     ViewState["IdUsuario"] = Convert.ToInt32(Request.QueryString["IdUsuario"]);
                     this.IdUsuario = Convert.ToInt32(Convert.ToInt32(ViewState["IdUsuario"]));
                     this.CarregarUsuario();
                 }
+
+                ddlTipo_SelectedIndexChanged(null, null);
             }
             else
             {
@@ -49,6 +53,11 @@ namespace Noticia.Apresentacao
                     if (!(new Negocios.Diretor().ManterUsuario(usuario, Negocios.Singleton.CRUDEnum.INSERIR)))
                     {
                         ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Não foi possível completar a operação.');", true);
+                    }
+                    else
+                    {
+                        Page.ClientScript.RegisterStartupScript(typeof(string), "fecha", "window.parent.post(); window.parent.hs.close();", true);
+                        return;
                     }
                 }
                 else
@@ -504,6 +513,21 @@ namespace Noticia.Apresentacao
             catch (Exception ex)
             {
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('" + ex.Message + "');", true);
+            }
+        }
+
+        protected void ddlTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlTipo.SelectedIndex > 0)
+            {
+                if (Convert.ToInt32(ddlTipo.SelectedValue) == (int)Entidades.TipoUsuarioEnum.Editor)
+                {
+                    this.divDiasTrabalho.Visible = true;
+                }
+                else
+                {
+                    this.divDiasTrabalho.Visible = false;
+                }
             }
         }
 

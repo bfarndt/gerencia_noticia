@@ -12,7 +12,7 @@ namespace Noticia.Negocios
         AcessoDados.ImagemArquivo dalImagemArquivo = new AcessoDados.ImagemArquivo();
         AcessoDados.NoticiaImagem dalNoticiaImagem = new AcessoDados.NoticiaImagem();
         AcessoDados.Historico dalHistorico = new AcessoDados.Historico();
-        
+
 
         Negocios.Imagem NegImagem = new Imagem();
 
@@ -32,11 +32,12 @@ namespace Noticia.Negocios
                     if (int.TryParse(strRetorno, out intResult))
                     {
                         imagem.IdImagem = intResult;
+                        imagem.Selecionada = false;
                         Entidades.ImagemArquivo imagemArquivo = new Entidades.ImagemArquivo();
+                        imagemArquivo.NomeArquivo = file.Name;
                         imagemArquivo.Imagem = imagem;
                         imagemArquivo.Extensao = file.Extension;
                         imagemArquivo.Tamanho = file.Length.ToString();
-                        imagemArquivo.Formato = "SEILA";
                         imagemArquivo.ImagemBytes = NegImagem.RetornarArrayBytes(file);
 
                         strRetorno = dalImagemArquivo.Inserir(imagemArquivo);
@@ -63,6 +64,23 @@ namespace Noticia.Negocios
             }
         }
 
+        public bool DeletarImagem(Entidades.ImagemArquivo imagemArquivo)
+        {
+            try
+            {
+                string strRetorno = string.Empty;
+                strRetorno = new AcessoDados.ImagemArquivo().Excluir(imagemArquivo);
+
+                int intResult = 0;
+                return int.TryParse(strRetorno, out intResult);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public bool AssociarImagem(Entidades.Noticia noticia, Entidades.Imagem imagem)
         {
             try
@@ -75,7 +93,7 @@ namespace Noticia.Negocios
                 noticiaImagem.Imagem = imagem;
 
                 strRetorno = dalNoticiaImagem.Inserir(noticiaImagem);
-                
+
 
                 int intResult = 0;
 

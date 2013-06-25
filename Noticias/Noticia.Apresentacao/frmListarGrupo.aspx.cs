@@ -46,12 +46,12 @@ namespace Noticia.Apresentacao
                 if (e.CommandName.Trim().ToUpper() == "VISUALIZAR")
                 {
                     int cod = Convert.ToInt32(e.CommandArgument);
-                    base.AbrirModal(Page.ResolveClientUrl("frmManterGrupo.aspx?IdGrupoTrabalho=" + string.Concat(cod.ToString())), "800", "Grupo Trabalho Visualizar", "600");
+                    base.AbrirModal(Page.ResolveClientUrl("frmManterGrupo.aspx?IdGrupoTrabalho=" + string.Concat(cod.ToString())), "400", "Grupo Trabalho Visualizar", "200");
                 }
                 if (e.CommandName.Trim().ToUpper() == "EDITAR")
                 {
                     int cod = Convert.ToInt32(e.CommandArgument);
-                    base.AbrirModal(Page.ResolveClientUrl("frmManterGrupo.aspx?IdGrupoTrabalho=" + string.Concat(cod.ToString())), "800", "Grupo Trabalho Visualizar", "600");
+                    base.AbrirModal(Page.ResolveClientUrl("frmManterGrupo.aspx?IdGrupoTrabalho=" + string.Concat(cod.ToString())), "400", "Grupo Trabalho Visualizar", "200");
                 }
                 if (e.CommandName.Trim().ToUpper() == "EXCLUIR")
                 {

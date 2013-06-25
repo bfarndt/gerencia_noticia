@@ -9,6 +9,18 @@ namespace Noticia.Negocios
     {
         AcessoDados.DiasTrabalhados dalUsuarioPermissao = new AcessoDados.DiasTrabalhados();
 
+        public List<Entidades.Trabalho> Listar()
+        {
+            try
+            {
+                return new AcessoDados.Trabalho().Consultar(new Entidades.Trabalho() { IdTrabalho = null, TipoUsuario = null });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public List<Entidades.DiaSemana> DiasTrabalhoPorUsuario(Entidades.Usuario usuario)
         {
             try

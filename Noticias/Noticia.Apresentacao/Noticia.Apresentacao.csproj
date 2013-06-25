@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.60501.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -64,11 +68,14 @@
     <Content Include="About.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="frmCriarNoticia.aspx" />
+    <Content Include="frmGerenciarTipoUsuarioPermissao.aspx" />
     <Content Include="frmListarGrupo.aspx" />
+    <Content Include="frmListarTipoUsuarioPermissao.aspx" />
     <Content Include="frmListarUsuario.aspx" />
     <Content Include="frmManterGrupo.aspx" />
     <Content Include="frmManterUsuario.aspx" />
-    <Content Include="frmVincularGrupo.aspx" />
+    <Content Include="frmSubmeterImagem.aspx" />
+    <Content Include="frmTrabalho.aspx" />
     <Content Include="Imagem\add.png" />
     <Content Include="Imagem\barra_cores.jpg" />
     <Content Include="Imagem\barra_verde.png" />
@@ -127,6 +134,7 @@
     <Content Include="Imagem\ui-icons_ef8c08_256x240.png" />
     <Content Include="Imagem\ui-icons_ffd27a_256x240.png" />
     <Content Include="Imagem\ui-icons_ffffff_256x240.png" />
+    <Content Include="Imagem\update.png" />
     <Content Include="Imagem\user.gif" />
     <Content Include="Imagem\viewheadergrad.gif" />
     <Content Include="Imagem\warning.png" />
@@ -315,12 +323,26 @@
     <Compile Include="frmCriarNoticia.aspx.designer.cs">
       <DependentUpon>frmCriarNoticia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmGerenciarTipoUsuarioPermissao.aspx.cs">
+      <DependentUpon>frmGerenciarTipoUsuarioPermissao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmGerenciarTipoUsuarioPermissao.aspx.designer.cs">
+      <DependentUpon>frmGerenciarTipoUsuarioPermissao.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmListarGrupo.aspx.cs">
       <DependentUpon>frmListarGrupo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="frmListarGrupo.aspx.designer.cs">
       <DependentUpon>frmListarGrupo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarTipoUsuarioPermissao.aspx.cs">
+      <DependentUpon>frmListarTipoUsuarioPermissao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmListarTipoUsuarioPermissao.aspx.designer.cs">
+      <DependentUpon>frmListarTipoUsuarioPermissao.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmListarUsuario.aspx.cs">
       <DependentUpon>frmListarUsuario.aspx</DependentUpon>
@@ -343,12 +365,19 @@
     <Compile Include="frmManterUsuario.aspx.designer.cs">
       <DependentUpon>frmManterUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="frmVincularGrupo.aspx.cs">
-      <DependentUpon>frmVincularGrupo.aspx</DependentUpon>
+    <Compile Include="frmSubmeterImagem.aspx.cs">
+      <DependentUpon>frmSubmeterImagem.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="frmVincularGrupo.aspx.designer.cs">
-      <DependentUpon>frmVincularGrupo.aspx</DependentUpon>
+    <Compile Include="frmSubmeterImagem.aspx.designer.cs">
+      <DependentUpon>frmSubmeterImagem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmTrabalho.aspx.cs">
+      <DependentUpon>frmTrabalho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmTrabalho.aspx.designer.cs">
+      <DependentUpon>frmTrabalho.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -367,6 +396,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Imagem\Temp\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />

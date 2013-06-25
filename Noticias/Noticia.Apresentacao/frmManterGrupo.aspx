@@ -16,9 +16,9 @@
         }
     </script>
 </head>
-<body>
+<body style="height:auto">
     <form id="form1" runat="server">
-        <div class="contentPage">
+        <div class="contentPage" style="height:153px">
             <asp:ValidationSummary runat="server" ID="vs" ValidationGroup="validacao" />
 
             <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -36,7 +36,7 @@
                             <tr>
                                 <td class="labelForm">Descrição:</td>
                                 <td>
-                                    <asp:TextBox runat="server" MaxLength="40" Width="98px" ID="txtDescricao"></asp:TextBox>
+                                    <asp:TextBox runat="server" MaxLength="40" Width="200px" ID="txtDescricao"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvDescricao" runat="server" ControlToValidate="txtDescricao" Display="Dynamic" ErrorMessage="Campo descrição é requerido." ValidationGroup="validacao">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>

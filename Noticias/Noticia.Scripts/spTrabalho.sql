@@ -58,7 +58,6 @@ BEGIN
 		UPDATE
 			tblTrabalho
 		SET
-			IdTipoUsuario = @intIdTipoUsuario,
 			ValorHoraTrabalhada = @decValorHoraTrabalhada
 		WHERE
 			IdTrabalho = @intIdTrabalho

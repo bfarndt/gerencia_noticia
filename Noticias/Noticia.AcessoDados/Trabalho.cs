@@ -17,7 +17,8 @@ namespace Noticia.AcessoDados
                 Dados.LimparParametros();
                 Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
                 Dados.AdicionarParametros("@intIdTrabalho", entidade.IdTrabalho);
-                Dados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
+                if (entidade.TipoUsuario != null)
+                    Dados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
 
                 objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spTrabalho");
 
@@ -95,7 +96,6 @@ namespace Noticia.AcessoDados
                 {
                     Dados.AdicionarParametros("@vchAcao", "ALTERAR");
                     Dados.AdicionarParametros("@intIdTrabalho", entidade.IdTrabalho);
-                    Dados.AdicionarParametros("@intIdTipoUsuario", entidade.TipoUsuario.IdTipoUsuario);
                     Dados.AdicionarParametros("@decValorHoraTrabalhada", entidade.ValorHoraTrabalhada);
 
                     objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spTrabalho");

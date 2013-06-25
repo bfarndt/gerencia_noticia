@@ -103,5 +103,17 @@ namespace Noticia.Negocios
                 AcessoDados.Dados.FecharConexao();
             }
         }
+
+        public List<Entidades.ImagemArquivo> ImagensNaoSelecionadas()
+        {
+            try
+            {
+                return new AcessoDados.ImagemArquivo().Consultar(new Entidades.ImagemArquivo() { Imagem = new Entidades.Imagem() { Selecionada = false } });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

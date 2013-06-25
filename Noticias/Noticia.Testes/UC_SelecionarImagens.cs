@@ -87,7 +87,7 @@ namespace Noticia.Testes
         public void Selecionar_Imagem()
         {
             Entidades.Imagem imagem = new Entidades.Imagem();
-            imagem.IdImagem = 2;
+            imagem.IdImagem = 99;
             imagem.Legenda = "São Paulo";
             imagem.ImagemGravacao = new Entidades.ImagemGravacao() { Imagem = imagem, LocalGravacao = "Ribeirão Preto", DataHoraGravacao = DateTime.Now };
 

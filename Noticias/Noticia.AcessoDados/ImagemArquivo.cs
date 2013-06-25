@@ -21,6 +21,7 @@ namespace Noticia.AcessoDados
                 Dados.AdicionarParametros("@vchExtensao", entidade.Extensao);
                 Dados.AdicionarParametros("@vchTamanho", entidade.Tamanho);
                 Dados.AdicionarParametros("@vchFormato", entidade.Formato);
+                Dados.AdicionarParametros("@vchNomeArquivo", entidade.NomeArquivo);
 
                 objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spImagemArquivo");
 
@@ -34,15 +35,17 @@ namespace Noticia.AcessoDados
                 foreach (DataRow objLinha in objDataTable.Rows)
                 {
                     Entidades.ImagemArquivo objNovoImagemArquivo = new Entidades.ImagemArquivo();
-
+                    objNovoImagemArquivo.IdImagemArquivo = objLinha["IdImagemArquivo"] != DBNull.Value ? Convert.ToInt32(objLinha["IdImagemArquivo"]) : 0;
                     objNovoImagemArquivo.Imagem = new Entidades.Imagem();
                     objNovoImagemArquivo.Imagem.IdImagem = objLinha["IdImagem"] != DBNull.Value ? Convert.ToInt32(objLinha["IdImagem"]) : 0;
-                    objNovoImagemArquivo.Imagem = new AcessoDados.Imagem().Consultar(objNovoImagemArquivo.Imagem).First();
+                    List<Entidades.Imagem> consulta = new AcessoDados.Imagem().Consultar(objNovoImagemArquivo.Imagem);
+                    if (consulta.First().Selecionada.Value)
+                        continue;
 
-                    objNovoImagemArquivo.ImagemBytes = objLinha["Imagem"] != DBNull.Value ? objLinha["Imagem"] as byte[] : null;
                     objNovoImagemArquivo.Extensao = objLinha["Extensao"] != DBNull.Value ? Convert.ToString(objLinha["Extensao"]) : "";
                     objNovoImagemArquivo.Tamanho = objLinha["Tamanho"] != DBNull.Value ? Convert.ToString(objLinha["Tamanho"]) : "";
                     objNovoImagemArquivo.Formato = objLinha["Formato"] != DBNull.Value ? Convert.ToString(objLinha["Formato"]) : "";
+                    objNovoImagemArquivo.NomeArquivo = objLinha["NomeArquivo"] != DBNull.Value ? Convert.ToString(objLinha["NomeArquivo"]) : "";
 
                     objRetorno.Add(objNovoImagemArquivo);
                 }
@@ -69,6 +72,7 @@ namespace Noticia.AcessoDados
                     Dados.AdicionarParametros("@vchExtensao", entidade.Extensao);
                     Dados.AdicionarParametros("@vchTamanho", entidade.Tamanho);
                     Dados.AdicionarParametros("@vchFormato", entidade.Formato);
+                    Dados.AdicionarParametros("@vchNomeArquivo", entidade.NomeArquivo);
 
                     objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagemArquivo");
                 }
@@ -104,6 +108,7 @@ namespace Noticia.AcessoDados
                     Dados.AdicionarParametros("@vchAcao", "ALTERAR");
                     Dados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
                     Dados.AdicionarParametros("@vchFormato", entidade.Formato);
+                    Dados.AdicionarParametros("@vchNomeArquivo", entidade.NomeArquivo);
 
                     objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagemArquivo");
                 }
@@ -133,10 +138,10 @@ namespace Noticia.AcessoDados
             {
                 Dados.LimparParametros();
                 object objRetorno = null;
-                if (entidade != null && entidade.Imagem != null && entidade.Imagem.IdImagem > 0)
+                if (entidade != null && entidade.IdImagemArquivo > 0)
                 {
                     Dados.AdicionarParametros("@vchAcao", "DELETAR");
-                    Dados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
+                    Dados.AdicionarParametros("@intIdImagemArquivo", entidade.IdImagemArquivo);
 
                     objRetorno = Dados.ExecutarManipulacao(CommandType.StoredProcedure, "spImagemArquivo");
                 }
