@@ -64,7 +64,9 @@
     <Content Include="About.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="frmCriarNoticia.aspx" />
+    <Content Include="frmEditarNoticia.aspx" />
     <Content Include="frmListarGrupo.aspx" />
+    <Content Include="frmListarNoticia.aspx" />
     <Content Include="frmListarUsuario.aspx" />
     <Content Include="frmManterGrupo.aspx" />
     <Content Include="frmManterUsuario.aspx" />
@@ -315,12 +317,26 @@
     <Compile Include="frmCriarNoticia.aspx.designer.cs">
       <DependentUpon>frmCriarNoticia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmEditarNoticia.aspx.cs">
+      <DependentUpon>frmEditarNoticia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmEditarNoticia.aspx.designer.cs">
+      <DependentUpon>frmEditarNoticia.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmListarGrupo.aspx.cs">
       <DependentUpon>frmListarGrupo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="frmListarGrupo.aspx.designer.cs">
       <DependentUpon>frmListarGrupo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarNoticia.aspx.cs">
+      <DependentUpon>frmListarNoticia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmListarNoticia.aspx.designer.cs">
+      <DependentUpon>frmListarNoticia.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmListarUsuario.aspx.cs">
       <DependentUpon>frmListarUsuario.aspx</DependentUpon>

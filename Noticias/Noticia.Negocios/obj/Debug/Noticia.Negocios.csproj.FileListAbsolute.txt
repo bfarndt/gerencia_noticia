@@ -34,3 +34,12 @@ E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Negocios\bin\Debug\
 E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.csprojResolveAssemblyReference.cache
 E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.dll
 E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.pdb
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Negocios\bin\Debug\Noticia.Negocios.dll
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Negocios\bin\Debug\Noticia.Negocios.pdb
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Negocios\bin\Debug\Noticia.AcessoDados.dll
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Negocios\bin\Debug\Noticia.Entidades.dll
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Negocios\bin\Debug\Noticia.AcessoDados.pdb
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Negocios\bin\Debug\Noticia.Entidades.pdb
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.csprojResolveAssemblyReference.cache
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.dll
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Negocios\obj\Debug\Noticia.Negocios.pdb

@@ -30,3 +30,14 @@ E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Testes\bin\Debug\No
 E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Testes\obj\Debug\Noticia.Testes.csprojResolveAssemblyReference.cache
 E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Testes\obj\Debug\Noticia.Testes.dll
 E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.Testes\obj\Debug\Noticia.Testes.pdb
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Testes\bin\Debug\Noticia.Testes.dll
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Testes\bin\Debug\Noticia.Testes.pdb
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Testes\bin\Debug\Noticia.Entidades.dll
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Testes\bin\Debug\Noticia.Negocios.dll
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Testes\bin\Debug\Noticia.AcessoDados.dll
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Testes\bin\Debug\Noticia.Entidades.pdb
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Testes\bin\Debug\Noticia.Negocios.pdb
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Testes\bin\Debug\Noticia.AcessoDados.pdb
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Testes\obj\Debug\Noticia.Testes.csprojResolveAssemblyReference.cache
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Testes\obj\Debug\Noticia.Testes.dll
+C:\Users\Luiz\Desktop\Projeto Gerencia Noticia\Noticias\Noticia.Testes\obj\Debug\Noticia.Testes.pdb

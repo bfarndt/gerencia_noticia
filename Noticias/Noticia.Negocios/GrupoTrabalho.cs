@@ -38,5 +38,10 @@ namespace Noticia.Negocios
         }
 
 
+
+        public List<Entidades.GrupoTrabalho> Listar(Entidades.GrupoTrabalho grupoTrabalho)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -430,5 +430,42 @@ namespace Noticia.Negocios
             }
         }
 
+
+        public bool ManterNoticia(Entidades.Noticia noticia, Singleton.CRUDEnum acao)
+        {
+            try
+            {
+                string strRetorno = string.Empty;
+                int intResult = 0;
+
+                switch (acao)
+                {
+                    case Singleton.CRUDEnum.INSERIR:
+                        strRetorno = dalNoticia.Inserir(noticia);
+                        break;
+                    case Singleton.CRUDEnum.ALTERAR:
+                        strRetorno = dalNoticia.Alterar(noticia);
+                        break;
+                    case Singleton.CRUDEnum.DELETAR:
+                        strRetorno = dalNoticia.Excluir(noticia);
+                        break;
+                    default:
+                        strRetorno = "AÇÃO INEXISTENTE";
+                        break;
+                }
+                if (int.TryParse(strRetorno, out intResult))
+                    noticia.IdNoticia = intResult;
+
+                return intResult > 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                AcessoDados.Dados.FecharConexao();
+            }
+        }
     }
 }
