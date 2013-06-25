@@ -16,8 +16,10 @@ namespace Noticia.AcessoDados
 
                 Dados.LimparParametros();
                 Dados.AdicionarParametros("@vchAcao", "SELECIONAR");
-                Dados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
-                Dados.AdicionarParametros("@intIdDia", entidade.DiaSemana.IdDia);
+                if (entidade.Usuario != null)
+                    Dados.AdicionarParametros("@intIdUsuario", entidade.Usuario.IdUsuario);
+                if (entidade.DiaSemana != null)
+                    Dados.AdicionarParametros("@intIdDia", entidade.DiaSemana.IdDia);
 
                 objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spDiasTrabalhados");
 

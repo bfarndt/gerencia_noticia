@@ -390,7 +390,7 @@ namespace Noticia.Negocios
         {
             try
             {
-                if (!NegGrupoTrabalho.TemGrupoTrabalhoEmBranco(grupoTrabalho) && !NegGrupoTrabalho.TemGrupoTrabalhoExistente(grupoTrabalho))
+                if (!(acao != Singleton.CRUDEnum.INSERIR) || !NegGrupoTrabalho.TemGrupoTrabalhoEmBranco(grupoTrabalho) && !NegGrupoTrabalho.TemGrupoTrabalhoExistente(grupoTrabalho))
                 {
                     string strRetorno = string.Empty;
 

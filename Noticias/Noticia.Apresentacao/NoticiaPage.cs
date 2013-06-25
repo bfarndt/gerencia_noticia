@@ -22,7 +22,7 @@ namespace Noticia.Apresentacao
             }
             else
             {
-                if (!url_solicitada.Contains("frmManterUsuario.aspx"))
+                if (!url_solicitada.Contains("frmManterUsuario.aspx") || !url_solicitada.Contains("frmManterGrupo.aspx"))
                     (Master.FindControl("litUsuarioLogado") as Literal).Text = "" + Session["NomeUsuario"];
             }
 

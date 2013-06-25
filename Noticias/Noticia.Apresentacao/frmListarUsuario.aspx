@@ -19,7 +19,7 @@
     </h2>
 
     <fieldset>
-        <legend>Filtrar Funcionário</legend>
+        <legend>Filtrar Usuário</legend>
         <table border="0" cellpadding="0" cellspacing="0">
             <tr>
                 <td style="padding-left: 10px; padding-right: 10px; height: 26px;">

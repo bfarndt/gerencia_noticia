@@ -51,6 +51,7 @@
     <Compile Include="Reporter.cs" />
     <Compile Include="Singleton.cs" />
     <Compile Include="TipoUsuario.cs" />
+    <Compile Include="Trabalho.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>

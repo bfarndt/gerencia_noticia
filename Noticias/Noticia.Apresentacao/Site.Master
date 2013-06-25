@@ -30,6 +30,7 @@
                         <Items>
                             <asp:MenuItem NavigateUrl="~/frmCriarNoticia.aspx" Text="Criar Notícia" />
                             <asp:MenuItem NavigateUrl="~/frmListarUsuario.aspx" Text="Manter Usuário" />
+                            <asp:MenuItem NavigateUrl="~/frmListarGrupo.aspx" Text="Manter Grupo Trabalho" />
                         </Items>
                     </asp:Menu>
                 </div>

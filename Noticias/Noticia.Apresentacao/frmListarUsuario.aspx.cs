@@ -33,12 +33,12 @@ namespace Noticia.Apresentacao
                 if (e.CommandName.Trim().ToUpper() == "VISUALIZAR")
                 {
                     int cod = Convert.ToInt32(e.CommandArgument);
-                    base.AbrirModal(Page.ResolveClientUrl("frmManterUsuario.aspx?IdUsuario=" + string.Concat(cod.ToString())), "800", "Usuário Visualizar", "500");
+                    base.AbrirModal(Page.ResolveClientUrl("frmManterUsuario.aspx?IdUsuario=" + string.Concat(cod.ToString())), "800", "Usuário Visualizar", "600");
                 }
                 if (e.CommandName.Trim().ToUpper() == "EDITAR")
                 {
                     int cod = Convert.ToInt32(e.CommandArgument);
-                    base.AbrirModal(Page.ResolveClientUrl("frmManterUsuario.aspx?IdUsuario=" + string.Concat(cod.ToString())), "800", "Usuário Visualizar", "500");
+                    base.AbrirModal(Page.ResolveClientUrl("frmManterUsuario.aspx?IdUsuario=" + string.Concat(cod.ToString())), "800", "Usuário Visualizar", "600");
                 }
                 if (e.CommandName.Trim().ToUpper() == "EXCLUIR")
                 {
@@ -99,7 +99,7 @@ namespace Noticia.Apresentacao
 
         protected void btnNovo_Click(object sender, ImageClickEventArgs e)
         {
-            this.AbrirModal(@"frmManterUsuario.aspx", "500", "Manter usuário");
+            this.AbrirModal(@"frmManterUsuario.aspx", "800", "Manter usuário", "600");
         }
 
         protected void btnVoltar_Click(object sender, ImageClickEventArgs e)

@@ -49,6 +49,24 @@ namespace Noticia.Apresentacao {
         protected global::System.Web.UI.WebControls.ValidationSummary vsPermissao;
         
         /// <summary>
+        /// vsGrupo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vsGrupo;
+        
+        /// <summary>
+        /// vsDia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vsDia;
+        
+        /// <summary>
         /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
@@ -202,13 +220,13 @@ namespace Noticia.Apresentacao {
         protected global::System.Web.UI.WebControls.GridView grvPermissoes;
         
         /// <summary>
-        /// ddlGrupoTrabalho control.
+        /// ddlGrupo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlGrupoTrabalho;
+        protected global::System.Web.UI.WebControls.DropDownList ddlGrupo;
         
         /// <summary>
         /// rfvGrupo control.
@@ -220,22 +238,58 @@ namespace Noticia.Apresentacao {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvGrupo;
         
         /// <summary>
-        /// ImageButton1 control.
+        /// imgOK_Grupo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+        protected global::System.Web.UI.WebControls.ImageButton imgOK_Grupo;
         
         /// <summary>
-        /// GridView1 control.
+        /// grvGrupo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView grvGrupo;
+        
+        /// <summary>
+        /// ddlDia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDia;
+        
+        /// <summary>
+        /// rfvDia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDia;
+        
+        /// <summary>
+        /// imgOK_Dia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgOK_Dia;
+        
+        /// <summary>
+        /// grvDia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grvDia;
         
         /// <summary>
         /// pnlAcao control.
