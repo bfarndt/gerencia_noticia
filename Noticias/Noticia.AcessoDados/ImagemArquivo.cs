@@ -39,9 +39,7 @@ namespace Noticia.AcessoDados
                     objNovoImagemArquivo.Imagem = new Entidades.Imagem();
                     objNovoImagemArquivo.Imagem.IdImagem = objLinha["IdImagem"] != DBNull.Value ? Convert.ToInt32(objLinha["IdImagem"]) : 0;
                     List<Entidades.Imagem> consulta = new AcessoDados.Imagem().Consultar(objNovoImagemArquivo.Imagem);
-                    if (consulta.First().Selecionada.Value)
-                        continue;
-
+                    objNovoImagemArquivo.Imagem = consulta.First();
                     objNovoImagemArquivo.Extensao = objLinha["Extensao"] != DBNull.Value ? Convert.ToString(objLinha["Extensao"]) : "";
                     objNovoImagemArquivo.Tamanho = objLinha["Tamanho"] != DBNull.Value ? Convert.ToString(objLinha["Tamanho"]) : "";
                     objNovoImagemArquivo.Formato = objLinha["Formato"] != DBNull.Value ? Convert.ToString(objLinha["Formato"]) : "";
@@ -51,6 +49,38 @@ namespace Noticia.AcessoDados
                 }
 
                 return objRetorno;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Byte[] CarregarImagem(Entidades.ImagemArquivo entidade)
+        {
+            try
+            {
+                DataTable objDataTable = null;
+
+                Dados.LimparParametros();
+                Dados.AdicionarParametros("@vchAcao", "IMAGEM");
+                Dados.AdicionarParametros("@intIdImagem", entidade.Imagem.IdImagem);
+
+                objDataTable = Dados.ExecutaConsultar(System.Data.CommandType.StoredProcedure, "spImagemArquivo");
+
+                if (objDataTable.Rows.Count <= 0)
+                {
+                    return null;
+                }
+
+                Entidades.ImagemArquivo objNovoImagemArquivo = new Entidades.ImagemArquivo();
+                foreach (DataRow objLinha in objDataTable.Rows)
+                {
+                    objNovoImagemArquivo.ImagemBytes = objLinha["Imagem"] != DBNull.Value ? objLinha["Imagem"] as byte[] : null;
+                }
+
+                return objNovoImagemArquivo.ImagemBytes;
+
             }
             catch (Exception ex)
             {

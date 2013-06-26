@@ -145,5 +145,10 @@ namespace Noticia.Apresentacao
         }
 
         #endregion
+
+        protected void btnVoltar_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("~/Default.aspx");
+        }
     }
 }

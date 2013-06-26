@@ -17,15 +17,12 @@ namespace Noticia.Apresentacao
             {
                 this.CarregarCombos();
 
-
-
                 if (Request.QueryString["IdUsuario"] != null && Request.QueryString["IdUsuario"].ToString().Length > 0)
                 {
                     ViewState["IdUsuario"] = Convert.ToInt32(Request.QueryString["IdUsuario"]);
                     this.IdUsuario = Convert.ToInt32(Convert.ToInt32(ViewState["IdUsuario"]));
                     this.CarregarUsuario();
                 }
-
                 ddlTipo_SelectedIndexChanged(null, null);
             }
             else
@@ -99,6 +96,7 @@ namespace Noticia.Apresentacao
                     this.AtualizarGridPermissoes(null, false);
                     this.AtualizarGridGrupos(null, false);
                     this.AtualizarGridDias(null, false);
+                    this.AtualizarGrid(null, false);
                 }
             }
             catch (Exception ex)
@@ -191,6 +189,7 @@ namespace Noticia.Apresentacao
                     if (new Negocios.Diretor().RemoverPermissaoDoUsuario(usuarioPermissao))
                     {
                         AtualizarGridPermissoes(permissaoSelecionada, true);
+                        AtualizarGrid(permissaoSelecionada, true);
                         ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Permissão removida.');", true);
                     }
                     else
@@ -209,6 +208,55 @@ namespace Noticia.Apresentacao
         {
 
         }
+
+        private void AtualizarGrid(Entidades.Permissao permissao, bool excluir)
+        {
+            try
+            {
+                if (this.IdUsuario > 0)
+                {
+                    if (excluir && permissao != null && permissao.IdPermissao > 0)
+                    {
+                        List<Entidades.Permissao> gridPermissoes = ViewState["permissoes"] as List<Entidades.Permissao>;
+                        var consulta = (from f in gridPermissoes
+                                        where f.IdPermissao == permissao.IdPermissao
+                                        select f);
+
+                        gridPermissoes.Remove(consulta.First());
+                        ViewState["permissoes"] = gridPermissoes;
+
+                        this.grvPermissoes.DataSource = gridPermissoes;
+                        this.grvPermissoes.DataBind();
+                    }
+                    else if (permissao != null)
+                    {
+                        List<Entidades.Permissao> gridPermissoes = ViewState["permissoes"] as List<Entidades.Permissao>;
+                        if (gridPermissoes == null)
+                            gridPermissoes = new List<Entidades.Permissao>();
+                        gridPermissoes.Add(permissao);
+
+                        ViewState["permissoes"] = gridPermissoes;
+                        this.grvPermissoes.DataSource = gridPermissoes;
+                        this.grvPermissoes.DataBind();
+                    }
+                    else
+                    {
+                        ViewState["permissoes"] = new Negocios.Permissao().PermissoesPorUsuario(new Entidades.Usuario() { IdUsuario = this.IdUsuario });
+                        this.grvPermissoes.DataSource = ViewState["permissoes"] as List<Entidades.Permissao>;
+                        this.grvPermissoes.DataBind();
+                    }
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('É necessário salvar o usuário antes desta operação.');", true);
+                }
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('" + ex.Message + "');", true);
+            }
+        }
+
 
         private void AtualizarGridPermissoes(Entidades.Permissao permissao, bool excluir)
         {
@@ -270,6 +318,7 @@ namespace Noticia.Apresentacao
                     if (new Negocios.Diretor().AssociarPermissaoParaUsuario(usuarioPermissao))
                     {
                         AtualizarGridPermissoes(usuarioPermissao.Permissao, false);
+                        AtualizarGrid(usuarioPermissao.Permissao, false);
                         ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Permissão adicionada com sucesso.');", true);
                     }
                     else

@@ -149,7 +149,7 @@ namespace Noticia.Negocios
 
         }
 
-        public List<Entidades.Noticia> NoticiasDoGrupoTrabalho()
+        public List<Entidades.Noticia> NoticiasDoGrupoTrabalhoNaoSubmetidasNaoAprovadas()
         {
             try
             {
@@ -168,6 +168,14 @@ namespace Noticia.Negocios
 
                         foreach (var noticia in dalNoticiaGrupoTrabalho.Consultar(consultaPorGrupo))
                         {
+                            if (noticia.Noticia.StatusNoticia != null)
+                            {
+                                if ((noticia.Noticia.StatusNoticia.IdStatus == (int)Entidades.StatusNoticiaEnum.Submetida) ||
+                                    (noticia.Noticia.StatusNoticia.IdStatus == (int)Entidades.StatusNoticiaEnum.Aprovada))
+                                {
+                                    continue;
+                                }
+                            }
                             noticiasDoGrupo.Add(noticia.Noticia);
                         }
                     }
@@ -189,5 +197,35 @@ namespace Noticia.Negocios
                 AcessoDados.Dados.FecharConexao();
             }
         }
+
+        public List<Entidades.NoticiaImagem> NoticiasImagensAssociadas()
+        {
+            try
+            {
+                List<Entidades.NoticiaImagem> retorno = new List<Entidades.NoticiaImagem>();
+
+                foreach (var noticia in this.NoticiasDoGrupoTrabalhoNaoSubmetidasNaoAprovadas())
+                {
+                    foreach (var item in new AcessoDados.NoticiaImagem().Consultar(new Entidades.NoticiaImagem() { Noticia = noticia }))
+                    {
+                        if (item.Imagem.Selecionada.Value)
+                            continue;
+
+                        retorno.Add(new Entidades.NoticiaImagem() { Noticia = noticia, Imagem = item.Imagem });
+                    }
+                }
+
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                AcessoDados.Dados.FecharConexao();
+            }
+        }
+
     }
 }

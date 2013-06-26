@@ -39,6 +39,8 @@
                             <asp:MenuItem NavigateUrl="~/frmTrabalho.aspx" Text="Trabalho" />
                             <asp:MenuItem NavigateUrl="~/frmListarTipoUsuarioPermissao.aspx" Text="Perfil/Permissão" />
                             <asp:MenuItem NavigateUrl="~/frmSubmeterImagem.aspx" Text="Submeter Imagem" />
+                            <asp:MenuItem NavigateUrl="~/frmAssociarImagem.aspx" Text="Associar Imagem" />
+                            <asp:MenuItem NavigateUrl="~/frmSelecionarImagens.aspx" Text="Selecionar Imagem" />
                         </Items>
                     </asp:Menu>
                 </div>

@@ -120,5 +120,42 @@ namespace Noticia.Negocios
             }
         }
 
+        public bool DesassociarImagem(Entidades.Noticia noticia, Entidades.Imagem imagem)
+        {
+            try
+            {
+                string strRetorno = string.Empty;
+
+                Entidades.NoticiaImagem noticiaImagem = new Entidades.NoticiaImagem();
+                noticiaImagem.Noticia = noticia;
+                noticiaImagem.Imagem = imagem;
+
+                strRetorno = dalNoticiaImagem.Excluir(noticiaImagem);
+
+
+                int intResult = 0;
+
+                if (int.TryParse(strRetorno, out intResult))
+                {
+                    Entidades.Historico historico = new Entidades.Historico();
+                    historico.Noticia = noticia;
+                    historico.Usuario = Singleton.UsuarioLogado;
+                    historico.DataHora = DateTime.Now;
+                    historico.StatusNoticia = new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.GrupoVinculado };
+
+                    strRetorno = dalHistorico.Inserir(historico);
+                }
+
+                return (int.TryParse(strRetorno, out intResult));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                AcessoDados.Dados.FecharConexao();
+            }
+        }
     }
 }

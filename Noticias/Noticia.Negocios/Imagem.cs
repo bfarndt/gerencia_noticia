@@ -56,13 +56,13 @@ namespace Noticia.Negocios
             return !(string.IsNullOrWhiteSpace(imagem.Legenda));
         }
 
-        public List<Entidades.Imagem> ImagensDeNoticiasAssociadas()
+        public List<Entidades.NoticiaImagem> ImagensDeNoticiasAssociadas()
         {
             try
             {
                 if (NegUsuario.TenhoPermissao(Entidades.PermissaoEnum.Selecionar_Imagens))
                 {
-                    List<Entidades.Imagem> imagensAssociadas = new List<Entidades.Imagem>();
+                    List<Entidades.NoticiaImagem> imagensAssociadas = new List<Entidades.NoticiaImagem>();
 
                     Entidades.GrupoTrabalhoUsuario consultaPorUsuario = new Entidades.GrupoTrabalhoUsuario();
                     consultaPorUsuario.Usuario = Singleton.UsuarioLogado;
@@ -82,7 +82,14 @@ namespace Noticia.Negocios
 
                             foreach (var imagem in dalNoticiaImagem.Consultar(consultaPorNoticia))
                             {
-                                imagensAssociadas.Add(imagem.Imagem);
+                                if (imagem.Imagem.Selecionada.Value)
+                                    continue;
+
+                                var consulta = new AcessoDados.ImagemArquivo().Consultar(new Entidades.ImagemArquivo() { Imagem = imagem.Imagem });
+                                if (consulta.Count > 0)
+                                    imagem.Imagem.Legenda = consulta.First().NomeArquivo;
+
+                                imagensAssociadas.Add(imagem);
                             }
                         }
                     }
@@ -108,12 +115,66 @@ namespace Noticia.Negocios
         {
             try
             {
-                return new AcessoDados.ImagemArquivo().Consultar(new Entidades.ImagemArquivo() { Imagem = new Entidades.Imagem() { Selecionada = false } });
+                List<Entidades.ImagemArquivo> retorno = new List<Entidades.ImagemArquivo>();
+
+                foreach (var item in new AcessoDados.ImagemArquivo().Consultar(new Entidades.ImagemArquivo() { Imagem = new Entidades.Imagem() { IdImagem = null } }))
+                {
+                    if (item.Imagem.Selecionada.Value)
+                        continue;
+
+                    item.Imagem.Legenda = item.NomeArquivo;
+                    retorno.Add(item);
+                }
+                return retorno;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+            finally
+            {
+                AcessoDados.Dados.FecharConexao();
+            }
         }
+
+        public Entidades.ImagemArquivo CarregarImagemArquivo(Entidades.Imagem imagem)
+        {
+            try
+            {
+                Entidades.ImagemArquivo retorno = new Entidades.ImagemArquivo();
+                var consulta = new AcessoDados.Imagem().Consultar(imagem);
+                if (consulta.Count > 0)
+                {
+                    retorno.Imagem = consulta.First();
+                }
+
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                AcessoDados.Dados.FecharConexao();
+            }
+        }
+
+        public byte[] CarregarImagem(Entidades.Imagem imagem)
+        {
+            try
+            {
+                return new AcessoDados.ImagemArquivo().CarregarImagem(new Entidades.ImagemArquivo() { Imagem = imagem });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                AcessoDados.Dados.FecharConexao();
+            }
+        }
+
     }
 }

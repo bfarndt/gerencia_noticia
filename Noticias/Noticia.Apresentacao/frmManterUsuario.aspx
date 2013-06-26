@@ -24,8 +24,6 @@
             <asp:ValidationSummary runat="server" ID="vsPermissao" ValidationGroup="validacaoPermissao" />
             <asp:ValidationSummary runat="server" ID="vsGrupo" ValidationGroup="validacaoGrupo" />
             <asp:ValidationSummary runat="server" ID="vsDia" ValidationGroup="validacaoDia" />
-            <asp:ScriptManager ID="ScriptManager1" runat="server">
-            </asp:ScriptManager>
 
             <div class="legendFormulario">
                 Dados Usuário
@@ -118,7 +116,6 @@
                             OnRowCommand="grvPermissoes_RowCommand"
                             OnRowDataBound="grvPermissoes_RowDataBound"
                             EmptyDataText="Nenhum registro encontrado.">
-
                             <Columns>
 
                                 <asp:TemplateField HeaderText="Permissão" ConvertEmptyStringToNull="False">
@@ -254,6 +251,9 @@
 
 
         </div>
+        <br />
+
+
 
         <div class="contentFinal">
 

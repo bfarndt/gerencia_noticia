@@ -67,13 +67,16 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Account\Login.aspx" />
+    <Content Include="frmAssociarImagem.aspx" />
     <Content Include="frmCriarNoticia.aspx" />
+    <Content Include="frmGerenciarSelecionarImagem.aspx" />
     <Content Include="frmGerenciarTipoUsuarioPermissao.aspx" />
     <Content Include="frmListarGrupo.aspx" />
     <Content Include="frmListarTipoUsuarioPermissao.aspx" />
     <Content Include="frmListarUsuario.aspx" />
     <Content Include="frmManterGrupo.aspx" />
     <Content Include="frmManterUsuario.aspx" />
+    <Content Include="frmSelecionarImagens.aspx" />
     <Content Include="frmSubmeterImagem.aspx" />
     <Content Include="frmTrabalho.aspx" />
     <Content Include="Imagem\add.png" />
@@ -316,12 +319,26 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmAssociarImagem.aspx.cs">
+      <DependentUpon>frmAssociarImagem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmAssociarImagem.aspx.designer.cs">
+      <DependentUpon>frmAssociarImagem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmCriarNoticia.aspx.cs">
       <DependentUpon>frmCriarNoticia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="frmCriarNoticia.aspx.designer.cs">
       <DependentUpon>frmCriarNoticia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmGerenciarSelecionarImagem.aspx.cs">
+      <DependentUpon>frmGerenciarSelecionarImagem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmGerenciarSelecionarImagem.aspx.designer.cs">
+      <DependentUpon>frmGerenciarSelecionarImagem.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmGerenciarTipoUsuarioPermissao.aspx.cs">
       <DependentUpon>frmGerenciarTipoUsuarioPermissao.aspx</DependentUpon>
@@ -365,6 +382,13 @@
     <Compile Include="frmManterUsuario.aspx.designer.cs">
       <DependentUpon>frmManterUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmSelecionarImagens.aspx.cs">
+      <DependentUpon>frmSelecionarImagens.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmSelecionarImagens.aspx.designer.cs">
+      <DependentUpon>frmSelecionarImagens.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmSubmeterImagem.aspx.cs">
       <DependentUpon>frmSubmeterImagem.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -381,6 +405,9 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Imagem.ashx.cs">
+      <DependentUpon>Imagem.ashx</DependentUpon>
     </Compile>
     <Compile Include="NoticiaPage.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -422,6 +449,7 @@
     <Content Include="Imagem\Thumbs.db" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagem.ashx" />
     <None Include="Properties\PublishProfiles\testes.pubxml" />
   </ItemGroup>
   <PropertyGroup>

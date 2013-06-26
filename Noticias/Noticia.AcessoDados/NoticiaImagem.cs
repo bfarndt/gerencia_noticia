@@ -40,6 +40,7 @@ namespace Noticia.AcessoDados
 
                     objNovoNoticiaImagem.Imagem = new Entidades.Imagem();
                     objNovoNoticiaImagem.Imagem.IdImagem = objLinha["IdImagem"] != DBNull.Value ? Convert.ToInt32(objLinha["IdImagem"]) : 0;
+                    objNovoNoticiaImagem.Imagem = new AcessoDados.Imagem().Consultar(objNovoNoticiaImagem.Imagem).First();
 
                     objRetorno.Add(objNovoNoticiaImagem);
                 }

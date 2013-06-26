@@ -80,17 +80,17 @@ namespace Noticia.Apresentacao
                     if (new Negocios.Diretor().AssociarGrupoTrabalhoParaNoticia(noticiaGrupoTrabalho.GrupoTrabalho, noticiaGrupoTrabalho.Noticia))
                     {
                         AtualizarGridGrupos(grupoSelecionado, true);
-                        ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Grupo removido.');", true);
+                        ExibirMensagem(TipoMensagem.Sucesso, "Grupo removido.");
                     }
                     else
                     {
-                        ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Não foi possível completar a operação.');", true);
+                        ExibirMensagem(TipoMensagem.Alerta, "Não foi possível completar a operação.");
                     }
                 }
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('" + ex.Message + "');", true);
+                ExibirMensagem(TipoMensagem.Erro, ex.Message);
             }
         }
 
@@ -127,12 +127,12 @@ namespace Noticia.Apresentacao
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('É necessário criar a notícia antes desta operação.');", true);
+                    ExibirMensagem(TipoMensagem.Informacao, "É necessário criar a notícia antes desta operação.");
                 }
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('" + ex.Message + "');", true);
+                ExibirMensagem(TipoMensagem.Erro, ex.Message);
             }
         }
 
@@ -148,21 +148,21 @@ namespace Noticia.Apresentacao
                     if (new Negocios.Diretor().AssociarGrupoTrabalhoParaNoticia(noticiaGrupoTrabalho.GrupoTrabalho, noticiaGrupoTrabalho.Noticia))
                     {
                         AtualizarGridGrupos(noticiaGrupoTrabalho.GrupoTrabalho, false);
-                        ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Grupo adicionado com sucesso.');", true);
+                        ExibirMensagem(TipoMensagem.Sucesso, "Grupo adicionado com sucesso.");
                     }
                     else
                     {
-                        ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Grupo não adicionado.');", true);
+                        ExibirMensagem(TipoMensagem.Alerta, "Grupo não adicionado.");
                     }
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('É necessário criar a notícia antes desta operação.');", true);
+                    ExibirMensagem(TipoMensagem.Alerta, "É necessário criar a notícia antes desta operação.");
                 }
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('" + ex.Message + "');", true);
+                ExibirMensagem(TipoMensagem.Erro, ex.Message);
             }
         }
 
@@ -171,7 +171,7 @@ namespace Noticia.Apresentacao
 
         }
 
-        private void CarregarCombos() 
+        private void CarregarCombos()
         {
             try
             {

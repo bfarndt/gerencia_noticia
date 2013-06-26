@@ -14,6 +14,16 @@
         }
     </script>
 
+        <fieldset>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <asp:ImageButton ID="btnVoltar" AlternateText="Voltar" ImageUrl="~/imagem/btnVoltar.png" runat="server" OnClick="btnVoltar_Click" />
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
     <h2>
         Perfil/Permissão usuário
     </h2>

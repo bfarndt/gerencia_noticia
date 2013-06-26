@@ -6,6 +6,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+        <fieldset>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <asp:ImageButton ID="btnVoltar" AlternateText="Voltar" ImageUrl="~/imagem/btnVoltar.png" runat="server" OnClick="btnVoltar_Click" />
+                </td>
+            </tr>
+        </table>
+    </fieldset>
 
     <div class="legendFormulario">
         Submissão de imagens

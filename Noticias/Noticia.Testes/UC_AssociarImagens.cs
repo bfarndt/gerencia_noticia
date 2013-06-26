@@ -65,7 +65,7 @@ namespace Noticia.Testes
             Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
             Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Associar_Imagens } });
 
-            var retorno = NegNoticia.NoticiasDoGrupoTrabalho();
+            var retorno = NegNoticia.NoticiasDoGrupoTrabalhoNaoSubmetidasNaoAprovadas();
 
             Assert.IsNotNull(retorno);
         }

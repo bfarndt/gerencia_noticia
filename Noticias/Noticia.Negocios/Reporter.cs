@@ -129,6 +129,7 @@ namespace Noticia.Negocios
                     imagem.Selecionada = true;
 
                     strRetorno = dalImagem.Alterar(imagem);
+                    imagem.ImagemGravacao.Imagem = imagem;
                     strRetorno = dalImagemGravacao.Excluir(imagem.ImagemGravacao);
                     strRetorno = dalImagemGravacao.Inserir(imagem.ImagemGravacao);
 

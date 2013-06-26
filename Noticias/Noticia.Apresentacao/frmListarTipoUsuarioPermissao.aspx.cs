@@ -68,5 +68,10 @@ namespace Noticia.Apresentacao
                 ExibirMensagem(TipoMensagem.Erro, ex.Message);
             }
         }
+
+        protected void btnVoltar_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("~/Default.aspx");
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace Noticia.AcessoDados
                     objNovoImagem.Legenda = objLinha["Legenda"] != DBNull.Value ? Convert.ToString(objLinha["Legenda"]) : null;
                     objNovoImagem.Selecionada = objLinha["Selecionada"] != DBNull.Value ? Convert.ToBoolean(objLinha["Selecionada"]) : false;
 
-                    List<Entidades.ImagemGravacao> gravacao = new List<Entidades.ImagemGravacao>();
+                    List<Entidades.ImagemGravacao> gravacao = new AcessoDados.ImagemGravacao().Consultar(objNovoImagem);
 
                     if (gravacao.Count > 0)
                         objNovoImagem.ImagemGravacao = new AcessoDados.ImagemGravacao().Consultar(objNovoImagem).First();

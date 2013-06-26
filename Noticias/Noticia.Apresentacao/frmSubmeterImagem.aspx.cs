@@ -57,7 +57,7 @@ namespace Noticia.Apresentacao
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('" + ex.Message + "');", true);
+                ExibirMensagem(TipoMensagem.Erro, ex.Message);
             }
         }
 
@@ -81,8 +81,6 @@ namespace Noticia.Apresentacao
                         FileInfo file = new FileInfo(filePath);
                         if (new Negocios.Fotografo().SubmeterImagem(file))
                         {
-
-
                             ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Imagem submetida.');", true);
                         }
                         else
@@ -116,18 +114,18 @@ namespace Noticia.Apresentacao
 
                     if (new Negocios.Fotografo().DeletarImagem(selecionado))
                     {
-                        AtualizarGridImagens(null,false);
-                        ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Imagem removida.');", true);
+                        AtualizarGridImagens(null, false);
+                        ExibirMensagem(TipoMensagem.Sucesso, "Imagem removida.");
                     }
                     else
                     {
-                        ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Não foi possível completar a operação.');", true);
+                        ExibirMensagem(TipoMensagem.Sucesso, "Não foi possível completar a operação.");
                     }
                 }
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('" + ex.Message + "');", true);
+                ExibirMensagem(TipoMensagem.Erro, ex.Message);
             }
         }
 
@@ -139,6 +137,11 @@ namespace Noticia.Apresentacao
         protected void imgAtualizar_Click(object sender, ImageClickEventArgs e)
         {
             AtualizarGridImagens(null, false);
+        }
+
+        protected void btnVoltar_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("~/Default.aspx");
         }
     }
 }
