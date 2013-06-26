@@ -27,35 +27,28 @@ namespace Noticia.Negocios
         {
             try
             {
-                if (NegUsuario.TenhoPermissao(Entidades.PermissaoEnum.Editar_Noticia))
+                List<Entidades.Noticia> noticiasEdicao = new List<Entidades.Noticia>();
+
+                List<Entidades.StatusNoticia> statusConsulta = new List<Entidades.StatusNoticia>();
+                statusConsulta.Add(new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Criada });
+                statusConsulta.Add(new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.GrupoVinculado });
+                statusConsulta.Add(new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.ImagensAssociadas });
+
+                Entidades.Historico historico = new Entidades.Historico() { IdHistorico = null };
+                historico.Noticia = new Entidades.Noticia() { IdNoticia = null };
+                historico.Usuario = new Entidades.Usuario() { IdUsuario = null };
+
+                List<Entidades.Historico> historicos = dalHistorico.Consultar(historico, statusConsulta);
+                if (historicos.Count > 0)
                 {
-                    List<Entidades.Noticia> noticiasEdicao = new List<Entidades.Noticia>();
-
-                    List<Entidades.StatusNoticia> statusConsulta = new List<Entidades.StatusNoticia>();
-                    statusConsulta.Add(new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Criada });
-                    statusConsulta.Add(new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.GrupoVinculado });
-                    statusConsulta.Add(new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.ImagensAssociadas });
-
-                    Entidades.Historico historico = new Entidades.Historico() { IdHistorico = null };
-                    historico.Noticia = new Entidades.Noticia() { IdNoticia = null };
-                    historico.Usuario = new Entidades.Usuario() { IdUsuario = null };
-
-                    List<Entidades.Historico> historicos = dalHistorico.Consultar(historico, statusConsulta);
-                    if (historicos.Count > 0)
+                    noticiasEdicao = new List<Entidades.Noticia>();
+                    foreach (var item in historicos)
                     {
-                        noticiasEdicao = new List<Entidades.Noticia>();
-                        foreach (var item in historicos)
-                        {
-                            noticiasEdicao.Add(item.Noticia);
-                        }
+                        noticiasEdicao.Add(item.Noticia);
                     }
+                }
 
-                    return noticiasEdicao;
-                }
-                else
-                {
-                    return null;
-                }
+                return noticiasEdicao;
             }
             catch (Exception ex)
             {
@@ -73,29 +66,22 @@ namespace Noticia.Negocios
         {
             try
             {
-                if (NegUsuario.TenhoPermissao(Entidades.PermissaoEnum.Submeter_Noticia))
+                List<Entidades.Noticia> noticiasSubmissao = new List<Entidades.Noticia>();
+
+                List<Entidades.StatusNoticia> statusConsulta = new List<Entidades.StatusNoticia>();
+                statusConsulta.Add(new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Editada });
+
+                List<Entidades.Historico> historicos = dalHistorico.Consultar(null, statusConsulta);
+                if (historicos.Count > 0)
                 {
-                    List<Entidades.Noticia> noticiasSubmissao = new List<Entidades.Noticia>();
-
-                    List<Entidades.StatusNoticia> statusConsulta = new List<Entidades.StatusNoticia>();
-                    statusConsulta.Add(new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Editada });
-
-                    List<Entidades.Historico> historicos = dalHistorico.Consultar(null, statusConsulta);
-                    if (historicos.Count > 0)
+                    noticiasSubmissao = new List<Entidades.Noticia>();
+                    foreach (var item in historicos)
                     {
-                        noticiasSubmissao = new List<Entidades.Noticia>();
-                        foreach (var item in historicos)
-                        {
-                            noticiasSubmissao.Add(item.Noticia);
-                        }
+                        noticiasSubmissao.Add(item.Noticia);
                     }
+                }
 
-                    return noticiasSubmissao;
-                }
-                else
-                {
-                    return null;
-                }
+                return noticiasSubmissao;
             }
             catch (Exception ex)
             {
@@ -113,29 +99,22 @@ namespace Noticia.Negocios
         {
             try
             {
-                if (NegUsuario.TenhoPermissao(Entidades.PermissaoEnum.Avaliar_Noticia))
+                List<Entidades.Noticia> noticiasAvaliacao = new List<Entidades.Noticia>();
+
+                List<Entidades.StatusNoticia> statusConsulta = new List<Entidades.StatusNoticia>();
+                statusConsulta.Add(new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Submetida });
+
+                List<Entidades.Historico> historicos = dalHistorico.Consultar(null, statusConsulta);
+                if (historicos.Count > 0)
                 {
-                    List<Entidades.Noticia> noticiasAvaliacao = new List<Entidades.Noticia>();
-
-                    List<Entidades.StatusNoticia> statusConsulta = new List<Entidades.StatusNoticia>();
-                    statusConsulta.Add(new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Submetida });
-
-                    List<Entidades.Historico> historicos = dalHistorico.Consultar(null, statusConsulta);
-                    if (historicos.Count > 0)
+                    noticiasAvaliacao = new List<Entidades.Noticia>();
+                    foreach (var item in historicos)
                     {
-                        noticiasAvaliacao = new List<Entidades.Noticia>();
-                        foreach (var item in historicos)
-                        {
-                            noticiasAvaliacao.Add(item.Noticia);
-                        }
+                        noticiasAvaliacao.Add(item.Noticia);
                     }
+                }
 
-                    return noticiasAvaliacao;
-                }
-                else
-                {
-                    return null;
-                }
+                return noticiasAvaliacao;
             }
             catch (Exception ex)
             {
@@ -153,40 +132,32 @@ namespace Noticia.Negocios
         {
             try
             {
-                if (NegUsuario.TenhoPermissao(Entidades.PermissaoEnum.Associar_Imagens))
+                List<Entidades.Noticia> noticiasDoGrupo = new List<Entidades.Noticia>();
+
+                Entidades.GrupoTrabalhoUsuario consultaPorUsuario = new Entidades.GrupoTrabalhoUsuario();
+                consultaPorUsuario.Usuario = Singleton.UsuarioLogado;
+
+                Entidades.NoticiaGrupoTrabalho consultaPorGrupo;
+                foreach (var grupo in dalGrupoTrabalhoUsuario.Consultar(consultaPorUsuario))
                 {
-                    List<Entidades.Noticia> noticiasDoGrupo = new List<Entidades.Noticia>();
+                    consultaPorGrupo = new Entidades.NoticiaGrupoTrabalho();
+                    consultaPorGrupo.GrupoTrabalho = grupo.GrupoTrabalho;
 
-                    Entidades.GrupoTrabalhoUsuario consultaPorUsuario = new Entidades.GrupoTrabalhoUsuario();
-                    consultaPorUsuario.Usuario = Singleton.UsuarioLogado;
-
-                    Entidades.NoticiaGrupoTrabalho consultaPorGrupo;
-                    foreach (var grupo in dalGrupoTrabalhoUsuario.Consultar(consultaPorUsuario))
+                    foreach (var noticia in dalNoticiaGrupoTrabalho.Consultar(consultaPorGrupo))
                     {
-                        consultaPorGrupo = new Entidades.NoticiaGrupoTrabalho();
-                        consultaPorGrupo.GrupoTrabalho = grupo.GrupoTrabalho;
-
-                        foreach (var noticia in dalNoticiaGrupoTrabalho.Consultar(consultaPorGrupo))
+                        if (noticia.Noticia.StatusNoticia != null)
                         {
-                            if (noticia.Noticia.StatusNoticia != null)
+                            if ((noticia.Noticia.StatusNoticia.IdStatus == (int)Entidades.StatusNoticiaEnum.Submetida) ||
+                                (noticia.Noticia.StatusNoticia.IdStatus == (int)Entidades.StatusNoticiaEnum.Aprovada))
                             {
-                                if ((noticia.Noticia.StatusNoticia.IdStatus == (int)Entidades.StatusNoticiaEnum.Submetida) ||
-                                    (noticia.Noticia.StatusNoticia.IdStatus == (int)Entidades.StatusNoticiaEnum.Aprovada))
-                                {
-                                    continue;
-                                }
+                                continue;
                             }
-                            noticiasDoGrupo.Add(noticia.Noticia);
                         }
+                        noticiasDoGrupo.Add(noticia.Noticia);
                     }
-
-                    return noticiasDoGrupo;
-                }
-                else
-                {
-                    return null;
                 }
 
+                return noticiasDoGrupo;
             }
             catch (Exception ex)
             {

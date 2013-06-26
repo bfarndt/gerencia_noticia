@@ -15,6 +15,11 @@ namespace Noticia.Apresentacao
         {
             if (!IsPostBack)
             {
+                if (!(new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Criar_Noticia)))
+                {
+                    Response.Redirect("~/Default.aspx?Acesso=sem");
+                }
+
                 this.CarregarCombos();
             }
             else

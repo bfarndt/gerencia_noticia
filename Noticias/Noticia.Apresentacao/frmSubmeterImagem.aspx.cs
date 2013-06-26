@@ -14,6 +14,11 @@ namespace Noticia.Apresentacao
         {
             if (!IsPostBack)
             {
+                if (!(new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Submeter_Imagens)))
+                {
+                    Response.Redirect("~/Default.aspx?Acesso=sem");
+                }
+
                 this.AtualizarGridImagens(null, false);
             }
         }

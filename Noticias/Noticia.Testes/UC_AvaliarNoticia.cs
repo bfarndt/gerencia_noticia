@@ -52,9 +52,9 @@ namespace Noticia.Testes
             Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
             Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Efetuar_Acesso } });
 
-            var retorno = NegNoticia.NoticiasParaAvaliacao();
+            var retorno = new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Avaliar_Noticia);
 
-            Assert.IsNull(retorno);
+            Assert.AreEqual(false, retorno);
         }
 
         //Confirmar recusa de notícia: sistema apresenta mensagem de sucesso.
@@ -77,7 +77,7 @@ namespace Noticia.Testes
             noticia.IdNoticia = 1;
             noticia.Titulo = "São Paulo";
             noticia.Conteudo = "Melhor Time do Brasil";
-            var retorno = NegEditor.ReprovarNoticia(noticia,"Ficou Ruim");
+            var retorno = NegEditor.ReprovarNoticia(noticia, "Ficou Ruim");
             Assert.AreEqual(true, retorno);
         }
 

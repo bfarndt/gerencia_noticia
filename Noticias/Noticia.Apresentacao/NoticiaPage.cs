@@ -23,6 +23,7 @@ namespace Noticia.Apresentacao
             else
             {
                 new Negocios.Usuario().CarregarPermissoes();
+
                 (Master.FindControl("litUsuarioLogado") as Literal).Text = "" + Session["NomeUsuario"];
             }
 

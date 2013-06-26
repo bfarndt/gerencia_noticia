@@ -13,6 +13,11 @@ namespace Noticia.Apresentacao
         {
             if (!IsPostBack) 
             {
+                if (!(new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Manter_grupo_de_trabalho)))
+                {
+                    Response.Redirect("~/Default.aspx?Acesso=sem");
+                }
+
                 this.CarregarGrid();
             }
         }

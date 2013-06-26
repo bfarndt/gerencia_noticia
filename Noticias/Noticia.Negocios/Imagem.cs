@@ -60,46 +60,39 @@ namespace Noticia.Negocios
         {
             try
             {
-                if (NegUsuario.TenhoPermissao(Entidades.PermissaoEnum.Selecionar_Imagens))
+                List<Entidades.NoticiaImagem> imagensAssociadas = new List<Entidades.NoticiaImagem>();
+
+                Entidades.GrupoTrabalhoUsuario consultaPorUsuario = new Entidades.GrupoTrabalhoUsuario();
+                consultaPorUsuario.Usuario = Singleton.UsuarioLogado;
+
+                Entidades.NoticiaGrupoTrabalho consultaPorGrupo;
+                Entidades.NoticiaImagem consultaPorNoticia;
+
+                foreach (var grupo in dalGrupoTrabalhoUsuario.Consultar(consultaPorUsuario))
                 {
-                    List<Entidades.NoticiaImagem> imagensAssociadas = new List<Entidades.NoticiaImagem>();
+                    consultaPorGrupo = new Entidades.NoticiaGrupoTrabalho();
+                    consultaPorGrupo.GrupoTrabalho = grupo.GrupoTrabalho;
 
-                    Entidades.GrupoTrabalhoUsuario consultaPorUsuario = new Entidades.GrupoTrabalhoUsuario();
-                    consultaPorUsuario.Usuario = Singleton.UsuarioLogado;
-
-                    Entidades.NoticiaGrupoTrabalho consultaPorGrupo;
-                    Entidades.NoticiaImagem consultaPorNoticia;
-
-                    foreach (var grupo in dalGrupoTrabalhoUsuario.Consultar(consultaPorUsuario))
+                    foreach (var noticia in dalNoticiaGrupoTrabalho.Consultar(consultaPorGrupo))
                     {
-                        consultaPorGrupo = new Entidades.NoticiaGrupoTrabalho();
-                        consultaPorGrupo.GrupoTrabalho = grupo.GrupoTrabalho;
+                        consultaPorNoticia = new Entidades.NoticiaImagem();
+                        consultaPorNoticia.Noticia = noticia.Noticia;
 
-                        foreach (var noticia in dalNoticiaGrupoTrabalho.Consultar(consultaPorGrupo))
+                        foreach (var imagem in dalNoticiaImagem.Consultar(consultaPorNoticia))
                         {
-                            consultaPorNoticia = new Entidades.NoticiaImagem();
-                            consultaPorNoticia.Noticia = noticia.Noticia;
+                            if (imagem.Imagem.Selecionada.Value)
+                                continue;
 
-                            foreach (var imagem in dalNoticiaImagem.Consultar(consultaPorNoticia))
-                            {
-                                if (imagem.Imagem.Selecionada.Value)
-                                    continue;
+                            var consulta = new AcessoDados.ImagemArquivo().Consultar(new Entidades.ImagemArquivo() { Imagem = imagem.Imagem });
+                            if (consulta.Count > 0)
+                                imagem.Imagem.Legenda = consulta.First().NomeArquivo;
 
-                                var consulta = new AcessoDados.ImagemArquivo().Consultar(new Entidades.ImagemArquivo() { Imagem = imagem.Imagem });
-                                if (consulta.Count > 0)
-                                    imagem.Imagem.Legenda = consulta.First().NomeArquivo;
-
-                                imagensAssociadas.Add(imagem);
-                            }
+                            imagensAssociadas.Add(imagem);
                         }
                     }
+                }
 
-                    return imagensAssociadas;
-                }
-                else
-                {
-                    return null;
-                }
+                return imagensAssociadas;
             }
             catch (Exception ex)
             {

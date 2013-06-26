@@ -7,11 +7,17 @@ using System.Web.UI.WebControls;
 
 namespace Noticia.Apresentacao
 {
-    public partial class _Default : System.Web.UI.Page
+    public partial class _Default : NoticiaPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["Acesso"] != null && Request.QueryString["Acesso"].ToString().Length > 0)
+                {
+                    ExibirMensagem(TipoMensagem.Alerta, "Sem acesso a esta tela.");
+                }
+            }
         }
     }
 }

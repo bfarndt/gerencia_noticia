@@ -18,6 +18,11 @@ namespace Noticia.Apresentacao
         {
             if (!Page.IsPostBack)
             {
+                if (!(new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Manter_Usuario)))
+                {
+                    Response.Redirect("~/Default.aspx?Acesso=sem");
+                }
+
                 this.CarregarGridView();
             }
         }

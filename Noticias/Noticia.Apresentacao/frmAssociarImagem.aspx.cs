@@ -13,6 +13,11 @@ namespace Noticia.Apresentacao
         {
             if (!IsPostBack)
             {
+                if (!(new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Associar_Imagens))) 
+                {
+                    Response.Redirect("~/Default.aspx?Acesso=sem");
+                }
+
                 this.CarregarCombos();
                 AtualizarGridNoticiaImagem(null, false);
             }

@@ -52,9 +52,9 @@ namespace Noticia.Testes
             Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
             Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Efetuar_Acesso } });
 
-            var retorno = NegNoticia.NoticiasParaSubmissao();
+            var retorno = NegUsuario.TenhoPermissao(Entidades.PermissaoEnum.Submeter_Noticia);
 
-            Assert.IsNull(retorno);
+            Assert.AreEqual(false,retorno);
         }
 
         //Selecionar a opção de submeter notícia com todos os dados preenchidos corretamente: sistema apresenta mensagem de sucesso.

@@ -51,9 +51,9 @@ namespace Noticia.Testes
             Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
             Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Efetuar_Acesso } });
 
-            var retorno = NegNoticia.NoticiasParaEdicao();
+            var retorno = new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Editar_Noticia);
 
-            Assert.IsNull(retorno);
+            Assert.AreEqual(false, retorno);
         }
 
         //Alterar dados e submeter edição: sistema apresenta mensagem de sucesso.
