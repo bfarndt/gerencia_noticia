@@ -80,8 +80,6 @@
 
             <asp:TemplateField HeaderText="Ações">
                 <ItemTemplate>
-                    <asp:ImageButton runat="server" ID="ibtVisualizar" ImageUrl="~/Imagem/magnifier.png"
-                        CommandArgument='<%# Eval("IdUsuario") %>' CommandName="VISUALIZAR" CausesValidation="False" ToolTip="Visualizar" />
                     <asp:ImageButton runat="server" ID="ibtEditar" ImageUrl="~/Imagem/ico_edit_grid.gif"
                         CommandArgument='<%# Eval("IdUsuario") %>' CommandName="EDITAR" CausesValidation="False" ToolTip="Editar" />
                     <asp:ImageButton runat="server" OnClientClick="if(confirm('Deseja realmente remover este usuário?')){return true;}else{return false;}" ID="ibtExcluir" ImageUrl="~/Imagem/ico_delete_grid.gif"

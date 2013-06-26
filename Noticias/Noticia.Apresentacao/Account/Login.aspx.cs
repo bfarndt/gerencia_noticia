@@ -23,6 +23,12 @@ namespace Noticia.Apresentacao.Account
             {
                 Negocios.Singleton.UsuarioLogado = new Entidades.Usuario() { Login = this.UserName.Text, Senha = this.Password.Text };
                 bool sucesso = new Negocios.Usuario().Logar();
+
+                if (!(new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Efetuar_Acesso)))
+                {
+                    Response.Redirect("~/Default.aspx?Acesso=sem");
+                }
+
                 if (sucesso)
                 {
                     Session["NomeUsuario"] = Negocios.Singleton.UsuarioLogado.Nome;

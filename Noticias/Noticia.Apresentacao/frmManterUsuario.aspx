@@ -16,10 +16,10 @@
         }
     </script>
 </head>
-<body>
-    <form id="form1" runat="server" style="height: auto">
+<body style="background-color:white;height:auto">
+    <form id="form1" runat="server" >
 
-        <div class="contentPage" style="height: auto">
+        <div class="contentPage" >
             <asp:ValidationSummary runat="server" ID="vs" ValidationGroup="validacao" />
             <asp:ValidationSummary runat="server" ID="vsPermissao" ValidationGroup="validacaoPermissao" />
             <asp:ValidationSummary runat="server" ID="vsGrupo" ValidationGroup="validacaoGrupo" />
@@ -245,16 +245,7 @@
                     </tr>
                 </table>
             </div>
-
-            <br />
-
-
-
         </div>
-        <br />
-
-
-
         <div class="contentFinal">
 
             <div class="AcaoFormulario">

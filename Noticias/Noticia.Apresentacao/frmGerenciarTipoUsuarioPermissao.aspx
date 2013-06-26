@@ -16,9 +16,9 @@
         }
     </script>
 </head>
-<body style="height:auto">
-    <form id="form1" runat="server" style="height:auto">
-        <div class="contentPage" style="height:250px"  >
+<body style="background-color:white;height:auto">
+    <form id="form1" runat="server" >
+        <div class="contentPage">
             <asp:ValidationSummary runat="server" ID="vsPermissao" ValidationGroup="validacaoPermissao" />
 
 

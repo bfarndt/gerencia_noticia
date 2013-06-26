@@ -35,11 +35,6 @@ namespace Noticia.Apresentacao
         {
             try
             {
-                if (e.CommandName.Trim().ToUpper() == "VISUALIZAR")
-                {
-                    int cod = Convert.ToInt32(e.CommandArgument);
-                    base.AbrirModal(Page.ResolveClientUrl("frmManterUsuario.aspx?IdUsuario=" + string.Concat(cod.ToString())), "800", "Usuário Visualizar", "500");
-                }
                 if (e.CommandName.Trim().ToUpper() == "EDITAR")
                 {
                     int cod = Convert.ToInt32(e.CommandArgument);
