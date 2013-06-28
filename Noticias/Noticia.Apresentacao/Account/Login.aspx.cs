@@ -13,7 +13,8 @@ namespace Noticia.Apresentacao.Account
         {
             if (!IsPostBack)
             {
-
+                Menu mnuMenu = ((Master.FindControl("NavigationMenu") as Menu)) as Menu;
+                mnuMenu.Items.Clear();
             }
         }
 

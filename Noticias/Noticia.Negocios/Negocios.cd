@@ -3,7 +3,7 @@
   <Class Name="Noticia.Negocios.Diretor">
     <Position X="0.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgwAAAgAAAAAgEAAgAMCAAABCoCAAoAAAACAIAEgAA=</HashCode>
+      <HashCode>AAgwAAAgAAAAAoEAAgAMCAAABCoCAAoAAAACAIAEgAA=</HashCode>
       <FileName>Diretor.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -15,44 +15,47 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Noticia.Negocios.Fotografo">
-    <Position X="4.5" Y="5.5" Width="1.5" />
+    <Position X="4.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAAKAAAAAAAAAAAAAgAAAAAgAAAAgAIAAAAA=</HashCode>
+      <HashCode>AAAIAAAAAAKAAAAAEAAAAAAAgAAAAAgAABAgAIAAAAA=</HashCode>
       <FileName>Fotografo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Noticia.Negocios.GrupoTrabalho">
     <Position X="6.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <HashCode>AAAAAIAAAEAAAAAAIgAEAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
       <FileName>GrupoTrabalho.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Noticia.Negocios.Imagem">
-    <Position X="8" Y="2.25" Width="1.5" />
+    <Position X="9.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAIAAAAAAAAggACCAAgAAAAAAAAAQAAACCEAA=</HashCode>
+      <HashCode>AAACAAAAIIAAAAABAgAACCAAgAAAAEAAAAQAQACCEAA=</HashCode>
       <FileName>Imagem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Noticia.Negocios.Noticia">
     <Position X="6.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAIBQAAAAAAgAACAAAAAgAAAIAAAEAAIAAAAA=</HashCode>
+      <HashCode>IAAAAAAEIAQAAICAAggACAIAAAgAAAJAAAECAJAAAAQ=</HashCode>
       <FileName>Noticia.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Noticia.Negocios.Reporter">
-    <Position X="2.5" Y="5.25" Width="1.5" />
+    <Position X="2.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAAAAAhAAAAAAAAFAAAAAgAIAAAAiAIAAAAA=</HashCode>
+      <HashCode>AEAIAAAAAAAAAhAAAAAAAABAAAAAgAIAAAAiAIAAAAQ=</HashCode>
       <FileName>Reporter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Noticia.Negocios.Singleton">
-    <Position X="8" Y="6.25" Width="1.5" />
+    <Position X="12" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
     <NestedTypes>
-      <Enum Name="Noticia.Negocios.Singleton.AcaoEnum" Collapsed="true">
+      <Enum Name="Noticia.Negocios.Singleton.CRUDEnum" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Singleton.cs</NewMemberFileName>
         </TypeIdentifier>
@@ -66,8 +69,29 @@
   <Class Name="Noticia.Negocios.Usuario">
     <Position X="2.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAgAAAAAAAABAAAAAAAIAAAAgAAAAAAAAAAAAAAAABI=</HashCode>
+      <HashCode>QAgAAAAAAEABAAAAAAAIAAAAgAAAAAAAAAAAAAAAABI=</HashCode>
       <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Negocios.Permissao">
+    <Position X="8" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAgUAAAAAAAAAIAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Permissao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Negocios.TipoUsuario">
+    <Position X="5.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TipoUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Negocios.Trabalho">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAEABEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Trabalho.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

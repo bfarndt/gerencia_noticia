@@ -15,6 +15,7 @@ namespace Noticia.Apresentacao
             String url_solicitada = this.Page.Request.Url.ToString();
             url_solicitada = url_solicitada.Remove(0, url_solicitada.LastIndexOf("/") + 1);
 
+
             if ((Session["NomeUsuario"] == null && url_solicitada.ToLower() != "login.aspx") && !Negocios.Singleton.comSessao)
             {
                 ExibirMensagem(TipoMensagem.Informacao, "Sessão expirada");
@@ -23,6 +24,62 @@ namespace Noticia.Apresentacao
             else
             {
                 new Negocios.Usuario().CarregarPermissoes();
+
+                Menu mnuMenu = ((Master.FindControl("NavigationMenu") as Menu)) as Menu;
+                mnuMenu.Items.Clear();
+
+                if (new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Criar_Noticia))
+                {
+                    mnuMenu.Items.Add(new MenuItem() { NavigateUrl = "~/frmCriarNoticia.aspx", Text = "Criar Notícia" });
+                }
+
+                if (new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Manter_Usuario))
+                {
+                    mnuMenu.Items.Add(new MenuItem() { NavigateUrl = "~/frmListarUsuario.aspx", Text = "Manter Usuário" });
+                    mnuMenu.Items.Add(new MenuItem() { NavigateUrl = "~/frmListarTipoUsuarioPermissao.aspx", Text = "Perfil/Permissão" });
+                    mnuMenu.Items.Add(new MenuItem() { NavigateUrl = "~/frmTrabalho.aspx", Text = "Trabalho" });
+
+                }
+
+                if (new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Manter_grupo_de_trabalho))
+                {
+                    mnuMenu.Items.Add(new MenuItem() { NavigateUrl = "~/frmListarGrupo.aspx", Text = "Manter Grupo Trabalho" });
+                }
+
+                if (new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Submeter_Imagens))
+                {
+                    mnuMenu.Items.Add(new MenuItem() { NavigateUrl = "~/frmSubmeterImagem.aspx", Text = "Submeter Imagem" });
+                }
+
+                if (new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Associar_Imagens))
+                {
+                    mnuMenu.Items.Add(new MenuItem() { NavigateUrl = "~/frmAssociarImagem.aspx", Text = "Associar Imagem" });
+                }
+
+                if (new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Selecionar_Imagens))
+                {
+                    mnuMenu.Items.Add(new MenuItem() { NavigateUrl = "~/frmSelecionarImagens.aspx", Text = "Selecionar Imagem" });
+                }
+
+                if (new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Editar_Noticia))
+                {
+                    mnuMenu.Items.Add(new MenuItem() { NavigateUrl = "~/frmListarNoticiaParaEdicao.aspx", Text = "Notícias para Edição" });
+                }
+
+                if (new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Submeter_Noticia))
+                {
+                    mnuMenu.Items.Add(new MenuItem() { NavigateUrl = "~/frmListarNoticiaParaSubmissao.aspx", Text = "Notícias para Submissão" });
+                }
+
+                if (new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Avaliar_Noticia))
+                {
+                    mnuMenu.Items.Add(new MenuItem() { NavigateUrl = "~/frmListarNoticiaParaAvaliacao.aspx", Text = "Notícias para Avaliação" });
+                }
+
+                if (new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Gerar_Relatorio))
+                {
+                    mnuMenu.Items.Add(new MenuItem() { NavigateUrl = "~/frmRelatorio.aspx", Text = "Relatório" });
+                }
 
                 (Master.FindControl("litUsuarioLogado") as Literal).Text = "" + Session["NomeUsuario"];
             }

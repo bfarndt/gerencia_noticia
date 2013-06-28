@@ -2,6 +2,9 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Noticia.Testes.UC_AssociarImagens">
     <Position X="0.5" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAgACAIAAIBAAgAAAAAAAAAAAAAAAQAA=</HashCode>
       <FileName>UC_AssociarImagens.cs</FileName>
@@ -52,7 +55,7 @@
   <Class Name="Noticia.Testes.UC_SelecionarImagens">
     <Position X="5.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAAAAAAACEAAAMICAAAAAABAAAAIAAAAACAA=</HashCode>
+      <HashCode>AAAIAAAAAAAAAgACEAAAMICAAAAAABAAAAIAAAAACAA=</HashCode>
       <FileName>UC_SelecionarImagens.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -66,7 +69,7 @@
   <Class Name="Noticia.Testes.UC_SubmeterNoticia">
     <Position X="7.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAIAAAAgACAAAAIEAAAAAAABAAAAQAAAAAAAE=</HashCode>
+      <HashCode>AACAAAAAIAAAAgACAAAAIEAAAAIAABAAAAAAAAAAAAE=</HashCode>
       <FileName>UC_SubmeterNoticia.cs</FileName>
     </TypeIdentifier>
   </Class>

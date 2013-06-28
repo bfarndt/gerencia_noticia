@@ -33,18 +33,7 @@
                 <div class="clear hideSkiplink">
                     <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                         <Items>
-                            <asp:MenuItem NavigateUrl="~/frmCriarNoticia.aspx" Text="Criar Notícia" />
-                            <asp:MenuItem NavigateUrl="~/frmListarUsuario.aspx" Text="Manter Usuário" />
-                            <asp:MenuItem NavigateUrl="~/frmListarGrupo.aspx" Text="Manter Grupo Trabalho" />
-                            <asp:MenuItem NavigateUrl="~/frmTrabalho.aspx" Text="Trabalho" />
-                            <asp:MenuItem NavigateUrl="~/frmListarTipoUsuarioPermissao.aspx" Text="Perfil/Permissão" />
-                            <asp:MenuItem NavigateUrl="~/frmSubmeterImagem.aspx" Text="Submeter Imagem" />
-                            <asp:MenuItem NavigateUrl="~/frmAssociarImagem.aspx" Text="Associar Imagem" />
-                            <asp:MenuItem NavigateUrl="~/frmSelecionarImagens.aspx" Text="Selecionar Imagem" />
-                            <asp:MenuItem NavigateUrl="~/frmListarNoticiaParaEdicao.aspx" Text="Notícias para Edição" />
-                            <asp:MenuItem NavigateUrl="~/frmListarNoticiaParaSubmissao.aspx" Text="Notícias para Submissão" />
-                            <asp:MenuItem NavigateUrl="~/frmListarNoticiaParaAvaliacao.aspx" Text="Notícias para Avaliação" />
-                            <asp:MenuItem NavigateUrl="~/frmRelatorio.aspx" Text="Relatório" />
+
                         </Items>
                     </asp:Menu>
                 </div>

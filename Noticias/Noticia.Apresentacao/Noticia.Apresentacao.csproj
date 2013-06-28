@@ -509,6 +509,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagem.ashx" />
+    <Content Include="cdApresentacao.cd" />
     <None Include="Properties\PublishProfiles\testes.pubxml" />
   </ItemGroup>
   <PropertyGroup>

@@ -11,137 +11,77 @@
         </dependencyFromLayerToLayer>
       </dependencyToLayers>
       <references>
-        <reference Id="08d192c4-6bf6-41a1-8210-531aea01e712" name="DiaSemana">
-          <ArtifactNode Label="DiaSemana" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=DiaSemana)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=DiaSemana)" Label="DiaSemana" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="5014751a-880b-46e3-9064-c22e0e6ca086" name="AcessoDados.cd">
+          <ArtifactNode Label="AcessoDados.cd" Category="File" Id="(Assembly=../Noticia.AcessoDados/AcessoDados.cd)" />
         </reference>
-        <reference Id="755c3793-b2fd-4fa9-86c5-cf19d83b0936" name="DiasTrabalhados">
-          <ArtifactNode Label="DiasTrabalhados" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=DiasTrabalhados)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=DiasTrabalhados)" Label="DiasTrabalhados" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="7fd932f1-db59-4b61-b5b7-8ab87b4fc81c" name="Contratacao.cs">
+          <ArtifactNode Label="Contratacao.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/Contratacao.cs)" />
         </reference>
-        <reference Id="a491b40a-4a53-4613-8652-548a8e9d2eab" name="GrupoTrabalho">
-          <ArtifactNode Label="GrupoTrabalho" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=GrupoTrabalho)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=GrupoTrabalho)" Label="GrupoTrabalho" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="cc8d08df-563a-4715-9117-dce2edb62f2d" name="ImagemGravacao.cs">
+          <ArtifactNode Label="ImagemGravacao.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/ImagemGravacao.cs)" />
         </reference>
-        <reference Id="bf602787-3ebc-4c53-a139-43c628e8e36e" name="GrupoTrabalhoUsuario">
-          <ArtifactNode Label="GrupoTrabalhoUsuario" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=GrupoTrabalhoUsuario)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=GrupoTrabalhoUsuario)" Label="GrupoTrabalhoUsuario" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="84febf76-75fc-4c55-9e14-a8f7c72f6ccd" name="UsuarioPermissao.cs">
+          <ArtifactNode Label="UsuarioPermissao.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/UsuarioPermissao.cs)" />
         </reference>
-        <reference Id="fb82e708-5f8a-4316-821d-85638d123b8a" name="Historico">
-          <ArtifactNode Label="Historico" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=Historico)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=Historico)" Label="Historico" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="953236fa-3a57-460c-9789-85618e16338d" name="Permissao.cs">
+          <ArtifactNode Label="Permissao.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/Permissao.cs)" />
         </reference>
-        <reference Id="43d6352a-5374-4213-a22a-7bbcd49d60bd" name="Imagem">
-          <ArtifactNode Label="Imagem" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=Imagem)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=Imagem)" Label="Imagem" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="3c3e41f6-85fb-4176-869e-590b5a28d518" name="UsuarioEndereco.cs">
+          <ArtifactNode Label="UsuarioEndereco.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/UsuarioEndereco.cs)" />
         </reference>
-        <reference Id="22457d2d-293c-4ce5-971a-51a7eade7d2a" name="ImagemArquivo">
-          <ArtifactNode Label="ImagemArquivo" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=ImagemArquivo)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=ImagemArquivo)" Label="ImagemArquivo" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="af5d2ba1-cfb7-4867-b4ac-1c3e619aa449" name="Historico.cs">
+          <ArtifactNode Label="Historico.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/Historico.cs)" />
         </reference>
-        <reference Id="f86e3fb2-1397-4672-8067-00862b89515f" name="ImagemGravacao">
-          <ArtifactNode Label="ImagemGravacao" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=ImagemGravacao)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=ImagemGravacao)" Label="ImagemGravacao" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="cf424308-8a3a-4fe9-87d4-347716cddacf" name="NoticiaGrupoTrabalho.cs">
+          <ArtifactNode Label="NoticiaGrupoTrabalho.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/NoticiaGrupoTrabalho.cs)" />
         </reference>
-        <reference Id="114ac117-90f3-4ef0-89c0-d6001b25afbe" name="Noticia">
-          <ArtifactNode Label="Noticia" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=Noticia)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=Noticia)" Label="Noticia" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="7e28c8bc-7ffd-431f-abfa-3b89ba83b968" name="GrupoTrabalho.cs">
+          <ArtifactNode Label="GrupoTrabalho.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/GrupoTrabalho.cs)" />
         </reference>
-        <reference Id="a6d8f8a2-074e-4ee5-8f0f-4ff032e6a251" name="NoticiaGrupoTrabalho">
-          <ArtifactNode Label="NoticiaGrupoTrabalho" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=NoticiaGrupoTrabalho)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=NoticiaGrupoTrabalho)" Label="NoticiaGrupoTrabalho" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="06de2ebd-64cc-4c00-938a-a8bab2b40238" name="Trabalho.cs">
+          <ArtifactNode Label="Trabalho.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/Trabalho.cs)" />
         </reference>
-        <reference Id="2209a157-5b16-41ad-877c-a056dd804fe0" name="NoticiaImagem">
-          <ArtifactNode Label="NoticiaImagem" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=NoticiaImagem)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=NoticiaImagem)" Label="NoticiaImagem" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="ccb58b09-279e-4c40-8be2-fd6f0b69544b" name="GrupoTrabalhoUsuario.cs">
+          <ArtifactNode Label="GrupoTrabalhoUsuario.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/GrupoTrabalhoUsuario.cs)" />
         </reference>
-        <reference Id="96a5a753-69bc-4389-bfa9-a767bd9018c3" name="PalavraChave">
-          <ArtifactNode Label="PalavraChave" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=PalavraChave)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=PalavraChave)" Label="PalavraChave" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="89873f3e-6299-4106-a095-8d45d1f386ff" name="Noticia.AcessoDados.csproj">
+          <ArtifactNode Label="Noticia.AcessoDados.csproj" Category="File" Id="(Assembly=../Noticia.AcessoDados/Noticia.AcessoDados.csproj)" />
         </reference>
-        <reference Id="11fcadc8-7873-4bb5-94b8-bfdf6ba5fd94" name="Permissao">
-          <ArtifactNode Label="Permissao" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=Permissao)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=Permissao)" Label="Permissao" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="68af232c-d1f0-4eb7-97c7-8b6d1f296a97" name="TipoUsuario.cs">
+          <ArtifactNode Label="TipoUsuario.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/TipoUsuario.cs)" />
         </reference>
-        <reference Id="dca73fcf-1365-4339-a31c-5c82fa46c5a6" name="StatusNoticia">
-          <ArtifactNode Label="StatusNoticia" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=StatusNoticia)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=StatusNoticia)" Label="StatusNoticia" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="1aaf9c0e-5e14-42b7-9fee-0a88b7e6d202" name="Usuario.cs">
+          <ArtifactNode Label="Usuario.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/Usuario.cs)" />
         </reference>
-        <reference Id="c60464eb-a9a4-48cf-8338-8ddfdea574b0" name="TipoUsuario">
-          <ArtifactNode Label="TipoUsuario" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=TipoUsuario)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=TipoUsuario)" Label="TipoUsuario" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="bb500915-af68-48e0-b711-4e36e2baa115" name="ImagemArquivo.cs">
+          <ArtifactNode Label="ImagemArquivo.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/ImagemArquivo.cs)" />
         </reference>
-        <reference Id="5efd16bb-0943-4201-9176-ed3ea91d3df9" name="Trabalho">
-          <ArtifactNode Label="Trabalho" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=Trabalho)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=Trabalho)" Label="Trabalho" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="9071faa3-3187-4894-ae11-2e8707368379" name="AcessoDadosSqlServer.cs">
+          <ArtifactNode Label="AcessoDadosSqlServer.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/AcessoDadosSqlServer.cs)" />
         </reference>
-        <reference Id="ffdfdcec-5037-4fd6-9564-657334ddfdcf" name="Usuario">
-          <ArtifactNode Label="Usuario" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=Usuario)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=Usuario)" Label="Usuario" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="b16b27c9-07af-4e40-b4a0-a2bb668f1cbd" name="DiasTrabalhados.cs">
+          <ArtifactNode Label="DiasTrabalhados.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/DiasTrabalhados.cs)" />
         </reference>
-        <reference Id="cacc3720-3c92-4b12-a5a8-8f61162c904e" name="UsuarioEndereco">
-          <ArtifactNode Label="UsuarioEndereco" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=UsuarioEndereco)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=UsuarioEndereco)" Label="UsuarioEndereco" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="7c2c13a7-d637-46a0-a1d7-8b162ae89474" name="StatusNoticia.cs">
+          <ArtifactNode Label="StatusNoticia.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/StatusNoticia.cs)" />
         </reference>
-        <reference Id="2c249ee0-71e4-4484-beb3-982070ef37c3" name="UsuarioPermissao">
-          <ArtifactNode Label="UsuarioPermissao" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=UsuarioPermissao)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=UsuarioPermissao)" Label="UsuarioPermissao" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="c1fdde7e-5922-458a-8166-23bb35747fbc" name="Noticia.cs">
+          <ArtifactNode Label="Noticia.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/Noticia.cs)" />
         </reference>
-        <reference Id="f1cc4fc3-7273-4174-b6af-0c2122a99311" name="ICrud&lt;T&gt;">
-          <ArtifactNode Label="ICrud&lt;T&gt;" Category="CodeSchema_Interface" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=(Name=ICrud GenericParameterCount=1))" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=(Name=ICrud GenericParameterCount=1))" Label="ICrud&lt;T&gt;" Category="CodeSchema_Interface">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="94da0ccc-cbda-4850-9476-123fb91316b7" name="DiaSemana.cs">
+          <ArtifactNode Label="DiaSemana.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/DiaSemana.cs)" />
         </reference>
-        <reference Id="38ffb9e7-47e2-4fd9-b65f-20b48e9e8878" name="Contratacao">
-          <ArtifactNode Label="Contratacao" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=Contratacao)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=Contratacao)" Label="Contratacao" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="6249e9ba-d4bd-4ed4-ac33-e1cd35151d5e" name="ICrud.cs">
+          <ArtifactNode Label="ICrud.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/ICrud.cs)" />
         </reference>
-        <reference Id="4a9483e8-5a8b-4447-94db-0b1372fc1513" name="Dados">
-          <ArtifactNode Label="Dados" Category="CodeSchema_Class" Id="(Assembly=../Noticia.AcessoDados/bin/Debug/Noticia.AcessoDados.dll Namespace=Noticia.AcessoDados Type=Dados)" />
-          <ExpandedNode Id="(Assembly=Noticia.AcessoDados Namespace=Noticia.AcessoDados Type=Dados)" Label="Dados" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="262d7239-0b14-412b-9138-4607d777b75b" name="PalavraChave.cs">
+          <ArtifactNode Label="PalavraChave.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/PalavraChave.cs)" />
+        </reference>
+        <reference Id="2abb7147-6d0b-490e-9bed-3d2b8a452bf6" name="NoticiaImagem.cs">
+          <ArtifactNode Label="NoticiaImagem.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/NoticiaImagem.cs)" />
+        </reference>
+        <reference Id="d549599d-6c16-4162-882a-417ff06ac939" name="Imagem.cs">
+          <ArtifactNode Label="Imagem.cs" Category="File" Id="(Assembly=../Noticia.AcessoDados/Imagem.cs)" />
         </reference>
       </references>
     </layer>
@@ -155,213 +95,120 @@
         </dependencyFromLayerToLayer>
       </dependencyToLayers>
       <references>
-        <reference Id="163290ed-5dc3-42d0-8e14-2d56e11a9669" name="Fotografo">
-          <ArtifactNode Label="Fotografo" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Negocios/bin/Debug/Noticia.Negocios.dll Namespace=Noticia.Negocios Type=Fotografo)" />
-          <ExpandedNode Id="(Assembly=Noticia.Negocios Namespace=Noticia.Negocios Type=Fotografo)" Label="Fotografo" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="4610cf06-07ba-4947-8689-9eeecae21989" name="Negocios.cd">
+          <ArtifactNode Label="Negocios.cd" Category="File" Id="(Assembly=../Noticia.Negocios/Negocios.cd)" />
         </reference>
-        <reference Id="ee49719c-9cd5-4d21-905c-db1f485cdc1d" name="GrupoTrabalho">
-          <ArtifactNode Label="GrupoTrabalho" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Negocios/bin/Debug/Noticia.Negocios.dll Namespace=Noticia.Negocios Type=GrupoTrabalho)" />
-          <ExpandedNode Id="(Assembly=Noticia.Negocios Namespace=Noticia.Negocios Type=GrupoTrabalho)" Label="GrupoTrabalho" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="6f2d3ac2-e4be-48c3-a7f1-1e8a42abfd99" name="Trabalho.cs">
+          <ArtifactNode Label="Trabalho.cs" Category="File" Id="(Assembly=../Noticia.Negocios/Trabalho.cs)" />
         </reference>
-        <reference Id="285ea2ba-4590-4878-a925-5708c2dc0b86" name="Imagem">
-          <ArtifactNode Label="Imagem" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Negocios/bin/Debug/Noticia.Negocios.dll Namespace=Noticia.Negocios Type=Imagem)" />
-          <ExpandedNode Id="(Assembly=Noticia.Negocios Namespace=Noticia.Negocios Type=Imagem)" Label="Imagem" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="3e764075-75da-4d75-b9ba-6807a25c7811" name="TipoUsuario.cs">
+          <ArtifactNode Label="TipoUsuario.cs" Category="File" Id="(Assembly=../Noticia.Negocios/TipoUsuario.cs)" />
         </reference>
-        <reference Id="01ce46a9-453d-4136-85b8-fa54131be12d" name="Noticia">
-          <ArtifactNode Label="Noticia" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Negocios/bin/Debug/Noticia.Negocios.dll Namespace=Noticia.Negocios Type=Noticia)" />
-          <ExpandedNode Id="(Assembly=Noticia.Negocios Namespace=Noticia.Negocios Type=Noticia)" Label="Noticia" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="50d0c328-68a3-4840-8b59-6bd1a1da656a" name="Usuario.cs">
+          <ArtifactNode Label="Usuario.cs" Category="File" Id="(Assembly=../Noticia.Negocios/Usuario.cs)" />
         </reference>
-        <reference Id="3448f6d3-712f-4f2f-ad90-ad35e75d80b8" name="Reporter">
-          <ArtifactNode Label="Reporter" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Negocios/bin/Debug/Noticia.Negocios.dll Namespace=Noticia.Negocios Type=Reporter)" />
-          <ExpandedNode Id="(Assembly=Noticia.Negocios Namespace=Noticia.Negocios Type=Reporter)" Label="Reporter" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="eb23357c-a489-49ff-8185-c8d2762cd829" name="Reporter.cs">
+          <ArtifactNode Label="Reporter.cs" Category="File" Id="(Assembly=../Noticia.Negocios/Reporter.cs)" />
         </reference>
-        <reference Id="1f708bf8-cb83-4c8e-8a01-f59182c39966" name="Singleton">
-          <ArtifactNode Label="Singleton" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Negocios/bin/Debug/Noticia.Negocios.dll Namespace=Noticia.Negocios Type=Singleton)" />
-          <ExpandedNode Id="(Assembly=Noticia.Negocios Namespace=Noticia.Negocios Type=Singleton)" Label="Singleton" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="d7af4111-dae8-424e-9c80-cec75332385a" name="Diretor.cs">
+          <ArtifactNode Label="Diretor.cs" Category="File" Id="(Assembly=../Noticia.Negocios/Diretor.cs)" />
         </reference>
-        <reference Id="e54e1752-d316-4e69-a05a-042e1aa90d52" name="Usuario">
-          <ArtifactNode Label="Usuario" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Negocios/bin/Debug/Noticia.Negocios.dll Namespace=Noticia.Negocios Type=Usuario)" />
-          <ExpandedNode Id="(Assembly=Noticia.Negocios Namespace=Noticia.Negocios Type=Usuario)" Label="Usuario" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="ddd7543a-2154-4b3b-9f0b-f29ee40e8bd6" name="Editor.cs">
+          <ArtifactNode Label="Editor.cs" Category="File" Id="(Assembly=../Noticia.Negocios/Editor.cs)" />
         </reference>
-        <reference Id="156e8a07-31ca-40a0-9bd2-4d1ec527d479" name="Singleton.AcaoEnum">
-          <ArtifactNode Label="Singleton.AcaoEnum" Category="CodeSchema_Enum" Id="(Assembly=../Noticia.Negocios/bin/Debug/Noticia.Negocios.dll Namespace=Noticia.Negocios Type=(Name=AcaoEnum ParentType=Singleton))" />
-          <ExpandedNode Id="(Assembly=Noticia.Negocios Namespace=Noticia.Negocios Type=(Name=AcaoEnum ParentType=Singleton))" Label="Singleton.AcaoEnum" Category="CodeSchema_Enum">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="d300c422-0ac0-4bba-87c3-dc22eda6063d" name="Noticia.Negocios.csproj">
+          <ArtifactNode Label="Noticia.Negocios.csproj" Category="File" Id="(Assembly=../Noticia.Negocios/Noticia.Negocios.csproj)" />
         </reference>
-        <reference Id="6acc9f44-2bb7-4928-9b9e-57490d7203a6" name="Diretor">
-          <ArtifactNode Label="Diretor" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Negocios/bin/Debug/Noticia.Negocios.dll Namespace=Noticia.Negocios Type=Diretor)" />
-          <ExpandedNode Id="(Assembly=Noticia.Negocios Namespace=Noticia.Negocios Type=Diretor)" Label="Diretor" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="3f24dc16-547f-4f13-94f4-ead0ba72cc06" name="RelacaoNegocios.dgml">
+          <ArtifactNode Label="RelacaoNegocios.dgml" Category="FileSystem.Category.FileOfType.dgml" Id="(Assembly=../Noticia.Negocios/RelacaoNegocios.dgml)" />
         </reference>
-        <reference Id="b062a1bd-ef03-42cd-b078-053e325315ca" name="Editor">
-          <ArtifactNode Label="Editor" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Negocios/bin/Debug/Noticia.Negocios.dll Namespace=Noticia.Negocios Type=Editor)" />
-          <ExpandedNode Id="(Assembly=Noticia.Negocios Namespace=Noticia.Negocios Type=Editor)" Label="Editor" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="19dbd2ba-5ef5-4a03-aa6f-cea5fcd3cb7d" name="Noticia.cs">
+          <ArtifactNode Label="Noticia.cs" Category="File" Id="(Assembly=../Noticia.Negocios/Noticia.cs)" />
+        </reference>
+        <reference Id="9938f216-182b-437c-9004-53a557d89cc9" name="Imagem.cs">
+          <ArtifactNode Label="Imagem.cs" Category="File" Id="(Assembly=../Noticia.Negocios/Imagem.cs)" />
+        </reference>
+        <reference Id="da84ba09-e21b-4396-8b9e-c1a65e23e483" name="Singleton.cs">
+          <ArtifactNode Label="Singleton.cs" Category="File" Id="(Assembly=../Noticia.Negocios/Singleton.cs)" />
+        </reference>
+        <reference Id="d33df1db-1ccd-4ffe-9328-7749f27da7c1" name="Permissao.cs">
+          <ArtifactNode Label="Permissao.cs" Category="File" Id="(Assembly=../Noticia.Negocios/Permissao.cs)" />
+        </reference>
+        <reference Id="a646672e-3b55-490d-a71e-f641224528f0" name="Fotografo.cs">
+          <ArtifactNode Label="Fotografo.cs" Category="File" Id="(Assembly=../Noticia.Negocios/Fotografo.cs)" />
+        </reference>
+        <reference Id="19b55373-6b7c-491d-b4ca-3d42028070ae" name="GrupoTrabalho.cs">
+          <ArtifactNode Label="GrupoTrabalho.cs" Category="File" Id="(Assembly=../Noticia.Negocios/GrupoTrabalho.cs)" />
         </reference>
       </references>
     </layer>
     <layer Id="fe8e0287-41fe-4ba3-be92-66e69c196c9f" name="Entidades">
       <references>
-        <reference Id="33ecd939-0a95-4db5-979f-1c3ed528af75" name="DiasTrabalhados">
-          <ArtifactNode Label="DiasTrabalhados" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=DiasTrabalhados)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=DiasTrabalhados)" Label="DiasTrabalhados" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="9241b2e6-7078-4f94-9a07-1cd5e6bde4ed" name="Entidades.cd">
+          <ArtifactNode Label="Entidades.cd" Category="File" Id="(Assembly=../Noticia.Entidades/Entidades.cd)" />
         </reference>
-        <reference Id="458dbe12-578b-4942-bf53-0fa06f128081" name="GrupoTrabalho">
-          <ArtifactNode Label="GrupoTrabalho" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=GrupoTrabalho)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=GrupoTrabalho)" Label="GrupoTrabalho" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="5d6251d6-82d7-44c6-a27e-73db1a416f78" name="ImagemGravacao.cs">
+          <ArtifactNode Label="ImagemGravacao.cs" Category="File" Id="(Assembly=../Noticia.Entidades/ImagemGravacao.cs)" />
         </reference>
-        <reference Id="9d18f0d3-b989-4d0d-991b-146def50f89e" name="GrupoTrabalhoUsuario">
-          <ArtifactNode Label="GrupoTrabalhoUsuario" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=GrupoTrabalhoUsuario)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=GrupoTrabalhoUsuario)" Label="GrupoTrabalhoUsuario" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="33b9eafc-4fa4-498d-9c17-237d56a99906" name="UsuarioPermissao.cs">
+          <ArtifactNode Label="UsuarioPermissao.cs" Category="File" Id="(Assembly=../Noticia.Entidades/UsuarioPermissao.cs)" />
         </reference>
-        <reference Id="66247818-4734-46f4-a679-d7eb2f52fb99" name="Historico">
-          <ArtifactNode Label="Historico" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=Historico)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=Historico)" Label="Historico" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="84828526-39f0-4ff8-9976-126488cbe716" name="Permissao.cs">
+          <ArtifactNode Label="Permissao.cs" Category="File" Id="(Assembly=../Noticia.Entidades/Permissao.cs)" />
         </reference>
-        <reference Id="d1396906-d59b-42c8-96d5-cd718eea1fbe" name="Imagem">
-          <ArtifactNode Label="Imagem" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=Imagem)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=Imagem)" Label="Imagem" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="8733c58a-90e9-465e-9b84-ef7e35cc2f79" name="UsuarioEndereco.cs">
+          <ArtifactNode Label="UsuarioEndereco.cs" Category="File" Id="(Assembly=../Noticia.Entidades/UsuarioEndereco.cs)" />
         </reference>
-        <reference Id="b7bd5524-f7b5-454e-a8c7-775fb34621bc" name="ImagemArquivo">
-          <ArtifactNode Label="ImagemArquivo" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=ImagemArquivo)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=ImagemArquivo)" Label="ImagemArquivo" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="e42c20c0-199c-4056-b748-644ff81ad66f" name="Historico.cs">
+          <ArtifactNode Label="Historico.cs" Category="File" Id="(Assembly=../Noticia.Entidades/Historico.cs)" />
         </reference>
-        <reference Id="49ab3ee7-a23a-460b-b78e-8960b47ac04f" name="ImagemGravacao">
-          <ArtifactNode Label="ImagemGravacao" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=ImagemGravacao)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=ImagemGravacao)" Label="ImagemGravacao" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="828e0243-8ed5-429c-85d3-439d2b41f971" name="NoticiaGrupoTrabalho.cs">
+          <ArtifactNode Label="NoticiaGrupoTrabalho.cs" Category="File" Id="(Assembly=../Noticia.Entidades/NoticiaGrupoTrabalho.cs)" />
         </reference>
-        <reference Id="bbc77f03-0828-4bfd-aa30-ad440236b634" name="Noticia">
-          <ArtifactNode Label="Noticia" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=Noticia)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=Noticia)" Label="Noticia" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="7ea42e73-91ee-4fe3-8d50-2c0837be79b9" name="GrupoTrabalho.cs">
+          <ArtifactNode Label="GrupoTrabalho.cs" Category="File" Id="(Assembly=../Noticia.Entidades/GrupoTrabalho.cs)" />
         </reference>
-        <reference Id="046675f8-708e-4241-a22a-fdd18d3f3ad1" name="NoticiaGrupoTrabalho">
-          <ArtifactNode Label="NoticiaGrupoTrabalho" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=NoticiaGrupoTrabalho)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=NoticiaGrupoTrabalho)" Label="NoticiaGrupoTrabalho" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="98ac968a-7c25-4b97-b11e-59a0e332923e" name="Trabalho.cs">
+          <ArtifactNode Label="Trabalho.cs" Category="File" Id="(Assembly=../Noticia.Entidades/Trabalho.cs)" />
         </reference>
-        <reference Id="6e955e6b-da13-4d84-9f36-ee1e86131b1c" name="NoticiaImagem">
-          <ArtifactNode Label="NoticiaImagem" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=NoticiaImagem)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=NoticiaImagem)" Label="NoticiaImagem" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="e79ab3a0-ac6a-4676-9ce8-da0d37722da0" name="GrupoTrabalhoUsuario.cs">
+          <ArtifactNode Label="GrupoTrabalhoUsuario.cs" Category="File" Id="(Assembly=../Noticia.Entidades/GrupoTrabalhoUsuario.cs)" />
         </reference>
-        <reference Id="93169d1b-c59a-4e4f-8013-eb5b563f76cb" name="PalavraChave">
-          <ArtifactNode Label="PalavraChave" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=PalavraChave)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=PalavraChave)" Label="PalavraChave" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="0c193229-46a8-459e-83d2-903b5f7c2c1f" name="TipoUsuario.cs">
+          <ArtifactNode Label="TipoUsuario.cs" Category="File" Id="(Assembly=../Noticia.Entidades/TipoUsuario.cs)" />
         </reference>
-        <reference Id="a61c0e13-51dc-48c8-a345-92be232aa452" name="Permissao">
-          <ArtifactNode Label="Permissao" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=Permissao)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=Permissao)" Label="Permissao" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="0720d80f-f6e5-4855-b9f0-1b309a797614" name="Noticia.Entidades.csproj">
+          <ArtifactNode Label="Noticia.Entidades.csproj" Category="File" Id="(Assembly=../Noticia.Entidades/Noticia.Entidades.csproj)" />
         </reference>
-        <reference Id="408cb2ad-01a7-4129-9a86-e6fce7827b73" name="PermissaoEnum">
-          <ArtifactNode Label="PermissaoEnum" Category="CodeSchema_Enum" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=PermissaoEnum)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=PermissaoEnum)" Label="PermissaoEnum" Category="CodeSchema_Enum">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="d52379c6-b05c-4896-a497-e75b2775c6ca" name="Usuario.cs">
+          <ArtifactNode Label="Usuario.cs" Category="File" Id="(Assembly=../Noticia.Entidades/Usuario.cs)" />
         </reference>
-        <reference Id="df474681-bfc0-4f3d-96b8-ae700e7f4be1" name="StatusNoticia">
-          <ArtifactNode Label="StatusNoticia" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=StatusNoticia)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=StatusNoticia)" Label="StatusNoticia" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="6af7e601-ede1-42d0-9b1d-a8ab518044ac" name="ImagemArquivo.cs">
+          <ArtifactNode Label="ImagemArquivo.cs" Category="File" Id="(Assembly=../Noticia.Entidades/ImagemArquivo.cs)" />
         </reference>
-        <reference Id="5684ab75-9c12-41e8-92b3-c00309c4f0e0" name="StatusNoticiaEnum">
-          <ArtifactNode Label="StatusNoticiaEnum" Category="CodeSchema_Enum" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=StatusNoticiaEnum)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=StatusNoticiaEnum)" Label="StatusNoticiaEnum" Category="CodeSchema_Enum">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="9f70ed39-5659-4821-a5d0-132f47264fb9" name="DiasTrabalhados.cs">
+          <ArtifactNode Label="DiasTrabalhados.cs" Category="File" Id="(Assembly=../Noticia.Entidades/DiasTrabalhados.cs)" />
         </reference>
-        <reference Id="ad8bd8f6-a00b-4709-8eb5-8e8562280e8c" name="TipoUsuario">
-          <ArtifactNode Label="TipoUsuario" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=TipoUsuario)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=TipoUsuario)" Label="TipoUsuario" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="47b1b32d-1d5d-4c5b-971a-173449e1a4bb" name="StatusNoticia.cs">
+          <ArtifactNode Label="StatusNoticia.cs" Category="File" Id="(Assembly=../Noticia.Entidades/StatusNoticia.cs)" />
         </reference>
-        <reference Id="bead08fc-056e-48a7-9710-0c1f73b6d5a4" name="TipoUsuarioEnum">
-          <ArtifactNode Label="TipoUsuarioEnum" Category="CodeSchema_Enum" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=TipoUsuarioEnum)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=TipoUsuarioEnum)" Label="TipoUsuarioEnum" Category="CodeSchema_Enum">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="48dc4563-a369-4cad-9312-f9c1b6b069fb" name="Noticia.cs">
+          <ArtifactNode Label="Noticia.cs" Category="File" Id="(Assembly=../Noticia.Entidades/Noticia.cs)" />
         </reference>
-        <reference Id="c273c9e9-21d4-48e0-a690-82beb2a669f5" name="Trabalho">
-          <ArtifactNode Label="Trabalho" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=Trabalho)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=Trabalho)" Label="Trabalho" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="01141dd6-d32d-404b-ac9d-04a091fd6a06" name="DiaSemana.cs">
+          <ArtifactNode Label="DiaSemana.cs" Category="File" Id="(Assembly=../Noticia.Entidades/DiaSemana.cs)" />
         </reference>
-        <reference Id="56084da0-f2d6-4b8b-a140-ddc5f4deb5fd" name="Usuario">
-          <ArtifactNode Label="Usuario" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=Usuario)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=Usuario)" Label="Usuario" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="edc52340-93ec-402f-adef-3667e2925c18" name="PalavraChave.cs">
+          <ArtifactNode Label="PalavraChave.cs" Category="File" Id="(Assembly=../Noticia.Entidades/PalavraChave.cs)" />
         </reference>
-        <reference Id="00b03f81-55ac-4d91-a7d4-b43c74fb38e4" name="UsuarioEndereco">
-          <ArtifactNode Label="UsuarioEndereco" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=UsuarioEndereco)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=UsuarioEndereco)" Label="UsuarioEndereco" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="c8680764-8000-46ae-9e8a-eab37de098f0" name="NoticiaImagem.cs">
+          <ArtifactNode Label="NoticiaImagem.cs" Category="File" Id="(Assembly=../Noticia.Entidades/NoticiaImagem.cs)" />
         </reference>
-        <reference Id="f8413674-f921-4afc-b3b5-8e2cfe86cb63" name="Contratacao">
-          <ArtifactNode Label="Contratacao" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=Contratacao)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=Contratacao)" Label="Contratacao" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="a615c64a-f08c-473f-ab6f-8c6078bd7105" name="Imagem.cs">
+          <ArtifactNode Label="Imagem.cs" Category="File" Id="(Assembly=../Noticia.Entidades/Imagem.cs)" />
         </reference>
-        <reference Id="2e606c9f-4c3f-4097-b206-61b7e008692e" name="UsuarioPermissao">
-          <ArtifactNode Label="UsuarioPermissao" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=UsuarioPermissao)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=UsuarioPermissao)" Label="UsuarioPermissao" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
-        </reference>
-        <reference Id="038422c2-dc61-4961-abcd-2ba9d5f347a9" name="DiaSemana">
-          <ArtifactNode Label="DiaSemana" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=DiaSemana)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=DiaSemana)" Label="DiaSemana" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
-        </reference>
-        <reference Id="1ebd1376-6ea0-4e28-b8fc-42946d50b8c7" name="DiaSemanaEnum">
-          <ArtifactNode Label="DiaSemanaEnum" Category="CodeSchema_Enum" Id="(Assembly=../Noticia.Entidades/bin/Debug/Noticia.Entidades.dll Namespace=Noticia.Entidades Type=DiaSemanaEnum)" />
-          <ExpandedNode Id="(Assembly=Noticia.Entidades Namespace=Noticia.Entidades Type=DiaSemanaEnum)" Label="DiaSemanaEnum" Category="CodeSchema_Enum">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="21f93766-7b29-4119-9562-9d0d1fa85877" name="Contratacao.cs">
+          <ArtifactNode Label="Contratacao.cs" Category="File" Id="(Assembly=../Noticia.Entidades/Contratacao.cs)" />
         </reference>
       </references>
     </layer>
@@ -375,105 +222,309 @@
         </dependencyFromLayerToLayer>
       </dependencyToLayers>
       <references>
-        <reference Id="9232ff7e-10f6-47be-b0b4-2ba4609a89e1" name="Login">
-          <ArtifactNode Label="Login" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Apresentacao/bin/Noticia.Apresentacao.dll Namespace=Noticia.Apresentacao.Account Type=Login)" />
-          <ExpandedNode Id="(Assembly=Noticia.Apresentacao Namespace=Noticia.Apresentacao.Account Type=Login)" Label="Login" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="18bc9505-11e9-45ba-9a22-cc90b4b8edc2" name="cdApresentacao.cd">
+          <ArtifactNode Label="cdApresentacao.cd" Category="File" Id="(Assembly=../Noticia.Apresentacao/cdApresentacao.cd)" />
         </reference>
-        <reference Id="5a41105e-5e60-4a1c-b0ba-42bfbb1b1a8a" name="NoticiaPage">
-          <ArtifactNode Label="NoticiaPage" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Apresentacao/bin/Noticia.Apresentacao.dll Namespace=Noticia.Apresentacao Type=NoticiaPage)" />
-          <ExpandedNode Id="(Assembly=Noticia.Apresentacao Namespace=Noticia.Apresentacao Type=NoticiaPage)" Label="NoticiaPage" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="8cd4dfb7-2140-4249-9543-6f9a767cc804" name="frmAvaliarNoticia.aspx.designer.cs">
+          <ArtifactNode Label="frmAvaliarNoticia.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmAvaliarNoticia.aspx.designer.cs)" />
         </reference>
-        <reference Id="aab0293e-ddc1-4456-8130-063b3df7a2b9" name="SiteMaster">
-          <ArtifactNode Label="SiteMaster" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Apresentacao/bin/Noticia.Apresentacao.dll Namespace=Noticia.Apresentacao Type=SiteMaster)" />
-          <ExpandedNode Id="(Assembly=Noticia.Apresentacao Namespace=Noticia.Apresentacao Type=SiteMaster)" Label="SiteMaster" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="1e0a0d6c-a7df-4e5b-81a1-a371f350587f" name="frmCriarNoticia.aspx.designer.cs">
+          <ArtifactNode Label="frmCriarNoticia.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmCriarNoticia.aspx.designer.cs)" />
         </reference>
-        <reference Id="c51f7a61-eca0-4c29-917e-beb98c94e7e8" name="NoticiaPage.TipoMensagem">
-          <ArtifactNode Label="NoticiaPage.TipoMensagem" Category="CodeSchema_Enum" Id="(Assembly=../Noticia.Apresentacao/bin/Noticia.Apresentacao.dll Namespace=Noticia.Apresentacao Type=(Name=TipoMensagem ParentType=NoticiaPage))" />
-          <ExpandedNode Id="(Assembly=Noticia.Apresentacao Namespace=Noticia.Apresentacao Type=(Name=TipoMensagem ParentType=NoticiaPage))" Label="NoticiaPage.TipoMensagem" Category="CodeSchema_Enum">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="f34ad909-64b4-497d-b819-ea33935ec5d1" name="frmEditarNoticia.aspx.designer.cs">
+          <ArtifactNode Label="frmEditarNoticia.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmEditarNoticia.aspx.designer.cs)" />
         </reference>
-        <reference Id="90200f6f-969f-40d7-b414-1d78cddc0ce1" name="frmNoticiaListagem">
-          <ArtifactNode Label="frmNoticiaListagem" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Apresentacao/bin/Noticia.Apresentacao.dll Namespace=Noticia.Apresentacao.Noticia Type=frmNoticiaListagem)" />
-          <ExpandedNode Id="(Assembly=Noticia.Apresentacao Namespace=Noticia.Apresentacao.Noticia Type=frmNoticiaListagem)" Label="frmNoticiaListagem" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="af9c1278-8ff5-4c22-84bb-7bec8d4b0000" name="frmVisualizarNoticia.aspx.designer.cs">
+          <ArtifactNode Label="frmVisualizarNoticia.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmVisualizarNoticia.aspx.designer.cs)" />
+        </reference>
+        <reference Id="01e6b2c8-44b2-402b-aac1-be4f2ee4724e" name="frmAssociarImagem.aspx.designer.cs">
+          <ArtifactNode Label="frmAssociarImagem.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmAssociarImagem.aspx.designer.cs)" />
+        </reference>
+        <reference Id="73f93e93-9807-4c59-bc7c-b605024adaac" name="frmGerenciarSelecionarImagem.aspx.designer.cs">
+          <ArtifactNode Label="frmGerenciarSelecionarImagem.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmGerenciarSelecionarImagem.aspx.designer.cs)" />
+        </reference>
+        <reference Id="d8ba15b3-028c-4ea8-b879-32b5b10d92d5" name="frmSubmeterImagem.aspx.designer.cs">
+          <ArtifactNode Label="frmSubmeterImagem.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmSubmeterImagem.aspx.designer.cs)" />
+        </reference>
+        <reference Id="c9ac7290-ed37-4e0f-9bec-95267a1554d2" name="frmListarNoticiaParaAvaliacao.aspx.designer.cs">
+          <ArtifactNode Label="frmListarNoticiaParaAvaliacao.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarNoticiaParaAvaliacao.aspx.designer.cs)" />
+        </reference>
+        <reference Id="546cf2f0-fab8-41bf-b66a-876b0485a3a4" name="frmListarNoticiaParaEdicao.aspx.designer.cs">
+          <ArtifactNode Label="frmListarNoticiaParaEdicao.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarNoticiaParaEdicao.aspx.designer.cs)" />
+        </reference>
+        <reference Id="e040de01-5fee-4ebf-ae60-1fdef30d7fac" name="frmListarNoticiaParaSubmissao.aspx.designer.cs">
+          <ArtifactNode Label="frmListarNoticiaParaSubmissao.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarNoticiaParaSubmissao.aspx.designer.cs)" />
+        </reference>
+        <reference Id="d5cc3371-be2b-4eb0-ab73-741e0c576576" name="Web.config">
+          <ArtifactNode Label="Web.config" Category="File" Id="(Assembly=../Noticia.Apresentacao/Web.config)" />
+        </reference>
+        <reference Id="14ab4a08-66fe-43c3-83fd-362b4f49c18e" name="frmGerenciarTipoUsuarioPermissao.aspx.designer.cs">
+          <ArtifactNode Label="frmGerenciarTipoUsuarioPermissao.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmGerenciarTipoUsuarioPermissao.aspx.designer.cs)" />
+        </reference>
+        <reference Id="caceafd5-8fb1-4dc5-85c1-a960b68466c9" name="frmListarTipoUsuarioPermissao.aspx.designer.cs">
+          <ArtifactNode Label="frmListarTipoUsuarioPermissao.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarTipoUsuarioPermissao.aspx.designer.cs)" />
+        </reference>
+        <reference Id="db6bd3cf-8cfe-4c01-aa97-58494732e079" name="frmTrabalho.aspx.designer.cs">
+          <ArtifactNode Label="frmTrabalho.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmTrabalho.aspx.designer.cs)" />
+        </reference>
+        <reference Id="c9d1459d-1245-41fa-8ac1-bbbaaaedd611" name="frmListarUsuario.aspx.designer.cs">
+          <ArtifactNode Label="frmListarUsuario.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarUsuario.aspx.designer.cs)" />
+        </reference>
+        <reference Id="ddd28c00-b384-42e0-ac29-b1ff6401ed5b" name="frmManterUsuario.aspx.designer.cs">
+          <ArtifactNode Label="frmManterUsuario.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmManterUsuario.aspx.designer.cs)" />
+        </reference>
+        <reference Id="81b5855d-f64e-47b7-8d65-fa2df0e78b99" name="frmRelatorio.aspx.designer.cs">
+          <ArtifactNode Label="frmRelatorio.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmRelatorio.aspx.designer.cs)" />
+        </reference>
+        <reference Id="cf5f20ba-820c-4122-9983-9ebc017e472e" name="frmListarGrupo.aspx.designer.cs">
+          <ArtifactNode Label="frmListarGrupo.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarGrupo.aspx.designer.cs)" />
+        </reference>
+        <reference Id="0e9f4a09-b512-417f-b8ef-77b473f7f999" name="frmManterGrupo.aspx.designer.cs">
+          <ArtifactNode Label="frmManterGrupo.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmManterGrupo.aspx.designer.cs)" />
+        </reference>
+        <reference Id="62df4695-4fd1-4d29-9b37-075c8a5700d0" name="frmSelecionarImagens.aspx.designer.cs">
+          <ArtifactNode Label="frmSelecionarImagens.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmSelecionarImagens.aspx.designer.cs)" />
+        </reference>
+        <reference Id="27acc7e0-497f-4865-9e4d-eb11b6259b0e" name="Default.aspx.designer.cs">
+          <ArtifactNode Label="Default.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/Default.aspx.designer.cs)" />
+        </reference>
+        <reference Id="4b794f96-569c-4a1c-98e3-6764c2b7208b" name="Web.Release.config">
+          <ArtifactNode Label="Web.Release.config" Category="File" Id="(Assembly=../Noticia.Apresentacao/Web.Release.config)" />
+        </reference>
+        <reference Id="82d6e861-c9b7-4b4b-a9a3-022e8bd299b0" name="About.aspx.designer.cs">
+          <ArtifactNode Label="About.aspx.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/About.aspx.designer.cs)" />
+        </reference>
+        <reference Id="1fab9fcb-2a69-4ecb-9c48-a608d5dd05be" name="Site.Master.cs">
+          <ArtifactNode Label="Site.Master.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/Site.Master.cs)" />
+        </reference>
+        <reference Id="57022d52-b94c-45a0-a440-0a2f8ef31c9f" name="Global.asax.cs">
+          <ArtifactNode Label="Global.asax.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/Global.asax.cs)" />
+        </reference>
+        <reference Id="e8417138-0a7c-43a8-8e3f-8f85e1a62fcb" name="Imagem.ashx.cs">
+          <ArtifactNode Label="Imagem.ashx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/Imagem.ashx.cs)" />
+        </reference>
+        <reference Id="964492fb-2bb8-4024-aa91-dd12175cff21" name="frmAvaliarNoticia.aspx.cs">
+          <ArtifactNode Label="frmAvaliarNoticia.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmAvaliarNoticia.aspx.cs)" />
+        </reference>
+        <reference Id="f9370d0f-9329-4fdb-a0c5-3f053aa2bf8b" name="frmCriarNoticia.aspx.cs">
+          <ArtifactNode Label="frmCriarNoticia.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmCriarNoticia.aspx.cs)" />
+        </reference>
+        <reference Id="40e99b6d-943a-4986-ad42-7c9634a71e8a" name="frmEditarNoticia.aspx.cs">
+          <ArtifactNode Label="frmEditarNoticia.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmEditarNoticia.aspx.cs)" />
+        </reference>
+        <reference Id="db8d895e-aac2-40d2-acb7-254c88f00b0b" name="frmVisualizarNoticia.aspx.cs">
+          <ArtifactNode Label="frmVisualizarNoticia.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmVisualizarNoticia.aspx.cs)" />
+        </reference>
+        <reference Id="d951850f-de28-41fa-b870-5fbcf8e1b3a6" name="frmAssociarImagem.aspx.cs">
+          <ArtifactNode Label="frmAssociarImagem.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmAssociarImagem.aspx.cs)" />
+        </reference>
+        <reference Id="73317479-1217-43c2-93f2-b68dad8450f5" name="frmGerenciarSelecionarImagem.aspx.cs">
+          <ArtifactNode Label="frmGerenciarSelecionarImagem.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmGerenciarSelecionarImagem.aspx.cs)" />
+        </reference>
+        <reference Id="ba58e0d6-1249-40f2-bdbc-f435ee0221b9" name="Web.Debug.config">
+          <ArtifactNode Label="Web.Debug.config" Category="File" Id="(Assembly=../Noticia.Apresentacao/Web.Debug.config)" />
+        </reference>
+        <reference Id="f61a943d-3f13-4dcc-b5ec-85c0ab4d787e" name="frmSubmeterImagem.aspx.cs">
+          <ArtifactNode Label="frmSubmeterImagem.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmSubmeterImagem.aspx.cs)" />
+        </reference>
+        <reference Id="61238f61-e4f2-43e1-a7d6-8cb3740f9599" name="frmListarNoticiaParaAvaliacao.aspx.cs">
+          <ArtifactNode Label="frmListarNoticiaParaAvaliacao.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarNoticiaParaAvaliacao.aspx.cs)" />
+        </reference>
+        <reference Id="724e6f1d-c6ca-4f45-92a9-b67e03caa761" name="frmListarNoticiaParaEdicao.aspx.cs">
+          <ArtifactNode Label="frmListarNoticiaParaEdicao.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarNoticiaParaEdicao.aspx.cs)" />
+        </reference>
+        <reference Id="0e1c04ae-8cb0-43d3-a92f-1e5d51bf97b8" name="frmListarNoticiaParaSubmissao.aspx.cs">
+          <ArtifactNode Label="frmListarNoticiaParaSubmissao.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarNoticiaParaSubmissao.aspx.cs)" />
+        </reference>
+        <reference Id="a7e8b480-1c30-42a1-86b4-b501698c15cf" name="frmGerenciarTipoUsuarioPermissao.aspx.cs">
+          <ArtifactNode Label="frmGerenciarTipoUsuarioPermissao.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmGerenciarTipoUsuarioPermissao.aspx.cs)" />
+        </reference>
+        <reference Id="f36e96a5-b50c-48fc-b8b6-d2a6670e8dc5" name="frmListarTipoUsuarioPermissao.aspx.cs">
+          <ArtifactNode Label="frmListarTipoUsuarioPermissao.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarTipoUsuarioPermissao.aspx.cs)" />
+        </reference>
+        <reference Id="b39c184d-40f7-4e60-8952-05ad7d6c0a90" name="frmTrabalho.aspx.cs">
+          <ArtifactNode Label="frmTrabalho.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmTrabalho.aspx.cs)" />
+        </reference>
+        <reference Id="a79f2b58-c65e-4d2b-be08-0a2c08a6ea52" name="frmListarUsuario.aspx.cs">
+          <ArtifactNode Label="frmListarUsuario.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarUsuario.aspx.cs)" />
+        </reference>
+        <reference Id="cc19ec61-dbe1-4eeb-9774-5e1a8097a9de" name="frmManterUsuario.aspx.cs">
+          <ArtifactNode Label="frmManterUsuario.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmManterUsuario.aspx.cs)" />
+        </reference>
+        <reference Id="cc4ff6a5-70fa-4d01-abb6-3de409246443" name="frmRelatorio.aspx.cs">
+          <ArtifactNode Label="frmRelatorio.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmRelatorio.aspx.cs)" />
+        </reference>
+        <reference Id="c2b5b854-ef0a-4ea4-8606-de154b70e5e0" name="Noticia.Apresentacao.csproj">
+          <ArtifactNode Label="Noticia.Apresentacao.csproj" Category="File" Id="(Assembly=../Noticia.Apresentacao/Noticia.Apresentacao.csproj)" />
+        </reference>
+        <reference Id="20b46e29-af00-4879-802e-aa420d9ed7de" name="frmListarGrupo.aspx.cs">
+          <ArtifactNode Label="frmListarGrupo.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarGrupo.aspx.cs)" />
+        </reference>
+        <reference Id="07f8b0ce-ab76-408d-ad41-5a7c65c65b33" name="frmManterGrupo.aspx.cs">
+          <ArtifactNode Label="frmManterGrupo.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmManterGrupo.aspx.cs)" />
+        </reference>
+        <reference Id="e34d5fb1-0a08-4ff9-968f-61243afc6c2e" name="frmSelecionarImagens.aspx.cs">
+          <ArtifactNode Label="frmSelecionarImagens.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmSelecionarImagens.aspx.cs)" />
+        </reference>
+        <reference Id="e506007a-4470-4d23-81e6-af17f9927fe0" name="Default.aspx.cs">
+          <ArtifactNode Label="Default.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/Default.aspx.cs)" />
+        </reference>
+        <reference Id="65e6dd3f-cdff-40ed-a13b-e71ecfc3390e" name="About.aspx.cs">
+          <ArtifactNode Label="About.aspx.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/About.aspx.cs)" />
+        </reference>
+        <reference Id="cfb5dcaa-b47f-4148-8d1d-0ba86090c00c" name="Global.asax">
+          <ArtifactNode Label="Global.asax" Category="File" Id="(Assembly=../Noticia.Apresentacao/Global.asax)" />
+        </reference>
+        <reference Id="70eaff37-ad79-475f-a909-0c7ea1a52dfa" name="Imagem.ashx">
+          <ArtifactNode Label="Imagem.ashx" Category="File" Id="(Assembly=../Noticia.Apresentacao/Imagem.ashx)" />
+        </reference>
+        <reference Id="d88a089b-a75a-4a07-97de-808b50eeecb9" name="frmAvaliarNoticia.aspx">
+          <ArtifactNode Label="frmAvaliarNoticia.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmAvaliarNoticia.aspx)" />
+        </reference>
+        <reference Id="7fb8b76c-c24c-45b9-a74d-a4cb07c9c8b9" name="frmCriarNoticia.aspx">
+          <ArtifactNode Label="frmCriarNoticia.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmCriarNoticia.aspx)" />
+        </reference>
+        <reference Id="d5524de5-43a4-436f-ab8c-8b4a7dcf854c" name="frmEditarNoticia.aspx">
+          <ArtifactNode Label="frmEditarNoticia.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmEditarNoticia.aspx)" />
+        </reference>
+        <reference Id="e0a35c18-2b1d-4f99-9a5e-06044e53a250" name="Noticia.Apresentacao.csproj.user">
+          <ArtifactNode Label="Noticia.Apresentacao.csproj.user" Category="File" Id="(Assembly=../Noticia.Apresentacao/Noticia.Apresentacao.csproj.user)" />
+        </reference>
+        <reference Id="d08818ac-8ae3-4133-ba90-6b33e88e0d0e" name="frmVisualizarNoticia.aspx">
+          <ArtifactNode Label="frmVisualizarNoticia.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmVisualizarNoticia.aspx)" />
+        </reference>
+        <reference Id="61895ebc-6b42-4224-8336-31006e2af7fb" name="frmAssociarImagem.aspx">
+          <ArtifactNode Label="frmAssociarImagem.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmAssociarImagem.aspx)" />
+        </reference>
+        <reference Id="f12b3ec8-58cb-4ad7-8bcb-ab85647185db" name="frmGerenciarSelecionarImagem.aspx">
+          <ArtifactNode Label="frmGerenciarSelecionarImagem.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmGerenciarSelecionarImagem.aspx)" />
+        </reference>
+        <reference Id="f18d749a-1beb-4736-9354-8eaf0f3a3357" name="frmSubmeterImagem.aspx">
+          <ArtifactNode Label="frmSubmeterImagem.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmSubmeterImagem.aspx)" />
+        </reference>
+        <reference Id="3e53c0c1-df7b-4611-aa1c-9689f14676c2" name="frmListarNoticiaParaAvaliacao.aspx">
+          <ArtifactNode Label="frmListarNoticiaParaAvaliacao.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarNoticiaParaAvaliacao.aspx)" />
+        </reference>
+        <reference Id="b98307cc-1dfb-40ef-9370-d585625397fc" name="frmListarNoticiaParaEdicao.aspx">
+          <ArtifactNode Label="frmListarNoticiaParaEdicao.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarNoticiaParaEdicao.aspx)" />
+        </reference>
+        <reference Id="840fa099-5a4e-4a4f-83d0-b101f2c789c4" name="frmListarNoticiaParaSubmissao.aspx">
+          <ArtifactNode Label="frmListarNoticiaParaSubmissao.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarNoticiaParaSubmissao.aspx)" />
+        </reference>
+        <reference Id="4832711c-b4ce-42b7-a03b-6abd4742a924" name="frmGerenciarTipoUsuarioPermissao.aspx">
+          <ArtifactNode Label="frmGerenciarTipoUsuarioPermissao.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmGerenciarTipoUsuarioPermissao.aspx)" />
+        </reference>
+        <reference Id="3a1bbc66-1c00-4085-bcb9-e581a9c96c9a" name="frmListarTipoUsuarioPermissao.aspx">
+          <ArtifactNode Label="frmListarTipoUsuarioPermissao.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarTipoUsuarioPermissao.aspx)" />
+        </reference>
+        <reference Id="0e626967-204e-4e84-8be3-810971b80de1" name="frmTrabalho.aspx">
+          <ArtifactNode Label="frmTrabalho.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmTrabalho.aspx)" />
+        </reference>
+        <reference Id="a709822f-8503-4068-a99c-3df73af0c09e" name="Site.Master">
+          <ArtifactNode Label="Site.Master" Category="File" Id="(Assembly=../Noticia.Apresentacao/Site.Master)" />
+        </reference>
+        <reference Id="0bbbc17e-8cb8-411f-b3f7-08faf255b647" name="frmListarUsuario.aspx">
+          <ArtifactNode Label="frmListarUsuario.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarUsuario.aspx)" />
+        </reference>
+        <reference Id="a7d4b9d4-04cd-4fe5-9bd5-e24b2796f211" name="frmManterUsuario.aspx">
+          <ArtifactNode Label="frmManterUsuario.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmManterUsuario.aspx)" />
+        </reference>
+        <reference Id="92d7c92a-d7fd-44be-8ddf-439b29769e33" name="frmRelatorio.aspx">
+          <ArtifactNode Label="frmRelatorio.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmRelatorio.aspx)" />
+        </reference>
+        <reference Id="77c52835-c220-41eb-8a12-d8cc930a4cf6" name="frmListarGrupo.aspx">
+          <ArtifactNode Label="frmListarGrupo.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmListarGrupo.aspx)" />
+        </reference>
+        <reference Id="26ef8699-3e8a-4b4b-a9f6-4b46e7af12d4" name="frmManterGrupo.aspx">
+          <ArtifactNode Label="frmManterGrupo.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmManterGrupo.aspx)" />
+        </reference>
+        <reference Id="81d530ec-1c95-487f-b70c-60b4f9651057" name="frmSelecionarImagens.aspx">
+          <ArtifactNode Label="frmSelecionarImagens.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/frmSelecionarImagens.aspx)" />
+        </reference>
+        <reference Id="6edfba28-003f-495d-bcf5-7ebc585c4dff" name="Default.aspx">
+          <ArtifactNode Label="Default.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/Default.aspx)" />
+        </reference>
+        <reference Id="f5f3664f-469a-4f75-8bc6-878463c5bf41" name="About.aspx">
+          <ArtifactNode Label="About.aspx" Category="File" Id="(Assembly=../Noticia.Apresentacao/About.aspx)" />
+        </reference>
+        <reference Id="2c4adffe-a598-45f9-96c0-27af831cf773" name="NoticiaPage.cs">
+          <ArtifactNode Label="NoticiaPage.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/NoticiaPage.cs)" />
+        </reference>
+        <reference Id="f79be07d-ae96-4709-beeb-e3fc422a04fe" name="Site.Master.designer.cs">
+          <ArtifactNode Label="Site.Master.designer.cs" Category="File" Id="(Assembly=../Noticia.Apresentacao/Site.Master.designer.cs)" />
         </reference>
       </references>
     </layer>
     <layer Id="50f42327-a864-4dff-9c64-2fd676400e41" name="SQL Server - Procedures">
       <references>
-        <reference Id="d9373a36-dc63-443d-8fba-ff7cc26d8978" name="spNoticia.sql">
-          <ArtifactNode Label="spNoticia.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spNoticia.sql)" />
+        <reference Id="a448e911-1090-4ab9-993d-1f559ff88aa4" name="MER_Descritivo.png">
+          <ArtifactNode Label="MER_Descritivo.png" Category="File" Id="(Assembly=../Noticia.Scripts/MER_Descritivo.png)" />
         </reference>
-        <reference Id="b749bcd0-40d1-475c-bdd8-f24e78c620f0" name="spUsuarioPermissao.sql">
+        <reference Id="ac1a4a1a-7882-43bc-9e72-8255bb3701e7" name="spImagemGravacao.sql">
+          <ArtifactNode Label="spImagemGravacao.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spImagemGravacao.sql)" />
+        </reference>
+        <reference Id="41b95864-38b7-4845-8ae6-8f76e5762cc2" name="spUsuarioPermissao.sql">
           <ArtifactNode Label="spUsuarioPermissao.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spUsuarioPermissao.sql)" />
         </reference>
-        <reference Id="02568292-b4fb-4e01-90c7-76dcac25ef90" name="spPermissao.sql">
+        <reference Id="9c422838-c56a-4389-b526-1793add086b5" name="spPermissao.sql">
           <ArtifactNode Label="spPermissao.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spPermissao.sql)" />
         </reference>
-        <reference Id="f8c77e77-4b5b-4f22-a637-955f3827563c" name="spUsuarioEndereco.sql">
+        <reference Id="5edfc929-e048-4c4c-b516-724da27381e1" name="spUsuarioEndereco.sql">
           <ArtifactNode Label="spUsuarioEndereco.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spUsuarioEndereco.sql)" />
         </reference>
-        <reference Id="4011285d-5053-4e01-9af1-31662146f5f9" name="spHistorico.sql">
+        <reference Id="ffeecd38-51aa-4610-b6c8-ffe12f5c5e6f" name="spHistorico.sql">
           <ArtifactNode Label="spHistorico.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spHistorico.sql)" />
         </reference>
-        <reference Id="65f7eee0-b90f-4264-9210-bd1ae4804675" name="spNoticiaGrupoTrabalho.sql">
+        <reference Id="db761eb5-ab14-4728-813c-d61f9961c624" name="spNoticiaGrupoTrabalho.sql">
           <ArtifactNode Label="spNoticiaGrupoTrabalho.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spNoticiaGrupoTrabalho.sql)" />
         </reference>
-        <reference Id="34fbf622-e79c-4d1f-836e-bd47973e5e11" name="spGrupoTrabalho.sql">
+        <reference Id="ef377995-baae-43e4-ba9e-e8e5ac662c27" name="spGrupoTrabalho.sql">
           <ArtifactNode Label="spGrupoTrabalho.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spGrupoTrabalho.sql)" />
         </reference>
-        <reference Id="40e32d03-6069-4fdd-96fc-d55bc2d1437f" name="spTrabalho.sql">
+        <reference Id="611179fd-c122-49b5-bd89-42e4f24b6de0" name="spTrabalho.sql">
           <ArtifactNode Label="spTrabalho.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spTrabalho.sql)" />
         </reference>
-        <reference Id="2ec14657-d6af-427b-8405-ac4dcf28f8a5" name="spGrupoTrabalhoUsuario.sql">
+        <reference Id="0c1840ac-2e60-489e-854d-143772524526" name="spGrupoTrabalhoUsuario.sql">
           <ArtifactNode Label="spGrupoTrabalhoUsuario.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spGrupoTrabalhoUsuario.sql)" />
         </reference>
-        <reference Id="db3ad994-c68e-46b4-8d38-ca736ab6c21e" name="spTipoUsuario.sql">
+        <reference Id="247e148f-c9d7-4586-becd-3e4e3166d307" name="spTipoUsuario.sql">
           <ArtifactNode Label="spTipoUsuario.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spTipoUsuario.sql)" />
         </reference>
-        <reference Id="b2b662de-4b24-49ba-a598-40b98489323b" name="spUsuario.sql">
+        <reference Id="4b6eb8e9-bc96-491a-8048-45cfb1a0c0f2" name="spNoticia.sql">
+          <ArtifactNode Label="spNoticia.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spNoticia.sql)" />
+        </reference>
+        <reference Id="0b234e25-bbe8-47f1-903f-a82454dec583" name="spUsuario.sql">
           <ArtifactNode Label="spUsuario.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spUsuario.sql)" />
         </reference>
-        <reference Id="9ff3c664-daa5-4ce1-a373-40ed0e95e4b5" name="spStatusNoticia.sql">
-          <ArtifactNode Label="spStatusNoticia.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spStatusNoticia.sql)" />
-        </reference>
-        <reference Id="15a6aba2-1162-4262-bf7b-3cb2e4efc5ad" name="spImagemArquivo.sql">
+        <reference Id="26daa9e4-3667-46ab-ba60-4fa0cc03a247" name="spImagemArquivo.sql">
           <ArtifactNode Label="spImagemArquivo.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spImagemArquivo.sql)" />
         </reference>
-        <reference Id="eebc3c0a-f35c-4998-b394-d02fe9b828e5" name="spDiasTrabalhados.sql">
+        <reference Id="14faa94d-a30f-47e3-b75e-fd3e8a173cc8" name="spDiasTrabalhados.sql">
           <ArtifactNode Label="spDiasTrabalhados.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spDiasTrabalhados.sql)" />
         </reference>
-        <reference Id="c0e6b845-8000-4cf0-8dbc-2809027af630" name="fn_GetTableFromIntList.sql">
+        <reference Id="dafd2428-6ea6-47e6-a408-d30f77d1ddff" name="fn_GetTableFromIntList.sql">
           <ArtifactNode Label="fn_GetTableFromIntList.sql" Category="File" Id="(Assembly=../Noticia.Scripts/fn_GetTableFromIntList.sql)" />
         </reference>
-        <reference Id="10160b28-7516-46c1-b776-b76d05f2ab89" name="spDiaSemana.sql">
+        <reference Id="3a3ca188-5fbd-4849-8cae-b90dd1c27c33" name="spStatusNoticia.sql">
+          <ArtifactNode Label="spStatusNoticia.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spStatusNoticia.sql)" />
+        </reference>
+        <reference Id="1b59d8b2-3a98-431a-a66d-146fa16aafa1" name="spDiaSemana.sql">
           <ArtifactNode Label="spDiaSemana.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spDiaSemana.sql)" />
         </reference>
-        <reference Id="e77f0c3f-644e-44d9-9446-de343a666c85" name="spPalavraChave.sql">
+        <reference Id="fe1052c6-f265-4610-818a-14fbcefb0396" name="spPalavraChave.sql">
           <ArtifactNode Label="spPalavraChave.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spPalavraChave.sql)" />
         </reference>
-        <reference Id="b876b03b-2a89-4212-bd29-c5c1e03c4eb3" name="GeracaoDBInicial.sql">
+        <reference Id="9dd4c8d1-82d1-4a5a-8264-2ee2925bc82b" name="GeracaoDBInicial.sql">
           <ArtifactNode Label="GeracaoDBInicial.sql" Category="File" Id="(Assembly=../Noticia.Scripts/GeracaoDBInicial.sql)" />
         </reference>
-        <reference Id="1ba9c8f8-25e2-4cc6-bfb2-9295ebc176f5" name="spNoticiaImagem.sql">
+        <reference Id="ab8c09ea-22b9-4395-b594-d67bc58634f1" name="spNoticiaImagem.sql">
           <ArtifactNode Label="spNoticiaImagem.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spNoticiaImagem.sql)" />
         </reference>
-        <reference Id="7476d0e7-262c-4148-929e-f1f8324e2e14" name="spImagem.sql">
+        <reference Id="4c3f9f93-831e-47d5-95a5-258f715819a3" name="spImagem.sql">
           <ArtifactNode Label="spImagem.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spImagem.sql)" />
         </reference>
-        <reference Id="bbd5406f-9b9a-4541-8a93-7468a5dd2e38" name="spContratacao.sql">
+        <reference Id="e36f21d4-ed89-42b3-8e93-24926dbdbb46" name="spContratacao.sql">
           <ArtifactNode Label="spContratacao.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spContratacao.sql)" />
-        </reference>
-        <reference Id="74176c78-d738-4521-88a9-b9206cc195c4" name="spImagemGravacao.sql">
-          <ArtifactNode Label="spImagemGravacao.sql" Category="File" Id="(Assembly=../Noticia.Scripts/spImagemGravacao.sql)" />
         </reference>
       </references>
     </layer>
@@ -487,65 +538,41 @@
         </dependencyFromLayerToLayer>
       </dependencyToLayers>
       <references>
-        <reference Id="29822d06-5ca8-4b82-a5e5-a93e1ae782f9" name="UC_EditarNoticia">
-          <ArtifactNode Label="UC_EditarNoticia" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Testes/bin/Debug/Noticia.Testes.dll Namespace=Noticia.Testes Type=UC_EditarNoticia)" />
-          <ExpandedNode Id="(Assembly=Noticia.Testes Namespace=Noticia.Testes Type=UC_EditarNoticia)" Label="UC_EditarNoticia" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="9a55787d-d657-4a70-94f4-88c85dfd7ce7" name="Testes.cd">
+          <ArtifactNode Label="Testes.cd" Category="File" Id="(Assembly=../Noticia.Testes/Testes.cd)" />
         </reference>
-        <reference Id="33395d5b-c93f-4cc3-a10f-54aceea51406" name="UC_EfetuarAcesso">
-          <ArtifactNode Label="UC_EfetuarAcesso" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Testes/bin/Debug/Noticia.Testes.dll Namespace=Noticia.Testes Type=UC_EfetuarAcesso)" />
-          <ExpandedNode Id="(Assembly=Noticia.Testes Namespace=Noticia.Testes Type=UC_EfetuarAcesso)" Label="UC_EfetuarAcesso" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="fa796f04-8779-49d3-91cc-013904f477a5" name="UC_AssociarImagens.cs">
+          <ArtifactNode Label="UC_AssociarImagens.cs" Category="File" Id="(Assembly=../Noticia.Testes/UC_AssociarImagens.cs)" />
         </reference>
-        <reference Id="21695606-5eb3-4841-b8b5-9d823d98b2d8" name="UC_ManterGrupoTrabalho">
-          <ArtifactNode Label="UC_ManterGrupoTrabalho" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Testes/bin/Debug/Noticia.Testes.dll Namespace=Noticia.Testes Type=UC_ManterGrupoTrabalho)" />
-          <ExpandedNode Id="(Assembly=Noticia.Testes Namespace=Noticia.Testes Type=UC_ManterGrupoTrabalho)" Label="UC_ManterGrupoTrabalho" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="41d820f6-dc46-4956-9b93-18fc7b0e39e3" name="UC_SelecionarImagens.cs">
+          <ArtifactNode Label="UC_SelecionarImagens.cs" Category="File" Id="(Assembly=../Noticia.Testes/UC_SelecionarImagens.cs)" />
         </reference>
-        <reference Id="52a898b4-71e3-4de4-b3e3-4aeb05d8a9ad" name="UC_ManterUsuario">
-          <ArtifactNode Label="UC_ManterUsuario" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Testes/bin/Debug/Noticia.Testes.dll Namespace=Noticia.Testes Type=UC_ManterUsuario)" />
-          <ExpandedNode Id="(Assembly=Noticia.Testes Namespace=Noticia.Testes Type=UC_ManterUsuario)" Label="UC_ManterUsuario" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="71180d84-dd29-4891-977c-462dfde08f89" name="UC_SubmeterImagens.cs">
+          <ArtifactNode Label="UC_SubmeterImagens.cs" Category="File" Id="(Assembly=../Noticia.Testes/UC_SubmeterImagens.cs)" />
         </reference>
-        <reference Id="7f19ba06-8f3e-4254-86fb-fae02302b718" name="UC_SelecionarImagens">
-          <ArtifactNode Label="UC_SelecionarImagens" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Testes/bin/Debug/Noticia.Testes.dll Namespace=Noticia.Testes Type=UC_SelecionarImagens)" />
-          <ExpandedNode Id="(Assembly=Noticia.Testes Namespace=Noticia.Testes Type=UC_SelecionarImagens)" Label="UC_SelecionarImagens" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="d0c7562f-2b74-4227-b6be-8d06d93705a2" name="Noticia.Testes.csproj">
+          <ArtifactNode Label="Noticia.Testes.csproj" Category="File" Id="(Assembly=../Noticia.Testes/Noticia.Testes.csproj)" />
         </reference>
-        <reference Id="cb69878e-a2b4-4071-a287-1f13b541a9aa" name="UC_SubmeterImagens">
-          <ArtifactNode Label="UC_SubmeterImagens" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Testes/bin/Debug/Noticia.Testes.dll Namespace=Noticia.Testes Type=UC_SubmeterImagens)" />
-          <ExpandedNode Id="(Assembly=Noticia.Testes Namespace=Noticia.Testes Type=UC_SubmeterImagens)" Label="UC_SubmeterImagens" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="33a9781c-dbb0-4ac8-b323-c62239912419" name="UC_AvaliarNoticia.cs">
+          <ArtifactNode Label="UC_AvaliarNoticia.cs" Category="File" Id="(Assembly=../Noticia.Testes/UC_AvaliarNoticia.cs)" />
         </reference>
-        <reference Id="67380b6e-5471-46d7-ad89-0eb2aef41365" name="UC_SubmeterNoticia">
-          <ArtifactNode Label="UC_SubmeterNoticia" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Testes/bin/Debug/Noticia.Testes.dll Namespace=Noticia.Testes Type=UC_SubmeterNoticia)" />
-          <ExpandedNode Id="(Assembly=Noticia.Testes Namespace=Noticia.Testes Type=UC_SubmeterNoticia)" Label="UC_SubmeterNoticia" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="49e41c11-384b-4afe-83df-089a182bfe98" name="UC_CriarNoticia.cs">
+          <ArtifactNode Label="UC_CriarNoticia.cs" Category="File" Id="(Assembly=../Noticia.Testes/UC_CriarNoticia.cs)" />
         </reference>
-        <reference Id="280f6812-b652-4392-96f2-d731d5b4543b" name="UC_AssociarImagens">
-          <ArtifactNode Label="UC_AssociarImagens" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Testes/bin/Debug/Noticia.Testes.dll Namespace=Noticia.Testes Type=UC_AssociarImagens)" />
-          <ExpandedNode Id="(Assembly=Noticia.Testes Namespace=Noticia.Testes Type=UC_AssociarImagens)" Label="UC_AssociarImagens" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="3699f549-7fe4-4120-90dd-7c16b41a1606" name="UC_EditarNoticia.cs">
+          <ArtifactNode Label="UC_EditarNoticia.cs" Category="File" Id="(Assembly=../Noticia.Testes/UC_EditarNoticia.cs)" />
         </reference>
-        <reference Id="e43ad9cc-8f2c-45bf-823e-fbf7ca9bdaa0" name="UC_AvaliarNoticia">
-          <ArtifactNode Label="UC_AvaliarNoticia" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Testes/bin/Debug/Noticia.Testes.dll Namespace=Noticia.Testes Type=UC_AvaliarNoticia)" />
-          <ExpandedNode Id="(Assembly=Noticia.Testes Namespace=Noticia.Testes Type=UC_AvaliarNoticia)" Label="UC_AvaliarNoticia" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="f047db60-c33b-4c9f-8535-2b3366753684" name="UC_SubmeterNoticia.cs">
+          <ArtifactNode Label="UC_SubmeterNoticia.cs" Category="File" Id="(Assembly=../Noticia.Testes/UC_SubmeterNoticia.cs)" />
         </reference>
-        <reference Id="aedc9ae6-fec8-4399-b6db-d3baaaec64f8" name="UC_CriarNoticia">
-          <ArtifactNode Label="UC_CriarNoticia" Category="CodeSchema_Class" Id="(Assembly=../Noticia.Testes/bin/Debug/Noticia.Testes.dll Namespace=Noticia.Testes Type=UC_CriarNoticia)" />
-          <ExpandedNode Id="(Assembly=Noticia.Testes Namespace=Noticia.Testes Type=UC_CriarNoticia)" Label="UC_CriarNoticia" Category="CodeSchema_Class">
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
+        <reference Id="0984bbe8-148f-4059-9102-0163b0f1817b" name="UC_ManterGrupoTrabalho.cs">
+          <ArtifactNode Label="UC_ManterGrupoTrabalho.cs" Category="File" Id="(Assembly=../Noticia.Testes/UC_ManterGrupoTrabalho.cs)" />
+        </reference>
+        <reference Id="7dcb62ba-9811-4f6d-8fe6-7d52252d10b9" name="UC_ManterUsuario.cs">
+          <ArtifactNode Label="UC_ManterUsuario.cs" Category="File" Id="(Assembly=../Noticia.Testes/UC_ManterUsuario.cs)" />
+        </reference>
+        <reference Id="bb311740-1a1b-4b92-8d46-cf01e26aea9b" name="UC_EfetuarAcesso.cs">
+          <ArtifactNode Label="UC_EfetuarAcesso.cs" Category="File" Id="(Assembly=../Noticia.Testes/UC_EfetuarAcesso.cs)" />
         </reference>
       </references>
     </layer>

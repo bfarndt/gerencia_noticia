@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -73,8 +74,18 @@ namespace Noticia.Apresentacao
         {
             try
             {
-                DateTime data = DateTime.Now;
-                DateTime.TryParse(txtDataHora.Text, out data);
+
+                if (string.IsNullOrWhiteSpace(txtDataHora.Text.Replace("__/__/____", "")))
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "aler", "alert('Data inválida.');", true);
+                }
+                string[] strData = txtDataHora.Text.Substring(0, 10).Split('/');
+  
+                int dia = Convert.ToInt32(strData[0]);
+                int mes = Convert.ToInt32(strData[1]);
+                int ano = Convert.ToInt32(strData[2]);
+
+                DateTime data = new DateTime(ano, mes, dia);
 
                 if (new Negocios.Reporter().SelecionarImagem(new Entidades.Imagem()
                 {

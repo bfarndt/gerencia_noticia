@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Noticia.Apresentacao.frmAssociarImagem">
+    <Position X="1.25" Y="0.75" Width="1.5" />
+    <InheritanceLine Type="Noticia.Apresentacao.NoticiaPage" FixedFromPoint="true">
+      <Path>
+        <Point X="5.75" Y="9.225" />
+        <Point X="1.719" Y="9.225" />
+        <Point X="1.719" Y="4.742" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>EAABEABQAAABQAAACAAAAAAFAAAAAAIAEAAAAAIAAAA=</HashCode>
+      <FileName>frmAssociarImagem.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao._Default">
+    <Position X="2.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Default.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmAvaliarNoticia">
+    <Position X="8" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAiAAAAIAIAAAAAAAAAAAAIAIgABCAAAAgAAICAEA=</HashCode>
+      <FileName>frmAvaliarNoticia.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmCriarNoticia">
+    <Position X="11.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAZQkAAAgSAAgAEUAAEABIQAAgAAAIAAAA=</HashCode>
+      <FileName>frmCriarNoticia.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmEditarNoticia">
+    <Position X="11.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABEAAAABAoA4AAAAAAAIgEAAYAAAADCAAAwAAAYgAAA=</HashCode>
+      <FileName>frmEditarNoticia.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmGerenciarSelecionarImagem">
+    <Position X="13.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAgAAAAANAAgEAAAAAEAAYECAgBSAIAoAAAIAAEA=</HashCode>
+      <FileName>frmGerenciarSelecionarImagem.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmGerenciarTipoUsuarioPermissao">
+    <Position X="15.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAIAAAAAACCAACACAAAAAAGIAAAAAAAAAQQAAIIAAA=</HashCode>
+      <FileName>frmGerenciarTipoUsuarioPermissao.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmListarGrupo">
+    <Position X="4" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAACRQgAAAAAAAAAQAAAAEABIEBgAAAIAAAA=</HashCode>
+      <FileName>frmListarGrupo.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmListarNoticiaParaAvaliacao">
+    <Position X="13.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAEgAAAAAACBQgRAAAAAAAAQAAAAAAAAABgAAAIAAAA=</HashCode>
+      <FileName>frmListarNoticiaParaAvaliacao.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmListarNoticiaParaEdicao">
+    <Position X="18.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAEgAAAAAACBQgRAAAAAAAAQAAAAAAAAABgAAAIAAAA=</HashCode>
+      <FileName>frmListarNoticiaParaEdicao.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmListarNoticiaParaSubmissao">
+    <Position X="20.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAEgAAAAAACBQgRAAAAAAAAQAAAAAAAAABgAAAIAAAA=</HashCode>
+      <FileName>frmListarNoticiaParaSubmissao.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmListarTipoUsuarioPermissao">
+    <Position X="25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAACAAAAAAABQABAAAAAAAAQAAAAAEAIAAgAAAIAAAA=</HashCode>
+      <FileName>frmListarTipoUsuarioPermissao.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmListarUsuario">
+    <Position X="6" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAQQAAAEACRQgAAAAAAAAEVAAAAAAAAgBgAAAIAgAA=</HashCode>
+      <FileName>frmListarUsuario.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmManterGrupo">
+    <Position X="9.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAgABAAYAgAAAAACAEAAYAAAEACAAAgAAAIAAEA=</HashCode>
+      <FileName>frmManterGrupo.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmManterUsuario">
+    <Position X="29.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAYYCUAIASaAkCEigSAAwIGYiAEgIqQACwQEBIIEEA=</HashCode>
+      <FileName>frmManterUsuario.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmRelatorio">
+    <Position X="22.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAEAAACAAACBQgEAAAAAAAAUBAAAAAAAQBgAAAIAAAA=</HashCode>
+      <FileName>frmRelatorio.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmSelecionarImagens">
+    <Position X="27.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAQAAABQgAAAAAAAAAQAAAAAAIAAAgAAAIAAAA=</HashCode>
+      <FileName>frmSelecionarImagens.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmSubmeterImagem">
+    <Position X="8.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAABYAAEAAAgQAAAAAAAAAAAAAAEASIABAA=</HashCode>
+      <FileName>frmSubmeterImagem.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmTrabalho">
+    <Position X="16" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAABAAABQAAACACAACAAAAAQKAAIAAQAAAIAAAg=</HashCode>
+      <FileName>frmTrabalho.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.frmVisualizarNoticia">
+    <Position X="17.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAgAAAAAAAAAAAAQAAEAQIAAAABCAAAAAAAIAAEA=</HashCode>
+      <FileName>frmVisualizarNoticia.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.Imagem" BaseTypeListCollapsed="true">
+    <Position X="21.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Imagem.ashx.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Noticia.Apresentacao.NoticiaPage">
+    <Position X="5.75" Y="8.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Noticia.Apresentacao.NoticiaPage.TipoMensagem">
+        <TypeIdentifier>
+          <NewMemberFileName>NoticiaPage.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAEAAAAAAAQAAAAAARAAAAoAAAQAA=</HashCode>
+      <FileName>NoticiaPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Noticia.Apresentacao.SiteMaster">
+    <Position X="19.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCAAAAABAAAABAACAAAAAAQAAAACgQAGAAAIAAAE=</HashCode>
+      <FileName>Site.Master.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

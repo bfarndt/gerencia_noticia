@@ -71,7 +71,7 @@
                                                 <asp:RequiredFieldValidator ID="rfvDataHora" runat="server" ControlToValidate="txtDataHora" Display="Dynamic" ErrorMessage="Campo Data Hora é requerido." ValidationGroup="validacao">*</asp:RequiredFieldValidator>
                                                 <asp:MaskedEditExtender ID="MaskedEditExtender1" runat="server"
                                                     TargetControlID="txtDataHora"
-                                                    Mask="99/99/9999 99:99"
+                                                    Mask="99/99/9999" CultureName="pt-BR"
                                                     MessageValidatorTip="true"
                                                     OnFocusCssClass="MaskedEditFocus"
                                                     OnInvalidCssClass="MaskedEditError"
