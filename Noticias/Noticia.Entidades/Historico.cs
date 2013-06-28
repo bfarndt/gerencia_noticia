@@ -14,5 +14,22 @@ namespace Noticia.Entidades
         public StatusNoticia StatusNoticia { get; set; }
         public DateTime? DataHora { get; set; }
         public string Descricao { get; set; }
+        public int IdNoticia
+        {
+            get
+            {
+                if (this.Noticia != null && this.Noticia.IdNoticia.HasValue)
+                    return this.Noticia.IdNoticia.Value;
+                else
+                    return 0;
+            }
+            set
+            {
+                if (this.Noticia != null && this.Noticia.IdNoticia.HasValue)
+                    this.IdNoticia = this.Noticia.IdNoticia.Value;
+                else
+                    this.IdNoticia = 0;
+            }
+        }
     }
 }

@@ -126,7 +126,7 @@ namespace Noticia.AcessoDados
             {
                 Dados.LimparParametros();
                 object objRetorno = null;
-                if (entidade != null && entidade.IdPalavraChave > 0)
+                if (entidade != null && entidade.Noticia.IdNoticia > 0)
                 {
                     Dados.AdicionarParametros("@vchAcao", "DELETAR");
                     Dados.AdicionarParametros("@intIdNoticia", entidade.Noticia.IdNoticia);

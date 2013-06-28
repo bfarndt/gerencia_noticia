@@ -56,54 +56,6 @@ namespace Noticia.Negocios
             return !(string.IsNullOrWhiteSpace(imagem.Legenda));
         }
 
-        public List<Entidades.NoticiaImagem> ImagensDeNoticiasAssociadas()
-        {
-            try
-            {
-                List<Entidades.NoticiaImagem> imagensAssociadas = new List<Entidades.NoticiaImagem>();
-
-                Entidades.GrupoTrabalhoUsuario consultaPorUsuario = new Entidades.GrupoTrabalhoUsuario();
-                consultaPorUsuario.Usuario = Singleton.UsuarioLogado;
-
-                Entidades.NoticiaGrupoTrabalho consultaPorGrupo;
-                Entidades.NoticiaImagem consultaPorNoticia;
-
-                foreach (var grupo in dalGrupoTrabalhoUsuario.Consultar(consultaPorUsuario))
-                {
-                    consultaPorGrupo = new Entidades.NoticiaGrupoTrabalho();
-                    consultaPorGrupo.GrupoTrabalho = grupo.GrupoTrabalho;
-
-                    foreach (var noticia in dalNoticiaGrupoTrabalho.Consultar(consultaPorGrupo))
-                    {
-                        consultaPorNoticia = new Entidades.NoticiaImagem();
-                        consultaPorNoticia.Noticia = noticia.Noticia;
-
-                        foreach (var imagem in dalNoticiaImagem.Consultar(consultaPorNoticia))
-                        {
-                            if (imagem.Imagem.Selecionada.Value)
-                                continue;
-
-                            var consulta = new AcessoDados.ImagemArquivo().Consultar(new Entidades.ImagemArquivo() { Imagem = imagem.Imagem });
-                            if (consulta.Count > 0)
-                                imagem.Imagem.Legenda = consulta.First().NomeArquivo;
-
-                            imagensAssociadas.Add(imagem);
-                        }
-                    }
-                }
-
-                return imagensAssociadas;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                AcessoDados.Dados.FecharConexao();
-            }
-        }
-
         public List<Entidades.ImagemArquivo> ImagensNaoSelecionadas()
         {
             try
@@ -158,6 +110,33 @@ namespace Noticia.Negocios
             try
             {
                 return new AcessoDados.ImagemArquivo().CarregarImagem(new Entidades.ImagemArquivo() { Imagem = imagem });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                AcessoDados.Dados.FecharConexao();
+            }
+        }
+
+        public List<Entidades.Imagem> ImagensSelecionadasDaNoticia(int IdNoticia)
+        {
+            try
+            {
+                List<Entidades.Imagem> retorno = new List<Entidades.Imagem>();
+
+                var found = from f in new Negocios.Noticia().NoticiasImagensSelecionadas()
+                            where f.Noticia.IdNoticia == IdNoticia
+                            select f;
+
+                foreach (var item in found)
+                {
+                    retorno.Add(item.Imagem);
+                }
+
+                return retorno;
             }
             catch (Exception ex)
             {

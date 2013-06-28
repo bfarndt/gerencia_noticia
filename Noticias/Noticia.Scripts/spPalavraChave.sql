@@ -63,7 +63,7 @@ BEGIN
 		WHERE
 			IdNoticia = @intIdNoticia
 			
-		SELECT @intIdPalavraChave AS Retorno
+		SELECT @intIdNoticia AS Retorno
 	END
 	ELSE
 	BEGIN

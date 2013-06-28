@@ -120,7 +120,7 @@ namespace Noticia.Apresentacao
                     if (new Negocios.Fotografo().DeletarImagem(selecionado))
                     {
                         AtualizarGridImagens(null, false);
-                        ExibirMensagem(TipoMensagem.Sucesso, "Imagem removida.");
+                        ExibirMensagem(TipoMensagem.Informacao, "Imagem removida.");
                     }
                     else
                     {

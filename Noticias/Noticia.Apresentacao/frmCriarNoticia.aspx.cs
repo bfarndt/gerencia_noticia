@@ -153,7 +153,7 @@ namespace Noticia.Apresentacao
                     if (new Negocios.Diretor().AssociarGrupoTrabalhoParaNoticia(noticiaGrupoTrabalho.GrupoTrabalho, noticiaGrupoTrabalho.Noticia))
                     {
                         AtualizarGridGrupos(noticiaGrupoTrabalho.GrupoTrabalho, false);
-                        ExibirMensagem(TipoMensagem.Sucesso, "Grupo adicionado com sucesso.");
+                        ExibirMensagem(TipoMensagem.Informacao, "Grupo Vinculado.");
                     }
                     else
                     {

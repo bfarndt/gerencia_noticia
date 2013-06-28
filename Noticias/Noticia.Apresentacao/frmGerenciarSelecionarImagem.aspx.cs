@@ -10,28 +10,32 @@ namespace Noticia.Apresentacao
     public partial class frmGerenciarSelecionarImagem : System.Web.UI.Page
     {
         private int IdImagem = 0;
+        private int IdNoticia = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                if (Request.QueryString["IdImagem"] != null && Request.QueryString["IdImagem"].ToString().Length > 0)
+                if (Request.QueryString["Chave"] != null && Request.QueryString["Chave"].ToString().Length > 0)
                 {
-                    ViewState["IdImagem"] = Convert.ToInt32(Request.QueryString["IdImagem"]);
-                    this.IdImagem = Convert.ToInt32(Convert.ToInt32(ViewState["IdImagem"]));
+                    ViewState["Chave"] = Convert.ToString(Request.QueryString["Chave"]);
+                    string[] chave = ViewState["Chave"].ToString().Split(';');
+                    this.IdNoticia = Convert.ToInt32(chave[0]);
+                    this.IdImagem = Convert.ToInt32(chave[1]);
                     this.CarregarGravacao();
                 }
             }
             else
             {
-                if (ViewState["IdImagem"] != null)
+                if (ViewState["Chave"] != null)
                 {
-                    this.IdImagem = Convert.ToInt32(ViewState["IdImagem"]);
+                    ViewState["Chave"] = Convert.ToString(Request.QueryString["Chave"]);
+                    string[] chave = ViewState["Chave"].ToString().Split(';');
+                    this.IdNoticia = Convert.ToInt32(chave[0]);
+                    this.IdImagem = Convert.ToInt32(chave[1]);
                 }
                 else
                     this.IdImagem = 0;
-
-
             }
         }
 
@@ -39,6 +43,9 @@ namespace Noticia.Apresentacao
         {
             try
             {
+                Entidades.Noticia noticia = new Negocios.Noticia().NoticiaPorId(this.IdNoticia);
+                txtTitulo.Text = noticia.Titulo;
+
                 Entidades.ImagemArquivo consulta = new Negocios.Imagem().CarregarImagemArquivo(new Entidades.Imagem() { IdImagem = this.IdImagem });
 
                 if (this.IdImagem > 0 && consulta != null)

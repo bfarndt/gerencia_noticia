@@ -11,12 +11,14 @@ namespace Noticia.Testes
     {
         Negocios.Reporter NegReporter;
         Negocios.Imagem NegImagem;
+        Negocios.Noticia NegNoticia;
 
         [TestInitialize]
         public void IniciarTestes()
         {
             NegReporter = new Negocios.Reporter();
             NegImagem = new Negocios.Imagem();
+            this.NegNoticia = new Negocios.Noticia();
             Negocios.Singleton.UsuarioLogado = new Entidades.Usuario() { IdUsuario = 1, Login = "Bento", Senha = "senha" };
         }
 
@@ -78,7 +80,7 @@ namespace Noticia.Testes
             Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
             Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Selecionar_Imagens } });
 
-            var retorno = NegImagem.ImagensDeNoticiasAssociadas();
+            var retorno = NegNoticia.ImagensDeNoticiasAssociadas();
             Assert.IsNotNull(retorno);
         }
 

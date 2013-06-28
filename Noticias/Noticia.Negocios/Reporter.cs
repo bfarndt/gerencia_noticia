@@ -32,6 +32,7 @@ namespace Noticia.Negocios
                         strRetorno = dalPalavraChave.Excluir(new Entidades.PalavraChave() { Noticia = noticia });
                         foreach (var palavraChave in noticia.PalavrasChave)
                         {
+                            palavraChave.Noticia = noticia;
                             strRetorno = dalPalavraChave.Inserir(palavraChave);
                         }
                     }
@@ -71,41 +72,49 @@ namespace Noticia.Negocios
         {
             try
             {
-                if (NegNoticia.TemTitulo(noticia) && NegNoticia.TemConteudo(noticia))
-                {
-                    //Executar update
-                    string strRetorno = string.Empty;
+                //Executar update
+                string strRetorno = string.Empty;
 
-                    strRetorno = dalNoticia.Alterar(noticia);
-                    if (noticia.PalavrasChave != null)
-                    {
-                        strRetorno = dalPalavraChave.Excluir(new Entidades.PalavraChave() { Noticia = noticia });
-                        foreach (var palavraChave in noticia.PalavrasChave)
-                        {
-                            strRetorno = dalPalavraChave.Inserir(palavraChave);
-                        }
-                    }
+                int intResult = 0;
+                Entidades.Historico historico = new Entidades.Historico();
 
-                    int intResult = 0;
-                    if (int.TryParse(strRetorno, out intResult))
-                    {
-                        noticia.IdNoticia = intResult;
-                        Entidades.Historico historico = new Entidades.Historico();
+                historico.Noticia = noticia;
+                historico.Usuario = Singleton.UsuarioLogado;
+                historico.DataHora = DateTime.Now;
+                historico.StatusNoticia = new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Submetida };
 
-                        historico.Noticia = noticia;
-                        historico.Usuario = Singleton.UsuarioLogado;
-                        historico.DataHora = DateTime.Now;
-                        historico.StatusNoticia = new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Submetida };
+                strRetorno = dalHistorico.Inserir(historico);
 
-                        strRetorno = dalHistorico.Inserir(historico);
-                    }
+                return int.TryParse(strRetorno, out intResult);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                AcessoDados.Dados.FecharConexao();
+            }
+        }
 
-                    return intResult > 0;
-                }
-                else
-                {
-                    return false;
-                }
+        public bool CancelarSubmissao(Entidades.Noticia noticia)
+        {
+            try
+            {
+                //Executar update
+                string strRetorno = string.Empty;
+
+                int intResult = 0;
+                Entidades.Historico historico = new Entidades.Historico();
+
+                historico.Noticia = noticia;
+                historico.Usuario = Singleton.UsuarioLogado;
+                historico.DataHora = DateTime.Now;
+                historico.StatusNoticia = new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.GrupoVinculado };
+
+                strRetorno = dalHistorico.Inserir(historico);
+
+                return int.TryParse(strRetorno, out intResult);
             }
             catch (Exception ex)
             {
@@ -150,5 +159,7 @@ namespace Noticia.Negocios
                 AcessoDados.Dados.FecharConexao();
             }
         }
+
+
     }
 }

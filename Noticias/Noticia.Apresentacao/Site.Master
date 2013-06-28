@@ -41,6 +41,10 @@
                             <asp:MenuItem NavigateUrl="~/frmSubmeterImagem.aspx" Text="Submeter Imagem" />
                             <asp:MenuItem NavigateUrl="~/frmAssociarImagem.aspx" Text="Associar Imagem" />
                             <asp:MenuItem NavigateUrl="~/frmSelecionarImagens.aspx" Text="Selecionar Imagem" />
+                            <asp:MenuItem NavigateUrl="~/frmListarNoticiaParaEdicao.aspx" Text="Notícias para Edição" />
+                            <asp:MenuItem NavigateUrl="~/frmListarNoticiaParaSubmissao.aspx" Text="Notícias para Submissão" />
+                            <asp:MenuItem NavigateUrl="~/frmListarNoticiaParaAvaliacao.aspx" Text="Notícias para Avaliação" />
+                            <asp:MenuItem NavigateUrl="~/frmRelatorio.aspx" Text="Relatório" />
                         </Items>
                     </asp:Menu>
                 </div>

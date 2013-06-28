@@ -13,7 +13,7 @@ namespace Noticia.Apresentacao
         {
             if (!IsPostBack)
             {
-                if (!(new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Associar_Imagens))) 
+                if (!(new Negocios.Usuario().TenhoPermissao(Entidades.PermissaoEnum.Associar_Imagens)))
                 {
                     Response.Redirect("~/Default.aspx?Acesso=sem");
                 }
@@ -149,7 +149,7 @@ namespace Noticia.Apresentacao
                 }
                 else
                 {
-                    ViewState["noticiasImagens"] = new Negocios.Imagem().ImagensDeNoticiasAssociadas();
+                    ViewState["noticiasImagens"] = new Negocios.Noticia().ImagensDeNoticiasAssociadas();
                     this.grvNoticiaImagem.DataSource = ViewState["noticiasImagens"] as List<Entidades.NoticiaImagem>;
                     this.grvNoticiaImagem.DataBind();
                 }

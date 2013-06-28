@@ -15,34 +15,22 @@ namespace Noticia.Negocios
         {
             try
             {
-                if (NegNoticia.TemTitulo(noticia) && NegNoticia.TemConteudo(noticia))
-                {
-                    //Executar update
-                    string strRetorno = string.Empty;
+                string strRetorno = string.Empty;
 
-                    strRetorno = dalNoticia.Alterar(noticia);
 
-                    int intResult = 0;
-                    if (int.TryParse(strRetorno, out intResult))
-                    {
-                        noticia.IdNoticia = intResult;
-                        Entidades.Historico historico = new Entidades.Historico();
+                int intResult = 0;
+                Entidades.Historico historico = new Entidades.Historico();
 
-                        historico.Noticia = noticia;
-                        historico.Usuario = Singleton.UsuarioLogado;
-                        historico.DataHora = DateTime.Now;
-                        historico.Descricao = feedback;
-                        historico.StatusNoticia = new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Aprovada };
+                historico.Noticia = noticia;
+                historico.Usuario = Singleton.UsuarioLogado;
+                historico.DataHora = DateTime.Now;
+                historico.Descricao = feedback;
+                historico.StatusNoticia = new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Aprovada };
 
-                        strRetorno = dalHistorico.Inserir(historico);
-                    }
+                strRetorno = dalHistorico.Inserir(historico);
 
-                    return intResult > 0;
-                }
-                else
-                {
-                    return false;
-                }
+
+                return int.TryParse(strRetorno, out intResult);
             }
             catch (Exception ex)
             {
@@ -58,27 +46,21 @@ namespace Noticia.Negocios
         {
             try
             {
-                //Executar update
                 string strRetorno = string.Empty;
 
-                strRetorno = dalNoticia.Alterar(noticia);
 
                 int intResult = 0;
-                if (int.TryParse(strRetorno, out intResult))
-                {
-                    noticia.IdNoticia = intResult;
-                    Entidades.Historico historico = new Entidades.Historico();
+                Entidades.Historico historico = new Entidades.Historico();
 
-                    historico.Noticia = noticia;
-                    historico.Usuario = Singleton.UsuarioLogado;
-                    historico.DataHora = DateTime.Now;
-                    historico.Descricao = feedback;
-                    historico.StatusNoticia = new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Editada };
+                historico.Noticia = noticia;
+                historico.Usuario = Singleton.UsuarioLogado;
+                historico.DataHora = DateTime.Now;
+                historico.Descricao = feedback;
+                historico.StatusNoticia = new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Editada };
 
-                    strRetorno = dalHistorico.Inserir(historico);
-                }
+                strRetorno = dalHistorico.Inserir(historico);
 
-                return intResult > 0;
+                return int.TryParse(strRetorno, out intResult);
             }
             catch (Exception ex)
             {

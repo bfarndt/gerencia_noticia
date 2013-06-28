@@ -66,6 +66,10 @@ namespace Noticia.AcessoDados
 
                         objNovaNoticia.StatusNoticia = statusNoticia;
                     }
+                    else
+                    {
+                        objNovaNoticia.StatusNoticia = new Entidades.StatusNoticia() { IdStatus = (int)Entidades.StatusNoticiaEnum.Criada };
+                    }
 
 
                     objRetorno.Add(objNovaNoticia);

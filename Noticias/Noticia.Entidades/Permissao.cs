@@ -23,6 +23,7 @@ namespace Noticia.Entidades
         Selecionar_Imagens = 7,
         Submeter_Noticia = 8,
         Avaliar_Noticia = 9,
-        Manter_Usuario = 10
+        Manter_Usuario = 10,
+        Gerar_Relatorio = 11
     }
 }

@@ -18,7 +18,7 @@
         }
     </script>
 </head>
-<body style="background-color:white;height:auto">
+<body style="background-color: white; height: auto">
     <form id="form1" runat="server">
         <div class="contentPage" style="height: 353px">
             <asp:ValidationSummary runat="server" ID="vs" ValidationGroup="validacao" />
@@ -26,9 +26,7 @@
             <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
 
-            <div class="legendFormulario">
-                Imagem
-            </div>
+
 
             <table>
                 <tr>
@@ -37,6 +35,20 @@
                         <table>
                             <tr>
                                 <td>
+                                    <div class="legendFormulario">
+                                        Notícia
+                                    </div>
+                                    <table>
+                                        <tr>
+                                            <td class="labelForm">Título:</td>
+                                            <td>
+                                                <asp:TextBox runat="server" ReadOnly="true"  MaxLength="40" Width="300px" ID="txtTitulo"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div class="legendFormulario">
+                                        Imagem
+                                    </div>
                                     <table>
                                         <tr>
                                             <td class="labelForm">Legenda:</td>

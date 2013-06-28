@@ -25,7 +25,7 @@ namespace Noticia.Apresentacao
         protected void btnPost_Click(object sender, EventArgs e)
         {
             this.CarregarGrid();
-            this.ExibirMensagem(TipoMensagem.Informacao, "Atenção: Dados atualizados.");
+            this.ExibirMensagem(TipoMensagem.Informacao, "Imagem selecionada.");
         }
 
         private void CarregarGrid()
@@ -54,8 +54,7 @@ namespace Noticia.Apresentacao
             {
                 if (e.CommandName.Trim().ToUpper() == "SELECIONAR")
                 {
-                    string[] chave = e.CommandArgument.ToString().Split(';');
-                    base.AbrirModal(Page.ResolveClientUrl("frmGerenciarSelecionarImagem.aspx?IdImagem=" + chave[1]), "800", "Selecionar Imagem","400");
+                    base.AbrirModal(Page.ResolveClientUrl("frmGerenciarSelecionarImagem.aspx?Chave=" + e.CommandArgument.ToString()), "800", "Selecionar Imagem", "400");
                 }
             }
             catch (Exception ex)

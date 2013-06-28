@@ -46,6 +46,7 @@
     <Reference Include="AjaxControlToolkit, Version=4.1.60501.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -68,18 +69,26 @@
     <Content Include="About.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="frmAssociarImagem.aspx" />
+    <Content Include="frmAvaliarNoticia.aspx" />
     <Content Include="frmCriarNoticia.aspx" />
+    <Content Include="frmEditarNoticia.aspx" />
     <Content Include="frmGerenciarSelecionarImagem.aspx" />
     <Content Include="frmGerenciarTipoUsuarioPermissao.aspx" />
     <Content Include="frmListarGrupo.aspx" />
+    <Content Include="frmListarNoticiaParaAvaliacao.aspx" />
+    <Content Include="frmListarNoticiaParaEdicao.aspx" />
+    <Content Include="frmListarNoticiaParaSubmissao.aspx" />
     <Content Include="frmListarTipoUsuarioPermissao.aspx" />
     <Content Include="frmListarUsuario.aspx" />
     <Content Include="frmManterGrupo.aspx" />
     <Content Include="frmManterUsuario.aspx" />
+    <Content Include="frmRelatorio.aspx" />
     <Content Include="frmSelecionarImagens.aspx" />
     <Content Include="frmSubmeterImagem.aspx" />
     <Content Include="frmTrabalho.aspx" />
+    <Content Include="frmVisualizarNoticia.aspx" />
     <Content Include="Imagem\add.png" />
+    <Content Include="Imagem\approved.PNG" />
     <Content Include="Imagem\barra_cores.jpg" />
     <Content Include="Imagem\barra_verde.png" />
     <Content Include="Imagem\btnAcessar.png" />
@@ -92,6 +101,7 @@
     <Content Include="Imagem\btn_fechar.jpg" />
     <Content Include="Imagem\calendar.png" />
     <Content Include="Imagem\carregando.gif" />
+    <Content Include="Imagem\disaprove.PNG" />
     <Content Include="Imagem\error.png" />
     <Content Include="Imagem\fundo_tela_principal.jpg" />
     <Content Include="Imagem\fundo_tela_principal.png" />
@@ -326,12 +336,26 @@
     <Compile Include="frmAssociarImagem.aspx.designer.cs">
       <DependentUpon>frmAssociarImagem.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmAvaliarNoticia.aspx.cs">
+      <DependentUpon>frmAvaliarNoticia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmAvaliarNoticia.aspx.designer.cs">
+      <DependentUpon>frmAvaliarNoticia.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmCriarNoticia.aspx.cs">
       <DependentUpon>frmCriarNoticia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="frmCriarNoticia.aspx.designer.cs">
       <DependentUpon>frmCriarNoticia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarNoticia.aspx.cs">
+      <DependentUpon>frmEditarNoticia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmEditarNoticia.aspx.designer.cs">
+      <DependentUpon>frmEditarNoticia.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmGerenciarSelecionarImagem.aspx.cs">
       <DependentUpon>frmGerenciarSelecionarImagem.aspx</DependentUpon>
@@ -353,6 +377,27 @@
     </Compile>
     <Compile Include="frmListarGrupo.aspx.designer.cs">
       <DependentUpon>frmListarGrupo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarNoticiaParaAvaliacao.aspx.cs">
+      <DependentUpon>frmListarNoticiaParaAvaliacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmListarNoticiaParaAvaliacao.aspx.designer.cs">
+      <DependentUpon>frmListarNoticiaParaAvaliacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarNoticiaParaEdicao.aspx.cs">
+      <DependentUpon>frmListarNoticiaParaEdicao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmListarNoticiaParaEdicao.aspx.designer.cs">
+      <DependentUpon>frmListarNoticiaParaEdicao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarNoticiaParaSubmissao.aspx.cs">
+      <DependentUpon>frmListarNoticiaParaSubmissao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmListarNoticiaParaSubmissao.aspx.designer.cs">
+      <DependentUpon>frmListarNoticiaParaSubmissao.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmListarTipoUsuarioPermissao.aspx.cs">
       <DependentUpon>frmListarTipoUsuarioPermissao.aspx</DependentUpon>
@@ -382,6 +427,13 @@
     <Compile Include="frmManterUsuario.aspx.designer.cs">
       <DependentUpon>frmManterUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmRelatorio.aspx.cs">
+      <DependentUpon>frmRelatorio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmRelatorio.aspx.designer.cs">
+      <DependentUpon>frmRelatorio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmSelecionarImagens.aspx.cs">
       <DependentUpon>frmSelecionarImagens.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -402,6 +454,13 @@
     </Compile>
     <Compile Include="frmTrabalho.aspx.designer.cs">
       <DependentUpon>frmTrabalho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmVisualizarNoticia.aspx.cs">
+      <DependentUpon>frmVisualizarNoticia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmVisualizarNoticia.aspx.designer.cs">
+      <DependentUpon>frmVisualizarNoticia.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -39,7 +39,7 @@ namespace Noticia.Testes
             Negocios.Singleton.UsuarioPermissoes = new List<Entidades.UsuarioPermissao>();
             Negocios.Singleton.UsuarioPermissoes.Add(new Entidades.UsuarioPermissao() { Permissao = new Entidades.Permissao() { IdPermissao = (int)Entidades.PermissaoEnum.Editar_Noticia } });
 
-            var retorno = NegNoticia.NoticiasParaEdicao();
+            var retorno = NegNoticia.NoticiasParaEdicao(null);
 
             Assert.IsNotNull(retorno);
         }

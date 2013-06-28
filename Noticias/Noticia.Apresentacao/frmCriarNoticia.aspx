@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
 
-    <h2>Manter Usuário
+    <h2>Criar Notícia
     </h2>
 
     <table>
