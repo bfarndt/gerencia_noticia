@@ -16,14 +16,17 @@ namespace Noticia.Negocios
 
         public static void IniciarSessao()
         {
-            Singleton.TempoSessao = new Timer() { Enabled = true, Interval = 1000 };
+            TempoSessao = new Timer() { Enabled = true, Interval = 300 * 1000 };
             Singleton.TempoSessao.Elapsed += TempoSessao_Elapsed;
+            Singleton.TempoSessao.Start();
+            Singleton.comSessao = true;
         }
 
         static void TempoSessao_Elapsed(object sender, ElapsedEventArgs e)
         {
             Singleton.TempoSessao.Stop();
             Singleton.comSessao = false;
+            Singleton.TempoSessao.Elapsed -= TempoSessao_Elapsed;
         }
 
         public enum CRUDEnum

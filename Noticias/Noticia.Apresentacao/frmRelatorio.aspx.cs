@@ -113,6 +113,36 @@ namespace Noticia.Apresentacao
 
         }
 
+        protected void imgExportar_Click(object sender, ImageClickEventArgs e)
+        {
+
+
+
+            try
+            {
+                Response.Clear();
+
+                Response.AddHeader("content-disposition",
+                    "attachment;filename=FileName.xls");
+                Response.Charset = "";
+                Response.ContentType = "application/vnd.xls";
+
+                System.IO.StringWriter sw = new System.IO.StringWriter();
+                System.Web.UI.HtmlTextWriter hw = new HtmlTextWriter(sw);
+
+                grvHistorico.RenderControl(hw);
+
+                Response.Write(sw.ToString());
+                Response.End(); 
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+
+
+        }
+
 
     }
 }

@@ -5,3 +5,4 @@ E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.AcessoDados\bin\Rel
 E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.AcessoDados\obj\Release\Noticia.AcessoDados.csprojResolveAssemblyReference.cache
 E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.AcessoDados\obj\Release\Noticia.AcessoDados.dll
 E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.AcessoDados\obj\Release\Noticia.AcessoDados.pdb
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.AcessoDados\bin\Release\Noticia.AcessoDados.dll.config

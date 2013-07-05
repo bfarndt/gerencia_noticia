@@ -16,38 +16,98 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Account/Login.aspx">
       <publishTime>06/20/2013 13:00:10</publishTime>
     </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>06/02/2012 18:27:34</publishTime>
+    </File>
     <File Include="bin/Noticia.AcessoDados.dll">
-      <publishTime>06/21/2013 15:43:35</publishTime>
+      <publishTime>06/28/2013 13:45:47</publishTime>
     </File>
     <File Include="bin/Noticia.Apresentacao.dll">
-      <publishTime>06/21/2013 15:43:35</publishTime>
+      <publishTime>06/28/2013 13:45:47</publishTime>
     </File>
     <File Include="bin/Noticia.Entidades.dll">
-      <publishTime>06/21/2013 15:43:34</publishTime>
+      <publishTime>06/28/2013 13:45:46</publishTime>
     </File>
     <File Include="bin/Noticia.Negocios.dll">
-      <publishTime>06/21/2013 15:43:35</publishTime>
+      <publishTime>06/28/2013 13:45:47</publishTime>
+    </File>
+    <File Include="cdApresentacao.cd">
+      <publishTime>06/28/2013 01:44:29</publishTime>
     </File>
     <File Include="Default.aspx">
       <publishTime>06/20/2013 13:26:24</publishTime>
     </File>
+    <File Include="frmAssociarImagem.aspx">
+      <publishTime>06/27/2013 22:26:53</publishTime>
+    </File>
+    <File Include="frmAvaliarNoticia.aspx">
+      <publishTime>06/27/2013 21:13:48</publishTime>
+    </File>
     <File Include="frmCriarNoticia.aspx">
-      <publishTime>06/21/2013 12:38:56</publishTime>
+      <publishTime>06/27/2013 13:23:00</publishTime>
+    </File>
+    <File Include="frmEditarNoticia.aspx">
+      <publishTime>06/27/2013 21:52:25</publishTime>
+    </File>
+    <File Include="frmGerenciarSelecionarImagem.aspx">
+      <publishTime>06/28/2013 10:03:00</publishTime>
+    </File>
+    <File Include="frmGerenciarTipoUsuarioPermissao.aspx">
+      <publishTime>06/26/2013 19:12:11</publishTime>
+    </File>
+    <File Include="frmListarGrupo.aspx">
+      <publishTime>06/22/2013 21:23:44</publishTime>
+    </File>
+    <File Include="frmListarNoticiaParaAvaliacao.aspx">
+      <publishTime>06/27/2013 20:36:52</publishTime>
+    </File>
+    <File Include="frmListarNoticiaParaEdicao.aspx">
+      <publishTime>06/27/2013 13:23:00</publishTime>
+    </File>
+    <File Include="frmListarNoticiaParaSubmissao.aspx">
+      <publishTime>06/27/2013 20:25:29</publishTime>
+    </File>
+    <File Include="frmListarTipoUsuarioPermissao.aspx">
+      <publishTime>06/25/2013 22:54:57</publishTime>
     </File>
     <File Include="frmListarUsuario.aspx">
-      <publishTime>06/21/2013 14:05:17</publishTime>
+      <publishTime>06/26/2013 19:15:03</publishTime>
+    </File>
+    <File Include="frmManterGrupo.aspx">
+      <publishTime>06/26/2013 19:12:44</publishTime>
     </File>
     <File Include="frmManterUsuario.aspx">
-      <publishTime>06/21/2013 11:48:55</publishTime>
+      <publishTime>06/27/2013 13:23:00</publishTime>
+    </File>
+    <File Include="frmRelatorio.aspx">
+      <publishTime>06/27/2013 22:40:16</publishTime>
+    </File>
+    <File Include="frmSelecionarImagens.aspx">
+      <publishTime>06/27/2013 19:43:56</publishTime>
+    </File>
+    <File Include="frmSubmeterImagem.aspx">
+      <publishTime>06/26/2013 13:27:19</publishTime>
+    </File>
+    <File Include="frmTrabalho.aspx">
+      <publishTime>06/25/2013 22:57:54</publishTime>
     </File>
     <File Include="frmVincularGrupo.aspx">
       <publishTime>06/21/2013 09:59:36</publishTime>
     </File>
+    <File Include="frmVisualizarNoticia.aspx">
+      <publishTime>06/27/2013 21:50:18</publishTime>
+    </File>
     <File Include="Global.asax">
       <publishTime>06/15/2013 12:41:37</publishTime>
     </File>
+    <File Include="Imagem.ashx">
+      <publishTime>06/26/2013 00:17:47</publishTime>
+    </File>
     <File Include="Imagem/add.png">
       <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/approved.PNG">
+      <publishTime>06/27/2013 20:46:28</publishTime>
     </File>
     <File Include="Imagem/barra_cores.jpg">
       <publishTime>06/15/2013 12:41:37</publishTime>
@@ -84,6 +144,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Imagem/carregando.gif">
       <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/disaprove.PNG">
+      <publishTime>06/27/2013 20:46:54</publishTime>
     </File>
     <File Include="Imagem/error.png">
       <publishTime>06/15/2013 12:41:37</publishTime>
@@ -222,6 +285,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Imagem/ui-icons_ffffff_256x240.png">
       <publishTime>06/15/2013 12:41:37</publishTime>
+    </File>
+    <File Include="Imagem/update.png">
+      <publishTime>05/30/2009 21:00:10</publishTime>
     </File>
     <File Include="Imagem/user.gif">
       <publishTime>06/15/2013 12:41:37</publishTime>
@@ -662,7 +728,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2013 12:41:37</publishTime>
     </File>
     <File Include="Site.Master">
-      <publishTime>06/21/2013 12:39:33</publishTime>
+      <publishTime>06/28/2013 10:39:57</publishTime>
     </File>
     <File Include="Styles/highslide.css">
       <publishTime>06/15/2013 12:41:37</publishTime>
@@ -677,13 +743,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2013 12:41:37</publishTime>
     </File>
     <File Include="Styles/StyleSheet.css">
-      <publishTime>06/15/2013 12:41:37</publishTime>
+      <publishTime>06/26/2013 19:03:46</publishTime>
     </File>
     <File Include="Styles/StyleSheetImagem.css">
       <publishTime>06/15/2013 12:41:37</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/22/2013 08:46:24</publishTime>
+      <publishTime>06/28/2013 13:45:48</publishTime>
     </File>
   </ItemGroup>
 </Project>

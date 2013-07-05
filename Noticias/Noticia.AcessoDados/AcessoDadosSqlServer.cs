@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
+using Noticia.AcessoDados.Properties;
 
 namespace Noticia.AcessoDados
 {
@@ -19,7 +20,7 @@ namespace Noticia.AcessoDados
 
         private static SqlConnection CriarConexao()
         {
-            Conexao = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=Noticias;Integrated Security=True");
+            Conexao = new SqlConnection(Settings.Default.connDB);
             Conexao.Open();
             return Conexao;
         }

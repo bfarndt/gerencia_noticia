@@ -15,10 +15,17 @@ namespace Noticia.Apresentacao.Account
             {
                 Menu mnuMenu = ((Master.FindControl("NavigationMenu") as Menu)) as Menu;
                 mnuMenu.Items.Clear();
+
+                if (Negocios.Singleton.UsuarioLogado != null && !Negocios.Singleton.comSessao)
+                    ExibirMensagem(TipoMensagem.Informacao, "Sessão expirada.");
+            }
+            else
+            {
+
             }
         }
 
-        protected void LoginButton_Click(object sender, EventArgs e)
+        protected void LoginButton_Click(object sender, ImageClickEventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(this.UserName.Text) && (!string.IsNullOrWhiteSpace(this.Password.Text)))
             {
@@ -41,11 +48,6 @@ namespace Noticia.Apresentacao.Account
                     this.ExibirMensagem(TipoMensagem.Informacao, "Usuário/Senha incorreta!");
                 }
             }
-        }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            this.AbrirModal("www.google.com.br", "300", "Teste");
         }
     }
 

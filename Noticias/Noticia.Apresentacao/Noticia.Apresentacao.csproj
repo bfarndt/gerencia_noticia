@@ -103,6 +103,7 @@
     <Content Include="Imagem\carregando.gif" />
     <Content Include="Imagem\disaprove.PNG" />
     <Content Include="Imagem\error.png" />
+    <Content Include="Imagem\export_icon.jpg" />
     <Content Include="Imagem\fundo_tela_principal.jpg" />
     <Content Include="Imagem\fundo_tela_principal.png" />
     <Content Include="Imagem\gestaodeacesso.gif" />

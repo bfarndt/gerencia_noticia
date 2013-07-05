@@ -19,6 +19,7 @@ E:\Materias\Mestrado\OP2_ENG\Projeto\Noticias\Noticia.AcessoDados\bin\Debug\Noti
 E:\Materias\Mestrado\OP2_ENG\Projeto\Noticias\Noticia.AcessoDados\obj\Debug\Noticia.AcessoDados.csprojResolveAssemblyReference.cache
 E:\Materias\Mestrado\OP2_ENG\Projeto\Noticias\Noticia.AcessoDados\obj\Debug\Noticia.AcessoDados.dll
 E:\Materias\Mestrado\OP2_ENG\Projeto\Noticias\Noticia.AcessoDados\obj\Debug\Noticia.AcessoDados.pdb
+E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.AcessoDados\bin\Debug\Noticia.AcessoDados.dll.config
 E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.AcessoDados\bin\Debug\Noticia.AcessoDados.dll
 E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.AcessoDados\bin\Debug\Noticia.AcessoDados.pdb
 E:\Materias\Mestrado\OP2_ENG\ProjetoEntrega\Noticias\Noticia.AcessoDados\bin\Debug\Noticia.Entidades.dll

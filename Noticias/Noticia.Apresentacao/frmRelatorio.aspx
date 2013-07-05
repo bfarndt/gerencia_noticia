@@ -40,6 +40,9 @@
                     <asp:ImageButton ID="btnVoltar" AlternateText="Voltar" ImageUrl="~/imagem/btnVoltar.png" runat="server" OnClick="btnVoltar_Click" />
                     <asp:ImageButton ID="btnFiltrar" AlternateText="Filtrar Notícias" ImageUrl="~/Imagem/btnFiltrar.png" runat="server" OnClick="btnFiltrar_Click" />
                 </td>
+                <td>
+                    <asp:ImageButton ID="imgExportar" Height="30" Width="30" ImageUrl="~/Imagem/export_icon.jpg" runat="server" OnClick="imgExportar_Click" />
+                </td>
             </tr>
         </table>
     </fieldset>

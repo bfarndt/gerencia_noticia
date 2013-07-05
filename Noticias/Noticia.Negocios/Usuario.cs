@@ -33,8 +33,7 @@ namespace Noticia.Negocios
                         Singleton.IniciarSessao();
                         Singleton.UsuarioLogado = found.First();
                         CarregarPermissoes();
-                        Singleton.TempoSessao.Start();
-                        Singleton.comSessao = true;
+                        
                     }
 
                     return Singleton.comSessao;

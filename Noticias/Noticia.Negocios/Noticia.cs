@@ -328,6 +328,8 @@ namespace Noticia.Negocios
                                 select f;
                     if (found != null && found.Count() > 0)
                         return found.ToList<Entidades.Historico>();
+                    else
+                        return new List<Entidades.Historico>();
                 }
 
                 return retorno;

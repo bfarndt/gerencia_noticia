@@ -1,4 +1,6 @@
-﻿body {margin:0px; padding:0px; font-family:verdana,helvetica,sans-serif; color:#545454 ; font-size:8pt; }
+﻿body {margin:0px; padding:0px; font-family:verdana,helvetica,sans-serif; color:#545454; font-size:8pt;
+    height: 618px;
+}
 a{font-family:verdana,helvetica,sans-serif; color:#545454; font-size:8pt; text-decoration:none}
 a:hover{color:#777777; text-decoration:underline}
 h3{font-size:8pt}
@@ -18,7 +20,7 @@ fieldset{border:1px solid #f0f0f0; padding:5px}
 fieldset legend{text-transform:capitalize; padding-left:5px; padding-right:5px; color:#545454}
 
 /* Estrutura principal */
-.contentPage{background-color:#ffffff;height:553px; border:1px solid #f1f1f1; padding:5px 5px 10px 5px;}
+.contentPage{background-color:#ffffff;height:auto; border:1px solid #f1f1f1; padding:5px 5px 10px 5px;}
 .contentNav{background-color:#ffffff;padding-bottom:10px;width:180px; border:1px solid #f1f1f1}
 .contentFooter{text-align:center;padding-top:5px;}
 .contentFinal{background-color:#ffffff;height:15px; border:1px solid #f1f1f1; padding:5px 5px 10px 5px;}
@@ -81,7 +83,7 @@ fieldset legend{text-transform:capitalize; padding-left:5px; padding-right:5px; 
 	font-size:8pt;
 	height:17px;
 }
-.legendFormulario{border-bottom:1px solid #f1f1f1; font-size:8pt; font-weight:bold; color:#0b5c10;   margin-bottom:10px; margin-top:10px; padding-bottom:4px; }	
+.legendFormulario{border-bottom:1px solid #f1f1f1; background-color:#ffffff; font-size:8pt; font-weight:bold; color:#0b5c10;   margin-bottom:10px; margin-top:10px; padding-bottom:4px; }	
 
 .diaCalendarioAmarelo
 {

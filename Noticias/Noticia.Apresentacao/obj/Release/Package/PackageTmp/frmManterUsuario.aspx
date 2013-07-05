@@ -16,13 +16,14 @@
         }
     </script>
 </head>
-<body>
-    <form id="form1" runat="server">
-        <div class="contentPage">
-            <asp:ValidationSummary runat="server" ID="vs" ValidationGroup="validacao" />
+<body style="background-color:white;height:auto">
+    <form id="form1" runat="server" >
 
-            <asp:ScriptManager ID="ScriptManager1" runat="server">
-            </asp:ScriptManager>
+        <div class="contentPage" >
+            <asp:ValidationSummary runat="server" ID="vs" ValidationGroup="validacao" />
+            <asp:ValidationSummary runat="server" ID="vsPermissao" ValidationGroup="validacaoPermissao" />
+            <asp:ValidationSummary runat="server" ID="vsGrupo" ValidationGroup="validacaoGrupo" />
+            <asp:ValidationSummary runat="server" ID="vsDia" ValidationGroup="validacaoDia" />
 
             <div class="legendFormulario">
                 Dados Usuário
@@ -35,8 +36,8 @@
                             <tr>
                                 <td class="labelForm" style="width: 100px">Tipo:</td>
                                 <td>
-                                    <asp:DropDownList ID="ddlTipo" Width="320px"
-                                        runat="server">
+                                    <asp:DropDownList ID="ddlTipo" AutoPostBack="true" Width="320px"
+                                        runat="server" OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged">
                                     </asp:DropDownList>
                                     <asp:RequiredFieldValidator ID="rfvTipo" runat="server"
                                         ControlToValidate="ddlTipo"
@@ -86,19 +87,177 @@
                 </tr>
             </table>
 
-            <br />
-
-            <div class="contentFinal">
-                <div class="AcaoFormulario">
-                    <asp:Panel runat="server" ID="pnlAcao">
-                        <asp:ImageButton ID="btn_salvar" CausesValidation="true"
-                            ValidationGroup="validacao" runat="server" ImageUrl="../imagem/btnSalvar.png"
-                            OnClick="btn_salvar_Click" />
-                        <asp:ImageButton ID="btnNovo" Visible="false" runat="server" ImageUrl="../imagem/btnNovo.png"
-                            OnClick="btnNovo_Click" />
-                    </asp:Panel>
-                </div>
+            <div class="legendFormulario">
+                Permissões
             </div>
+
+            <table>
+                <tr>
+                    <td class="labelForm" style="width: 100px">Permissão:</td>
+                    <td>
+                        <asp:DropDownList ID="ddlPermissao" Width="320px"
+                            runat="server">
+                        </asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="rfvPermissao" runat="server"
+                            ControlToValidate="ddlPermissao"
+                            ErrorMessage="Informe a permissão" InitialValue="0"
+                            ValidationGroup="validacaoPermissao">*</asp:RequiredFieldValidator>
+                    </td>
+                    <td>
+                        <asp:ImageButton ID="imgOK_permissao" CausesValidation="true"
+                            ValidationGroup="validacaoPermissao" runat="server" ImageUrl="~/Imagem/add.png" OnClick="imgOK_permissao_Click" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:GridView runat="server" ID="grvPermissoes" Width="140%"
+                            AutoGenerateColumns="False" DataKeyNames="IdPermissao"
+                            AllowSorting="True"
+                            OnRowCommand="grvPermissoes_RowCommand"
+                            OnRowDataBound="grvPermissoes_RowDataBound"
+                            EmptyDataText="Nenhum registro encontrado.">
+                            <Columns>
+
+                                <asp:TemplateField HeaderText="Permissão" ConvertEmptyStringToNull="False">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblPermissao" runat="server" Text='<%# Bind("Descricao") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Excluir">
+                                    <ItemTemplate>
+                                        <asp:ImageButton runat="server" OnClientClick="if(confirm('Deseja realmente remover esta permissão?')){return true;}else{return false;}" ID="ibtExcluir" ImageUrl="~/Imagem/ico_delete_grid.gif"
+                                            CommandArgument='<%# Eval("IdPermissao") %>' CommandName="EXCLUIR" CausesValidation="true" />
+                                    </ItemTemplate>
+                                    <ItemStyle HorizontalAlign="Left" Width="30px" />
+                                </asp:TemplateField>
+                            </Columns>
+
+                        </asp:GridView>
+                    </td>
+                </tr>
+            </table>
+
+
+            <div class="legendFormulario">
+                Grupo trabalho
+            </div>
+
+            <table>
+                <tr>
+                    <td class="labelForm" style="width: 100px">Grupo trabalho:</td>
+                    <td>
+                        <asp:DropDownList ID="ddlGrupo" Width="320px"
+                            runat="server">
+                        </asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="rfvGrupo" runat="server"
+                            ControlToValidate="ddlGrupo"
+                            ErrorMessage="Informe o grupo" InitialValue="0"
+                            ValidationGroup="validacaoGrupo">*</asp:RequiredFieldValidator>
+                    </td>
+                    <td>
+                        <asp:ImageButton ID="imgOK_Grupo" CausesValidation="true"
+                            ValidationGroup="validacaoGrupo" runat="server" ImageUrl="~/Imagem/add.png" OnClick="imgOK_Grupo_Click" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:GridView runat="server" ID="grvGrupo" Width="140%"
+                            AutoGenerateColumns="False" DataKeyNames="IdGrupoTrabalho"
+                            AllowSorting="True"
+                            OnRowCommand="grvGrupo_RowCommand"
+                            OnRowDataBound="grvGrupo_RowDataBound"
+                            EmptyDataText="Nenhum registro encontrado.">
+
+                            <Columns>
+
+                                <asp:TemplateField HeaderText="Grupo" ConvertEmptyStringToNull="False">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblGrupo" runat="server" Text='<%# Bind("Descricao") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Excluir">
+                                    <ItemTemplate>
+                                        <asp:ImageButton runat="server" OnClientClick="if(confirm('Deseja realmente remover este grupo?')){return true;}else{return false;}" ID="ibtExcluir" ImageUrl="~/Imagem/ico_delete_grid.gif"
+                                            CommandArgument='<%# Eval("IdGrupoTrabalho") %>' CommandName="EXCLUIR" CausesValidation="true" />
+                                    </ItemTemplate>
+                                    <ItemStyle HorizontalAlign="Left" Width="30px" />
+                                </asp:TemplateField>
+                            </Columns>
+
+                        </asp:GridView>
+                    </td>
+                </tr>
+            </table>
+
+            <div id="divDiasTrabalho" runat="server" visible="false">
+
+                <div class="legendFormulario">
+                    Dias trabalhados
+                </div>
+
+                <table>
+                    <tr>
+                        <td class="labelForm" style="width: 100px">Dia Semana:</td>
+                        <td>
+                            <asp:DropDownList ID="ddlDia" Width="320px"
+                                runat="server">
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rfvDia" runat="server"
+                                ControlToValidate="ddlDia"
+                                ErrorMessage="Informe o dia" InitialValue="0"
+                                ValidationGroup="validacaoDia">*</asp:RequiredFieldValidator>
+                        </td>
+                        <td>
+                            <asp:ImageButton ID="imgOK_Dia" CausesValidation="true"
+                                ValidationGroup="validacaoDia" runat="server" ImageUrl="~/Imagem/add.png" OnClick="imgOK_Dia_Click" Style="height: 16px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:GridView runat="server" ID="grvDia" Width="140%"
+                                AutoGenerateColumns="False" DataKeyNames="IdDia"
+                                AllowSorting="True"
+                                OnRowCommand="grvDia_RowCommand"
+                                OnRowDataBound="grvDia_RowDataBound"
+                                EmptyDataText="Nenhum registro encontrado.">
+
+                                <Columns>
+
+                                    <asp:TemplateField HeaderText="Dia" ConvertEmptyStringToNull="False">
+                                        <ItemTemplate>
+                                            <asp:Label ID="lblDia" runat="server" Text='<%# Bind("Descricao") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="Excluir">
+                                        <ItemTemplate>
+                                            <asp:ImageButton runat="server" OnClientClick="if(confirm('Deseja realmente remover este dia?')){return true;}else{return false;}" ID="ibtExcluir" ImageUrl="~/Imagem/ico_delete_grid.gif"
+                                                CommandArgument='<%# Eval("IdDia") %>' CommandName="EXCLUIR" CausesValidation="true" />
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Left" Width="30px" />
+                                    </asp:TemplateField>
+                                </Columns>
+
+                            </asp:GridView>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="contentFinal">
+
+            <div class="AcaoFormulario">
+                <asp:Panel runat="server" ID="pnlAcao">
+                    <asp:ImageButton ID="btn_salvar" CausesValidation="true"
+                        ValidationGroup="validacao" runat="server" ImageUrl="../imagem/btnSalvar.png"
+                        OnClick="btn_salvar_Click" />
+                    <asp:ImageButton ID="btnNovo" Visible="false" runat="server" ImageUrl="../imagem/btnNovo.png"
+                        OnClick="btnNovo_Click" />
+                </asp:Panel>
+            </div>
+
         </div>
 
     </form>
